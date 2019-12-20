@@ -15,7 +15,8 @@ public class PauseMenu : MonoBehaviour
     GameObject GameoverUI;
 
     public bool GamePaused = false;
-
+    [SerializeField]
+    private Linea l;
 
     private void Update() //Funcion para el uso de la tecla Escape para abrir el menu
     {
@@ -32,7 +33,7 @@ public class PauseMenu : MonoBehaviour
 
         }
 
-        if (GetComponent<Linea>().colisiones >= 3)
+        if (l.colisiones >= 3)
         {
             EndGame();
         }
@@ -40,6 +41,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void ContinueGame()
     {
+        GameoverUI.SetActive(false);
         GameHUD.SetActive(true);
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
