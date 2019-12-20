@@ -9,15 +9,15 @@ public class Linea : MonoBehaviour
     [SerializeField]
     private GameObject Kirby;
 
-    [SerializeField]
-    private Material[] materiales;
-
     private LineRenderer line;
     private CapsuleCollider capsule;
     private Animator anim;
 
-    private int colisiones = 0;
-    private bool vulnerable = true;
+    public int colisiones = 0;
+
+
+
+    PauseMenu go;
 
     void Start()
     {
@@ -25,6 +25,7 @@ public class Linea : MonoBehaviour
         line = this.gameObject.GetComponent<LineRenderer>();
         capsule = this.gameObject.GetComponent<CapsuleCollider>();
         anim = this.gameObject.GetComponent<Animator>();
+        go = (PauseMenu)gameObject.GetComponent(typeof(PauseMenu));
 
         //capsule.radius = 1 / 2; // Width / 2 calculada en el Inspector
         capsule.center = Vector3.zero;
@@ -36,42 +37,25 @@ public class Linea : MonoBehaviour
     {
         LongitudYVainas();
         ModificarCollider();
-        ContadorDeVida();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemigos" && vulnerable == true) //Cambia material
+        if (other.gameObject.tag == "Enemigos")
         {
-            this.RecibirDano();
+            RecibirDano();
             Debug.Log("Colisión con línea");
-            Destroy(other.gameObject);
             Controlador.instance.AddPunt(30);
-            vulnerable = false;
-            StartCoroutine(CorVulnerabilidad());
         }
     }
 
-    protected IEnumerator CorVulnerabilidad()
-    {
-
-        yield return new WaitForSeconds(5);
-        vulnerable = true;
-    }
-
-    private void ContadorDeVida()
-    {
-        if (colisiones==3)
-        {
-            Debug.Log("Te has comido un nabo jajaj");
-            //RIP
-        }
-    }
 
     public void RecibirDano() //Para llamar a esta función desde los personajes
     {
+        
         ++colisiones;
-        line.material = materiales[colisiones];
+        Debug.Log(colisiones);
+        //line.material = materiales[colisiones];
         
     }
 
@@ -88,11 +72,12 @@ public class Linea : MonoBehaviour
         //Pa que la cadena empieze en una unidad de distancia mayor al radio del centro del personaje
         //Sorry no sé explicarme pero me he inventado esto y ya jajjh 
         Vector3 unitario = (Kirby.transform.position - Yoshi.transform.position).normalized;
-        Vector3 aPrima = unitario + Yoshi.transform.position;
+        Vector3 aPrima = unitario/2 + Yoshi.transform.position;
+        Vector3 bPrima = Kirby.transform.position - unitario / 2;
 
         //line.SetPosition(0, Yoshi.transform.position); Esta era pa que empiece en el centro
         line.SetPosition(0, aPrima);
-        line.SetPosition(1, Kirby.transform.position);
+        line.SetPosition(1, bPrima);
     }
 
 

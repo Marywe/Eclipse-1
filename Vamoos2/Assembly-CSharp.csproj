@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Azul.cs" />
     <Compile Include="Assets\Scripts\Chip.cs" />
     <Compile Include="Assets\Scripts\Controller UI\Controlador.cs" />
+    <Compile Include="Assets\Scripts\Controller UI\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\Controller UI\MenuController.cs" />
     <Compile Include="Assets\Scripts\Controller UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Controller UI\SetVolume.cs" />

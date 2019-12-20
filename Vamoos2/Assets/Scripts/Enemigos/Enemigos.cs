@@ -17,13 +17,14 @@ public class Enemigos : MonoBehaviour
     //public Camera cam;
     //public NavMeshAgent agent;
     // Start is called before the first frame update
+
     void Start()
     {
         objetivo1 = PosicionJugador.instance.jugador1.transform;
         objetivo2 = PosicionJugador.instance.jugador2.transform;
 
-
         agent = GetComponent<NavMeshAgent>();
+        agent.angularSpeed = 0;
     }
 
     // Update is called once per frame
@@ -46,6 +47,9 @@ public class Enemigos : MonoBehaviour
         }
         #endregion
 
+        MirarObjetivo(cam);
+        
+
     }
 
     void MirarObjetivo(Transform objetivo)
@@ -53,6 +57,7 @@ public class Enemigos : MonoBehaviour
 
         Vector3 direccion = (objetivo.position - transform.position).normalized;
         Quaternion rotacion = Quaternion.LookRotation(transform.position - cam.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotacion, Time.deltaTime * 5f);
 
     }
 

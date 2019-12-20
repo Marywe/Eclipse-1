@@ -11,8 +11,11 @@ public class PauseMenu : MonoBehaviour
     private GameObject PauseMenuUI;
     [SerializeField]
     private GameObject GameHUD;
+    [SerializeField]
+    GameObject GameoverUI;
 
-    public static bool GamePaused = false;
+    public bool GamePaused = false;
+
 
     private void Update() //Funcion para el uso de la tecla Escape para abrir el menu
     {
@@ -27,6 +30,11 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
 
+        }
+
+        if (GetComponent<Linea>().colisiones >= 3)
+        {
+            EndGame();
         }
 
     }
@@ -52,7 +60,19 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GamePaused = true;
     }
-        
+
+    public void EndGame()
+    {
+        GameoverUI.SetActive(true);
+        Time.timeScale = 0f;
+        GamePaused = true;
+        Debug.Log("GAME OVER TOLAI");
+    }
+
+
+
+
+
 
 
 
