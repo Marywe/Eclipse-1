@@ -75,7 +75,6 @@
     <Compile Include="Assets\Scripts\Enemigos\SpawnEnemigo.cs" />
     <Compile Include="Assets\Scripts\Jugador.cs" />
     <Compile Include="Assets\Scripts\Linea.cs" />
-    <Compile Include="Assets\Scripts\PosicionJugador.cs" />
     <Compile Include="Assets\Scripts\Rosa.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

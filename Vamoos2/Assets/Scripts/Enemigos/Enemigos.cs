@@ -5,24 +5,22 @@ using UnityEngine.AI;
 
 public class Enemigos : MonoBehaviour
 {
+
+
     [SerializeField]
     public float radioVision;
 
     [SerializeField]
     private Transform cam;
 
+    [SerializeField]
     Transform objetivo1, objetivo2;
     NavMeshAgent agent;
 
-    //public Camera cam;
-    //public NavMeshAgent agent;
-    // Start is called before the first frame update
+    bool vulnerable = false;
 
     void Start()
     {
-        objetivo1 = PosicionJugador.instance.jugador1.transform;
-        objetivo2 = PosicionJugador.instance.jugador2.transform;
-
         agent = GetComponent<NavMeshAgent>();
         agent.angularSpeed = 0;
     }
@@ -68,5 +66,18 @@ public class Enemigos : MonoBehaviour
 
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag=="Cadena")
+        {
+            vulnerable = true;
+        }
+    }
+
+    private IEnumerator vulnerabilidad()
+    {
+        yield return new WaitForSeconds(5);
+        vulnerable = false;
+    }
+
 }

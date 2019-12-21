@@ -14,13 +14,23 @@ public class Jugador : MonoBehaviour
 
     [SerializeField]
     private Transform cam = null;
+
+    CharacterController c;
+
+    private void Start()
+    {
+        c = (CharacterController)gameObject.GetComponent(typeof(CharacterController));
+    }
+
     protected void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Enemigos" && vulnerable==true)
         {
+            
             line_sc.RecibirDano();
-            Debug.Log("Colisión con psj");            
+            Debug.Log("Colisión con psj");           
             vulnerable = false;
+            Knockback(other);
             StartCoroutine(CorVulnerabilidad());
         }
     }
@@ -34,5 +44,13 @@ public class Jugador : MonoBehaviour
     protected void Rotar()
     {
         transform.rotation = Quaternion.LookRotation(transform.position - cam.position);
+    }
+
+    private void Knockback(Collider other)
+    {
+        Vector3 dir= ((transform.position - other.transform.position)*2);
+        Debug.Log("knockback");
+        c.Move(dir);
+    
     }
 }

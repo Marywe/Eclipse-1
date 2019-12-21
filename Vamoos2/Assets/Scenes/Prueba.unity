@@ -5480,6 +5480,16 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 963194228}
+    - target: {fileID: 4786111909518299321, guid: 984095d8b4eee2d4bb6b21c63b4ec6e2,
+        type: 3}
+      propertyPath: objetivo1
+      value: 
+      objectReference: {fileID: 1221305109}
+    - target: {fileID: 4786111909518299321, guid: 984095d8b4eee2d4bb6b21c63b4ec6e2,
+        type: 3}
+      propertyPath: objetivo2
+      value: 
+      objectReference: {fileID: 116925819}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 984095d8b4eee2d4bb6b21c63b4ec6e2, type: 3}
 --- !u!1 &652579912
@@ -9755,7 +9765,6 @@ GameObject:
   - component: {fileID: 1221305108}
   - component: {fileID: 1221305107}
   - component: {fileID: 1221305106}
-  - component: {fileID: 1221305105}
   - component: {fileID: 1221305104}
   - component: {fileID: 1221305103}
   - component: {fileID: 1221305110}
@@ -9801,22 +9810,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1221305105
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221305102}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 4
-  m_CollisionDetection: 0
 --- !u!64 &1221305106
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12286,6 +12279,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Linea
       objectReference: {fileID: 0}
+    - target: {fileID: 615767995219334739, guid: cb783d2c6330a7e478085a659c568d9e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cadena
+      objectReference: {fileID: 0}
     - target: {fileID: 615767995219334742, guid: cb783d2c6330a7e478085a659c568d9e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12901,8 +12899,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.0000054836273, z: 0}
+  m_Size: {x: 1.2591591, y: 1.1265806, z: 1.3138771}
+  m_Center: {x: 0.020919047, y: 0.063296884, z: 0.018918514}
 --- !u!1 &1654531628
 GameObject:
   m_ObjectHideFlags: 0
@@ -15100,7 +15098,6 @@ GameObject:
   - component: {fileID: 1922775291}
   - component: {fileID: 1922775292}
   - component: {fileID: 1922775293}
-  - component: {fileID: 1922775294}
   - component: {fileID: 1922775295}
   - component: {fileID: 1922775296}
   - component: {fileID: 1922775297}
@@ -15156,20 +15153,6 @@ MonoBehaviour:
   GameoverUI: {fileID: 288633606628508390}
   GamePaused: 0
   l: {fileID: 2037146422}
---- !u!114 &1922775294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922775290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd19e0cee3bcc24683300e7e9c7c8d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jugador1: {fileID: 1221305102}
-  jugador2: {fileID: 29301971}
 --- !u!114 &1922775295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17944,7 +17927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &4584479880056037674
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18050,6 +18033,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radioVision: 13.41
   cam: {fileID: 963194228}
+  objetivo1: {fileID: 1221305109}
+  objetivo2: {fileID: 116925819}
 --- !u!1001 &4786111907784664267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18061,6 +18046,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemigo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786111909518299302, guid: 984095d8b4eee2d4bb6b21c63b4ec6e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4786111909128433540, guid: 984095d8b4eee2d4bb6b21c63b4ec6e2,
         type: 3}
@@ -18122,6 +18112,16 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 963194228}
+    - target: {fileID: 4786111909518299321, guid: 984095d8b4eee2d4bb6b21c63b4ec6e2,
+        type: 3}
+      propertyPath: objetivo1
+      value: 
+      objectReference: {fileID: 1221305109}
+    - target: {fileID: 4786111909518299321, guid: 984095d8b4eee2d4bb6b21c63b4ec6e2,
+        type: 3}
+      propertyPath: objetivo2
+      value: 
+      objectReference: {fileID: 116925819}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 984095d8b4eee2d4bb6b21c63b4ec6e2, type: 3}
 --- !u!1001 &8378913335931942382
