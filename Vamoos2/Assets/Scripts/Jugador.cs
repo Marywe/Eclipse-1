@@ -28,7 +28,7 @@ public class Jugador : MonoBehaviour
         {
             
             line_sc.RecibirDano();
-            Debug.Log("Colisión con psj");           
+            Debug.Log("Colisión con psj");            
             vulnerable = false;
             Knockback(other);
             StartCoroutine(CorVulnerabilidad());
@@ -48,7 +48,7 @@ public class Jugador : MonoBehaviour
 
     private void Knockback(Collider other)
     {
-        Vector3 dir= ((transform.position - other.transform.position)*2);
+        Vector3 dir = ((this.transform.position - other.transform.position)*2*Time.deltaTime);
         Debug.Log("knockback");
         c.Move(dir);
     
