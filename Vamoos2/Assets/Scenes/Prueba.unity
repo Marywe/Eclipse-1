@@ -9791,6 +9791,8 @@ MonoBehaviour:
   speed: 6
   gravity: 20
   line_sc: {fileID: 2037146422}
+  distKnockback: 5000
+  tiempoVul: 5
   cam: {fileID: 963194228}
 --- !u!143 &1221305104
 CharacterController:
@@ -18211,5 +18213,15 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 963194228}
+    - target: {fileID: 8378913336048849043, guid: 2acbdc986124a4e4384fff612587ffe0,
+        type: 3}
+      propertyPath: distKnockback
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378913336048849043, guid: 2acbdc986124a4e4384fff612587ffe0,
+        type: 3}
+      propertyPath: tiempoVul
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2acbdc986124a4e4384fff612587ffe0, type: 3}
