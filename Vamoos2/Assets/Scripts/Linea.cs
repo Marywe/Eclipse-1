@@ -43,16 +43,14 @@ public class Linea : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemigos")
         {
-            RecibirDano();
+            //RecibirDano();
             Debug.Log("Colisión con línea");
-            Controlador.instance.AddPunt(30);
         }
     }
 
 
     public void RecibirDano() //Para llamar a esta función desde los personajes
-    {
-        
+    {      
         ++colisiones;
         Debug.Log(colisiones);
         //line.material = materiales[colisiones];
