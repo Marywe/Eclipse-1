@@ -1,0 +1,52 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Jugador : MonoBehaviour
+{
+    [SerializeField]
+    protected float speed = 6.0f;
+    [SerializeField]
+    protected float gravity = 20.0f;
+    [SerializeField]
+    Linea line_sc;
+    protected bool vulnerable = true;
+    [SerializeField]
+    protected int distKnockback = 5000;
+    [SerializeField]
+    float tiempoVul = 5f;
+
+    [SerializeField]
+    private Transform cam = null;
+
+    CharacterController c;
+
+    private void Start()
+    {
+        c = (CharacterController)gameObject.GetComponent(typeof(CharacterController));
+    }
+
+    protected virtual void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Enemigos" && vulnerable==true)
+        {            
+            line_sc.RecibirDano();
+            Debug.Log("Colisión con psj");
+            vulnerable = false;
+            StartCoroutine(CorVulnerabilidad());
+            
+        }
+    }
+
+    protected IEnumerator CorVulnerabilidad()
+    {        
+        yield return new WaitForSeconds(tiempoVul);
+        vulnerable = true;
+    }
+
+    protected void Rotar()
+    {
+        transform.rotation = Quaternion.LookRotation(transform.position - cam.position);
+    }
+
+}
