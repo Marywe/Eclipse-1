@@ -27,4 +27,15 @@ public class Azul : Jugador
         base.Rotar();
     }
 
+    protected override void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Enemigos" && vulnerable == true)
+        {
+            base.OnTriggerStay(other);
+            Vector3 dir = ((this.transform.position - other.transform.position) * distKnockback *Time.deltaTime);
+            characterController.Move(dir);
+            Debug.Log("knockback");
+        }
+    }
+
 }

@@ -3430,7 +3430,7 @@ Transform:
   m_GameObject: {fileID: 385078076}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 13.281, y: -6.5057, z: 27.604}
-  m_LocalScale: {x: 0.83878, y: 0.83878, z: 0.83878}
+  m_LocalScale: {x: 0.65835, y: 0.65835, z: 0.65835}
   m_Children:
   - {fileID: 1003495158}
   - {fileID: 1531499356}
@@ -3836,7 +3836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -7228,7 +7228,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.43
+  orthographic size: 7.83
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9791,6 +9791,8 @@ MonoBehaviour:
   speed: 6
   gravity: 20
   line_sc: {fileID: 2037146422}
+  distKnockback: 5000
+  tiempoVul: 5
   cam: {fileID: 963194228}
 --- !u!143 &1221305104
 CharacterController:
@@ -14432,7 +14434,7 @@ RectTransform:
   m_GameObject: {fileID: 1821200511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 134048152}
   - {fileID: 852933923}
@@ -17861,7 +17863,7 @@ Transform:
   m_GameObject: {fileID: 288633606628508390}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 13.281006, y: -6.505707, z: 27.604}
-  m_LocalScale: {x: 0.83878, y: 0.83878, z: 0.83878}
+  m_LocalScale: {x: 0.5220231, y: 0.5220231, z: 0.5220231}
   m_Children:
   - {fileID: 288633606582790928}
   - {fileID: 288633605196127235}
@@ -17883,7 +17885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!195 &4584479880056037664
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -18211,5 +18213,15 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 963194228}
+    - target: {fileID: 8378913336048849043, guid: 2acbdc986124a4e4384fff612587ffe0,
+        type: 3}
+      propertyPath: distKnockback
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378913336048849043, guid: 2acbdc986124a4e4384fff612587ffe0,
+        type: 3}
+      propertyPath: tiempoVul
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2acbdc986124a4e4384fff612587ffe0, type: 3}

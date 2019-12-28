@@ -11,6 +11,10 @@ public class Jugador : MonoBehaviour
     [SerializeField]
     Linea line_sc;
     protected bool vulnerable = true;
+    [SerializeField]
+    protected int distKnockback = 5000;
+    [SerializeField]
+    float tiempoVul = 5f;
 
     [SerializeField]
     private Transform cam = null;
@@ -22,22 +26,21 @@ public class Jugador : MonoBehaviour
         c = (CharacterController)gameObject.GetComponent(typeof(CharacterController));
     }
 
-    protected void OnTriggerStay(Collider other)
+    protected virtual void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Enemigos" && vulnerable==true)
-        {
-            
+        {            
             line_sc.RecibirDano();
-            Debug.Log("Colisión con psj");           
+            Debug.Log("Colisión con psj");
             vulnerable = false;
-            Knockback(other);
             StartCoroutine(CorVulnerabilidad());
+            
         }
     }
 
     protected IEnumerator CorVulnerabilidad()
     {        
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(tiempoVul);
         vulnerable = true;
     }
 
@@ -46,11 +49,4 @@ public class Jugador : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(transform.position - cam.position);
     }
 
-    private void Knockback(Collider other)
-    {
-        Vector3 dir= ((transform.position - other.transform.position)*2);
-        Debug.Log("knockback");
-        c.Move(dir);
-    
-    }
 }

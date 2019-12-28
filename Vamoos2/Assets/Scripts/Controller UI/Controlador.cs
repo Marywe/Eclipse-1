@@ -18,7 +18,6 @@ public class Controlador : MonoBehaviour
         get;
         private set;
     }
-
     private void Awake()
     {
         if (instance != null)
