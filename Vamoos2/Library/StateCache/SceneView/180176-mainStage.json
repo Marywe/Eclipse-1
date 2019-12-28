@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":7.177273750305176,"y":-2.130581855773926,"z":5.255094051361084},"rotation":{"x":0.2391890287399292,"y":0.3111892640590668,"z":-0.08116032183170319,"w":0.9163234829902649},"size":31.745555877685548,"orthographic":false}
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":201.2471466064453,"y":51.70945739746094,"z":-16.5572509765625},"rotation":{"x":0.21635733544826508,"y":0.153459832072258,"z":-0.03426063433289528,"w":0.9637183547019959},"size":416.9533996582031,"orthographic":false}
 >>>>>>> master
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":8.728409767150879,"y":2.628772735595703,"z":-1.4191169738769532},"rotation":{"x":0.04193020984530449,"y":0.29133647680282595,"z":-0.012675114907324314,"w":0.9557652473449707},"size":16.06801414489746,"orthographic":false}
+>>>>>>> parent of 3d4d624... Barra volumen M.Pausa
