@@ -10,10 +10,11 @@ public class Rosa : Jugador
     private Animator anim;
     private bool moving = false;
 
+    
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        //anim = (Animator)gameObject.GetComponent(typeof(Animator)); //No me acordaba de que esta era la forma buena así que el resto se queda como está que pa algo es un juego indie
+       
     }
 
     void Update()

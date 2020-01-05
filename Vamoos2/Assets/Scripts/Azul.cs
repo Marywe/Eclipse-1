@@ -6,6 +6,9 @@ public class Azul : Jugador
 {
     CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
+    [SerializeField]
+    private Animator anim;
+    private bool moving = false;
 
     void Start()
     {
@@ -14,17 +17,27 @@ public class Azul : Jugador
 
     void Update()
     {
+        this.Movimiento();
+        base.Rotar();
+    }
+
+    private void Movimiento()
+    {
+        float xAxis = Input.GetAxis("HorizontalArrow");
+        float zAxis = Input.GetAxis("VerticalArrow");
+
         if (characterController.isGrounded)
         {
-            moveDirection = new Vector3(Input.GetAxis("HorizontalArrow"), 0.0f, Input.GetAxis("VerticalArrow"));
+            moveDirection = new Vector3(xAxis, 0.0f, zAxis);
             moveDirection *= speed;
         }
 
+        if (xAxis == 0 && zAxis == 0) moving = false;
+        else moving = true;
+
         moveDirection.y -= gravity * Time.deltaTime;
-
         characterController.Move(moveDirection * Time.deltaTime);
-
-        base.Rotar();
+        anim.SetBool("IsRunning", moving);
     }
 
     protected override void OnTriggerStay(Collider other)
