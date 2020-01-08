@@ -51,4 +51,9 @@ public class Azul : Jugador
         }
     }
 
+    protected override void Rotar()
+    {
+        transform.rotation = Quaternion.LookRotation(transform.position - cam.position);
+    }
+
 }

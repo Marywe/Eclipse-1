@@ -53,4 +53,9 @@ public class Rosa : Jugador
             Debug.Log("knockback");
         }
     }
+
+    protected override void Rotar()
+    {
+        transform.rotation = Quaternion.LookRotation(transform.position - cam.position);
+    }
 }

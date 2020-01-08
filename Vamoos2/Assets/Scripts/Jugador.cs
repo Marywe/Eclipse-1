@@ -7,7 +7,7 @@ public class Jugador : MonoBehaviour
     [SerializeField]
     protected float speed = 6.0f;
     [SerializeField]
-    protected float gravity = 20.0f;
+    protected float gravity = 10000;
     [SerializeField]
     Linea line_sc;
     protected bool vulnerable = true;
@@ -17,10 +17,10 @@ public class Jugador : MonoBehaviour
     float tiempoVul = 5f;
 
     [SerializeField]
-    private Transform cam = null;
+    protected Transform cam = null;
 
     CharacterController c;
-
+    
     private void Start()
     {
         c = (CharacterController)gameObject.GetComponent(typeof(CharacterController));
@@ -44,7 +44,7 @@ public class Jugador : MonoBehaviour
         vulnerable = true;
     }
 
-    protected void Rotar()
+    protected virtual void Rotar()
     {
         transform.rotation = Quaternion.LookRotation(transform.position - cam.position);
     }
