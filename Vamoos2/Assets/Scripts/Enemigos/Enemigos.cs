@@ -6,10 +6,10 @@ using UnityEngine.AI;
 public class Enemigos : MonoBehaviour
 {
     [SerializeField]
-    public float radioVision;
+    protected float radioVision;
 
     [SerializeField]
-    private Transform cam;
+    protected Transform cam;
 
     
     [SerializeField]
@@ -18,22 +18,12 @@ public class Enemigos : MonoBehaviour
     bool vulnerable = false;
     protected NavMeshAgent agent;
 
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        MirarObjetivo(cam);      
-    }
-
-    void MirarObjetivo(Transform objetivo)
+    protected void MirarObjetivo(Transform objetivo)
     {
         Vector3 direccion = (objetivo.position - transform.position).normalized;
         Quaternion rotacion = Quaternion.LookRotation(transform.position - cam.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotacion, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotacion, Time.deltaTime * 10f);
     }
 
     private void OnDrawGizmosSelected() //Para ver graficamente el radio de vision del enemigo en cuestión
@@ -44,10 +34,11 @@ public class Enemigos : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="Cadena")
+        if(other.gameObject.tag=="Cadena" && vulnerable==false)
         {
             vulnerable = true;
             StartCoroutine(CorVulnerabilidad());
+            Debug.Log("Vulner");
         }
     }
 

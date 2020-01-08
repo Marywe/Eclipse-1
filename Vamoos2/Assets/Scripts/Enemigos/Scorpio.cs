@@ -17,6 +17,7 @@ public class Scorpio : Enemigos
     // Update is called once per frame
     void Update()
     {
+        base.MirarObjetivo(cam);
 
         #region Seguimiento
         //Con esto podemos modificar 
@@ -29,15 +30,19 @@ public class Scorpio : Enemigos
         if (distancia1 <= radioVision)
         {
             agent.SetDestination(objetivo1.position);
-            if (vectorMov1.x < 0) animE.SetBool("MovingL", true);
+            
         }
 
         if (distancia2 <= radioVision)
         {
             agent.SetDestination(objetivo2.position);
-            agent.SetDestination(objetivo1.position);
-            if (vectorMov1.x < 0) animE.SetBool("MovingL", true);
+            
         }
+
+        if (vectorMov1.x < 0) animE.SetBool("MovingL", true);
+        else animE.SetBool("MovingL", false);
+        if (vectorMov1.x > 0) animE.SetBool("MovingR", true);
+        else animE.SetBool("MovingR", false);
         #endregion    
 
 

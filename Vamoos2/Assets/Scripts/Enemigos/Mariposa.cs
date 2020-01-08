@@ -4,20 +4,25 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Mariposa : Enemigos
-{    
+{
+    SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()
     {
         agent = gameObject.GetComponent<NavMeshAgent>();
         agent.angularSpeed = 0;
+        sr = (SpriteRenderer)gameObject.GetComponentInChildren(typeof(SpriteRenderer));
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        base.MirarObjetivo(cam);
         #region Seguimiento
         //Con esto podemos modificar 
+
+        Vector3 vectorMov1 = new Vector3(objetivo1.position.x - this.transform.position.x, objetivo1.position.y - this.transform.position.y, objetivo1.position.z - this.transform.position.z);
+        Vector3 vectorMov2 = new Vector3(objetivo2.position.x - this.transform.position.x, objetivo2.position.y - this.transform.position.y, objetivo2.position.z - this.transform.position.z); ;
 
         float distancia1 = Vector3.Distance(objetivo1.position, transform.position);
         float distancia2 = Vector3.Distance(objetivo2.position, transform.position);
@@ -25,6 +30,7 @@ public class Mariposa : Enemigos
         if (distancia1 <= radioVision)
         {
             agent.SetDestination(objetivo1.position);
+
         }
 
         if (distancia2 <= radioVision)
@@ -32,6 +38,9 @@ public class Mariposa : Enemigos
             agent.SetDestination(objetivo2.position);
         }
         #endregion    
+
+        if (vectorMov1.x < 0) sr.flipX = true;
+        else sr.flipX = false;
 
 
     }
