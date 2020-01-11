@@ -915,7 +915,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116925814}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.89, y: 1.3591726, z: 0.49}
@@ -966,7 +966,7 @@ MonoBehaviour:
   speed: 6
   gravity: 20
   line_sc: {fileID: 2037146422}
-  distKnockback: 50
+  distKnockback: 100
   tiempoVul: 5
   cam: {fileID: 963194228}
   anim: {fileID: 63166835}
@@ -7529,7 +7529,7 @@ MonoBehaviour:
   speed: 6
   gravity: 20
   line_sc: {fileID: 2037146422}
-  distKnockback: 5000
+  distKnockback: 100
   tiempoVul: 5
   cam: {fileID: 963194228}
   anim: {fileID: 92467406}
@@ -7575,7 +7575,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221305102}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.8779788, y: 1.4353366, z: 0.45}

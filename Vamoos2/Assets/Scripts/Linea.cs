@@ -43,7 +43,6 @@ public class Linea : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemigos")
         {
-            RecibirDano();
             Debug.Log("Colisión con línea");
         }
     }

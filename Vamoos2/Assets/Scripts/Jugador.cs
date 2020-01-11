@@ -26,7 +26,7 @@ public class Jugador : MonoBehaviour
         c = (CharacterController)gameObject.GetComponent(typeof(CharacterController));
     }
 
-    protected virtual void OnTriggerStay(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemigos" && vulnerable==true)
         {            

@@ -40,12 +40,12 @@ public class Azul : Jugador
         anim.SetBool("IsRunning", moving);
     }
 
-    protected override void OnTriggerStay(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemigos" && vulnerable == true)
         {
-            base.OnTriggerStay(other);
-            Vector3 dir = ((this.transform.position - other.transform.position) * distKnockback *Time.deltaTime);
+            base.OnTriggerEnter(other);
+            Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback *Time.deltaTime);
             characterController.Move(dir);
             Debug.Log("knockback");
         }
