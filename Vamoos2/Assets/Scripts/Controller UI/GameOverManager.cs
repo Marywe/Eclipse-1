@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
-    PauseMenu pm;
 
+    PauseMenu pm;
 
     private void Start()
     {
         pm = (PauseMenu)gameObject.GetComponent(typeof(PauseMenu));
     }
+
+
 
    
 }

@@ -21,7 +21,7 @@ public class Linea : MonoBehaviour
 
     void Start()
     {
-        
+        Time.timeScale = 1f;                //Solución para el congelamiento despues del GameOver
         line = this.gameObject.GetComponent<LineRenderer>();
         capsule = this.gameObject.GetComponent<CapsuleCollider>();
         anim = this.gameObject.GetComponent<Animator>();
@@ -43,7 +43,7 @@ public class Linea : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemigos")
         {
-            //RecibirDano();
+            RecibirDano();
             Debug.Log("Colisión con línea");
         }
     }
