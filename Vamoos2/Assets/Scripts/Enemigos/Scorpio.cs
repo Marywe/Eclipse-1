@@ -9,6 +9,8 @@ public class Scorpio : Enemigos
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = 5;
+        currentHealth = maxHealth;
         agent = gameObject.GetComponent<NavMeshAgent>();
         agent.angularSpeed = 0;
         animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));

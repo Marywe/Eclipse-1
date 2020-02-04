@@ -6,9 +6,15 @@ using UnityEngine.AI;
 public class Mariposa : Enemigos
 {
     SpriteRenderer sr;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = 3;
+        currentHealth = maxHealth;
+
+
         agent = gameObject.GetComponent<NavMeshAgent>();
         agent.angularSpeed = 0;
         sr = (SpriteRenderer)gameObject.GetComponentInChildren(typeof(SpriteRenderer));
@@ -44,4 +50,6 @@ public class Mariposa : Enemigos
 
 
     }
+
+    
 }

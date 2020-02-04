@@ -8,11 +8,13 @@ public class Rosa : Jugador
     private Vector3 moveDirection = Vector3.zero;
     [SerializeField]
     private Animator anim;
-    private bool moving = false;
+    private bool moving;
 
     
     void Start()
     {
+        moving = false;
+
         characterController = GetComponent<CharacterController>();
        
     }
@@ -22,6 +24,7 @@ public class Rosa : Jugador
         Movimiento();
         base.Rotar();
     }
+
 
 
     private void Movimiento()

@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class Enemigos : MonoBehaviour
 {
+    protected int maxHealth;
+    protected int currentHealth;
+
     [SerializeField]
     protected float radioVision;
 
@@ -48,4 +51,20 @@ public class Enemigos : MonoBehaviour
         vulnerable = false;
     }
 
+    public void TakeDamage(int dmg)
+    {
+        currentHealth -= dmg;
+
+        if (currentHealth <= 0) Morirse();
+    }
+
+    private void Morirse()
+    {
+        this.enabled = false;
+        this.GetComponent<Collider>().enabled = false;
+
+        //Animación muerte
+
+        Destroy(this.gameObject, 2);
+    }
 }
