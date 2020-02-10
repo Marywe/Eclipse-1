@@ -33,19 +33,21 @@ public class Mariposa : Enemigos
         float distancia1 = Vector3.Distance(objetivo1.position, transform.position);
         float distancia2 = Vector3.Distance(objetivo2.position, transform.position);
 
-        if (distancia1 <= radioVision)
+        if (distancia1 <= radioVision && distancia1 < distancia2)
         {
+            mov = vectorMov1;
             agent.SetDestination(objetivo1.position);
 
         }
 
-        if (distancia2 <= radioVision)
+        if (distancia2 <= radioVision && distancia2 < distancia1)
         {
+            mov = vectorMov2;
             agent.SetDestination(objetivo2.position);
         }
         #endregion    
 
-        if (vectorMov1.x < 0) sr.flipX = true;
+        if (mov.x < 0) sr.flipX = true;
         else sr.flipX = false;
 
 

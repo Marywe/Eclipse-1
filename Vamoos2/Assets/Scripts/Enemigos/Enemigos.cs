@@ -7,6 +7,7 @@ public class Enemigos : MonoBehaviour
 {
     protected int maxHealth;
     protected int currentHealth;
+    protected Vector3 mov;
 
     [SerializeField]
     protected float radioVision;

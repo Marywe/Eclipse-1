@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class Scorpio : Enemigos
 {
     Animator animE;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,21 +31,24 @@ public class Scorpio : Enemigos
         float distancia1 = Vector3.Distance(objetivo1.position, transform.position);
         float distancia2 = Vector3.Distance(objetivo2.position, transform.position);
 
-        if (distancia1 <= radioVision)
+        if (distancia1 <= radioVision && distancia1 < distancia2)
         {
+            mov = vectorMov1;
             agent.SetDestination(objetivo1.position);
             
         }
 
-        if (distancia2 <= radioVision)
+        if (distancia2 <= radioVision && distancia2 < distancia1)
         {
+            mov = vectorMov2;
             agent.SetDestination(objetivo2.position);
             
         }
 
-        if (vectorMov1.x < 0) animE.SetBool("MovingL", true);
+        if (mov.x < 0) animE.SetBool("MovingL", true);
         else animE.SetBool("MovingL", false);
-        if (vectorMov1.x > 0) animE.SetBool("MovingR", true);
+
+        if (mov.x > 0) animE.SetBool("MovingR", true);
         else animE.SetBool("MovingR", false);
         #endregion    
 
