@@ -6,16 +6,20 @@ using UnityEngine.AI;
 public class Robot : Enemigos
 {
 	Animator animE;
-
+	public float distanciaAtaque;
+	SpriteRenderer sr;
+	private bool attacking;
 
 	// Start is called before the first frame update
 	void Start()
 	{
+		attacking = false;
 		maxHealth = 6;
 		currentHealth = maxHealth;
 		agent = gameObject.GetComponent<NavMeshAgent>();
 		agent.angularSpeed = 0;
 		animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
+		sr = gameObject.GetComponentInChildren<SpriteRenderer>();
 	}
 
 	// Update is called once per frame
@@ -45,18 +49,52 @@ public class Robot : Enemigos
 
 		}
 
-		if (mov.x < 0) animE.SetBool("MovingL", true);
-		else animE.SetBool("MovingL", false);
+		if (mov.x == 0 && mov.z == 0)
+		{
+			animE.SetBool("Moving", false);
+		}
 
-		if (mov.x > 0) animE.SetBool("MovingR", true);
-		else animE.SetBool("MovingR", false);
+
+		else if (mov.x > 0)
+		{
+			animE.SetBool("Moving", true);
+			sr.flipX = false;
+		}
+		else if (mov.x < 0)
+		{
+			animE.SetBool("Moving", true);
+			sr.flipX = true;
+		}
+
+
+
 		#endregion
+		#region
+		if (distancia1 <= distanciaAtaque && attacking == false)
+		{
+			Atacar();
+		}
+		else if (distancia2 <= distanciaAtaque && attacking == false)
+		{
+			Atacar();
+		}
+        #endregion
 
+    }
 
+    void Atacar()
+	{		
+		attacking = true;
+		animE.SetTrigger("Atacar");
+		StartCoroutine(corAttack());
 	}
 
-	void Atacar()
+	private IEnumerator corAttack()
 	{
-		
+		agent.isStopped = true;
+		yield return new WaitForSeconds(3);
+		attacking = false;
+		agent.isStopped = false;
+
 	}
 }

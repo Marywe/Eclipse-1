@@ -928,7 +928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116925814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -45.41, y: -3.49, z: -1.37}
+  m_LocalPosition: {x: -49.99, y: -3.49, z: -10.62}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 63166833}
@@ -3643,7 +3643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &465005487
 Transform:
   m_ObjectHideFlags: 0
@@ -3652,7 +3652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465005486}
   m_LocalRotation: {x: -0.0017820183, y: 0.0013652765, z: -0.0019447437, w: 0.9999956}
-  m_LocalPosition: {x: 1.74, y: -0.27, z: -12.63}
+  m_LocalPosition: {x: -0.94, y: -0.2, z: 3.77}
   m_LocalScale: {x: 0.45371023, y: 0.45371035, z: 0.4537103}
   m_Children:
   - {fileID: 2022124108}
@@ -3682,7 +3682,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.04
-  m_Speed: 1
+  m_Speed: 3.85
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -3706,10 +3706,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 297804323cd179e4ca7d19083b40adde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radioVision: 0
-  cam: {fileID: 0}
-  objetivo1: {fileID: 0}
-  objetivo2: {fileID: 0}
+  radioVision: 5.95
+  cam: {fileID: 963194228}
+  objetivo1: {fileID: 116925819}
+  objetivo2: {fileID: 1221305109}
+  distanciaAtaque: 3
 --- !u!54 &465005491
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7848,7 +7849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221305102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -41.36, y: -3.15, z: -1.16}
+  m_LocalPosition: {x: -45.940002, y: -3.15, z: -10.41}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 92467404}
@@ -10792,7 +10793,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716091473}
   m_LocalRotation: {x: -0.0017820183, y: 0.0013652765, z: -0.0019447437, w: 0.9999956}
-  m_LocalPosition: {x: 4.58, y: -5.48, z: -3.45}
+  m_LocalPosition: {x: 22.41, y: -5.55, z: -3.5}
   m_LocalScale: {x: 0.45371, y: 0.4537101, z: 0.45371005}
   m_Children:
   - {fileID: 1861495722}
@@ -10833,7 +10834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ec4755d60c886418155016f5d35271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radioVision: 17
+  radioVision: 11.52
   cam: {fileID: 963194228}
   objetivo1: {fileID: 116925819}
   objetivo2: {fileID: 1221305109}
@@ -14665,7 +14666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4584479880056037672}
   m_LocalRotation: {x: -0.0017820183, y: 0.0013652765, z: -0.0019447437, w: 0.9999956}
-  m_LocalPosition: {x: 8.27, y: -5.69, z: 6.11}
+  m_LocalPosition: {x: 5.03, y: -5.72, z: -6.01}
   m_LocalScale: {x: 0.45371023, y: 0.45371035, z: 0.4537103}
   m_Children:
   - {fileID: 2134315507}

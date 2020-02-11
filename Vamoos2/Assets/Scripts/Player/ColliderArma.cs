@@ -36,7 +36,7 @@ public class ColliderArma : Jugador
             foreach (Collider enemy in enemiesHit)
             {
                 Debug.Log("uwu");
-                enemy.GetComponent<Enemigos>().TakeDamage(3);
+                enemy.GetComponent<Enemigos>().TakeDamage(1);
             }
 
             StartCoroutine(corBasicAtt());
