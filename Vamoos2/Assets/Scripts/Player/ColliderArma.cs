@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderArma : Jugador
+public class ColliderArma : MonoBehaviour
 {
     public LayerMask enemyLayer;
     Collider[] enemiesHit;
-
+    Animator anim;
     private bool puedeAtacar;
     // Start is called before the first frame update
     void Start()
     {
+        anim = gameObject.GetComponentInParent<Animator>();
         puedeAtacar = true;
     }
 
@@ -27,9 +28,10 @@ public class ColliderArma : Jugador
 
     private void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.F1))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             //Animación atacar
+            anim.SetTrigger("Attack");
 
             enemiesHit = Physics.OverlapCapsule(this.transform.position, this.transform.position * 2, 1, enemyLayer);
 
