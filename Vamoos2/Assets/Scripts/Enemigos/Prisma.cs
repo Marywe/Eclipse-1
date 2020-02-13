@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Scorpio : Enemigos
+public class Prisma : Enemigos
 {
     Animator animE;
 
