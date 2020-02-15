@@ -32,12 +32,17 @@ public class Azul : Jugador
             moveDirection *= speed;
         }
 
-        if (xAxis == 0 && zAxis == 0) moving = false;
-        else moving = true;
-
         moveDirection.y -= gravity * Time.deltaTime;
         characterController.Move(moveDirection * Time.deltaTime);
-        anim.SetBool("IsRunning", moving);
+
+        if (xAxis !=0 || zAxis != 0)
+            SetSpeedValue(Mathf.Max(xAxis, zAxis));
+
+
+        SetDirectionValue(xAxis);
+        /*if (xAxis == 0 && zAxis == 0) moving = false;
+        else moving = true;       
+        anim.SetBool("IsRunning", moving);*/
     }
 
     protected override void OnTriggerEnter(Collider other)
@@ -56,4 +61,12 @@ public class Azul : Jugador
         transform.rotation = Quaternion.LookRotation(transform.position - cam.position);
     }
 
+    private void SetSpeedValue(float speed)
+    {
+        anim.SetFloat("Speed", speed);
+    }
+    private void SetDirectionValue(float dir)
+    {
+        anim.SetFloat("Direction", dir);
+    }
 }

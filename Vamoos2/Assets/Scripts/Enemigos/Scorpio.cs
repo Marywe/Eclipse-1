@@ -46,7 +46,7 @@ public class Scorpio : Enemigos
         }
 
         //Animaciones
-        if (mov.x == 0)
+        if (mov.x == 0 && mov.z==0)
         {
             SetSpeedValue(0);
             
