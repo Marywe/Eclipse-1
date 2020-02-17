@@ -8,6 +8,9 @@ public class ColliderArma : MonoBehaviour
     Collider[] enemiesHit;
     Animator anim;
     private bool puedeAtacar;
+
+    [SerializeField]
+    private float radio = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +26,7 @@ public class ColliderArma : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, 1f);
+        Gizmos.DrawWireSphere(transform.position, radio);
     }
 
     private void Attack()
@@ -33,7 +36,7 @@ public class ColliderArma : MonoBehaviour
             //Animación atacar
             anim.SetTrigger("Attack");
 
-            enemiesHit = Physics.OverlapCapsule(this.transform.position, this.transform.position * 2, 1, enemyLayer);
+            enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
 
             foreach (Collider enemy in enemiesHit)
             {

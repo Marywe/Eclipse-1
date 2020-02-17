@@ -8,7 +8,6 @@ public class Azul : Jugador
     private Vector3 moveDirection = Vector3.zero;
     [SerializeField]
     private Animator anim;
-    private bool moving = false;
 
     void Start()
     {
@@ -35,22 +34,21 @@ public class Azul : Jugador
         moveDirection.y -= gravity * Time.deltaTime;
         characterController.Move(moveDirection * Time.deltaTime);
 
-        if (xAxis !=0 || zAxis != 0)
-            SetSpeedValue(Mathf.Max(xAxis, zAxis));
-
-
-        SetDirectionValue(xAxis);
-        /*if (xAxis == 0 && zAxis == 0) moving = false;
-        else moving = true;       
-        anim.SetBool("IsRunning", moving);*/
+        if (xAxis == 0 && zAxis == 0)
+            SetSpeedValue(0);
+        else
+            SetSpeedValue(1);
+        SetDirectionValue(Input.GetAxis("HorizontalArrow"));
     }
+
+
 
     protected override void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemigos" && vulnerable == true)
         {
             base.OnTriggerEnter(other);
-            Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback *Time.deltaTime);
+            Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
             characterController.Move(dir);
             Debug.Log("knockback");
         }

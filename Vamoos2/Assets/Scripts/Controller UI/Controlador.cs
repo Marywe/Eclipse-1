@@ -6,11 +6,7 @@ using UnityEngine.UI;
 public class Controlador : MonoBehaviour
 {
     [SerializeField]
-    private Text textoPuntuacion;
-    [SerializeField]
     private Text textoChips;
-
-    private int puntuacion=0;
     private int chips=0;
 
     public static Controlador instance
@@ -31,11 +27,11 @@ public class Controlador : MonoBehaviour
         }
     } //Comprobación Singleton
 
-    public void AddPunt(int puntos)
+    /*public void AddPunt(int puntos)
     {
         puntuacion += puntos;
         textoPuntuacion.text = puntuacion.ToString();
-    }
+    }*/
 
     public void AddChips()
     {
