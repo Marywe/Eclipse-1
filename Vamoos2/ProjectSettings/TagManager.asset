@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemigos
   - Spawn
+  - Cadena
+  - Shield
   layers:
   - Default
   - TransparentFX

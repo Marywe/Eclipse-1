@@ -13,7 +13,7 @@ public class Mariposa : Enemigos
     {
         maxHealth = 3;
         currentHealth = maxHealth;
-
+        shield = transform.GetChild(1).gameObject;
 
         agent = gameObject.GetComponent<NavMeshAgent>();
         agent.angularSpeed = 0;

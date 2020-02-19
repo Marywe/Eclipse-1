@@ -9,6 +9,8 @@ public class Enemigos : MonoBehaviour
     protected int currentHealth;
     protected Vector3 mov;
 
+    protected GameObject shield;
+
     [SerializeField]
     protected float radioVision;
 
@@ -22,7 +24,10 @@ public class Enemigos : MonoBehaviour
     bool vulnerable = false;
     protected NavMeshAgent agent;
 
-
+    private void Start()
+    {
+        
+    }
     protected void MirarObjetivo(Transform objetivo)
     {
         Vector3 direccion = (objetivo.position - transform.position).normalized;
@@ -40,16 +45,23 @@ public class Enemigos : MonoBehaviour
     {
         if(other.gameObject.tag=="Cadena" && vulnerable==false)
         {
+            //Sprites, corrutina, health-armor
             vulnerable = true;
             StartCoroutine(CorVulnerabilidad());
             Debug.Log("Vulner");
+
         }
     }
 
     private IEnumerator CorVulnerabilidad()
     {
+     
+        shield.SetActive(false);
         yield return new WaitForSeconds(5);
         vulnerable = false;
+
+        shield.SetActive(true);
+
     }
 
     public void TakeDamage(int dmg)

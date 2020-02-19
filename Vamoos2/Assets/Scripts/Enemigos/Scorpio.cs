@@ -11,6 +11,7 @@ public class Scorpio : Enemigos
     // Start is called before the first frame update
     void Start()
     {
+        shield = transform.GetChild(1).gameObject;
         maxHealth = 5;
         currentHealth = maxHealth;
         agent = gameObject.GetComponent<NavMeshAgent>();
