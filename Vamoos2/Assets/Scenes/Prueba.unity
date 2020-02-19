@@ -2257,7 +2257,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
-  radio: 2
+  radio: 3
 --- !u!1 &260392136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3370733790499376251, guid: 608fc174dacc89f499c219d46f1b67b8,
@@ -5187,7 +5187,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0.1171875, y: 0.04296875, z: 0.0390625, w: -0.04296875}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -9890,7 +9890,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
-  radio: 2
+  radio: 3
 --- !u!1 &1486294601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -587761056779144275, guid: dcd13a578382cc24b945e86617d9b74e,

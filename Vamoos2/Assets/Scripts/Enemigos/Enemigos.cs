@@ -8,6 +8,8 @@ public class Enemigos : MonoBehaviour
     protected int maxHealth;
     protected int currentHealth;
     protected Vector3 mov;
+    protected int armor = 1;
+
 
     protected GameObject shield;
 
@@ -43,7 +45,7 @@ public class Enemigos : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="Cadena" && vulnerable==false)
+        if(other.gameObject.tag=="Cadena" && vulnerable==false && shield!=null)
         {
             //Sprites, corrutina, health-armor
             vulnerable = true;
@@ -55,7 +57,7 @@ public class Enemigos : MonoBehaviour
 
     private IEnumerator CorVulnerabilidad()
     {
-     
+        
         shield.SetActive(false);
         yield return new WaitForSeconds(5);
         vulnerable = false;
@@ -66,7 +68,15 @@ public class Enemigos : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
+        if(vulnerable==true || shield==null)
         currentHealth -= dmg;
+        
+        else if (vulnerable == false && shield!=null)
+        {
+            armor -= dmg;
+        }
+        Debug.Log("Current life " + currentHealth + "armor " + armor);
+        if (armor <= 0) Destroy(shield);
 
         if (currentHealth <= 0) Morirse();
     }

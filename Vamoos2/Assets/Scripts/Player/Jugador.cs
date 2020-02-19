@@ -7,7 +7,7 @@ public class Jugador : MonoBehaviour
     [SerializeField]
     protected float speed = 6.0f;
     [SerializeField]
-    protected float gravity = 10000;
+    protected float gravity = 10;
     [SerializeField]
     Linea line_sc;
     protected bool vulnerable = true;
@@ -29,7 +29,9 @@ public class Jugador : MonoBehaviour
     protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemigos" && vulnerable==true)
-        {            
+        {       
+            //Animación recibir daño
+
             line_sc.RecibirDano();
             Debug.Log("Colisión con psj");
             vulnerable = false;
