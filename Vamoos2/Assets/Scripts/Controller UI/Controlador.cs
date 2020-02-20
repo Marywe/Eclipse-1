@@ -7,7 +7,7 @@ public class Controlador : MonoBehaviour
 {
     [SerializeField]
     private Text textoChips;
-    private int chips=0;
+    public int chips=0;
 
     public static Controlador instance
     {

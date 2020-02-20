@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -474,7 +474,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dd5c9c5f24ad2e645a201d518e60ca67, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c8bd47f0e7f35b4ab237c0a1c5540e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -751,7 +751,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cc846f83ccce8b440afa0b7354fdd281, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ddc7ae2e996ff52489caa9cece729ddc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12489,6 +12489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoChips: {fileID: 301147023}
+  chips: 0
 --- !u!114 &1922775293
 MonoBehaviour:
   m_ObjectHideFlags: 0
