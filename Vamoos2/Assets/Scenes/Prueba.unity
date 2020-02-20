@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2139,7 +2139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254074583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4.4, z: 0}
   m_LocalScale: {x: 15.86, y: 1, z: 17.29}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3924,7 +3924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465005486}
   m_LocalRotation: {x: -0.0017820183, y: 0.0013652765, z: -0.0019447437, w: 0.9999956}
-  m_LocalPosition: {x: 0.26, y: -0.2, z: 3.77}
+  m_LocalPosition: {x: 5.2, y: -0.3, z: -5.3}
   m_LocalScale: {x: 0.45371023, y: 0.45371035, z: 0.4537103}
   m_Children:
   - {fileID: 2022124108}
@@ -6444,7 +6444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980197346}
   m_LocalRotation: {x: -0.0017820183, y: 0.0013652765, z: -0.0019447437, w: 0.9999956}
-  m_LocalPosition: {x: -17.8, y: -4.85, z: -9.41}
+  m_LocalPosition: {x: 13.4, y: -4.9, z: -1}
   m_LocalScale: {x: 0.45371, y: 0.4537101, z: 0.45371005}
   m_Children:
   - {fileID: 177089822}
@@ -11193,7 +11193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716091473}
   m_LocalRotation: {x: -0.0017820183, y: 0.0013652765, z: -0.0019447437, w: 0.9999956}
-  m_LocalPosition: {x: -24.9, y: -5.3, z: 12.5}
+  m_LocalPosition: {x: -13.8, y: -5.3, z: 12.8}
   m_LocalScale: {x: 0.45371, y: 0.4537101, z: 0.45371005}
   m_Children:
   - {fileID: 1861495722}
@@ -12490,6 +12490,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoChips: {fileID: 301147023}
   chips: 0
+  puertaFinalAbierta: 0
+  cam: {fileID: 0}
+  ptoCamPuerta: {fileID: 0}
+  doorAnim: {fileID: 0}
 --- !u!114 &1922775293
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,7 +7,11 @@ public class Controlador : MonoBehaviour
 {
     [SerializeField]
     private Text textoChips;
-    public int chips=0;
+    public int chips = 0;
+    public bool puertaFinalAbierta = false;
+    [SerializeField] Camera cam;
+    [SerializeField] Transform ptoCamPuerta;
+    [SerializeField] Animator doorAnim;
 
     public static Controlador instance
     {
@@ -35,10 +39,38 @@ public class Controlador : MonoBehaviour
 
     public void AddChips()
     {
+        if (chips == 3)
+        {
+            Time.timeScale = 0;
+            puertaFinalAbierta = true;
+
+            //Animación cámara
+            Transform temp = cam.transform;
+            cam.transform.position = Vector3.Lerp(cam.transform.position, ptoCamPuerta.position, 3 * Time.deltaTime);
+            cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, ptoCamPuerta.rotation, 3 * Time.deltaTime);
+            //Animación puerta
+            Invoke("AbrirPuerta", 3);
+            //Camera back
+            Invoke("VolverCam", 5);
+
+
+        }
+
         ++chips;
-        textoChips.text = chips + "";
+        textoChips.text = chips.ToString();
     }
 
+    private void AbrirPuerta()
+    {
+        doorAnim.SetBool("Open", puertaFinalAbierta);
+    }
+    private void VolverCam(Transform t)
+    {
+        cam.transform.position = Vector3.Lerp(cam.transform.position, t.position, 3 * Time.deltaTime);
+        cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, t.rotation, 3 * Time.deltaTime);
+
+        Time.timeScale = 1f;
+    }
 
 
 }

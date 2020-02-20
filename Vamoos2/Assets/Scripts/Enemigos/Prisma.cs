@@ -47,7 +47,7 @@ public class Prisma : Enemigos
         }
 
         //Animaciones
-        if (mov.x == 0)
+        if (radioVision<distancia2 && radioVision < distancia1)
         {
             SetSpeedValue(0);
             

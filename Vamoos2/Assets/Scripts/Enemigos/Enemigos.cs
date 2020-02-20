@@ -9,7 +9,7 @@ public class Enemigos : MonoBehaviour
     protected int currentHealth;
     protected Vector3 mov;
     protected int armor = 1;
-
+    private Animator anim;
 
     protected GameObject shield;
 
@@ -83,10 +83,10 @@ public class Enemigos : MonoBehaviour
 
     private void Morirse()
     {
+        anim = this.GetComponentInChildren<Animator>();
+        anim.SetTrigger("Die");
         this.enabled = false;
         this.GetComponent<Collider>().enabled = false;
-
-        //Animación muerte
 
         Destroy(this.gameObject, 2);
     }

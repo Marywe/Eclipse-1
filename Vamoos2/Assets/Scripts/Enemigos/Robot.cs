@@ -49,12 +49,13 @@ public class Robot : Enemigos
 			agent.SetDestination(objetivo2.position);
 
 		}
-
-		if (mov.x == 0 && mov.z == 0)
+		#endregion
+		#region Anims
+		if (mov.z == 0)
 		{
 			animE.SetBool("Moving", false);
+			
 		}
-
 
 		else if (mov.x > 0)
 		{
@@ -70,7 +71,7 @@ public class Robot : Enemigos
 
 
 		#endregion
-		#region
+		#region Ataque
 		if (distancia1 <= distanciaAtaque && attacking == false)
 		{
 			Atacar();
