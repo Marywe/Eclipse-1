@@ -14,7 +14,9 @@ public class Jugador : MonoBehaviour
     [SerializeField]
     protected int distKnockback = 5000;
     [SerializeField]
-    float tiempoVul = 5f;
+    float tiempoVul = 2f;
+    protected GameObject sprites;
+
 
     [SerializeField]
     protected Transform cam = null;
@@ -23,6 +25,8 @@ public class Jugador : MonoBehaviour
     
     private void Start()
     {
+
+        DontDestroyOnLoad(this);
         c = (CharacterController)gameObject.GetComponent(typeof(CharacterController));
     }
 
@@ -41,14 +45,14 @@ public class Jugador : MonoBehaviour
     }
 
     protected IEnumerator CorVulnerabilidad()
-    {        
+    {       
         yield return new WaitForSeconds(tiempoVul);
         vulnerable = true;
     }
 
     protected virtual void Rotar()
     {
-        transform.rotation = Quaternion.LookRotation(transform.position - cam.position);
+        sprites.transform.rotation = Quaternion.LookRotation(transform.position - cam.position);
     }
 
 }

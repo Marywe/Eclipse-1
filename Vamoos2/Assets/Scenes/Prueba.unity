@@ -968,7 +968,7 @@ MonoBehaviour:
   speed: 6
   gravity: 20
   line_sc: {fileID: 2037146422}
-  distKnockback: 100
+  distKnockback: 200
   tiempoVul: 5
   cam: {fileID: 963194228}
   anim: {fileID: 63166835}
@@ -983,8 +983,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
+  m_Height: 1.45
+  m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -2139,7 +2139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254074583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.4, z: 0}
+  m_LocalPosition: {x: 0, y: -0.6, z: 0}
   m_LocalScale: {x: 15.86, y: 1, z: 17.29}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3924,7 +3924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465005486}
   m_LocalRotation: {x: -0.0017820183, y: 0.0013652765, z: -0.0019447437, w: 0.9999956}
-  m_LocalPosition: {x: 5.2, y: -0.3, z: -5.3}
+  m_LocalPosition: {x: -5.44, y: -0.26, z: -5.27}
   m_LocalScale: {x: 0.45371023, y: 0.45371035, z: 0.4537103}
   m_Children:
   - {fileID: 2022124108}
@@ -8189,8 +8189,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
+  m_Height: 1.45
+  m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08

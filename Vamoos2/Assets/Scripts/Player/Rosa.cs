@@ -8,12 +8,12 @@ public class Rosa : Jugador
     private Vector3 moveDirection = Vector3.zero;
     [SerializeField]
     private Animator anim;
-
     
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-       
+        sprites = transform.GetChild(0).gameObject;
+
     }
 
     void Update()
@@ -47,6 +47,7 @@ public class Rosa : Jugador
     {
         if (other.gameObject.tag == "Enemigos" && vulnerable == true)
         {
+
             base.OnTriggerEnter(other);
             Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
             characterController.Move(dir);

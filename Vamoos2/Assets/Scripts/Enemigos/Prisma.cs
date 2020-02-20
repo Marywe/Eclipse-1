@@ -35,14 +35,14 @@ public class Prisma : Enemigos
         if (distancia1 <= radioVision && distancia1 < distancia2)
         {
             mov = vectorMov1;
-            agent.SetDestination(objetivo1.position);
+            agent.SetDestination((objetivo1.position)-Vector3.forward - Vector3.right*2);
             
         }
 
         if (distancia2 <= radioVision && distancia2 < distancia1)
         {
             mov = vectorMov2;
-            agent.SetDestination(objetivo2.position);
+            agent.SetDestination(objetivo2.position - Vector3.forward - Vector3.right*2);
             
         }
 

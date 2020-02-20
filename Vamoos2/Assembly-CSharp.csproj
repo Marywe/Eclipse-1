@@ -110,6 +110,7 @@
     <Compile Include="Assets\Scripts\Enemigos\Robot.cs" />
     <Compile Include="Assets\Scripts\Enemigos\Scorpio.cs" />
     <Compile Include="Assets\Scripts\Enemigos\SpawnEnemigo.cs" />
+    <Compile Include="Assets\Scripts\FinalBoss.cs" />
     <Compile Include="Assets\Scripts\Player\Azul.cs" />
     <Compile Include="Assets\Scripts\Player\ColliderArma.cs" />
     <Compile Include="Assets\Scripts\Player\Jugador.cs" />

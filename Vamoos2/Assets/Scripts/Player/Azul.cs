@@ -12,6 +12,7 @@ public class Azul : Jugador
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        sprites = transform.GetChild(0).gameObject;
     }
 
     void Update()

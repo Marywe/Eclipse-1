@@ -28,6 +28,7 @@ public class Controlador : MonoBehaviour
         else
         {
             instance = this;
+
         }
     } //Comprobación Singleton
 
