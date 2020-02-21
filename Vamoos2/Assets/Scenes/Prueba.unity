@@ -3959,7 +3959,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -6428,6 +6428,7 @@ GameObject:
   - component: {fileID: 980197350}
   - component: {fileID: 980197349}
   - component: {fileID: 980197348}
+  - component: {fileID: 980197352}
   - component: {fileID: 980197351}
   m_Layer: 10
   m_Name: Prisma
@@ -6479,7 +6480,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -6519,6 +6520,19 @@ MonoBehaviour:
   cam: {fileID: 963194228}
   objetivo1: {fileID: 116925819}
   objetivo2: {fileID: 1221305109}
+--- !u!114 &980197352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980197346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee31d7b7f1e449e42aed849db9965017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distRay: 34.3
 --- !u!1 &995184595 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7505410621731916176, guid: 608fc174dacc89f499c219d46f1b67b8,
@@ -11210,12 +11224,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 1716091473}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2.01
+  m_Radius: 2.28
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -15064,12 +15078,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 4584479880056037672}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.38
+  m_Radius: 1.62
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

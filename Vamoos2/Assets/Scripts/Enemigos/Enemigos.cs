@@ -25,11 +25,9 @@ public class Enemigos : MonoBehaviour
 
     bool vulnerable = false;
     protected NavMeshAgent agent;
+    protected Shooting s;
 
-    private void Start()
-    {
-        
-    }
+
     protected void MirarObjetivo(Transform objetivo)
     {
         Vector3 direccion = (objetivo.position - transform.position).normalized;

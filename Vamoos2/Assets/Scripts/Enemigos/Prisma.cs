@@ -36,6 +36,11 @@ public class Prisma : Enemigos
         {
             mov = vectorMov1;
             agent.SetDestination((objetivo1.position)-Vector3.forward - Vector3.right*2);
+
+            if (distancia1 <= agent.stoppingDistance)
+            {
+                //Attack
+            }
             
         }
 
@@ -43,7 +48,12 @@ public class Prisma : Enemigos
         {
             mov = vectorMov2;
             agent.SetDestination(objetivo2.position - Vector3.forward - Vector3.right*2);
-            
+
+            if (distancia1 <= agent.stoppingDistance)
+            {
+
+            }
+
         }
 
         //Animaciones
