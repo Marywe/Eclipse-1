@@ -10788,6 +10788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1684771896}
   - component: {fileID: 1684771895}
+  - component: {fileID: 1684771897}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -10906,6 +10907,29 @@ Transform:
   m_Father: {fileID: 2075353415}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1684771897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684771894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7a6eeccc4fbc4409f2217c55880fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sonidos:
+  - nombre: Main theme
+    PistaDeAudio: {fileID: 8300000, guid: d045b4daad1f24642b7b0bd59a3313c6, type: 3}
+    volumen: 0
+    loop: 1
+    Fuente: {fileID: 0}
+  - nombre: Mariposa
+    PistaDeAudio: {fileID: 8300000, guid: 9a4d84b83a3fc3c4eb17b2437310bee3, type: 3}
+    volumen: 0
+    loop: 1
+    Fuente: {fileID: 0}
 --- !u!1 &1699796266
 GameObject:
   m_ObjectHideFlags: 0
@@ -12565,6 +12589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61dc0ec21619ff4c9f9b0e3b8a61caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BarraBrillo: {fileID: 0}
 --- !u!1 &1928578404
 GameObject:
   m_ObjectHideFlags: 0

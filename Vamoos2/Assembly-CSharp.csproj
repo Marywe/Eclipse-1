@@ -96,11 +96,13 @@
     <Compile Include="Assets\ExternalTools\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\ExternalTools\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\Chip.cs" />
+    <Compile Include="Assets\Scripts\Controller UI\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Controller UI\Controlador.cs" />
     <Compile Include="Assets\Scripts\Controller UI\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\Controller UI\MenuController.cs" />
     <Compile Include="Assets\Scripts\Controller UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Controller UI\SetVolume.cs" />
+    <Compile Include="Assets\Scripts\Controller UI\Sonidos.cs" />
     <Compile Include="Assets\Scripts\Enemigos\Enemigos.cs" />
     <Compile Include="Assets\Scripts\Enemigos\InstantiateEnemies.cs" />
     <Compile Include="Assets\Scripts\Enemigos\Mariposa.cs" />

@@ -7,10 +7,10 @@ public class SetVolume : MonoBehaviour
 {
     [SerializeField]
     private AudioMixer mixer;
-
+    
     public void SetLevel (float sliderValue)
     {
-        mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 18);
+        mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue)* 18);
     }
 
 }
