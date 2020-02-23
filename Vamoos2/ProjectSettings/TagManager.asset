@@ -8,6 +8,7 @@ TagManager:
   - Spawn
   - Cadena
   - Shield
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Linea
   - Enemigos
   - Cosas
-  - 
+  - DisparoEnems
   - 
   - 
   - 

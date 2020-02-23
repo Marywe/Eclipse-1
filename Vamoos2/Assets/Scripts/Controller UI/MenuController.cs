@@ -7,8 +7,12 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
 
-    public Slider BarraBrillo;
-   
+    private float rbgValue = 0.5f;
+
+    private void Update()
+    {
+        RenderSettings.ambientLight = new Color(rbgValue, rbgValue, rbgValue, 1);
+    }
 
     public void PlayGame(string Scene)
     {
@@ -23,10 +27,9 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
-    public void CambiarBrillo()
+    public void CambiarBrillo(float value)
     {
-        RenderSettings.ambientIntensity = BarraBrillo.value;
-        
+        rbgValue = value;
     }
 
 

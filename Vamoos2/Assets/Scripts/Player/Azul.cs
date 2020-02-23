@@ -44,11 +44,11 @@ public class Azul : Jugador
 
 
 
-    protected override void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemigos" && vulnerable == true)
+        if ((other.gameObject.tag == "Enemigos" || other.gameObject.tag == "Bullet") && vulnerable == true)
         {
-            base.OnTriggerEnter(other);
+            Danado();
             Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
             characterController.Move(dir);
             Debug.Log("knockback");

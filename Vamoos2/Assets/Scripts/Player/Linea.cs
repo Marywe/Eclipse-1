@@ -15,8 +15,6 @@ public class Linea : MonoBehaviour
 
     public int colisiones = 0;
 
-
-
     PauseMenu go;
 
     void Start()
@@ -52,7 +50,6 @@ public class Linea : MonoBehaviour
     {      
         ++colisiones;
         Debug.Log(colisiones);
-        //line.material = materiales[colisiones];
         
     }
 

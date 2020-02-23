@@ -30,22 +30,10 @@ public class Jugador : MonoBehaviour
         c = (CharacterController)gameObject.GetComponent(typeof(CharacterController));
     }
 
-    protected virtual void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Enemigos" && vulnerable==true)
-        {       
-            //Animación recibir daño
-
-            line_sc.RecibirDano();
-            Debug.Log("Colisión con psj");
-            vulnerable = false;
-            StartCoroutine(CorVulnerabilidad());
-            
-        }
-    }
 
     protected IEnumerator CorVulnerabilidad()
-    {       
+    {
+        vulnerable = false;
         yield return new WaitForSeconds(tiempoVul);
         vulnerable = true;
     }
@@ -53,6 +41,13 @@ public class Jugador : MonoBehaviour
     protected virtual void Rotar()
     {
         sprites.transform.rotation = Quaternion.LookRotation(transform.position - cam.position);
+    }
+
+    public void Danado()
+    {
+        //Animación recibir daño
+        line_sc.RecibirDano();       
+        StartCoroutine(CorVulnerabilidad());
     }
 
 }
