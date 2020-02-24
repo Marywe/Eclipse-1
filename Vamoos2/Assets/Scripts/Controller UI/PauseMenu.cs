@@ -33,7 +33,7 @@ public class PauseMenu : MonoBehaviour
 
         }
 
-        if (l.colisiones >= 3)
+        if (l.colisiones >= 8)
         {
             EndGame();
         }

@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class Enemigos : MonoBehaviour
 {
+    protected bool puedeDisparar = true;
+
+    [SerializeField]
     protected int maxHealth;
     protected int currentHealth;
     protected Vector3 mov;
@@ -19,13 +22,12 @@ public class Enemigos : MonoBehaviour
     //[SerializeField]
     //protected Transform cam;
 
-    
+    protected bool damaged = false;
     [SerializeField]
     protected Transform objetivo1, objetivo2;
 
     bool vulnerable = false;
     protected NavMeshAgent agent;
-    protected Shooting s;
 
 
     /*protected void MirarObjetivo(Transform objetivo)
@@ -66,6 +68,8 @@ public class Enemigos : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
+        damaged = true;
+
         if(vulnerable==true || shield==null)
         currentHealth -= dmg;
         
@@ -83,10 +87,7 @@ public class Enemigos : MonoBehaviour
     {
         if (shield != null) Destroy(shield);
 
-        
-        anim = this.GetComponentInChildren<Animator>();
-        
-
-        Destroy(this.gameObject, 10);
+         
+        Destroy(this.gameObject, 4f);
     }
 }

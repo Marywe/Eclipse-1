@@ -99,7 +99,6 @@
     <Compile Include="Assets\Scripts\Chip.cs" />
     <Compile Include="Assets\Scripts\Controller UI\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Controller UI\Controlador.cs" />
-    <Compile Include="Assets\Scripts\Controller UI\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\Controller UI\MenuController.cs" />
     <Compile Include="Assets\Scripts\Controller UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Controller UI\SetVolume.cs" />
@@ -112,7 +111,6 @@
     <Compile Include="Assets\Scripts\Enemigos\Prisma.cs" />
     <Compile Include="Assets\Scripts\Enemigos\Robot.cs" />
     <Compile Include="Assets\Scripts\Enemigos\Scorpio.cs" />
-    <Compile Include="Assets\Scripts\Enemigos\Shooting.cs" />
     <Compile Include="Assets\Scripts\Enemigos\SpawnEnemigo.cs" />
     <Compile Include="Assets\Scripts\FinalBoss.cs" />
     <Compile Include="Assets\Scripts\MirarCamara.cs" />

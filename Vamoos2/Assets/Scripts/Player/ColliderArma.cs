@@ -10,7 +10,7 @@ public class ColliderArma : MonoBehaviour
     private bool puedeAtacar;
 
     [SerializeField]
-    private float radio = 1;
+    private float radio = 2;
     // Start is called before the first frame update
     void Start()
     {

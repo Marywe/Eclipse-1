@@ -1431,7 +1431,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8ae4c39f01299ac4bad82bbe243c166b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da2e98a6029ba104bb279032da1b93f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2183,7 +2183,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
-  radio: 3
+  radio: 4
 --- !u!1 &260392136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3370733790499376251, guid: 608fc174dacc89f499c219d46f1b67b8,
@@ -3826,6 +3826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 297804323cd179e4ca7d19083b40adde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
   radioVision: 5.95
   objetivo1: {fileID: 116925819}
   objetivo2: {fileID: 1221305109}
@@ -6305,7 +6306,6 @@ GameObject:
   - component: {fileID: 980197350}
   - component: {fileID: 980197349}
   - component: {fileID: 980197348}
-  - component: {fileID: 980197352}
   - component: {fileID: 980197351}
   - component: {fileID: 980197353}
   m_Layer: 10
@@ -6358,7 +6358,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 15
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -6394,22 +6394,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe1e041d02d361449979274dd640fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radioVision: 7.06
+  maxHealth: 0
+  radioVision: 30
   objetivo1: {fileID: 116925819}
   objetivo2: {fileID: 1221305109}
---- !u!114 &980197352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980197346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee31d7b7f1e449e42aed849db9965017, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distRay: 34.3
   disparo: {fileID: 3103709836968943278, guid: 5815055345f15d04e93d16fe22c2ac80, type: 3}
 --- !u!114 &980197353
 MonoBehaviour:
@@ -9853,7 +9841,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
-  radio: 3
+  radio: 4
 --- !u!1 &1486294601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -587761056779144275, guid: dcd13a578382cc24b945e86617d9b74e,
@@ -11311,6 +11299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ec4755d60c886418155016f5d35271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
   radioVision: 11.52
   objetivo1: {fileID: 116925819}
   objetivo2: {fileID: 1221305109}
@@ -12588,6 +12577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ae54e0e717aa44eafb27563a41eb7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pm: {fileID: 0}
 --- !u!1 &1928578404
 GameObject:
   m_ObjectHideFlags: 0
@@ -15170,6 +15160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc8ca7d3a8b5ca40807bb63e722e503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
   radioVision: 11.23
   objetivo1: {fileID: 116925819}
   objetivo2: {fileID: 1221305109}
