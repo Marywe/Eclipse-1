@@ -12,7 +12,7 @@ public class Prisma : Enemigos
     void Start()
     {
         shield = transform.GetChild(1).gameObject;
-        maxHealth = 5;
+        maxHealth = 1;
         currentHealth = maxHealth;
         agent = gameObject.GetComponent<NavMeshAgent>();
         agent.angularSpeed = 0;
@@ -66,7 +66,12 @@ public class Prisma : Enemigos
 
         #endregion    
 
-
+        if (currentHealth <= 0)
+        {
+            animE.SetTrigger("Die");
+            this.enabled = false;
+            this.GetComponent<Collider>().enabled = false;
+        }
     }
     private void SetSpeedValue(float speed)
     {

@@ -81,11 +81,12 @@ public class Enemigos : MonoBehaviour
 
     private void Morirse()
     {
-        anim = this.GetComponentInChildren<Animator>();
-        anim.SetTrigger("Die");
-        this.enabled = false;
-        this.GetComponent<Collider>().enabled = false;
+        if (shield != null) Destroy(shield);
 
-        Destroy(this.gameObject, 2);
+        
+        anim = this.GetComponentInChildren<Animator>();
+        
+
+        Destroy(this.gameObject, 10);
     }
 }

@@ -28,6 +28,6 @@ public class MirarCamara : MonoBehaviour
         look.z = transform.position.z - cam.position.z;
         transform.rotation = Quaternion.LookRotation(look);
         tr.rotation = Quaternion.LookRotation(transform.position - cam.position);
-        tr2.rotation = Quaternion.LookRotation(transform.position - cam.position);
+        if (tr2!=null)tr2.rotation = Quaternion.LookRotation(transform.position - cam.position);
     }
 }
