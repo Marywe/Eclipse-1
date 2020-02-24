@@ -8,10 +8,11 @@ public class MenuController : MonoBehaviour
 {
 
     private float rbgValue = 0.5f;
+    public Rect SliderBrillo;
 
     private void Update()
     {
-        RenderSettings.ambientLight = new Color(rbgValue, rbgValue, rbgValue, 1);
+        RenderSettings.ambientLight = new Color(rbgValue, rbgValue,rbgValue, 1);
     }
 
     public void PlayGame(string Scene)
@@ -30,6 +31,10 @@ public class MenuController : MonoBehaviour
     public void CambiarBrillo(float value)
     {
         rbgValue = value;
+    }
+    void OnGUI()
+    {
+        rbgValue = GUI.HorizontalSlider(SliderBrillo, rbgValue, 0f, 1f);
     }
 
 
