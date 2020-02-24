@@ -22,7 +22,7 @@ public class Prisma : Enemigos
     // Update is called once per frame
     void Update()
     {
-        base.MirarObjetivo(cam);
+        //base.MirarObjetivo(cam);
 
         #region Seguimiento
         //Con esto podemos modificar 
@@ -48,11 +48,6 @@ public class Prisma : Enemigos
         {
             mov = vectorMov2;
             agent.SetDestination(objetivo2.position - Vector3.forward - Vector3.right*2);
-
-            if (distancia1 <= agent.stoppingDistance)
-            {
-
-            }
 
         }
 

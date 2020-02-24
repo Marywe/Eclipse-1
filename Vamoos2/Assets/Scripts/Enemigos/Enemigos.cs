@@ -16,8 +16,8 @@ public class Enemigos : MonoBehaviour
     [SerializeField]
     protected float radioVision;
 
-    [SerializeField]
-    protected Transform cam;
+    //[SerializeField]
+    //protected Transform cam;
 
     
     [SerializeField]
@@ -28,12 +28,12 @@ public class Enemigos : MonoBehaviour
     protected Shooting s;
 
 
-    protected void MirarObjetivo(Transform objetivo)
+    /*protected void MirarObjetivo(Transform objetivo)
     {
         Vector3 direccion = (objetivo.position - transform.position).normalized;
         Quaternion rotacion = Quaternion.LookRotation(transform.position - cam.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotacion, Time.deltaTime * 10f);
-    }
+    }*/
 
     private void OnDrawGizmosSelected() //Para ver graficamente el radio de vision del enemigo en cuestión
     {

@@ -26,7 +26,7 @@ public class Robot : Enemigos
 	// Update is called once per frame
 	void Update()
 	{
-		base.MirarObjetivo(cam);
+		//base.MirarObjetivo(cam);
 
 		#region Seguimiento
 		//Con esto podemos modificar 

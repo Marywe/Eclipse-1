@@ -23,9 +23,8 @@ public class Mariposa : Enemigos
     // Update is called once per frame
     void Update()
     {
-        base.MirarObjetivo(cam);
+        //base.MirarObjetivo(cam);
         #region Seguimiento
-        //Con esto podemos modificar 
 
         Vector3 vectorMov1 = new Vector3(objetivo1.position.x - this.transform.position.x, objetivo1.position.y - this.transform.position.y, objetivo1.position.z - this.transform.position.z);
         Vector3 vectorMov2 = new Vector3(objetivo2.position.x - this.transform.position.x, objetivo2.position.y - this.transform.position.y, objetivo2.position.z - this.transform.position.z); ;
