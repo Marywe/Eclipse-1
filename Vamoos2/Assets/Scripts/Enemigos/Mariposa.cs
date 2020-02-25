@@ -48,8 +48,6 @@ public class Mariposa : Enemigos
 
         if (mov.x < 0) sr.flipX = true;
         else sr.flipX = false;
-
-
     }
 
     

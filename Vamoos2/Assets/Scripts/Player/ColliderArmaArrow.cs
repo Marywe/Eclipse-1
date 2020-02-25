@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderArma : MonoBehaviour
+public class ColliderArmaArrow : MonoBehaviour
 {
     public LayerMask enemyLayer;
     Collider[] enemiesHit;
@@ -32,7 +32,7 @@ public class ColliderArma : MonoBehaviour
 
     private void Attack()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire2"))
         {
             //Animación atacar
             anim.SetTrigger("Attack");

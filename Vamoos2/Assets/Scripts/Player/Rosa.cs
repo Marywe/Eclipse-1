@@ -68,10 +68,17 @@ public class Rosa : Jugador
 
     private void SetSpeedValue(float speed)
     {
-        anim.SetFloat("Speed", speed);
+        if (speed > 0)
+            anim.SetFloat("Speed", 1);
+
+        if (speed <= 0)
+            anim.SetFloat("Speed", 0);
     }
     private void SetDirectionValue(float dir)
     {
-        anim.SetFloat("Direction", dir);
+        if (dir > 0)
+            anim.SetFloat("Direction", 1);
+        if (dir < 0)
+            anim.SetFloat("Direction", -1);
     }
 }

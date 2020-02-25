@@ -6,11 +6,11 @@ public class Disparo : MonoBehaviour
 {
     private void Start()
     {
-        Destroy(this, 4);
+        Destroy(gameObject, 4);
     }
     private void OnTriggerEnter(Collider other)
     {
         
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
