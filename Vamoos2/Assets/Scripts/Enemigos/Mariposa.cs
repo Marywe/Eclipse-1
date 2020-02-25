@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Mariposa : Enemigos
 {
     SpriteRenderer sr;
-    
+    Animator animE;
     
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class Mariposa : Enemigos
         shield = transform.GetChild(1).gameObject;
 
         agent = gameObject.GetComponent<NavMeshAgent>();
-        agent.angularSpeed = 0;
+        animE = gameObject.GetComponent<Animator>();
         sr = (SpriteRenderer)gameObject.GetComponentInChildren(typeof(SpriteRenderer));
     }
 
@@ -48,7 +48,32 @@ public class Mariposa : Enemigos
 
         if (mov.x < 0) sr.flipX = true;
         else sr.flipX = false;
+
+        #region Morirse
+        if (currentHealth <= 0)
+        {
+            animE.SetTrigger("Die");
+            this.GetComponent<Collider>().enabled = false;
+            this.enabled = false;
+        }
+        #endregion
+    }
+    private void LateUpdate()
+    {
+        if (damaged && currentHealth > 0)
+        {
+            //Animasao
+            animE.SetTrigger("TakeDmg");
+
+            agent.isStopped = true;
+            Invoke("Damaged", 0.15f);
+        }
     }
 
-    
+    private void Damaged()
+    {
+        agent.isStopped = false;
+        damaged = false;
+    }
+
 }

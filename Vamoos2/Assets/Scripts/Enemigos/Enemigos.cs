@@ -85,9 +85,7 @@ public class Enemigos : MonoBehaviour
 
     private void Morirse()
     {
-        if (shield != null) Destroy(shield);
-
-         
+        if (shield != null) Destroy(shield);        
         Destroy(this.gameObject, 4f);
     }
 }

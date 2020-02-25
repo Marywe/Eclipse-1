@@ -91,8 +91,8 @@ public class Prisma : Enemigos
         if (currentHealth <= 0)
         {
             animE.SetTrigger("Die");
-            this.enabled = false;
             this.GetComponent<Collider>().enabled = false;
+            this.enabled = false;
         }
         #endregion
 
@@ -129,6 +129,7 @@ public class Prisma : Enemigos
 
     private void Damaged()
     {
+        agent.isStopped = false;
         damaged = false;
     }
 

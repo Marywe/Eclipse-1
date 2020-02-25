@@ -60,15 +60,46 @@ public class Scorpio : Enemigos
         }
 
         #endregion    
+        #region Morirse
+        if (currentHealth <= 0)
+        {
+            animE.SetTrigger("Die");
+            this.GetComponent<Collider>().enabled = false;
+            this.enabled = false;
+        }
+        #endregion
 
 
+    }
+    private void LateUpdate()
+    {
+        if (damaged && currentHealth > 0)
+        {
+            //Animasao
+            animE.SetTrigger("TakeDmg");
+
+            agent.isStopped = true;
+            Invoke("Damaged", 0.15f);
+        }
     }
     private void SetSpeedValue(float speed)
     {
-        animE.SetFloat("Speed", speed);
+        if (speed > 0)
+            animE.SetFloat("Speed", 1);
+
+        if (speed <= 0)
+            animE.SetFloat("Speed", 0);
     }
     private void SetDirectionValue(float dir)
     {
-        animE.SetFloat("Direction", dir);
+        if (dir > 0)
+            animE.SetFloat("Direction", 1);
+        if (dir < 0)
+            animE.SetFloat("Direction", -1);
+    }
+    private void Damaged()
+    {
+        agent.isStopped = false;
+        damaged = false;
     }
 }
