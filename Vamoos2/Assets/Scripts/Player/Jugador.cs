@@ -24,9 +24,8 @@ public class Jugador : MonoBehaviour
     CharacterController c;
     
     private void Start()
-    {
- 
-        DontDestroyOnLoad(this);
+    { 
+        //DontDestroyOnLoad(this);
         c = (CharacterController)gameObject.GetComponent(typeof(CharacterController));
     }
 

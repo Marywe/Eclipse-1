@@ -99,7 +99,7 @@ public class Prisma : Enemigos
             animE.SetTrigger("TakeDmg");
 
             agent.isStopped = true;
-            Invoke("Damaged", 0.2f);
+            Invoke("Damaged", 0.15f);
         }
     }
     private void SetSpeedValue(float speed)
@@ -136,12 +136,14 @@ public class Prisma : Enemigos
     IEnumerator InstanciarDisparo(Transform target)
     {
         yield return new WaitForSeconds(0.5f);
-
-        GameObject newDisparo = Instantiate(disparo, transform.position, Quaternion.identity);
-        vD.x = target.transform.position.x - transform.position.x;
-        vD.y = 0;
-        vD.z = target.transform.position.z - transform.position.z;
-        newDisparo.GetComponent<Rigidbody>().AddForce(vD.normalized * 60 * 20);
+		if (!damaged)
+		{
+			GameObject newDisparo = Instantiate(disparo, transform.position, Quaternion.identity);
+			vD.x = target.transform.position.x - transform.position.x;
+			vD.y = 0;
+			vD.z = target.transform.position.z - transform.position.z;
+			newDisparo.GetComponent<Rigidbody>().AddForce(vD.normalized * 60 * 20);
+		}
       
     }
 }
