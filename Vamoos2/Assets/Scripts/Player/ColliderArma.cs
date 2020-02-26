@@ -20,7 +20,7 @@ public class ColliderArma : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = gameObject.GetComponentInParent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
         puedeAtacar = true;
     }
 
@@ -28,6 +28,7 @@ public class ColliderArma : MonoBehaviour
     void Update()
     {
         if (puedeAtacar) BasicAttack();
+
     }
 
     private void OnDrawGizmos()
@@ -37,28 +38,33 @@ public class ColliderArma : MonoBehaviour
 
     private void BasicAttack()
     {
-        if (Time.time - lastButTime <= maxComboDelay)
+        if (Time.time - lastButTime > maxComboDelay)
         {
             nBut = 0;
         }
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             lastButTime = Time.time;
-            ++nBut;
+            nBut++;
+            anim.SetBool("Attack", true);
 
             if (nBut == 1)
             {
                 SetBasicAttack(0);
-                anim.SetTrigger("Attack");
+                
 
                 enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
                 foreach (Collider enemy in enemiesHit)
                 {
                     enemy.GetComponent<Enemigos>().TakeDamage(dano);
                 }
+                
             }
+
+            nBut = Mathf.Clamp(nBut, 0, 3);
         }
+        
     }
 
     public void SetBasicAttack(float f)
@@ -74,14 +80,47 @@ public class ColliderArma : MonoBehaviour
 
     public void FtAt()
     {
-        if (nBut >= 2) ;
+        if (nBut >= 2)
+        {
+            SetBasicAttack(0.5f);
+            enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
+            foreach (Collider enemy in enemiesHit)
+            {
+                enemy.GetComponent<Enemigos>().TakeDamage(dano);
+            }
+
+        }
+        else
+        {
+            StartCoroutine(corBasicAtt());
+            anim.SetBool("Attack", false);
+            nBut = 0;
+        }
+            
     }
     public void SecAt()
     {
+        if (nBut >= 3)
+        {
+            SetBasicAttack(1f);
+            enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
+            foreach (Collider enemy in enemiesHit)
+            {
+                enemy.GetComponent<Enemigos>().TakeDamage(dano);
+            }
 
+        }
+        else
+        {
+            nBut = 0;
+            anim.SetBool("Attack", false);
+            StartCoroutine(corBasicAtt());
+        }
     }
     public void ThAt()
     {
-
+        anim.SetBool("Attack", false);
+        StartCoroutine(corBasicAtt());
+        nBut = 0;
     }
 }
