@@ -11,7 +11,7 @@ public class Enemigos : MonoBehaviour
     protected int maxHealth;
     protected int currentHealth;
     protected Vector3 mov;
-    protected int armor = 1;
+    protected int armor = 5;
     private Animator anim;
 
     protected GameObject shield;
@@ -77,7 +77,7 @@ public class Enemigos : MonoBehaviour
         {
             armor -= dmg;
         }
-        Debug.Log("Current life " + currentHealth + "armor " + armor);
+        Debug.Log("Current life: " + currentHealth + " Armor: " + armor);
         if (armor <= 0) Destroy(shield);
 
         if (currentHealth <= 0) Morirse();

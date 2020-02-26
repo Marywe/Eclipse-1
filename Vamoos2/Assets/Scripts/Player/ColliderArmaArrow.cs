@@ -12,6 +12,9 @@ public class ColliderArmaArrow : MonoBehaviour
 
     [SerializeField]
     private float radio = 2;
+
+    float lastButTime;
+    public float maxComboDelay = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,8 +48,15 @@ public class ColliderArmaArrow : MonoBehaviour
                 enemy.GetComponent<Enemigos>().TakeDamage(dano);
             }
 
-            StartCoroutine(corBasicAtt());
+            if (Time.time - lastButTime <= maxComboDelay)
+            {
+                if (Input.GetButton("Fire2"))
+                {
 
+                }
+            }
+
+            else StartCoroutine(corBasicAtt());
         }
     }
 

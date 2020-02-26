@@ -8,10 +8,15 @@ public class ColliderArma : MonoBehaviour
     Collider[] enemiesHit;
     Animator anim;
     private bool puedeAtacar;
+
     private int dano = 1;
 
     [SerializeField]
     private float radio = 2;
+
+    float lastButTime;
+    public float maxComboDelay = 0.9f;
+    public int nBut = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +27,7 @@ public class ColliderArma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (puedeAtacar) Attack();
+        if (puedeAtacar) BasicAttack();
     }
 
     private void OnDrawGizmos()
@@ -30,30 +35,53 @@ public class ColliderArma : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, radio);
     }
 
-    private void Attack()
+    private void BasicAttack()
     {
+        if (Time.time - lastButTime <= maxComboDelay)
+        {
+            nBut = 0;
+        }
+
         if (Input.GetButton("Fire1"))
         {
-            //Animación atacar
-            anim.SetTrigger("Attack");
+            lastButTime = Time.time;
+            ++nBut;
 
-            enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
-
-            foreach (Collider enemy in enemiesHit)
+            if (nBut == 1)
             {
-                Debug.Log("uwu");
-                enemy.GetComponent<Enemigos>().TakeDamage(dano);
+                SetBasicAttack(0);
+                anim.SetTrigger("Attack");
+
+                enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
+                foreach (Collider enemy in enemiesHit)
+                {
+                    enemy.GetComponent<Enemigos>().TakeDamage(dano);
+                }
             }
-
-            StartCoroutine(corBasicAtt());
-
         }
     }
 
+    public void SetBasicAttack(float f)
+    {
+        anim.SetFloat("AttackN", f);
+    }
     private IEnumerator corBasicAtt()
     {
         puedeAtacar = false;
         yield return new WaitForSeconds(2);
         puedeAtacar = true;
+    }
+
+    public void FtAt()
+    {
+        if (nBut >= 2) ;
+    }
+    public void SecAt()
+    {
+
+    }
+    public void ThAt()
+    {
+
     }
 }
