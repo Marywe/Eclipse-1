@@ -7,7 +7,8 @@ public class ColliderArmaArrow : MonoBehaviour
     public LayerMask enemyLayer;
     Collider[] enemiesHit;
     Animator anim;
-    
+    private bool puedeAtacar;
+
 
     [SerializeField]
     private float radio = 2;
@@ -15,11 +16,15 @@ public class ColliderArmaArrow : MonoBehaviour
     float lastButTime;
     public float maxComboDelay = 0.9f;
     public int nBut;
+
+    private Azul a;
+    private int modifDano = 0;
     // Start is called before the first frame update
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         puedeAtacar = true;
+        a = gameObject.GetComponentInParent<Azul>();
     }
 
     // Update is called once per frame
@@ -54,7 +59,7 @@ public class ColliderArmaArrow : MonoBehaviour
                 enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
                 foreach (Collider enemy in enemiesHit)
                 {
-                    enemy.GetComponent<Enemigos>().TakeDamage(dano);
+                    enemy.GetComponent<Enemigos>().TakeDamage(a.dano + modifDano);
                 }
 
             }
@@ -83,7 +88,7 @@ public class ColliderArmaArrow : MonoBehaviour
             enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(dano);
+                enemy.GetComponent<Enemigos>().TakeDamage(a.dano + modifDano);
             }
 
         }
@@ -104,7 +109,7 @@ public class ColliderArmaArrow : MonoBehaviour
             enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(dano);
+                enemy.GetComponent<Enemigos>().TakeDamage(a.dano + modifDano);
             }
 
         }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -517,13 +517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3b049cfdc744b43b70b283236e2cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  gravity: 10
-  line_sc: {fileID: 0}
-  distKnockback: 5000
-  tiempoVul: 2
-  cam: {fileID: 0}
-  anim: {fileID: 0}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -820,13 +813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f87873463aef94c9beb6fed2b5a02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  gravity: 10
-  line_sc: {fileID: 0}
-  distKnockback: 5000
-  tiempoVul: 2
-  cam: {fileID: 0}
-  anim: {fileID: 0}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -982,7 +968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116925814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -49.99, y: -3.49, z: -10.62}
+  m_LocalPosition: {x: -49.99, y: -4.73, z: -10.62}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 63166833}
@@ -1022,6 +1008,7 @@ MonoBehaviour:
   line_sc: {fileID: 2037146422}
   distKnockback: 200
   tiempoVul: 5
+  dano: 1
   cam: {fileID: 963194228}
   anim: {fileID: 63166835}
 --- !u!143 &116925823
@@ -2117,8 +2104,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254074583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.6, z: 0}
-  m_LocalScale: {x: 15.86, y: 1, z: 17.29}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 15.86, y: 2.43, z: 17.29}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -2232,13 +2219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f87873463aef94c9beb6fed2b5a02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  gravity: 10
-  line_sc: {fileID: 0}
-  distKnockback: 5000
-  tiempoVul: 2
-  cam: {fileID: 0}
-  anim: {fileID: 0}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -8137,6 +8117,7 @@ MonoBehaviour:
   line_sc: {fileID: 2037146422}
   distKnockback: 100
   tiempoVul: 5
+  dano: 1
   cam: {fileID: 963194228}
   anim: {fileID: 92467406}
 --- !u!143 &1221305104
@@ -8194,7 +8175,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221305102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -45.940002, y: -3.15, z: -10.41}
+  m_LocalPosition: {x: -44.28, y: -4.65, z: -7.03}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 92467404}
@@ -9913,13 +9894,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3b049cfdc744b43b70b283236e2cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  gravity: 10
-  line_sc: {fileID: 0}
-  distKnockback: 5000
-  tiempoVul: 2
-  cam: {fileID: 0}
-  anim: {fileID: 0}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -11383,7 +11357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ec4755d60c886418155016f5d35271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 3
   radioVision: 11.52
   objetivo1: {fileID: 116925819}
   objetivo2: {fileID: 1221305109}
@@ -14054,7 +14028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134315506}
   m_LocalRotation: {x: -0, y: -0, z: -1.5916159e-11, w: 1}
-  m_LocalPosition: {x: 0, y: 1.45, z: -0}
+  m_LocalPosition: {x: -0, y: 3.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4584479880056037678}
@@ -15267,17 +15241,17 @@ PrefabInstance:
     - target: {fileID: 3696164487096764532, guid: 0d160709437430941ad4317bce7c4005,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3696164487096764532, guid: 0d160709437430941ad4317bce7c4005,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.94
+      value: 5.72
       objectReference: {fileID: 0}
     - target: {fileID: 3696164487096764532, guid: 0d160709437430941ad4317bce7c4005,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3696164487096764532, guid: 0d160709437430941ad4317bce7c4005,
         type: 3}
@@ -15330,7 +15304,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4584479880056037672}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.62
+  m_Radius: 1.6
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
@@ -15339,8 +15313,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2.26
-  m_BaseOffset: -0.25
+  m_Height: 5.64
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &4584479880056037672
@@ -15407,8 +15381,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.35, y: 2.8, z: 1}
-  m_Center: {x: 0, y: 0.55, z: 0}
+  m_Size: {x: 2.35, y: 3.91, z: 1}
+  m_Center: {x: 0, y: 2.1, z: 0}
 --- !u!114 &4584479880056037676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15430,7 +15404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4584479880056037672}
   m_LocalRotation: {x: -0.0017820183, y: 0.0013652765, z: -0.0019447437, w: 0.9999956}
-  m_LocalPosition: {x: 39.4, y: -5.42, z: -6.15}
+  m_LocalPosition: {x: 5.09, y: -6.27, z: -16.07}
   m_LocalScale: {x: 0.45371023, y: 0.45371035, z: 0.4537103}
   m_Children:
   - {fileID: 2134315507}

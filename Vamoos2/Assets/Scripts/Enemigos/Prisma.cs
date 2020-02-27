@@ -151,7 +151,9 @@ public class Prisma : Enemigos
         yield return new WaitForSeconds(1f);
 		if (!damaged)
 		{
-			GameObject newDisparo = Instantiate(disparo, transform.position, Quaternion.identity);
+			GameObject newDisparo = Instantiate(disparo, transform.position, transform.rotation);
+            Vector3 look = new Vector3(target.position.x - transform.position.x -90, target.position.y - transform.position.y, target.position.z - transform.position.z);
+            newDisparo.transform.rotation = Quaternion.LookRotation(look);
 			vD.x = target.transform.position.x - transform.position.x;
 			vD.y = 0;
 			vD.z = target.transform.position.z - transform.position.z;

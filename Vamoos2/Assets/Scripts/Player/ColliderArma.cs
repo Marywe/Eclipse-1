@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderArma : Rosa
+public class ColliderArma : MonoBehaviour
 {
     public LayerMask enemyLayer;
     Collider[] enemiesHit;
     Animator anim;
-
-    private int dano = 1;
 
     [SerializeField]
     private float radio = 2;
@@ -16,11 +14,16 @@ public class ColliderArma : Rosa
     float lastButTime;
     public float maxComboDelay = 0.9f;
     public int nBut = 0;
+
+    private bool puedeAtacar;
+    private Rosa r;
+    private int modifDano = 0;
     // Start is called before the first frame update
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         puedeAtacar = true;
+        r = gameObject.GetComponentInParent<Rosa>();
     }
 
     // Update is called once per frame
@@ -56,7 +59,7 @@ public class ColliderArma : Rosa
                 enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
                 foreach (Collider enemy in enemiesHit)
                 {
-                    enemy.GetComponent<Enemigos>().TakeDamage(dano);
+                    enemy.GetComponent<Enemigos>().TakeDamage(r.dano + modifDano);
                 }
                 
             }
@@ -85,7 +88,7 @@ public class ColliderArma : Rosa
             enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(dano);
+                enemy.GetComponent<Enemigos>().TakeDamage(r.dano + modifDano);
             }
 
         }
@@ -105,7 +108,7 @@ public class ColliderArma : Rosa
             enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(dano);
+                enemy.GetComponent<Enemigos>().TakeDamage(r.dano + modifDano);
             }
 
         }

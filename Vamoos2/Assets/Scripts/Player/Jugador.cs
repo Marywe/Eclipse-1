@@ -12,17 +12,17 @@ public class Jugador : MonoBehaviour
     Linea line_sc;
     protected bool vulnerable = true;
     [SerializeField]
-    protected int distKnockback = 5000;
+    protected int distKnockback = 8000;
     [SerializeField]
     float tiempoVul = 2f;
     protected GameObject sprites;
-    protected int dano = 1;
+    public int dano = 1;
 
     [SerializeField]
     protected Transform cam = null;
 
     CharacterController c;
-    protected bool puedeAtacar;
+
 
     private void Start()
     { 
