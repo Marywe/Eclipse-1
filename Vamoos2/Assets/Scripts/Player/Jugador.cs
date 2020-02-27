@@ -16,13 +16,14 @@ public class Jugador : MonoBehaviour
     [SerializeField]
     float tiempoVul = 2f;
     protected GameObject sprites;
-
+    protected int dano = 1;
 
     [SerializeField]
     protected Transform cam = null;
 
     CharacterController c;
-    
+    protected bool puedeAtacar;
+
     private void Start()
     { 
         //DontDestroyOnLoad(this);

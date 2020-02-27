@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderArma : MonoBehaviour
+public class ColliderArma : Rosa
 {
     public LayerMask enemyLayer;
     Collider[] enemiesHit;
     Animator anim;
-    private bool puedeAtacar;
 
     private int dano = 1;
 

@@ -7,19 +7,18 @@ public class ColliderArmaArrow : MonoBehaviour
     public LayerMask enemyLayer;
     Collider[] enemiesHit;
     Animator anim;
-    private bool puedeAtacar;
-    private int dano = 1;
+    
 
     [SerializeField]
     private float radio = 2;
 
     float lastButTime;
     public float maxComboDelay = 0.9f;
-    private int nBut;
+    public int nBut;
     // Start is called before the first frame update
     void Start()
     {
-        anim = gameObject.GetComponentInParent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
         puedeAtacar = true;
     }
 
@@ -100,6 +99,7 @@ public class ColliderArmaArrow : MonoBehaviour
     {
         if (nBut >= 3)
         {
+            Debug.Log("hhh");
             SetBasicAttack(1f);
             enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
             foreach (Collider enemy in enemiesHit)
@@ -117,6 +117,7 @@ public class ColliderArmaArrow : MonoBehaviour
     }
     public void ThAt()
     {
+        Debug.Log("htt");
         anim.SetBool("Attack", false);
         StartCoroutine(corBasicAtt());
         nBut = 0;

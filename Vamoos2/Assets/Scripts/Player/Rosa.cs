@@ -8,12 +8,12 @@ public class Rosa : Jugador
     private Vector3 moveDirection = Vector3.zero;
     [SerializeField]
     private Animator anim;
+
     
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         sprites = transform.GetChild(0).gameObject;
-
     }
 
     void Update()
