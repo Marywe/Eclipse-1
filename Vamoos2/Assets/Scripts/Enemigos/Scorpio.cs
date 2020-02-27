@@ -15,7 +15,6 @@ public class Scorpio : Enemigos
         maxHealth = 5;
         currentHealth = maxHealth;
         agent = gameObject.GetComponent<NavMeshAgent>();
-        agent.angularSpeed = 0;
         animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
     }
 
@@ -47,12 +46,12 @@ public class Scorpio : Enemigos
         }
 
         //Animaciones
-        if (mov.x == 0 && mov.z==0)
+        if ((radioVision < distancia2 && radioVision < distancia1) || agent.stoppingDistance >= distancia1 || agent.stoppingDistance >= distancia2)
         {
             SetSpeedValue(0);
             
         }
-        else if (mov.x != 0)
+        else if ((radioVision > distancia1 || radioVision > distancia2) && (mov != Vector3.zero))
         {
             SetSpeedValue(1);
             if (mov.x > 0) SetDirectionValue(1);

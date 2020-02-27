@@ -373,36 +373,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &58508159
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 58508160}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Spawn
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &58508160
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58508159}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.69, y: -1.5245, z: -5.66}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 238217052}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &63166832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,7 +1763,6 @@ Transform:
   m_LocalPosition: {x: 7.1262293, y: 1.4330659, z: 3.3268852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 58508160}
   - {fileID: 504944378}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -3868,7 +3837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
-  radioVision: 5.95
+  radioVision: 9.9
   objetivo1: {fileID: 116925819}
   objetivo2: {fileID: 1221305109}
   distanciaAtaque: 3
@@ -3929,7 +3898,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238217052}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &512940520
 GameObject:
@@ -6527,6 +6496,7 @@ MonoBehaviour:
   objetivo1: {fileID: 116925819}
   objetivo2: {fileID: 1221305109}
   disparo: {fileID: 3103709836968943278, guid: 5815055345f15d04e93d16fe22c2ac80, type: 3}
+  look: {x: 0, y: 0, z: 0}
 --- !u!114 &980197353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12619,7 +12589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mismuertos:
-  - {fileID: 58508160}
+  - {fileID: 0}
   - {fileID: 504944378}
   enemigo: {fileID: 4786111909518299302, guid: 984095d8b4eee2d4bb6b21c63b4ec6e2, type: 3}
 --- !u!1 &1928578404

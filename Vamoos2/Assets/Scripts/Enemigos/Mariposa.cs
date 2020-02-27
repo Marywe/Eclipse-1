@@ -16,7 +16,7 @@ public class Mariposa : Enemigos
         shield = transform.GetChild(1).gameObject;
 
         agent = gameObject.GetComponent<NavMeshAgent>();
-        animE = gameObject.GetComponent<Animator>();
+        animE = gameObject.GetComponentInChildren<Animator>();
         sr = (SpriteRenderer)gameObject.GetComponentInChildren(typeof(SpriteRenderer));
     }
 

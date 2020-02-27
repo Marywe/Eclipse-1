@@ -10,6 +10,7 @@ public class Prisma : Enemigos
     [SerializeField]
     GameObject disparo;
     Vector3 vD;
+    public Vector3 look;
 
 
     // Start is called before the first frame update
@@ -73,12 +74,12 @@ public class Prisma : Enemigos
         #endregion
 
         #region Animaciones
-        if (radioVision < distancia2 && radioVision < distancia1)
+        if ((radioVision < distancia2 && radioVision < distancia1) || agent.stoppingDistance >= distancia1 || agent.stoppingDistance >= distancia2)
         {
             SetSpeedValue(0);
 
         }
-        else if (mov.x != 0)
+        else if ((radioVision > distancia1 || radioVision > distancia2) && (mov != Vector3.zero))
         {
             if (mov.x > 0) SetDirectionValue(1);
             else if (mov.x < 0) SetDirectionValue(-1);
@@ -148,16 +149,17 @@ public class Prisma : Enemigos
 
     IEnumerator InstanciarDisparo(Transform target)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
 		if (!damaged)
 		{
-			GameObject newDisparo = Instantiate(disparo, transform.position, transform.rotation);
-            Vector3 look = new Vector3(target.position.x - transform.position.x -90, target.position.y - transform.position.y, target.position.z - transform.position.z);
-            newDisparo.transform.rotation = Quaternion.LookRotation(look);
+			GameObject newDisparo = Instantiate(disparo);
+            newDisparo.transform.position = transform.position;
+
 			vD.x = target.transform.position.x - transform.position.x;
 			vD.y = 0;
 			vD.z = target.transform.position.z - transform.position.z;
-			newDisparo.GetComponent<Rigidbody>().AddForce(vD.normalized * 60 * 20);
+            newDisparo.transform.rotation = Quaternion.Euler(0, target.transform.rotation.y-transform.rotation.y, 0);
+            newDisparo.GetComponent<Rigidbody>().AddForce(vD.normalized * 60 * 20);
 		}
       
     }

@@ -46,7 +46,7 @@ public class Jugador : MonoBehaviour
     public void Danado()
     {
         //Animación recibir daño
-        line_sc.RecibirDano();       
+        line_sc.RecibirDano();
         StartCoroutine(CorVulnerabilidad());
     }
 
