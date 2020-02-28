@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Scorpio : Enemigos
 {
     Animator animE;
-
+    private bool attacking;
 
     // Start is called before the first frame update
     void Start()
@@ -31,32 +31,43 @@ public class Scorpio : Enemigos
         float distancia1 = Vector3.Distance(objetivo1.position, transform.position);
         float distancia2 = Vector3.Distance(objetivo2.position, transform.position);
 
-        if (distancia1 <= radioVision && distancia1 < distancia2)
+        if (distancia1 <= radioVision && distancia1 < distancia2 && distancia1 > agent.stoppingDistance && (mov != Vector3.zero))
         {
+            SetSpeedValue(1);
             mov = vectorMov1;
             agent.SetDestination(objetivo1.position);
             
         }
-
-        if (distancia2 <= radioVision && distancia2 < distancia1)
+        else if (distancia1 <= agent.stoppingDistance && distancia1 < distancia2)
         {
+            SetSpeedValue(0);
+            if (puedeDisparar && !attacking)
+                Atacar(objetivo1, 1);
+        }
+
+        else if (distancia2 <= radioVision && distancia2 < distancia1 && distancia2 > agent.stoppingDistance)
+        {
+            SetSpeedValue(1);
             mov = vectorMov2;
             agent.SetDestination(objetivo2.position);
             
+        }
+        else if (distancia2 <= agent.stoppingDistance && distancia2 < distancia1)
+        {
+            SetSpeedValue(0);
+            if (puedeDisparar && !attacking)
+                Atacar(objetivo2, 2);
         }
 
         //Animaciones
         if ((radioVision < distancia2 && radioVision < distancia1) || agent.stoppingDistance >= distancia1 || agent.stoppingDistance >= distancia2)
         {
-            SetSpeedValue(0);
-            
+            SetSpeedValue(0);            
         }
-        else if ((radioVision > distancia1 || radioVision > distancia2) && (mov != Vector3.zero))
-        {
-            SetSpeedValue(1);
+
             if (mov.x > 0) SetDirectionValue(1);
             else if (mov.x < 0) SetDirectionValue(-1);
-        }
+        
 
         #endregion    
         #region Morirse
@@ -67,7 +78,6 @@ public class Scorpio : Enemigos
             this.enabled = false;
         }
         #endregion
-
 
     }
     private void LateUpdate()
@@ -81,6 +91,36 @@ public class Scorpio : Enemigos
             Invoke("Damaged", 0.15f);
         }
     }
+    private void Atacar(Transform target, int n)
+    {
+        attacking = true;      
+        animE.SetTrigger("Atacar");
+        puedeDisparar = false;
+        StartCoroutine(corAttack());
+        StartCoroutine(corAnimAtacar(target, n));
+        Invoke("corDisparo", 3);
+    }
+    private IEnumerator corAnimAtacar(Transform t, int n)
+    {
+        yield return new WaitForSeconds(0.15f);
+        if ((t.position-transform.position).magnitude <= agent.stoppingDistance)
+        {
+            if (n == 1) t.GetComponent<Azul>().RecibirGolpe(this.transform);
+            else if (n==2) t.GetComponent<Rosa>().RecibirGolpe(this.transform);
+        }
+    }
+    private IEnumerator corAttack()
+    {
+        agent.isStopped = true;
+        yield return new WaitForSeconds(1);
+        attacking = false;
+        agent.isStopped = false;
+    }
+    private void corDisparo()
+    {
+        puedeDisparar = true;
+    }
+
     private void SetSpeedValue(float speed)
     {
         if (speed > 0)

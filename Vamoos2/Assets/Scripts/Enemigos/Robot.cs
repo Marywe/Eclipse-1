@@ -67,15 +67,17 @@ public class Robot : Enemigos
 			sr.flipX = true;
 		}
 
+        if (mov.x > 0) sr.flipX = false;
+        else if (mov.x < 0) sr.flipX = true;
 
 
-		#endregion
-		#region Ataque
-		if (distancia1 <= distanciaAtaque && attacking == false)
+        #endregion
+        #region Ataque
+        if (distancia1 <= distanciaAtaque && !attacking && puedeDisparar)
 		{
 			Atacar();
 		}
-		else if (distancia2 <= distanciaAtaque && attacking == false)
+		else if (distancia2 <= distanciaAtaque && !attacking &&puedeDisparar)
 		{
 			Atacar();
 		}
@@ -96,7 +98,6 @@ public class Robot : Enemigos
 		{
 			//Animasao
 			animE.SetTrigger("TakeDmg");
-
 			agent.isStopped = true;
 			Invoke("Damaged", 0.15f);
 		}

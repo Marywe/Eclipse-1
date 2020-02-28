@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Script que controla las características de los chips para abrir la puerta final
+/// </summary>
 public class Chip : MonoBehaviour
 {
     Transform tr;

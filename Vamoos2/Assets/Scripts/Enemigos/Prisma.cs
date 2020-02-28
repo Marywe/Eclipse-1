@@ -28,7 +28,7 @@ public class Prisma : Enemigos
     {
         //base.MirarObjetivo(cam);  
 
-        #region Seguimiento
+        #region Seguimiento y ataque
         //Con esto podemos modificar 
         Vector3 vectorMov1 = new Vector3(objetivo1.position.x - this.transform.position.x, objetivo1.position.y - this.transform.position.y, objetivo1.position.z - this.transform.position.z);   
         float distancia1 = Vector3.Distance(objetivo1.position, transform.position);
@@ -79,11 +79,10 @@ public class Prisma : Enemigos
             SetSpeedValue(0);
 
         }
-        else if ((radioVision > distancia1 || radioVision > distancia2) && (mov != Vector3.zero))
-        {
+       
             if (mov.x > 0) SetDirectionValue(1);
             else if (mov.x < 0) SetDirectionValue(-1);
-        }
+       
         #endregion
 
         #region Morirse

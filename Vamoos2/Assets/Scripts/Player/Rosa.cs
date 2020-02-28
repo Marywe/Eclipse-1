@@ -48,15 +48,17 @@ public class Rosa : Jugador
     {
         if ((other.gameObject.tag == "Enemigos" || other.gameObject.tag == "Bullet") && vulnerable == true)
         {
-            Danado();
-            Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
-            characterController.Move(dir);
-            Debug.Log("knockback");
-        }
-
-      
+            RecibirGolpe(other.transform);
+        } 
     }
 
+    public void RecibirGolpe(Transform other)
+    {
+        Danado();
+        Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
+        characterController.Move(dir);
+        Debug.Log("knockback");
+    }
     protected override void Rotar()
     {
         Vector3 look;

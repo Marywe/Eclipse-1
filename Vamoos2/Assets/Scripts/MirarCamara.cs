@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Script para que los sprites miren a la cámara
+/// </summary>
 public class MirarCamara : MonoBehaviour
 {
     Transform tr;
