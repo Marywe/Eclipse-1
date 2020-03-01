@@ -6,8 +6,7 @@ public class Rosa : Jugador
 {
     CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
-    [SerializeField]
-    private Animator anim;
+    public Animator anim;
 
     
     void Start()
@@ -25,7 +24,7 @@ public class Rosa : Jugador
 
     private void Movimiento()
     {
-        float xAxis = Input.GetAxis("Horizontal");
+        xAxis = Input.GetAxis("Horizontal");
         float zAxis = Input.GetAxis("Vertical");
 
         if (characterController.isGrounded)
@@ -41,7 +40,9 @@ public class Rosa : Jugador
             SetSpeedValue(0);
         else
             SetSpeedValue(1);
-        SetDirectionValue(Input.GetAxis("Horizontal"));
+
+        if (xAxis != 0)
+            SetDirectionValue(xAxis);
     }
 
     protected void OnTriggerEnter(Collider other)

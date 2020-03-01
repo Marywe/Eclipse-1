@@ -23,7 +23,7 @@ public class Jugador : MonoBehaviour
 
     CharacterController c;
 
-
+    public float xAxis;
     private void Start()
     { 
         //DontDestroyOnLoad(this);

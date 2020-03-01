@@ -8,8 +8,7 @@ public class Azul : Jugador
 {
     CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
-    [SerializeField]
-    private Animator anim;
+    public Animator anim;
 
     void Start()
     {
@@ -26,7 +25,7 @@ public class Azul : Jugador
 
     private void Movimiento()
     {
-        float xAxis = Input.GetAxis("HorizontalArrow");
+        xAxis = Input.GetAxis("HorizontalArrow");
         float zAxis = Input.GetAxis("VerticalArrow");
 
         if (characterController.isGrounded)
@@ -42,7 +41,9 @@ public class Azul : Jugador
             SetSpeedValue(0);
         else
             SetSpeedValue(1);
-        SetDirectionValue(Input.GetAxis("HorizontalArrow"));
+
+        if(xAxis!=0)
+        SetDirectionValue(xAxis);
     }
 
 

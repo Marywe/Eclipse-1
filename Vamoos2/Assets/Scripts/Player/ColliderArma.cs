@@ -6,22 +6,29 @@ public class ColliderArma : MonoBehaviour
 {
     public LayerMask enemyLayer;
     Collider[] enemiesHit;
-    Animator anim;
+    [SerializeField]
+    private Animator anim;
 
     [SerializeField]
-    private float radio = 2;
+    private Vector3 cubeSz;
 
     float lastButTime;
     public float maxComboDelay = 0.9f;
     public int nBut = 0;
-
+    public Vector3 posicion;
     private bool puedeAtacar;
     private Rosa r;
     private int modifDano = 0;
     // Start is called before the first frame update
     void Start()
     {
-        anim = gameObject.GetComponent<Animator>();
+        cubeSz.x = 2.5f;
+        cubeSz.y = 3;
+        cubeSz.z = 3;
+        posicion.x = 0.7f;
+        posicion.y = 0;
+        posicion.z = 0;
+        transform.position = posicion;
         puedeAtacar = true;
         r = gameObject.GetComponentInParent<Rosa>();
     }
@@ -29,13 +36,24 @@ public class ColliderArma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float attackDirection = r.anim.GetFloat("Direction");
+        if (attackDirection >= 0)
+        {
+            posicion.x = 0.7f;
+            transform.localPosition = posicion;
+        }
+        else if (attackDirection < 0)
+        {
+            posicion.x = -0.7f;
+            transform.localPosition = posicion;
+        }
         if (puedeAtacar) BasicAttack();
 
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, radio);
+        Gizmos.DrawWireCube(transform.position, cubeSz);
     }
 
     private void BasicAttack()
@@ -54,9 +72,9 @@ public class ColliderArma : MonoBehaviour
             if (nBut == 1)
             {
                 SetBasicAttack(0);
-                
 
-                enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
+                enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2);
+                //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
                 foreach (Collider enemy in enemiesHit)
                 {
                     enemy.GetComponent<Enemigos>().TakeDamage(r.dano + modifDano);
@@ -85,7 +103,10 @@ public class ColliderArma : MonoBehaviour
         if (nBut >= 2)
         {
             SetBasicAttack(0.5f);
-            enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
+
+            enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2);
+
+            //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
                 enemy.GetComponent<Enemigos>().TakeDamage(r.dano + modifDano);
@@ -105,7 +126,8 @@ public class ColliderArma : MonoBehaviour
         if (nBut >= 3)
         {
             SetBasicAttack(1f);
-            enemiesHit = Physics.OverlapSphere(this.transform.position, radio, enemyLayer);
+            enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2);
+//  enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
                 enemy.GetComponent<Enemigos>().TakeDamage(r.dano + modifDano);

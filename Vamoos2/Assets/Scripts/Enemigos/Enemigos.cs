@@ -62,7 +62,7 @@ public class Enemigos : MonoBehaviour
         yield return new WaitForSeconds(5);
         vulnerable = false;
 
-        shield.SetActive(true);
+        if(shield!=null)shield.SetActive(true);
 
     }
 
