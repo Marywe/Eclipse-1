@@ -71,6 +71,21 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("GAME OVER TOLAI");
     }
 
+    /*public void OptionsMenu()
+    {
+        SceneManager.LoadScene("Menu");
+        if (gameObject.name == "OptionsMenu" && GamePaused == true)
+        {
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+
+
+    }*/
+
 
 
 

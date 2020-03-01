@@ -9,7 +9,30 @@ public class MenuController : MonoBehaviour
 
     private float rbgValue = 0.5f;
     public Rect SliderBrillo;
+    Resolution[] Resoluciones;
+    public Dropdown DropDeResoluciones;
+    void Start()
+    {
+        Resoluciones = Screen.resolutions;
+        DropDeResoluciones.ClearOptions();
 
+        List<string> opcionesResol = new List<string>();
+
+        int ResolucionActualIndex = 0;
+        for(int i = 0; i < Resoluciones.Length; ++i)
+        {
+            string opcionElegida = Resoluciones[i].width + " x " + Resoluciones[i].height;
+            opcionesResol.Add(opcionElegida);
+
+            if(Resoluciones[i].width == Screen.currentResolution.width && Resoluciones[i].height == Screen.currentResolution.height) {
+                ResolucionActualIndex = i;
+            }
+        }
+        DropDeResoluciones.AddOptions(opcionesResol);
+        DropDeResoluciones.value = ResolucionActualIndex;
+        DropDeResoluciones.RefreshShownValue();
+
+    }
     private void Update()
     {
         RenderSettings.ambientLight = new Color(rbgValue, rbgValue,rbgValue, 1);
@@ -42,6 +65,12 @@ public class MenuController : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(qualityIndex);
 
+    }
+    
+    public void SetResolution(int IndexResolcion)
+    {
+        Resolution resolution = Resoluciones[IndexResolcion];
+        Screen.SetResolution(resolution.width, resolution.height,Screen.fullScreen);
     }
 
 
