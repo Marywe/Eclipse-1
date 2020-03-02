@@ -9,6 +9,10 @@ TagManager:
   - Cadena
   - Shield
   - Bullet
+  - Recarga
+  - Vida
+  - Velocidad
+  - Ataque
   layers:
   - Default
   - TransparentFX
