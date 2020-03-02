@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Jugador : MonoBehaviour
 {
-    [SerializeField]
-    protected float speed = 6.0f;
+    
+    public float speed = 6.0f;
     [SerializeField]
     protected float gravity = 10;
-    [SerializeField]
-    Linea line_sc;
+    public Linea line_sc;
     protected bool vulnerable = true;
     [SerializeField]
     protected int distKnockback = 8000;

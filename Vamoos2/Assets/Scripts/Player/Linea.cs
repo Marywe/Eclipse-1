@@ -14,6 +14,7 @@ public class Linea : MonoBehaviour
     private Animator anim;
 
     public int colisiones = 0;
+    public int vidaMax = 6;
 
     PauseMenu go;
 
@@ -45,7 +46,10 @@ public class Linea : MonoBehaviour
         }
     }
 
-
+    public void ModificarVidaMax()
+    {
+        ++vidaMax;
+    }
     public void RecibirDano() //Para llamar a esta función desde los personajes
     {      
         ++colisiones;
