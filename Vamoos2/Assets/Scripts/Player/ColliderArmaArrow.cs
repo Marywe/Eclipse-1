@@ -19,7 +19,6 @@ public class ColliderArmaArrow : MonoBehaviour
     public int nBut;
 
     private Azul a;
-    private int modifDano = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +79,7 @@ public class ColliderArmaArrow : MonoBehaviour
                 //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
                 foreach (Collider enemy in enemiesHit)
                 {
-                    enemy.GetComponent<Enemigos>().TakeDamage(a.dano + modifDano);
+                    enemy.GetComponent<Enemigos>().TakeDamage(a.dano);
                 }
 
             }
@@ -110,7 +109,7 @@ public class ColliderArmaArrow : MonoBehaviour
             //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(a.dano + modifDano);
+                enemy.GetComponent<Enemigos>().TakeDamage(a.dano);
             }
 
         }
@@ -132,7 +131,7 @@ public class ColliderArmaArrow : MonoBehaviour
             //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(a.dano + modifDano);
+                enemy.GetComponent<Enemigos>().TakeDamage(a.dano);
             }
 
         }

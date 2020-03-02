@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 63166833}
   - component: {fileID: 63166834}
   - component: {fileID: 63166835}
+  - component: {fileID: 63166836}
   m_Layer: 8
   m_Name: SpritesMitsu
   m_TagString: Untagged
@@ -473,6 +474,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &63166836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63166832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba9056ffd4333348b101421caeb337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  c: {fileID: 1460624277}
 --- !u!1001 &79812187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -660,6 +674,7 @@ GameObject:
   - component: {fileID: 92467404}
   - component: {fileID: 92467406}
   - component: {fileID: 92467405}
+  - component: {fileID: 92467407}
   m_Layer: 8
   m_Name: SpritesAraxiel
   m_TagString: Untagged
@@ -749,6 +764,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &92467407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92467403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec89b88be5517d84cb01bae7c087ef56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rosa: {fileID: 258613453}
 --- !u!1 &96345034 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1287320646942759845, guid: 4ae43ecc3d00d384cbc7fbfc19237bdc,
@@ -2060,7 +2088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &254074584
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5429,7 +5457,7 @@ PrefabInstance:
     - target: {fileID: 5637928175103176108, guid: 89623fbdbf3afd846bb67a2ba0388d6c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7524568247608441279, guid: 89623fbdbf3afd846bb67a2ba0388d6c,
         type: 3}
@@ -12892,7 +12920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1808063886
 Transform:
   m_ObjectHideFlags: 0

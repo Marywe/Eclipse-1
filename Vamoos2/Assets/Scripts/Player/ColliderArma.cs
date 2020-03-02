@@ -18,7 +18,6 @@ public class ColliderArma : MonoBehaviour
     public Vector3 posicion;
     private bool puedeAtacar;
     private Rosa r;
-    private int modifDano = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,7 +76,7 @@ public class ColliderArma : MonoBehaviour
                 //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
                 foreach (Collider enemy in enemiesHit)
                 {
-                    enemy.GetComponent<Enemigos>().TakeDamage(r.dano + modifDano);
+                    enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
                 }
                 
             }
@@ -109,7 +108,7 @@ public class ColliderArma : MonoBehaviour
             //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(r.dano + modifDano);
+                enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
             }
 
         }
@@ -130,7 +129,7 @@ public class ColliderArma : MonoBehaviour
 //  enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(r.dano + modifDano);
+                enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
             }
 
         }

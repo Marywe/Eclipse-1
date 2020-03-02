@@ -118,6 +118,8 @@
     <Compile Include="Assets\Scripts\Player\Azul.cs" />
     <Compile Include="Assets\Scripts\Player\ColliderArma.cs" />
     <Compile Include="Assets\Scripts\Player\ColliderArmaArrow.cs" />
+    <Compile Include="Assets\Scripts\Player\EventoAtaqueAzul.cs" />
+    <Compile Include="Assets\Scripts\Player\EventoAtaqueRosa.cs" />
     <Compile Include="Assets\Scripts\Player\Jugador.cs" />
     <Compile Include="Assets\Scripts\Player\Linea.cs" />
     <Compile Include="Assets\Scripts\Player\Rosa.cs" />
