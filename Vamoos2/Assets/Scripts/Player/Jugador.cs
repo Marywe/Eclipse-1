@@ -15,7 +15,7 @@ public class Jugador : MonoBehaviour
     [SerializeField]
     float tiempoVul = 2f;
     protected GameObject sprites;
-    public int dano = 1;
+    public float dano = 1;
 
     [SerializeField]
     protected Transform cam = null;

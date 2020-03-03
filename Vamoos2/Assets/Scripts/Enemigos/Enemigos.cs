@@ -8,8 +8,8 @@ public class Enemigos : MonoBehaviour
     protected bool puedeDisparar = true;
 
     [SerializeField]
-    protected int maxHealth;
-    protected int currentHealth;
+    protected float maxHealth;
+    protected float currentHealth;
     protected Vector3 mov;
     protected int armor = 5;
     private Animator anim;
@@ -66,7 +66,7 @@ public class Enemigos : MonoBehaviour
 
     }
 
-    public void TakeDamage(int dmg)
+    public void TakeDamage(float dmg)
     {
         damaged = true;
 
@@ -75,7 +75,7 @@ public class Enemigos : MonoBehaviour
         
         else if (vulnerable == false && shield!=null)
         {
-            armor -= dmg;
+            armor -= (int)dmg;
         }
         Debug.Log("Current life: " + currentHealth + " Armor: " + armor);
         if (armor <= 0) Destroy(shield);

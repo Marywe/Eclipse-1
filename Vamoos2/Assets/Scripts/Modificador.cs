@@ -44,7 +44,7 @@ public class Modificador : MonoBehaviour
 
     void ModificarDano(GameObject other)
     {
-        other.GetComponent<Jugador>().dano += 1;
+        other.GetComponent<Jugador>().dano += 0.75f;
     }
     void ModificarVel(GameObject other)
     {
