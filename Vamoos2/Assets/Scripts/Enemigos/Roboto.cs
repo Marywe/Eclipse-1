@@ -37,7 +37,6 @@ public class Roboto : Enemigos
 
 		if (distancia1 <= radioVision && distancia1 < distancia2)
 		{
-			Debug.Log("uwu");
 			mov = vectorMov1;
 			agent.SetDestination(objetivo1.position);
 
@@ -45,7 +44,6 @@ public class Roboto : Enemigos
 
 		if (distancia2 <= radioVision && distancia2 < distancia1)
 		{
-			Debug.Log("uw2u");
 			mov = vectorMov2;
 			agent.SetDestination(objetivo2.position);
 

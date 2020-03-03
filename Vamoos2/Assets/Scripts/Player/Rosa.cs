@@ -25,7 +25,7 @@ public class Rosa : Jugador
     private void Movimiento()
     {
         xAxis = Input.GetAxis("Horizontal");
-        float zAxis = Input.GetAxis("Vertical");
+        zAxis = Input.GetAxis("Vertical");
 
         if (characterController.isGrounded)
         {

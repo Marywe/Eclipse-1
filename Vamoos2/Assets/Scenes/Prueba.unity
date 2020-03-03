@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -969,7 +969,7 @@ MonoBehaviour:
   tiempoVul: 5
   dano: 1
   cam: {fileID: 963194228}
-  xAxis: 0
+  moveDirection: {x: 0, y: 0, z: 0}
   anim: {fileID: 63166835}
 --- !u!143 &116925823
 CharacterController:
@@ -8817,7 +8817,6 @@ MonoBehaviour:
   tiempoVul: 5
   dano: 1
   cam: {fileID: 963194228}
-  xAxis: 0
   anim: {fileID: 92467406}
 --- !u!143 &1221305104
 CharacterController:
@@ -12929,7 +12928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808063885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -42.24, y: 6.25, z: 4.47}
+  m_LocalPosition: {x: -42.24, y: 2.8, z: 4.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4584479880056037678}
