@@ -11,6 +11,7 @@ public class Rosa : Jugador
     
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody>();
         characterController = GetComponent<CharacterController>();
         sprites = transform.GetChild(0).gameObject;
     }

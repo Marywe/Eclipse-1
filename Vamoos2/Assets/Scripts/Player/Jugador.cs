@@ -6,7 +6,6 @@ public class Jugador : MonoBehaviour
 {
     
     public float speed = 6.0f;
-    [SerializeField]
     protected float gravity = 10;
     public Linea line_sc;
     protected bool vulnerable = true;
@@ -20,6 +19,7 @@ public class Jugador : MonoBehaviour
     [SerializeField]
     protected Transform cam = null;
 
+    protected Rigidbody rb;
     CharacterController c;
 
     protected float xAxis;

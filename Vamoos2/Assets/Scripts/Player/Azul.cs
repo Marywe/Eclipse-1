@@ -9,9 +9,14 @@ public class Azul : Jugador
     CharacterController characterController;
     public Vector3 moveDirection = Vector3.zero;
     public Animator anim;
+     
+    public float dashSpeed;
+    public float dashTime;
+    public float startDash;
 
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody>();
         characterController = GetComponent<CharacterController>();
         sprites = transform.GetChild(0).gameObject;
     }
