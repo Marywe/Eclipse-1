@@ -45,7 +45,7 @@ public class Jugador : MonoBehaviour
 
     public void Danado()
     {
-        CameraShake.ShakeOnce(0.3f, 0.3f);
+        CameraShake.ShakeOnce(0.4f, 0.4f);
         line_sc.RecibirDano();
         StartCoroutine(CorVulnerabilidad());
     }

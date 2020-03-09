@@ -884,7 +884,6 @@ MonoBehaviour:
     width: 0
     height: 0
   DropDeResoluciones: {fileID: 1075882470}
-  Advertencia: {fileID: 1628700809}
 --- !u!1 &148728080
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,7 +2138,6 @@ MonoBehaviour:
     width: 0
     height: 0
   DropDeResoluciones: {fileID: 1075882470}
-  Advertencia: {fileID: 1628700809}
 --- !u!1 &531056128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3738,7 +3736,6 @@ MonoBehaviour:
     width: 0
     height: 0
   DropDeResoluciones: {fileID: 0}
-  Advertencia: {fileID: 0}
 --- !u!1 &880750976
 GameObject:
   m_ObjectHideFlags: 0
@@ -6992,7 +6989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1628700810
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7656,7 +7653,6 @@ MonoBehaviour:
     width: 0
     height: 0
   DropDeResoluciones: {fileID: 1075882470}
-  Advertencia: {fileID: 0}
 --- !u!1 &1865100922
 GameObject:
   m_ObjectHideFlags: 0

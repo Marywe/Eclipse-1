@@ -151,13 +151,12 @@ public class Prisma : Enemigos
         yield return new WaitForSeconds(0.8f);
 		if (!damaged)
 		{
-			GameObject newDisparo = Instantiate(disparo);
-            newDisparo.transform.position = transform.position;
+			GameObject newDisparo = Instantiate(disparo, transform.position, Quaternion.Euler(target.transform.rotation.x - transform.rotation.x, target.transform.rotation.y - transform.rotation.y, target.transform.rotation.z - transform.rotation.z));
 
 			vD.x = target.transform.position.x - transform.position.x;
 			vD.y = 0;
 			vD.z = target.transform.position.z - transform.position.z;
-            newDisparo.transform.rotation = Quaternion.Euler(0, target.transform.rotation.y-transform.rotation.y, 0);
+
             newDisparo.GetComponent<Rigidbody>().AddForce(vD.normalized * 60 * 20);
 		}
       

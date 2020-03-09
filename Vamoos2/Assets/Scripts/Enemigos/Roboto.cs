@@ -75,7 +75,6 @@ public class Roboto : Enemigos
 		#region Ataque
 		if (distancia1 <= distanciaAtaque && !attacking && puedeDisparar)
 		{
-			Debug.Log("phbjiub");
 			Atacar();
 		}
 		else if (distancia2 <= distanciaAtaque && !attacking && puedeDisparar)

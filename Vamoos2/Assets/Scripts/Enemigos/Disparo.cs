@@ -6,7 +6,7 @@ public class Disparo : MonoBehaviour
 {
     private void Start()
     {
-        Destroy(gameObject, 4);
+        Destroy(gameObject, 5);
     }
     private void OnTriggerEnter(Collider other)
     {
