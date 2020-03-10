@@ -15,14 +15,14 @@ public class MenuController : MonoBehaviour
     private Slider loadingPorcentaje;
 
 
-    //public GameObject Advertencia;
-    //float tiempoEsperaAdvertencia = 10;
+    public GameObject Advertencia;
+    public float tiempoEsperaAdvertencia = 8;
 
-    /* Para el aviso de warning, not working
+
     private void Awake()
     {
         StartCoroutine(AvisoWarning(tiempoEsperaAdvertencia,Advertencia));
-    }*/
+    }
 
 
     void Start()
@@ -109,11 +109,10 @@ public class MenuController : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height,Screen.fullScreen);
     }
 
-   /* IEnumerator AvisoWarning (float time, GameObject GO)
+    IEnumerator AvisoWarning (float time, GameObject GO)
     {
-        time = tiempoEsperaAdvertencia;
-        GO = Advertencia;
+        GO.SetActive(true);
         yield return new WaitForSeconds(time);
         GO.SetActive(false);
-    }*/
+    }
 }
