@@ -6,11 +6,15 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-
-    //private float rbgValue = 0.5f;
-    public Rect SliderBrillo;
+    //public Rect SliderBrillo;
     Resolution[] Resoluciones;
     public Dropdown DropDeResoluciones;
+    [SerializeField]
+    private GameObject LoadingScreen;
+    [SerializeField]
+    private Slider loadingPorcentaje;
+
+
     //public GameObject Advertencia;
     //float tiempoEsperaAdvertencia = 10;
 
@@ -52,7 +56,22 @@ public class MenuController : MonoBehaviour
     public void PlayGame(string Scene)
     {
         Debug.Log("Cambiando a la escena " + Scene); //Para que en la consola de unity aparezca si se esta realizando
-        SceneManager.LoadScene("Prueba");
+        StartCoroutine(OperationAsync(Scene));
+        
+    }
+
+    IEnumerator OperationAsync(string Scene)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(Scene);
+        LoadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            loadingPorcentaje.value = progress;
+            yield return null;
+        }
     }
     /// <summary>
     /// Salida del juego, cierre de la aplicación
