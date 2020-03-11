@@ -11,14 +11,18 @@ public class Azul : Jugador
     public Animator anim;
      
     public float dashSpeed;
-    public float dashTime;
+    private float dashTime;
     public float startDash;
-
+    Vector3 dashVector;
+    bool dashing = false;
+    public float tiempoDash;
     void Start()
     {
+        dashTime = startDash;
         rb = gameObject.GetComponent<Rigidbody>();
         characterController = GetComponent<CharacterController>();
         sprites = transform.GetChild(0).gameObject;
+        
     }
 
     void Update()
@@ -27,7 +31,12 @@ public class Azul : Jugador
         base.Rotar();
         Rotar();
 
-        if (Input.GetKey(KeyCode.L)) Dash();
+        #region Dash
+        dashVector = new Vector3(moveDirection.x, 0, moveDirection.z).normalized;
+        if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
+        if (Input.GetKeyDown(KeyCode.L)) StartCoroutine(corDash());
+        Dash();
+        #endregion
     }
 
     private void Movimiento()
@@ -92,11 +101,30 @@ public class Azul : Jugador
             anim.SetFloat("Direction", -1);
     }
 
-    private void Dash()
+    private void Dash() //:)
     {
-        Debug.Log("Dashing xd");
-        Vector3 dashVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
-        if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
-        characterController.Move(dashVector * Time.deltaTime * 800000);
+        if (dashTime <= 0 && !dashing)
+        {
+            
+            dashTime = startDash;
+            rb.velocity = Vector3.zero;
+        }
+        else if (dashTime > 0 && dashing)
+        {
+            dashTime -= Time.deltaTime;
+            rb.AddForce(dashVector * dashSpeed);
+            Debug.Log("Dashing xd");
+        }
+        
+        
+        //characterController.Move(dashVector * Time.deltaTime * 5);
+        //rb.AddForce(dashVector * Time.deltaTime * 700, ForceMode.Impulse);
+    }
+
+    IEnumerator corDash()
+    {
+        dashing = true;
+        yield return new WaitForSeconds(tiempoDash);
+        dashing = false;
     }
 }
