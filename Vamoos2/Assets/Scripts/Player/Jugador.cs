@@ -4,32 +4,36 @@ using UnityEngine;
 
 public class Jugador : MonoBehaviour
 {
-    
+    [Header("Stats")]
     public float speed = 6.0f;
     protected float gravity = 10;
-    public Linea line_sc;
-    protected bool vulnerable = true;
     [SerializeField]
-    protected int distKnockback = 8000;
+    protected int distKnockback;
+
+    protected bool vulnerable = true;
+    
     [SerializeField]
     float tiempoVul = 2f;
     protected GameObject sprites;
     public float dano = 1;
 
+    [Header("Componentes")]
     [SerializeField]
     protected Transform cam = null;
-
-    protected Rigidbody rb;
-    CharacterController c;
+    protected CharacterController characterController;
+    public Animator anim;
 
     protected float xAxis;
     protected float zAxis;
-    private void Start()
-    { 
-        //DontDestroyOnLoad(this);
-        c = (CharacterController)gameObject.GetComponent(typeof(CharacterController));
-    }
+    public Linea line_sc;
 
+    [Header("Dash")]
+    public float dashSpeed;
+    protected float dashTime;
+    public float startDash;
+    protected Vector3 dashVector;
+    protected bool dashing = false;
+    public float tiempoDash;
 
     protected IEnumerator CorVulnerabilidad()
     {

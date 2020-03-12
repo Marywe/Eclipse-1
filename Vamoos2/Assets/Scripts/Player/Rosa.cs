@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Rosa : Jugador
-{
-    CharacterController characterController;
+{   
     private Vector3 moveDirection = Vector3.zero;
-    public Animator anim;
 
-    
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody>();
+        anim.SetFloat("Direction", 1);
+        dashTime = startDash;
         characterController = GetComponent<CharacterController>();
         sprites = transform.GetChild(0).gameObject;
     }
@@ -21,6 +19,13 @@ public class Rosa : Jugador
         Movimiento();
         base.Rotar();
         Rotar();
+
+        #region Dash
+        dashVector = new Vector3(moveDirection.x, 0, moveDirection.z).normalized;
+        if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
+        if (Input.GetKeyDown(KeyCode.L)) StartCoroutine(corDash());
+        Dash();
+        #endregion
     }
 
     private void Movimiento()
@@ -84,5 +89,27 @@ public class Rosa : Jugador
             anim.SetFloat("Direction", 1);
         if (dir < 0)
             anim.SetFloat("Direction", -1);
+    }
+
+    private void Dash() 
+    {
+        if (dashTime <= 0 && !dashing)
+        {
+            dashTime = startDash;
+        }
+        else if (dashTime > 0 && dashing)
+        {
+            characterController.Move(dashVector * Time.deltaTime * dashSpeed);
+            dashTime -= Time.deltaTime;
+            Debug.Log("Dashing xd");
+        }
+
+    }
+
+    IEnumerator corDash()
+    {
+        dashing = true;
+        yield return new WaitForSeconds(tiempoDash);
+        dashing = false;
     }
 }

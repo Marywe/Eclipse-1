@@ -455,7 +455,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116925819}
-  - component: {fileID: 116925820}
   - component: {fileID: 116925821}
   - component: {fileID: 116925823}
   - component: {fileID: 116925815}
@@ -487,7 +486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116925814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.6, y: 0, z: -10.62}
+  m_LocalPosition: {x: -13.5, y: 0, z: -10.62}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 63166833}
@@ -495,22 +494,6 @@ Transform:
   m_Father: {fileID: 1580655484}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &116925820
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116925814}
-  serializedVersion: 2
-  m_Mass: 50
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
 --- !u!114 &116925821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,16 +507,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  line_sc: {fileID: 2037146422}
   distKnockback: 200
   tiempoVul: 5
   dano: 1
   cam: {fileID: 963194228}
-  moveDirection: {x: 0, y: 0, z: 0}
   anim: {fileID: 63166835}
-  dashSpeed: 0
-  dashTime: 0
-  startDash: 0
+  line_sc: {fileID: 2037146422}
+  dashSpeed: 50
+  startDash: 0.12
+  tiempoDash: 3
 --- !u!143 &116925823
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3133,12 +3115,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  line_sc: {fileID: 2037146422}
-  distKnockback: 100
+  distKnockback: 200
   tiempoVul: 5
   dano: 1
   cam: {fileID: 963194228}
   anim: {fileID: 92467406}
+  line_sc: {fileID: 2037146422}
+  dashSpeed: 50
+  startDash: 0.12
+  tiempoDash: 3
 --- !u!143 &1221305104
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5456,6 +5441,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: sala 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8157531816100383613, guid: 3b2dacfc1cb2e384593e7f87c4f2f88d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157531815777808661, guid: 3b2dacfc1cb2e384593e7f87c4f2f88d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157531814677680954, guid: 3b2dacfc1cb2e384593e7f87c4f2f88d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 149941368804789420, guid: 3b2dacfc1cb2e384593e7f87c4f2f88d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6336,11 +6336,6 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8157531815777808661, guid: 3b2dacfc1cb2e384593e7f87c4f2f88d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 8157531815716813570, guid: 3b2dacfc1cb2e384593e7f87c4f2f88d,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6375,11 +6370,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8157531816100383613, guid: 3b2dacfc1cb2e384593e7f87c4f2f88d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8157531815976607612, guid: 3b2dacfc1cb2e384593e7f87c4f2f88d,
         type: 3}
@@ -6450,11 +6440,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8157531814677680954, guid: 3b2dacfc1cb2e384593e7f87c4f2f88d,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8157531815023375496, guid: 3b2dacfc1cb2e384593e7f87c4f2f88d,
         type: 3}

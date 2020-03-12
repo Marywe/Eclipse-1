@@ -108,7 +108,7 @@ public class ColliderArma : MonoBehaviour
             //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
+                 enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
             }
 
         }
@@ -129,7 +129,7 @@ public class ColliderArma : MonoBehaviour
 //  enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
+               enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
             }
 
         }

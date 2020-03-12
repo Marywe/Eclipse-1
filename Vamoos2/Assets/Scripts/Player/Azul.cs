@@ -6,23 +6,15 @@ using UnityEngine;
 /// </summary>
 public class Azul : Jugador
 {
-    CharacterController characterController;
-    public Vector3 moveDirection = Vector3.zero;
-    public Animator anim;
-     
-    public float dashSpeed;
-    private float dashTime;
-    public float startDash;
-    Vector3 dashVector;
-    bool dashing = false;
-    public float tiempoDash;
+    private Vector3 moveDirection = Vector3.zero;
+
     void Start()
     {
+        anim.SetFloat("Direction", 1);
         dashTime = startDash;
-        rb = gameObject.GetComponent<Rigidbody>();
         characterController = GetComponent<CharacterController>();
         sprites = transform.GetChild(0).gameObject;
-        
+
     }
 
     void Update()
@@ -101,24 +93,19 @@ public class Azul : Jugador
             anim.SetFloat("Direction", -1);
     }
 
-    private void Dash() //:)
+    private void Dash() 
     {
         if (dashTime <= 0 && !dashing)
-        {
-            
+        {            
             dashTime = startDash;
-            rb.velocity = Vector3.zero;
         }
         else if (dashTime > 0 && dashing)
         {
+            characterController.Move(dashVector * Time.deltaTime* dashSpeed);
             dashTime -= Time.deltaTime;
-            rb.AddForce(dashVector * dashSpeed);
             Debug.Log("Dashing xd");
         }
         
-        
-        //characterController.Move(dashVector * Time.deltaTime * 5);
-        //rb.AddForce(dashVector * Time.deltaTime * 700, ForceMode.Impulse);
     }
 
     IEnumerator corDash()
