@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Prisma : Enemigos
 {
-    Animator animE;
 
     [SerializeField]
     GameObject disparo;

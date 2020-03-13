@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class Mariposa : Enemigos
 {
     SpriteRenderer sr;
-    Animator animE;
     
     // Start is called before the first frame update
     void Start()

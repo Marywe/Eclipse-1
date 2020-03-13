@@ -5,11 +5,9 @@ using UnityEngine.AI;
 
 public class Roboto : Enemigos
 {
-	Animator animE;
 	public float distanciaAtaque;
 	SpriteRenderer sr;
 	private bool attacking;
-
 
 	// Start is called before the first frame update
 	void Start()
@@ -42,12 +40,16 @@ public class Roboto : Enemigos
 
 		}
 
-		if (distancia2 <= radioVision && distancia2 < distancia1)
+		else if (distancia2 <= radioVision && distancia2 < distancia1)
 		{
 			mov = vectorMov2;
 			agent.SetDestination(objetivo2.position);
 
 		}
+        else
+        {
+            mov = Vector3.zero;
+        }
 		#endregion
 		#region Anims
 		if ((radioVision < distancia1 && radioVision < distancia2) || agent.stoppingDistance >= distancia1 || agent.stoppingDistance >= distancia2)
@@ -66,11 +68,6 @@ public class Roboto : Enemigos
 			animE.SetBool("Moving", true);
 			sr.flipX = true;
 		}
-
-		if (mov.x > 0) sr.flipX = false;
-		else if (mov.x < 0) sr.flipX = true;
-
-
 		#endregion
 		#region Ataque
 		if (distancia1 <= distanciaAtaque && !attacking && puedeDisparar)

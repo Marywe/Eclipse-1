@@ -5,9 +5,18 @@ using UnityEngine;
 public class Rosa : Jugador
 {   
     private Vector3 moveDirection = Vector3.zero;
+    public PlayerState playerState;
+
+    [Header("Skill")]
+    public float skillTime;
+    public float startSkill;
+    public float cdSkill;
+
+    private Transform escudoTemp;
 
     void Start()
     {
+        playerState = PlayerState.idle;
         anim.SetFloat("Direction", 1);
         dashTime = startDash;
         characterController = GetComponent<CharacterController>();
@@ -23,8 +32,22 @@ public class Rosa : Jugador
         #region Dash
         dashVector = new Vector3(moveDirection.x, 0, moveDirection.z).normalized;
         if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
-        if (Input.GetKeyDown(KeyCode.L)) StartCoroutine(corDash());
+        if (Input.GetKeyDown(KeyCode.L) && playerState == PlayerState.idle && !dashing)
+        {
+            playerState = PlayerState.dash;
+            StartCoroutine(corDash());
+        }
         Dash();
+        #endregion
+
+        #region Skill Escudo
+        if (Input.GetKeyDown(KeyCode.F) && playerState==PlayerState.idle)
+        {
+            escudoTemp = transform;
+            playerState = PlayerState.skill;
+            StartCoroutine(corDash());
+        }
+        HabilidadEscudo(escudoTemp);
         #endregion
     }
 
@@ -61,10 +84,11 @@ public class Rosa : Jugador
 
     public void RecibirGolpe(Transform other)
     {
+        playerState = PlayerState.damaged;
+        Invoke("NoHacerNadaMientrasTeDan", 0.3f);
         Danado();
         Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
         characterController.Move(dir);
-        Debug.Log("knockback");
     }
     protected override void Rotar()
     {
@@ -93,23 +117,41 @@ public class Rosa : Jugador
 
     private void Dash() 
     {
-        if (dashTime <= 0 && !dashing)
+        if (dashTime <= 0 && playerState==PlayerState.dash)
         {
-            dashTime = startDash;
+            playerState = PlayerState.idle;
+            
         }
-        else if (dashTime > 0 && dashing)
+        else if(dashTime<=0 &&!dashing)
+                dashTime = startDash;
+        else if (dashTime > 0 && playerState == PlayerState.dash)
         {
             characterController.Move(dashVector * Time.deltaTime * dashSpeed);
             dashTime -= Time.deltaTime;
-            Debug.Log("Dashing xd");
         }
 
     }
-
     IEnumerator corDash()
     {
         dashing = true;
-        yield return new WaitForSeconds(tiempoDash);
+        yield return new WaitForSeconds(cdDash);
         dashing = false;
+    }
+
+    private void HabilidadEscudo(Transform puntoEscudo)
+    {
+        if (skillTime <= 0 && playerState != PlayerState.skill)
+        {
+            skillTime = startSkill;
+        }
+        else if(skillTime>0 && playerState == PlayerState.skill)
+        {
+
+        }
+    }
+
+    private void NoHacerNadaMientrasTeDan()
+    {
+        playerState = PlayerState.idle;
     }
 }

@@ -12,7 +12,7 @@ public class Enemigos : MonoBehaviour
     protected float currentHealth;
     protected Vector3 mov;
     protected int armor = 5;
-    private Animator anim;
+    protected Animator animE;
 
     protected GameObject shield;
 

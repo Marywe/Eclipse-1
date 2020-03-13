@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Scorpio : Enemigos
 {
-    Animator animE;
     private bool attacking;
 
     // Start is called before the first frame update

@@ -27,13 +27,15 @@ public class Jugador : MonoBehaviour
     protected float zAxis;
     public Linea line_sc;
 
+    public enum PlayerState { idle, dash, skill, damaged }
+
     [Header("Dash")]
     public float dashSpeed;
     protected float dashTime;
     public float startDash;
     protected Vector3 dashVector;
     protected bool dashing = false;
-    public float tiempoDash;
+    public float cdDash;
 
     protected IEnumerator CorVulnerabilidad()
     {

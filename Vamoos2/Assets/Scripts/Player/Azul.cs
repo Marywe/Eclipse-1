@@ -7,14 +7,15 @@ using UnityEngine;
 public class Azul : Jugador
 {
     private Vector3 moveDirection = Vector3.zero;
+    public PlayerState playerState;
 
     void Start()
     {
+        playerState = PlayerState.idle;
         anim.SetFloat("Direction", 1);
         dashTime = startDash;
         characterController = GetComponent<CharacterController>();
         sprites = transform.GetChild(0).gameObject;
-
     }
 
     void Update()
@@ -26,7 +27,11 @@ public class Azul : Jugador
         #region Dash
         dashVector = new Vector3(moveDirection.x, 0, moveDirection.z).normalized;
         if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
-        if (Input.GetKeyDown(KeyCode.L)) StartCoroutine(corDash());
+        if (Input.GetKeyDown(KeyCode.L) && playerState==PlayerState.idle)
+        {
+            playerState = PlayerState.dash;
+            StartCoroutine(corDash());
+        }
         Dash();
         #endregion
     }
@@ -62,10 +67,11 @@ public class Azul : Jugador
     }
     public void RecibirGolpe(Transform other)
     {
+        playerState = PlayerState.damaged;
+        Invoke("NoHacerNadaMientrasTeDan", 0.3f);
         Danado();
         Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
         characterController.Move(dir);
-        Debug.Log("knockback");
     }
     protected override void Rotar()
     {
@@ -95,23 +101,26 @@ public class Azul : Jugador
 
     private void Dash() 
     {
-        if (dashTime <= 0 && !dashing)
+        if (dashTime <= 0 && playerState != PlayerState.dash)
         {            
             dashTime = startDash;
         }
-        else if (dashTime > 0 && dashing)
+        else if (dashTime > 0 && playerState == PlayerState.dash)
         {
             characterController.Move(dashVector * Time.deltaTime* dashSpeed);
             dashTime -= Time.deltaTime;
-            Debug.Log("Dashing xd");
         }
         
     }
 
     IEnumerator corDash()
     {
-        dashing = true;
-        yield return new WaitForSeconds(tiempoDash);
-        dashing = false;
+        yield return new WaitForSeconds(cdDash);
+        playerState = PlayerState.idle;
+    }
+
+    private void NoHacerNadaMientrasTeDan()
+    {
+        playerState = PlayerState.idle;
     }
 }

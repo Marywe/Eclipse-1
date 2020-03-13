@@ -75,7 +75,7 @@ public class ColliderArmaArrow : MonoBehaviour
             {
                 SetBasicAttack(0);
 
-                enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2);
+                enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2, Quaternion.identity, enemyLayer);
                 //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
                 foreach (Collider enemy in enemiesHit)
                 {
@@ -105,7 +105,7 @@ public class ColliderArmaArrow : MonoBehaviour
         if (nBut >= 2)
         {
             SetBasicAttack(0.5f);
-            enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2);
+            enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2, Quaternion.identity, enemyLayer);
             //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
@@ -127,7 +127,7 @@ public class ColliderArmaArrow : MonoBehaviour
         {
             Debug.Log("hhh");
             SetBasicAttack(1f);
-            enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2);
+            enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2, Quaternion.identity, enemyLayer);
             //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
