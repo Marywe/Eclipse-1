@@ -5,15 +5,10 @@ using UnityEngine;
 public class Rosa : Jugador
 {   
     private Vector3 moveDirection = Vector3.zero;
-    public PlayerState playerState;
+    public PlayerState playerState; 
 
-    [Header("Skill")]
-    public float skillTime;
-    public float startSkill;
-    public float cdSkill;
-
-    private Transform escudoTemp;
-
+    public GameObject escudoTemp;
+    Vector3 posicionEscudoSuelo;
     void Start()
     {
         playerState = PlayerState.idle;
@@ -43,11 +38,11 @@ public class Rosa : Jugador
         #region Skill Escudo
         if (Input.GetKeyDown(KeyCode.F) && playerState==PlayerState.idle)
         {
-            escudoTemp = transform;
+            posicionEscudoSuelo = transform.position;
             playerState = PlayerState.skill;
-            StartCoroutine(corDash());
+            StartCoroutine(corrSkill());
         }
-        HabilidadEscudo(escudoTemp);
+        HabilidadEscudo();
         #endregion
     }
 
@@ -119,18 +114,17 @@ public class Rosa : Jugador
     {
         if (dashTime <= 0 && playerState==PlayerState.dash)
         {
-            playerState = PlayerState.idle;
-            
+            playerState = PlayerState.idle;  
         }
-        else if(dashTime<=0 &&!dashing)
+        else if(!dashing)
                 dashTime = startDash;
         else if (dashTime > 0 && playerState == PlayerState.dash)
         {
             characterController.Move(dashVector * Time.deltaTime * dashSpeed);
             dashTime -= Time.deltaTime;
         }
-
     }
+
     IEnumerator corDash()
     {
         dashing = true;
@@ -138,15 +132,31 @@ public class Rosa : Jugador
         dashing = false;
     }
 
-    private void HabilidadEscudo(Transform puntoEscudo)
+    IEnumerator corrSkill()
     {
-        if (skillTime <= 0 && playerState != PlayerState.skill)
+        skilling = true;
+        yield return new WaitForSeconds(cdSkill);
+        skilling = false;
+    }
+
+    private void HabilidadEscudo()
+    {
+        if (skillTime <= 0 && playerState == PlayerState.skill)
         {
+            playerState = PlayerState.idle;
+            escudoTemp.SetActive(false);
+        }
+        else if (!skilling)
+        {
+            escudoTemp.SetActive(false);
+            escudoTemp.transform.position = transform.position;
             skillTime = startSkill;
         }
-        else if(skillTime>0 && playerState == PlayerState.skill)
+        else if (skillTime > 0 && playerState == PlayerState.skill)
         {
-
+            escudoTemp.transform.position = posicionEscudoSuelo;
+            escudoTemp.SetActive(true);
+            skillTime -= Time.deltaTime;
         }
     }
 

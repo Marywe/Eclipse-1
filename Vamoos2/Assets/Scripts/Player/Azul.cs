@@ -9,6 +9,7 @@ public class Azul : Jugador
     private Vector3 moveDirection = Vector3.zero;
     public PlayerState playerState;
 
+
     void Start()
     {
         playerState = PlayerState.idle;
@@ -27,11 +28,12 @@ public class Azul : Jugador
         #region Dash
         dashVector = new Vector3(moveDirection.x, 0, moveDirection.z).normalized;
         if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
-        if (Input.GetKeyDown(KeyCode.L) && playerState==PlayerState.idle)
+        if (Input.GetKeyDown(KeyCode.L) && playerState==PlayerState.idle && !dashing)
         {
             playerState = PlayerState.dash;
             StartCoroutine(corDash());
         }
+
         Dash();
         #endregion
     }
@@ -101,26 +103,54 @@ public class Azul : Jugador
 
     private void Dash() 
     {
-        if (dashTime <= 0 && playerState != PlayerState.dash)
-        {            
-            dashTime = startDash;
+        if (dashTime <= 0 && playerState == PlayerState.dash)
+        {
+            playerState = PlayerState.idle;
         }
+        else if (!dashing)
+            dashTime = startDash;
         else if (dashTime > 0 && playerState == PlayerState.dash)
         {
-            characterController.Move(dashVector * Time.deltaTime* dashSpeed);
+            characterController.Move(dashVector * Time.deltaTime * dashSpeed);
             dashTime -= Time.deltaTime;
         }
-        
+
     }
 
     IEnumerator corDash()
     {
+        dashing = true;
         yield return new WaitForSeconds(cdDash);
-        playerState = PlayerState.idle;
+        dashing = false;
     }
 
+    public IEnumerator corrSkill()
+    {
+        skilling = true;
+        yield return new WaitForSeconds(cdSkill);
+        skilling = false;
+    }
     private void NoHacerNadaMientrasTeDan()
     {
         playerState = PlayerState.idle;
+    }
+
+    public void HabilidadGirar(Collider[] enemiesHit, LayerMask enemyLayer, float radius)
+    {
+        if (skillTime <= 0 && playerState == PlayerState.skill)
+        {
+            playerState=PlayerState.idle;
+        }
+        else if (!skilling) skillTime = startSkill;
+        else if (skillTime > 0 && playerState == PlayerState.skill)
+        {
+            enemiesHit = Physics.OverlapSphere(this.transform.position, radius, enemyLayer);
+
+            foreach (Collider enemy in enemiesHit)
+            {
+                enemy.GetComponent<Enemigos>().TakeDamage(0.1f);
+            }
+            skillTime -= Time.deltaTime;
+        }
     }
 }

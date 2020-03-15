@@ -8,14 +8,12 @@ public class ColliderArma : MonoBehaviour
     Collider[] enemiesHit;
     [SerializeField]
     private Animator anim;
-
-    [SerializeField]
     private Vector3 cubeSz;
 
     float lastButTime;
     public float maxComboDelay = 0.9f;
-    public int nBut = 0;
-    public Vector3 posicion;
+    private int nBut = 0;
+    private Vector3 posicion;
     private bool puedeAtacar;
     private Rosa r;
     // Start is called before the first frame update
@@ -35,6 +33,7 @@ public class ColliderArma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #region Dirección ataque
         float attackDirection = r.anim.GetFloat("Direction");
         if (attackDirection >= 0)
         {
@@ -46,6 +45,8 @@ public class ColliderArma : MonoBehaviour
             posicion.x = -0.7f;
             transform.localPosition = posicion;
         }
+        #endregion
+
         if (puedeAtacar) BasicAttack();
 
     }
@@ -93,7 +94,7 @@ public class ColliderArma : MonoBehaviour
     private IEnumerator corBasicAtt()
     {
         puedeAtacar = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(r.cdbasicAttack);
         puedeAtacar = true;
     }
 

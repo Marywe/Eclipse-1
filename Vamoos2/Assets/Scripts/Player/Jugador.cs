@@ -28,6 +28,7 @@ public class Jugador : MonoBehaviour
     public Linea line_sc;
 
     public enum PlayerState { idle, dash, skill, damaged }
+    public float cdbasicAttack;
 
     [Header("Dash")]
     public float dashSpeed;
@@ -36,6 +37,12 @@ public class Jugador : MonoBehaviour
     protected Vector3 dashVector;
     protected bool dashing = false;
     public float cdDash;
+
+    [Header("Skill")]
+    protected float skillTime;
+    public float startSkill;
+    public float cdSkill;
+    protected bool skilling = false;
 
     protected IEnumerator CorVulnerabilidad()
     {

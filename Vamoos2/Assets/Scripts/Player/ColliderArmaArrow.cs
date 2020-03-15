@@ -10,14 +10,12 @@ public class ColliderArmaArrow : MonoBehaviour
     Animator anim;
     private bool puedeAtacar;
 
-    public Vector3 posicion;
-
-    [SerializeField]
+    private Vector3 posicion;
     private Vector3 cubeSz;
     float lastButTime;
     public float maxComboDelay = 0.9f;
-    public int nBut;
-
+    private int nBut;
+    public float radius;
     private Azul a;
 
     // Start is called before the first frame update
@@ -37,7 +35,17 @@ public class ColliderArmaArrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        #region Skill Girar
+
+        if (Input.GetKeyDown(KeyCode.F) && a.playerState == Jugador.PlayerState.idle)
+        {   
+            a.playerState = Jugador.PlayerState.skill;
+            a.StartCoroutine(a.corrSkill());
+        }
+        a.HabilidadGirar(enemiesHit, enemyLayer, radius);
+        #endregion
+
+        #region Dirección ataque
         float attackDirection = a.anim.GetFloat("Direction");
         if (attackDirection >= 0)
         {
@@ -49,13 +57,15 @@ public class ColliderArmaArrow : MonoBehaviour
             posicion.x = -0.7f;
             transform.localPosition = posicion;
         }
+        #endregion
 
-            if (puedeAtacar) BasicAttack();
+        if (puedeAtacar) BasicAttack();
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(base.transform.position, cubeSz);
+        Gizmos.DrawWireSphere(base.transform.position, radius);
     }
 
     private void BasicAttack()
@@ -96,7 +106,7 @@ public class ColliderArmaArrow : MonoBehaviour
     private IEnumerator corBasicAtt()
     {
         puedeAtacar = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(a.cdbasicAttack);
         puedeAtacar = true;
     }
 
@@ -125,7 +135,6 @@ public class ColliderArmaArrow : MonoBehaviour
     {
         if (nBut >= 3)
         {
-            Debug.Log("hhh");
             SetBasicAttack(1f);
             enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2, Quaternion.identity, enemyLayer);
             //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
