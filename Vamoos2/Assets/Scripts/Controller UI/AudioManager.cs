@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Enemigo 1: Mariposa")]
     public AudioClip PistaDeAudioEnemigo1;
-    //public AudioClip Muerte;
+    public AudioClip Muerte;
 
 
     AudioSource FuenteMaster;
@@ -49,10 +49,20 @@ public class AudioManager : MonoBehaviour
     }
     void Start()
     {
-        //esto se colocará en los respectivos scripts, en lo momentos oportunos
-        ReMariposa();
         ReproducirMainTheme();
     }
+
+    #region Barras Volumen
+    public void SetLevelMaster(float sliderValue)
+    {
+        mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 18);
+    }
+
+    public void SetLevelSFX(float sliderValue)
+    {
+        mixer.SetFloat("SFXVol", Mathf.Log10(sliderValue) * 18);
+    }
+    #endregion
 
     void ReproducirMainTheme()
     {
@@ -64,19 +74,11 @@ public class AudioManager : MonoBehaviour
     void ReMariposa()
     {
         MiAudioManager.FuenteSFX.clip = MiAudioManager.PistaDeAudioEnemigo1;
-        //MiAudioManager.FuenteSFX.clip = MiAudioManager.Muerte;
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.Muerte;
         MiAudioManager.FuenteSFX.loop = true;
         MiAudioManager.FuenteSFX.Play();
     }
 
-    public void SetLevelMaster(float sliderValue)
-    {
-        mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 18);
-    }
-
-    public void SetLevelSFX(float sliderValue)
-    {
-        mixer.SetFloat("SFXVol", Mathf.Log10(sliderValue) * 18);
-    }
+   
 
 }
