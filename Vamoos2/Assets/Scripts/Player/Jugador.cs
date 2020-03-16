@@ -43,6 +43,7 @@ public class Jugador : MonoBehaviour
     public float startSkill;
     public float cdSkill;
     protected bool skilling = false;
+    public bool onShield = false;
 
     protected IEnumerator CorVulnerabilidad()
     {

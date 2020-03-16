@@ -36,7 +36,7 @@ public class Rosa : Jugador
         #endregion
 
         #region Skill Escudo
-        if (Input.GetKeyDown(KeyCode.F) && playerState==PlayerState.idle)
+        if (Input.GetKeyDown(KeyCode.E) && playerState==PlayerState.idle)
         {
             posicionEscudoSuelo = transform.position;
             playerState = PlayerState.skill;
@@ -75,6 +75,13 @@ public class Rosa : Jugador
         {
             RecibirGolpe(other.transform);
         } 
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if ((other.gameObject.tag == "Enemigos" || other.gameObject.tag == "Bullet") && vulnerable == true)
+        {
+            RecibirGolpe(other.transform);
+        }
     }
 
     public void RecibirGolpe(Transform other)
@@ -143,12 +150,18 @@ public class Rosa : Jugador
     {
         if (skillTime <= 0 && playerState == PlayerState.skill)
         {
+            if (onShield)
+            {
+                DevolverStats(escudoTemp);
+                DevolverStats(escudoTemp);
+            }
+
             playerState = PlayerState.idle;
             escudoTemp.SetActive(false);
         }
         else if (!skilling)
         {
-            escudoTemp.SetActive(false);
+            
             escudoTemp.transform.position = transform.position;
             skillTime = startSkill;
         }
@@ -163,5 +176,20 @@ public class Rosa : Jugador
     private void NoHacerNadaMientrasTeDan()
     {
         playerState = PlayerState.idle;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Intangible"))
+        {
+            DevolverStats(other.gameObject);
+        }
+    }
+
+    void DevolverStats(GameObject other)
+    {
+        speed -= other.GetComponent<EscudoHabilidad>().speed;
+        dano -= other.GetComponent<EscudoHabilidad>().dano;
+        onShield = false;
     }
 }

@@ -67,6 +67,13 @@ public class Azul : Jugador
             RecibirGolpe(other.transform);
         }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if ((other.gameObject.tag == "Enemigos" || other.gameObject.tag == "Bullet") && vulnerable == true)
+        {
+            RecibirGolpe(other.transform);
+        }
+    }
     public void RecibirGolpe(Transform other)
     {
         playerState = PlayerState.damaged;
@@ -151,6 +158,15 @@ public class Azul : Jugador
                 enemy.GetComponent<Enemigos>().TakeDamage(0.1f);
             }
             skillTime -= Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Intangible"))
+        {
+            speed -= other.gameObject.GetComponent<EscudoHabilidad>().speed;
+            dano -= other.gameObject.GetComponent<EscudoHabilidad>().dano;
         }
     }
 }

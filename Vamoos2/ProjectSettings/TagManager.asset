@@ -13,6 +13,7 @@ TagManager:
   - Vida
   - Velocidad
   - Ataque
+  - Intangible
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Enemigos
   - Cosas
   - DisparoEnems
-  - 
+  - Intangible
   - 
   - 
   - 

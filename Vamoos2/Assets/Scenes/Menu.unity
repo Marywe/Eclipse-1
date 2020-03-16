@@ -2520,7 +2520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &597207821
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6917,7 +6917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88a5eaf7f6c3274a9ae30c0ddc41198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: c3a912536834e1a4a9a9fb95f1d2229f, type: 2}
 --- !u!1 &1545130587
 GameObject:
   m_ObjectHideFlags: 0
@@ -7316,7 +7315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88a5eaf7f6c3274a9ae30c0ddc41198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: c3a912536834e1a4a9a9fb95f1d2229f, type: 2}
 --- !u!114 &1613302514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7428,7 +7426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5660378, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
