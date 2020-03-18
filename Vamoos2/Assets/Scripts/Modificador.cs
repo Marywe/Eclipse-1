@@ -52,7 +52,7 @@ public class Modificador : MonoBehaviour
     }
     void ModificarRecarga(GameObject other)
     {
-        //other.GetComponent<Jugador>().dano += .5f;
+        other.GetComponent<Jugador>().cdSkill -= 1f;
     }
     void ModificarVida(GameObject other)
     {

@@ -9,10 +9,12 @@ public class Controlador : MonoBehaviour
     private Text textoChips;
     public int chips = 0;
     public bool puertaFinalAbierta = false;
-    [SerializeField] Camera cam;
+    public Transform cam;
     [SerializeField] Transform ptoCamPuerta;
     [SerializeField] Animator doorAnim;
+    public int currentNumEnems;
 
+    public Transform objetivo1, objetivo2;
     public static Controlador instance
     {
         get;
@@ -30,6 +32,9 @@ public class Controlador : MonoBehaviour
             instance = this;
 
         }
+
+
+        currentNumEnems = 0;
     } //Comprobación Singleton
 
     /*public void AddPunt(int puntos)

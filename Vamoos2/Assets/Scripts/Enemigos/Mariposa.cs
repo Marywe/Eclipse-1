@@ -10,6 +10,8 @@ public class Mariposa : Enemigos
     // Start is called before the first frame update
     void Start()
     {
+        objetivo1 = Controlador.instance.objetivo1;
+        objetivo2 = Controlador.instance.objetivo2;
         maxHealth = 3;
         currentHealth = maxHealth;
         shield = transform.GetChild(1).gameObject;

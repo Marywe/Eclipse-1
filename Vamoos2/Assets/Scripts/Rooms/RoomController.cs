@@ -5,10 +5,10 @@ using UnityEngine;
 public class RoomController : MonoBehaviour
 {
     public GameObject[] sala;
-    public int[] numEnems;
     public bool fighting;
-    public GameObject[] doors;
-
+    
+    public Azul a;
+    public Rosa r;
     private void Start()
     {
         fighting = false;

@@ -7,20 +7,14 @@ public class Salas : MonoBehaviour
     //public RoomController roomController;
     protected int numPuertas;
     protected bool sePuedePasar = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //roomController = gameObject.GetComponent<RoomController>();
-        //if (roomController != null) Debug.Log("Joder");
-    }
+    protected bool salaClean=true;
+    protected bool salaCleanFirstTime=false;
 
-    protected void PuertasAbiertas(int nSala)
+    protected void PuertasAbiertas(int nEnems)
     {
-        if (nSala == 0)
-        {
-                     
-                sePuedePasar = true;
-            
+        if (nEnems == 0)
+        {       
+            sePuedePasar = true;
         }
     }
 }

@@ -5,12 +5,12 @@ using UnityEngine;
 public class MirarCamObjetos : MonoBehaviour
 {
     Transform tr;
-    [SerializeField]
     Transform cam;
     // Start is called before the first frame update
     void Start()
     {
         tr = gameObject.transform.GetChild(0);
+        cam = Controlador.instance.cam;
     }
 
     // Update is called once per frame

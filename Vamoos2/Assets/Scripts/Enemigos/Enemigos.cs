@@ -23,12 +23,11 @@ public class Enemigos : MonoBehaviour
     //protected Transform cam;
 
     protected bool damaged = false;
-    [SerializeField]
+
     protected Transform objetivo1, objetivo2;
 
     bool vulnerable = false;
     protected NavMeshAgent agent;
-
 
     /*protected void MirarObjetivo(Transform objetivo)
     {
@@ -85,6 +84,7 @@ public class Enemigos : MonoBehaviour
 
     private void Morirse()
     {
+        --Controlador.instance.currentNumEnems;
         if (shield != null) Destroy(shield);        
         Destroy(this.gameObject, 4f);
     }

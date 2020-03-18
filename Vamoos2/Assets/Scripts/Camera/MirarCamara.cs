@@ -8,13 +8,13 @@ public class MirarCamara : MonoBehaviour
 {
     Transform tr;
     Transform tr2;
-    [SerializeField]
     private Transform cam;
     // Start is called before the first frame update
     void Start()
     {
         tr = gameObject.transform.GetChild(0);
         tr2 = gameObject.transform.GetChild(1);
+        cam = Controlador.instance.cam;
     }
 
     // Update is called once per frame

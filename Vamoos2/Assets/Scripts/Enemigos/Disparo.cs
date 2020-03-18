@@ -10,7 +10,7 @@ public class Disparo : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        
+        if(!other.CompareTag("Salas"))
         Destroy(gameObject);
     }
 }
