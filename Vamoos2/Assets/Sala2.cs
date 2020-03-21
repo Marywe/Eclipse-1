@@ -11,6 +11,7 @@ public class Sala2 : Salas
     public GameObject[] prefabEnems;
 
     public GameObject[] doors;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +23,24 @@ public class Sala2 : Salas
     {
         if (Controlador.instance.currentNumEnems == 0) salaClean = true;
         else salaClean = false;
+
+        if (salaClean) sePuedePasar = true;
+        else sePuedePasar = false;
+
         base.PuertasAbiertas(Controlador.instance.currentNumEnems);
         if (sePuedePasar && salaClean)
         {
             for (int i = 0; i < numPuertas; i++)
             {
-                doors[i].GetComponent<Animator>().SetBool("SePuedePasar", sePuedePasar);
+                doors[i].GetComponent<Animator>().SetBool("SePuedePasar", true);
+            }
+        }
+
+        else
+        {
+            for (int i = 0; i < numPuertas; i++)
+            {
+                doors[i].GetComponent<Animator>().SetBool("SePuedePasar", false);
             }
         }
 
@@ -36,8 +49,26 @@ public class Sala2 : Salas
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             luces.SetActive(true);
-        if (!salaCleanFirstTime) InstanciarEnemigos();
+            Controlador.instance.cam = Controlador.instance.ptoscamara[1];
+            if (!salaCleanFirstTime) InstanciarEnemigos();
+            Controlador.instance.dondeEstas = Controlador.DondeEstas.s2;
+
+            if (other.GetComponent<Azul>() != null)
+            {
+                Debug.Log("azul");
+                Controlador.instance.objetivo2.position = other.transform.position + (Vector3.down * 5);
+            }
+            if (other.GetComponent<Rosa>() != null)
+            {
+                Debug.Log("rosa");
+                Controlador.instance.objetivo1.position = other.transform.position + (Vector3.down * 5);
+            }
+        }
+            
+
+
     }
 
     private void OnTriggerExit(Collider other)

@@ -281,6 +281,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   c: {fileID: 1460624277}
+--- !u!1 &84876569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 84876570}
+  m_Layer: 0
+  m_Name: pto2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &84876570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84876569}
+  m_LocalRotation: {x: 0.3227859, y: -0, z: -0, w: 0.94647205}
+  m_LocalPosition: {x: 61.5, y: -79, z: 115.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 37.663002, y: 0, z: 0}
 --- !u!1 &90399461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2908,6 +2938,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053471804}
   m_CullTransparentMesh: 0
+--- !u!1 &1098469230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1098469231}
+  m_Layer: 0
+  m_Name: pto1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1098469231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098469230}
+  m_LocalRotation: {x: 0.3227859, y: -0, z: -0, w: 0.94647205}
+  m_LocalPosition: {x: 23.28, y: -79, z: 115.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 37.663002, y: 0, z: 0}
 --- !u!1 &1122969664
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,7 +3232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221305102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6000042, y: 0, z: -7.03}
+  m_LocalPosition: {x: -37.8, y: 0, z: -7.03}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 92467404}
@@ -4556,7 +4616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1808063886
 Transform:
   m_ObjectHideFlags: 0
@@ -4869,11 +4929,23 @@ MonoBehaviour:
   chips: 0
   puertaFinalAbierta: 0
   cam: {fileID: 963194228}
+  ptoscamara:
+  - {fileID: 1098469231}
+  - {fileID: 84876570}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ptoCamPuerta: {fileID: 0}
   doorAnim: {fileID: 0}
   currentNumEnems: 0
   objetivo1: {fileID: 116925819}
   objetivo2: {fileID: 1221305109}
+  dondeEstas: 0
 --- !u!114 &1922775293
 MonoBehaviour:
   m_ObjectHideFlags: 0

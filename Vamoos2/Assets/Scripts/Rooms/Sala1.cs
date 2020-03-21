@@ -34,8 +34,13 @@ public class Sala1 : Salas
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
+        {
             luces.SetActive(true);
+
+            Controlador.instance.cam = Controlador.instance.ptoscamara[0];
+            Controlador.instance.dondeEstas = Controlador.DondeEstas.s1;
+        }
     }
 
     private void OnTriggerExit(Collider other)

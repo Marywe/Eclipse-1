@@ -10,11 +10,17 @@ public class Controlador : MonoBehaviour
     public int chips = 0;
     public bool puertaFinalAbierta = false;
     public Transform cam;
+    public Transform[] ptoscamara;
+
     [SerializeField] Transform ptoCamPuerta;
     [SerializeField] Animator doorAnim;
     public int currentNumEnems;
 
     public Transform objetivo1, objetivo2;
+
+    public enum DondeEstas { s1, s2, s3, s4, s5, s6, s7, s8}
+    public DondeEstas dondeEstas = new DondeEstas();
+
     public static Controlador instance
     {
         get;

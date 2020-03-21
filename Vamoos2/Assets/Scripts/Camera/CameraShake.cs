@@ -33,7 +33,7 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
-
+        
         if (shakeDuration > 0)
         {
             Vector3 newPos = originalPos + Random.insideUnitSphere * shakeAmount;
@@ -48,5 +48,18 @@ public class CameraShake : MonoBehaviour
             camTransform.localPosition = originalPos;
         }
 
+        switch (Controlador.instance.dondeEstas)
+        {
+            case Controlador.DondeEstas.s1:
+                originalPos = Controlador.instance.ptoscamara[0].position;
+                break;
+            case Controlador.DondeEstas.s2:
+                originalPos = Controlador.instance.ptoscamara[1].position;
+                break;
+            case Controlador.DondeEstas.s3:
+                originalPos = Controlador.instance.ptoscamara[2].position;
+                break;
+
+        }
     }
 }

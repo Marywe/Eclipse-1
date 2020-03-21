@@ -30,5 +30,6 @@ public class Puerta : MonoBehaviour
         {
             cerca = false;
         }
+       
     }
 }
