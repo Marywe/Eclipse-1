@@ -58,12 +58,12 @@ public class Sala2 : Salas
             if (other.GetComponent<Azul>() != null)
             {
                 Debug.Log("azul");
-                Controlador.instance.objetivo2.position = other.transform.position + (Vector3.down * 5);
+                Controlador.instance.objetivo2.position = other.transform.position + (Vector3.forward * 5);
             }
             if (other.GetComponent<Rosa>() != null)
             {
                 Debug.Log("rosa");
-                Controlador.instance.objetivo1.position = other.transform.position + (Vector3.down * 5);
+                Controlador.instance.objetivo1.position = other.transform.position + (Vector3.forward * 5);
             }
         }
             
