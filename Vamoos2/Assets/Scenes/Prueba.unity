@@ -600,7 +600,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.12, y: 1.3591726, z: 0.5}
+  m_Size: {x: 1.12, y: 1.3591726, z: 1.5}
   m_Center: {x: 0, y: -0.04, z: 0}
 --- !u!4 &116925819
 Transform:
@@ -1739,7 +1739,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.87, y: 4.99, z: 1}
+  m_Size: {x: 2.87, y: 4.99, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &465005489
 NavMeshAgent:
@@ -2646,7 +2646,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.18, y: 5.46, z: 1}
+  m_Size: {x: 3.18, y: 5.46, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &980197349
 NavMeshAgent:
@@ -3314,7 +3314,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.12, y: 1.4353366, z: 0.5}
+  m_Size: {x: 1.12, y: 1.4353366, z: 1.5}
   m_Center: {x: 0, y: -0.04, z: 0}
 --- !u!4 &1221305109
 Transform:
@@ -5064,7 +5064,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.66, y: 3.79, z: 1}
+  m_Size: {x: 3.66, y: 3.79, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1716091479
 MonoBehaviour:
@@ -13874,6 +13874,7 @@ GameObject:
   - component: {fileID: 3036660809688974303}
   - component: {fileID: 6304868323705469417}
   - component: {fileID: 307350053269816592}
+  - component: {fileID: 2053425041295176141}
   m_Layer: 0
   m_Name: pared corta (9)
   m_TagString: Untagged
@@ -13881,6 +13882,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &2053425041295176141
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053425041295176140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2627685598787497106, guid: c4aca476a5b863f40b9ff4233b6775fa, type: 3}
 --- !u!1 &2053425041340981841
 GameObject:
   m_ObjectHideFlags: 0
@@ -13944,6 +13959,7 @@ GameObject:
   - component: {fileID: 3036660810069455073}
   - component: {fileID: 6304868323356379863}
   - component: {fileID: 307350053046908462}
+  - component: {fileID: 2053425041443177203}
   m_Layer: 0
   m_Name: pared corta (1)
   m_TagString: Untagged
@@ -13951,6 +13967,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &2053425041443177203
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053425041443177202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2627685598787497106, guid: c4aca476a5b863f40b9ff4233b6775fa, type: 3}
 --- !u!1 &2053425041457828240
 GameObject:
   m_ObjectHideFlags: 0
@@ -14017,6 +14047,7 @@ GameObject:
   - component: {fileID: 3036660809384777287}
   - component: {fileID: 6304868323208588401}
   - component: {fileID: 307350052630565000}
+  - component: {fileID: 2053425041595180117}
   m_Layer: 0
   m_Name: pared corta (6)
   m_TagString: Untagged
@@ -14024,6 +14055,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &2053425041595180117
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053425041595180116}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2627685598787497106, guid: c4aca476a5b863f40b9ff4233b6775fa, type: 3}
 --- !u!1 &2053425041636125328
 GameObject:
   m_ObjectHideFlags: 0
@@ -14071,6 +14116,7 @@ GameObject:
   - component: {fileID: 3036660809302925589}
   - component: {fileID: 6304868323319798563}
   - component: {fileID: 307350052615825370}
+  - component: {fileID: 2053425041681355527}
   m_Layer: 0
   m_Name: pared corta (4)
   m_TagString: Untagged
@@ -14078,6 +14124,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &2053425041681355527
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053425041681355526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2627685598787497106, guid: c4aca476a5b863f40b9ff4233b6775fa, type: 3}
 --- !u!1 &2053425041694552740
 GameObject:
   m_ObjectHideFlags: 0
@@ -14249,6 +14309,7 @@ GameObject:
   - component: {fileID: 3036660809542378878}
   - component: {fileID: 6304868323046760264}
   - component: {fileID: 307350052317914033}
+  - component: {fileID: 2053425041970386798}
   m_Layer: 0
   m_Name: pared corta (10)
   m_TagString: Untagged
@@ -14256,6 +14317,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &2053425041970386798
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053425041970386797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2627685598787497106, guid: c4aca476a5b863f40b9ff4233b6775fa, type: 3}
 --- !u!1 &2053425041976776218
 GameObject:
   m_ObjectHideFlags: 0
@@ -14431,6 +14506,7 @@ GameObject:
   - component: {fileID: 3036660808694981227}
   - component: {fileID: 6304868322585499741}
   - component: {fileID: 307350054423340196}
+  - component: {fileID: 2053425042280910969}
   m_Layer: 0
   m_Name: pared corta
   m_TagString: Untagged
@@ -14438,6 +14514,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &2053425042280910969
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053425042280910968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2627685598787497106, guid: c4aca476a5b863f40b9ff4233b6775fa, type: 3}
 --- !u!1 &2053425042313763340
 GameObject:
   m_ObjectHideFlags: 0
@@ -14539,6 +14629,7 @@ GameObject:
   - component: {fileID: 3036660809071515246}
   - component: {fileID: 6304868322441817176}
   - component: {fileID: 307350053994500257}
+  - component: {fileID: 2053425042441118846}
   m_Layer: 0
   m_Name: pared corta (2)
   m_TagString: Untagged
@@ -14546,6 +14637,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &2053425042441118846
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053425042441118845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2627685598787497106, guid: c4aca476a5b863f40b9ff4233b6775fa, type: 3}
 --- !u!1 &2053425042489807215
 GameObject:
   m_ObjectHideFlags: 0
@@ -14681,6 +14786,7 @@ GameObject:
   - component: {fileID: 3036660808296206791}
   - component: {fileID: 6304868322179001329}
   - component: {fileID: 307350053756622600}
+  - component: {fileID: 2053425042687943637}
   m_Layer: 0
   m_Name: pared corta (8)
   m_TagString: Untagged
@@ -14688,6 +14794,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &2053425042687943637
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053425042687943636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2627685598787497106, guid: c4aca476a5b863f40b9ff4233b6775fa, type: 3}
 --- !u!1 &2053425042740849076
 GameObject:
   m_ObjectHideFlags: 0
@@ -14735,6 +14855,7 @@ GameObject:
   - component: {fileID: 3036660808209062471}
   - component: {fileID: 6304868322234720369}
   - component: {fileID: 307350053668920456}
+  - component: {fileID: 2053425042769848405}
   m_Layer: 0
   m_Name: pared corta (7)
   m_TagString: Untagged
@@ -14742,6 +14863,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &2053425042769848405
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053425042769848404}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2627685598787497106, guid: c4aca476a5b863f40b9ff4233b6775fa, type: 3}
 --- !u!1 &2053425042780587533
 GameObject:
   m_ObjectHideFlags: 0
@@ -14861,6 +14996,7 @@ GameObject:
   - component: {fileID: 3036660808459119694}
   - component: {fileID: 6304868321745524344}
   - component: {fileID: 307350053583497857}
+  - component: {fileID: 2053425043053518430}
   m_Layer: 0
   m_Name: pared corta (5)
   m_TagString: Untagged
@@ -14868,6 +15004,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &2053425043053518430
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053425043053518429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2627685598787497106, guid: c4aca476a5b863f40b9ff4233b6775fa, type: 3}
 --- !u!1 &2053425043101706654
 GameObject:
   m_ObjectHideFlags: 0
@@ -20587,7 +20737,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.35, y: 3.91, z: 1}
+  m_Size: {x: 2.35, y: 3.91, z: 1.5}
   m_Center: {x: 0, y: 2.1, z: 0}
 --- !u!114 &4584479880056037676
 MonoBehaviour:
