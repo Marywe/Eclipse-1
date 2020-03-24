@@ -55,20 +55,18 @@ public class Sala2 : Salas
             if (!salaCleanFirstTime) InstanciarEnemigos();
             Controlador.instance.dondeEstas = Controlador.DondeEstas.s2;
 
-            if (other.GetComponent<Azul>() != null)
+            if (other.gameObject.GetComponent<Azul>() != null)
             {
-                Debug.Log("azul");
-                Controlador.instance.objetivo2.position = other.transform.position + (Vector3.forward * 5);
-            }
-            if (other.GetComponent<Rosa>() != null)
-            {
-                Debug.Log("rosa");
-                Controlador.instance.objetivo1.position = other.transform.position + (Vector3.forward * 5);
+
             }
         }
-            
+           
 
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player")) Controlador.instance.dondeEstas = Controlador.DondeEstas.s2;
     }
 
     private void OnTriggerExit(Collider other)

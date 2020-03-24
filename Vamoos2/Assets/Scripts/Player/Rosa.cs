@@ -9,6 +9,8 @@ public class Rosa : Jugador
 
     public GameObject escudoTemp;
     Vector3 posicionEscudoSuelo;
+
+    public GameObject azul;
     void Start()
     {
         playerState = PlayerState.idle;
@@ -74,7 +76,15 @@ public class Rosa : Jugador
         if ((other.gameObject.tag == "Enemigos" || other.gameObject.tag == "Bullet") && vulnerable == true)
         {
             RecibirGolpe(other.transform);
-        } 
+        }
+
+        if (other.gameObject.tag == "Salas")
+        {
+            Debug.Log("hufjdn");
+            azul.transform.position = this.transform.position;
+        }
+
+
     }
     private void OnTriggerStay(Collider other)
     {
