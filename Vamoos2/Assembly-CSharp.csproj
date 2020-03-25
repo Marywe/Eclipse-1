@@ -101,7 +101,6 @@
     <Compile Include="Assets\Scripts\Camera\MirarCamObjetos.cs" />
     <Compile Include="Assets\Scripts\Controlador.cs" />
     <Compile Include="Assets\Scripts\Controller UI\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Controller UI\GameLoader.cs" />
     <Compile Include="Assets\Scripts\Controller UI\MenuController.cs" />
     <Compile Include="Assets\Scripts\Controller UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Enemigos\Disparo.cs" />

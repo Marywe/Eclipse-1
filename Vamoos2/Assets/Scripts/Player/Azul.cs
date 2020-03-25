@@ -50,7 +50,8 @@ public class Azul : Jugador
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
-        characterController.Move(moveDirection * Time.deltaTime);
+        if (playerState == PlayerState.idle || playerState == PlayerState.skill) characterController.Move(moveDirection * Time.deltaTime);
+        else characterController.Move(new Vector3(0, moveDirection.y , 0 )* Time.deltaTime);
 
         if (xAxis == 0 && zAxis == 0)
             SetSpeedValue(0);
@@ -76,6 +77,7 @@ public class Azul : Jugador
     }
     public void RecibirGolpe(Transform other)
     {
+        anim.SetTrigger("TakeDmg");
         playerState = PlayerState.damaged;
         Invoke("NoHacerNadaMientrasTeDan", 0.3f);
         Danado();

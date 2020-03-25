@@ -16,17 +16,13 @@ public class MenuController : MonoBehaviour
 
 
     public GameObject Advertencia;
-    public float tiempoEsperaAdvertencia = 8;
+    public float tiempoEsperaAdvertencia = 5;
 
-
-    private void Awake()
-    {
-        StartCoroutine(AvisoWarning(tiempoEsperaAdvertencia,Advertencia));
-    }
 
 
     void Start()
     {
+        Destroy(Advertencia, tiempoEsperaAdvertencia);
         Resoluciones = Screen.resolutions;
         DropDeResoluciones.ClearOptions();
 
@@ -107,12 +103,5 @@ public class MenuController : MonoBehaviour
     {
         Resolution resolution = Resoluciones[IndexResolcion];
         Screen.SetResolution(resolution.width, resolution.height,Screen.fullScreen);
-    }
-
-    IEnumerator AvisoWarning (float time, GameObject GO)
-    {
-        GO.SetActive(true);
-        yield return new WaitForSeconds(time);
-        GO.SetActive(false);
     }
 }
