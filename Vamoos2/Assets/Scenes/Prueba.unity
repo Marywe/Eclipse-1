@@ -534,7 +534,7 @@ MonoBehaviour:
   cam: {fileID: 963194228}
   anim: {fileID: 63166835}
   line_sc: {fileID: 615767996478704514}
-  cdbasicAttack: 2
+  cdbasicAttack: 0.2
   dashSpeed: 50
   startDash: 0.12
   cdDash: 5
@@ -1222,7 +1222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &385078077
 Transform:
   m_ObjectHideFlags: 0
@@ -2837,7 +2837,7 @@ MonoBehaviour:
   cam: {fileID: 963194228}
   anim: {fileID: 92467406}
   line_sc: {fileID: 615767996478704514}
-  cdbasicAttack: 2
+  cdbasicAttack: 0.2
   dashSpeed: 50
   startDash: 0.12
   cdDash: 5
