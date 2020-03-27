@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//Clase encargada del manejo de las escenas, en concreto su transicion y como el nombre indica, las funciones disponibles en el Menu del juego.
 public class MenuController : MonoBehaviour
 {
     //public Rect SliderBrillo;
@@ -19,7 +20,10 @@ public class MenuController : MonoBehaviour
     public float tiempoEsperaAdvertencia = 5;
 
 
-
+    /// <summary>
+    /// Desde el metodo Start, ademas de mostrar una imagen de advertencia, realizamos las comprobaciones para modificar la resolucion del juego, así como la
+    /// posibilidad de modificar en el menú.
+    /// </summary>
     void Start()
     {
         Destroy(Advertencia, tiempoEsperaAdvertencia);
@@ -46,7 +50,7 @@ public class MenuController : MonoBehaviour
 
 
     /// <summary>
-    /// Función encargada de cargar la escena del juego.
+    /// Función encargada de cargar la escena del juego, mediante una corrutina.
     /// </summary>
     /// <param name="Scene"></param>
     public void PlayGame(string Scene)
@@ -55,7 +59,7 @@ public class MenuController : MonoBehaviour
         StartCoroutine(OperationAsync(Scene));
         
     }
-
+    //corrutina que creamos para la pantalla durante la carga de escenas, a modo de transicion.
     IEnumerator OperationAsync(string Scene)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(Scene);
@@ -63,7 +67,6 @@ public class MenuController : MonoBehaviour
 
         while (!operation.isDone)
         {
-            
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
             loadingPorcentaje.value = progress;
             yield return null;
@@ -92,13 +95,14 @@ public class MenuController : MonoBehaviour
     }
     }*/
 
-
+    //Funcione que accede a los valores de unity de las cualidades gráficas, para poder modificarlas tambien desde el menu.
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
 
     }
     
+    //Junto al start, se encargada de comprobodar la resolucion de pantalla.
     public void SetResolution(int IndexResolcion)
     {
         Resolution resolution = Resoluciones[IndexResolcion];

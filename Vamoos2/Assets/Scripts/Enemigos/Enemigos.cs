@@ -36,12 +36,14 @@ public class Enemigos : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rotacion, Time.deltaTime * 10f);
     }*/
 
-    private void OnDrawGizmosSelected() //Para ver graficamente el radio de vision del enemigo en cuestión
+    //Para ver graficamente el radio de vision del enemigo en cuestión
+    private void OnDrawGizmosSelected() 
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radioVision);
     }
 
+    //Si vulnabilidad los personajes(su union, la cadena) puede recibir daño.
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag=="Cadena" && vulnerable==false && shield!=null)
@@ -53,7 +55,7 @@ public class Enemigos : MonoBehaviour
 
         }
     }
-
+    //corrutina para cambiar entre vulnerabilidad la cadena, teniendo un tiempo en concreto
     private IEnumerator CorVulnerabilidad()
     {
         
@@ -65,6 +67,7 @@ public class Enemigos : MonoBehaviour
 
     }
 
+    //Implementacion del daño y donde lo recibe
     public void TakeDamage(float dmg)
     {
         damaged = true;
@@ -82,6 +85,7 @@ public class Enemigos : MonoBehaviour
         if (currentHealth <= 0) Morirse();
     }
 
+    
     private void Morirse()
     {
         --Controlador.instance.currentNumEnems;

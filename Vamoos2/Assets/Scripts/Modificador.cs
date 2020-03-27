@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Esta clase como indica su nombre es la encargada de modificar los estados de los personajes en funcion a unos objetos determinados.
 public class Modificador : MonoBehaviour
 {
     private string tagMod;
@@ -17,6 +18,10 @@ public class Modificador : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Establecer el modificador a aplicar en funcion a la colision que se detecte.
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -42,6 +47,10 @@ public class Modificador : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Las funciones encargadas de acceder al componente correspondiente y modificar su valor, por ejemplo si el jugador consigue un modificador para aumentar el daño.
+    /// </summary>
+    /// <param name="other"></param>
     void ModificarDano(GameObject other)
     {
         other.GetComponent<Jugador>().dano += 0.75f;

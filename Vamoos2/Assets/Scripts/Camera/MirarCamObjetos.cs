@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Al igual que ocurre con los personajes, los objetos tambien se posicionan visualmente mirando a la camara.
 public class MirarCamObjetos : MonoBehaviour
 {
     Transform tr;

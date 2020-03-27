@@ -18,6 +18,7 @@ public class Controlador : MonoBehaviour
 
     public Transform objetivo1, objetivo2;
 
+    //Mediante una enumeracion controlamos en que sala se encuentra el jugador.
     public enum DondeEstas { s1, s2, s3, s4, s5, s6, s7, s8}
     public DondeEstas dondeEstas = new DondeEstas();
 
@@ -26,6 +27,7 @@ public class Controlador : MonoBehaviour
         get;
         private set;
     }
+    //Comprobamos que no haya otro controladores.
     private void Awake()
     {
         if (instance != null)
@@ -49,6 +51,8 @@ public class Controlador : MonoBehaviour
         textoPuntuacion.text = puntuacion.ToString();
     }*/
 
+    //Desde aqui se actualiza la cantidad de chips que le jugador recoja, cuando llegue a 3 podra ir a la sala final.
+    //Ademas la camara temporalmente mostrará donde se encuentra esta sala y despues de unos segundos volverá a su posicion incial, junto a los personajes.
     public void AddChips()
     {
         if (chips == 3)
@@ -72,10 +76,12 @@ public class Controlador : MonoBehaviour
         textoChips.text = chips.ToString();
     }
 
+    
     private void AbrirPuerta()
     {
         doorAnim.SetBool("Open", puertaFinalAbierta);
     }
+    //Control de la camara durante el desbloqueo de la sala final
     private void VolverCam(Transform t)
     {
         cam.transform.position = Vector3.Lerp(cam.transform.position, t.position, 3 * Time.deltaTime);

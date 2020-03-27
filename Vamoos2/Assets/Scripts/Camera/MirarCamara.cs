@@ -9,7 +9,7 @@ public class MirarCamara : MonoBehaviour
     Transform tr;
     Transform tr2;
     private Transform cam;
-    // Start is called before the first frame update
+    // llamamos a la camara y conseguimos las posiciones de los personajes
     void Start()
     {
         tr = gameObject.transform.GetChild(0);
@@ -22,6 +22,7 @@ public class MirarCamara : MonoBehaviour
     {
         Rotar();
     }
+    //Encargado de ajustar la rotacion de la camara en relacion a la posicion de los personajes.
     protected virtual void Rotar()
     {
         Vector3 look;

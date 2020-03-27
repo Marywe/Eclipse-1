@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
-
+//Clase que contiene todo el audio del juego, se encarga de generar los sources determinados y reproducirlos.
 public class AudioManager : MonoBehaviour
 {
     static AudioManager MiAudioManager;
 
+    /// <summary>
+    /// Mediante un audio mixer, y dos grupos vamos a controlar todos los sonidos del juego.
+    /// </summary>
     [SerializeField]
     private AudioMixer mixer;
     public AudioMixerGroup MusicGroup;
     public AudioMixerGroup FXGroup;
 
-    //public Sonidos[] Sonidos;
+    //Mediante Header hacemos mas sencilla la organicacion y asignacion en el inspector de los sources de sonido.
     [Header("TemaPrincipal")]
     public AudioClip PistaDeAudio;
 
@@ -25,10 +28,10 @@ public class AudioManager : MonoBehaviour
     AudioSource FuenteMaster;
     AudioSource FuenteSFX;
 
-    // Start is called before the first frame update 
+    // Mediante el awake logramos que el audio se reproduzca antes que nada, para asegurar que no haya componentes duplicados relacionados con el audiomanager
     void Awake()
     {
-
+        //Como es un GameObject dedicado al audio, nos aseguramos que solo haya un audiomanager en la escena en la que nos encontremos.
         if (MiAudioManager != null && MiAudioManager != this)
         {
             Destroy(gameObject);
@@ -47,12 +50,13 @@ public class AudioManager : MonoBehaviour
         FuenteSFX.outputAudioMixerGroup = FXGroup;
 
     }
+    //Reproducimos el tema principal desde el comienzo de la escena.
     void Start()
     {
         ReproducirMainTheme();
     }
 
-    #region Barras Volumen
+    #region Barras Volumen, asignamos dos sliders para la musica, una para el tema principal y otra para los efectos de sonidos, desde aqui los controlamos
     public void SetLevelMaster(float sliderValue)
     {
         mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 18);
@@ -64,6 +68,8 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
+    //Como el resto de funciones a continuacion, son todas funciones que crearan los sources correspondientes cuando sea oportuno, así como 
+    // que indicamos a que parametro del audio mixer correspondem, tambien si queremos que se repitan.
     void ReproducirMainTheme()
     {
         MiAudioManager.FuenteMaster.clip = MiAudioManager.PistaDeAudio;
