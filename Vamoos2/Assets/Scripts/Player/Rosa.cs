@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Controla movimiento del personaje Mistu
+// Controla movimiento del personaje Araxiel
 public class Rosa : Jugador
 {   
     private Vector3 moveDirection = Vector3.zero;
@@ -30,7 +30,7 @@ public class Rosa : Jugador
         #region Dash
         dashVector = new Vector3(moveDirection.x, 0, moveDirection.z).normalized;
         if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
-        if (Input.GetKeyDown(KeyCode.L) && playerState == PlayerState.idle && !dashing)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && playerState == PlayerState.idle && !dashing)
         {
             playerState = PlayerState.dash;
             StartCoroutine(corDash());
@@ -39,7 +39,7 @@ public class Rosa : Jugador
         #endregion
 
         #region Skill Escudo
-        if (Input.GetKeyDown(KeyCode.E) && playerState==PlayerState.idle)
+        if (Input.GetKeyDown(KeyCode.CapsLock) && playerState==PlayerState.idle)
         {
             posicionEscudoSuelo = transform.position;
             playerState = PlayerState.skill;

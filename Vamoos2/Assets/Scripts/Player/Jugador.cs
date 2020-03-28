@@ -36,7 +36,7 @@ public class Jugador : MonoBehaviour
     public enum PlayerState { idle, dash, skill, damaged }
     public float cdbasicAttack;
 
-    [Header("Dash")]
+    [Header("Skills")]
     public float dashSpeed;
     protected float dashTime;
     public float startDash;
@@ -44,7 +44,7 @@ public class Jugador : MonoBehaviour
     protected bool dashing = false;
     public float cdDash;
 
-    [Header("Skill")]
+
     protected float skillTime;
     public float startSkill;
     public float cdSkill;
@@ -65,6 +65,9 @@ public class Jugador : MonoBehaviour
     /// <summary>
     /// Funcion para rotar los sprites de los personajes en relacion a la camara
     /// </summary>
+    
+
+
     protected virtual void Rotar()
     {
         sprites.transform.rotation = Quaternion.LookRotation(transform.position - cam.position);

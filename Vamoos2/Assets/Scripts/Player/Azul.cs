@@ -27,7 +27,7 @@ public class Azul : Jugador
         #region Dash
         dashVector = new Vector3(moveDirection.x, 0, moveDirection.z).normalized;
         if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
-        if (Input.GetKeyDown(KeyCode.L) && playerState==PlayerState.idle && !dashing)
+        if (Input.GetKeyDown(KeyCode.RightShift) && playerState==PlayerState.idle && !dashing)
         {
             playerState = PlayerState.dash;
             StartCoroutine(corDash());
@@ -108,7 +108,7 @@ public class Azul : Jugador
 
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(0.1f);
+                enemy.GetComponent<Enemigos>().TakeDamage(0.05f);
             }
             skillTime -= Time.deltaTime;
         }
@@ -198,6 +198,8 @@ public class Azul : Jugador
         Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
         characterController.Move(dir);
     }
+
+
     protected override void Rotar()
     {
         Vector3 look;

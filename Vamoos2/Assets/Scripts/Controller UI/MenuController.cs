@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-//Clase encargada del manejo de las escenas, en concreto su transicion y como el nombre indica, las funciones disponibles en el Menu del juego.
+/// <summary>
+/// Clase encargada del manejo de las escenas, en concreto su transicion y como el nombre indica, las funciones disponibles en el Menu del juego.
+/// </summary>
 public class MenuController : MonoBehaviour
 {
     //public Rect SliderBrillo;
@@ -26,10 +28,10 @@ public class MenuController : MonoBehaviour
     /// </summary>
     void Start()
     {
-        while(primeraVez) {
-            Destroy(Advertencia, tiempoEsperaAdvertencia);
-            primeraVez = false;
-        }
+     
+        Invoke("FuncionAdvertencia", tiempoEsperaAdvertencia);
+
+        #region Resoluciones
         Resoluciones = Screen.resolutions;
         DropDeResoluciones.ClearOptions();
 
@@ -48,10 +50,13 @@ public class MenuController : MonoBehaviour
         DropDeResoluciones.AddOptions(opcionesResol);
         DropDeResoluciones.value = ResolucionActualIndex;
         DropDeResoluciones.RefreshShownValue();
-
+        #endregion
     }
 
-
+    private void Update()
+    {
+        
+    }
     /// <summary>
     /// Función encargada de cargar la escena del juego, mediante una corrutina.
     /// </summary>
@@ -83,6 +88,7 @@ public class MenuController : MonoBehaviour
         Debug.Log("Saliendo del juego");
         Application.Quit();
     }
+
     /* Barra de Brillo
     private void Update()
     {
@@ -98,7 +104,10 @@ public class MenuController : MonoBehaviour
     }
     }*/
 
-    //Funcione que accede a los valores de unity de las cualidades gráficas, para poder modificarlas tambien desde el menu.
+    /// <summary>
+    /// Funcion que accede a los valores de unity de las cualidades gráficas, para poder modificarlas tambien desde el menu.
+    /// </summary>
+    /// <param name="qualityIndex"></param>
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
@@ -110,5 +119,12 @@ public class MenuController : MonoBehaviour
     {
         Resolution resolution = Resoluciones[IndexResolcion];
         Screen.SetResolution(resolution.width, resolution.height,Screen.fullScreen);
+    }
+
+    public void FuncionAdvertencia()
+    {
+
+        Advertencia.SetActive(false);
+       
     }
 }

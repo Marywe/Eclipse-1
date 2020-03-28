@@ -59,7 +59,7 @@ public class ColliderArma : MonoBehaviour
     }
 
     #region Tipos de Ataque
-    //Golpe normal, ataque basico hacia un enemigo
+    //ataque basico hacia un enemigo
     private void BasicAttack()
     {
         if (Time.time - lastButTime > maxComboDelay)

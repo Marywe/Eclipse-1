@@ -103,7 +103,7 @@ public class Scorpio : Enemigos
     private void Atacar(Transform target, int n)
     {
         attacking = true;      
-        animE.SetTrigger("Atacar");
+        animE.SetTrigger("Attack");
         puedeDisparar = false;
         StartCoroutine(corAttack());
         StartCoroutine(corAnimAtacar(target, n));

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Al igua que ColliderArma, pero para aquellos que sean a distancia, como proyectiles.
+//Al igua que ColliderArma pero para el otro pj
 public class ColliderArmaArrow : MonoBehaviour
 {
     public LayerMask enemyLayer;
@@ -38,7 +38,7 @@ public class ColliderArmaArrow : MonoBehaviour
     {
         #region Skill Girar
 
-        if (Input.GetKeyDown(KeyCode.F) && a.playerState == Jugador.PlayerState.idle)
+        if (Input.GetKeyDown(KeyCode.RightAlt) && a.playerState == Jugador.PlayerState.idle)
         {   
             a.playerState = Jugador.PlayerState.skill;
             a.StartCoroutine(a.corrSkill());
