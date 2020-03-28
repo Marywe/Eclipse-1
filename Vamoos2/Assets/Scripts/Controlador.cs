@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Controlador de los estados generales del juego, como la camara, posicion de los personajes, datos sobre la puntuacion de los jugadores.
+//Comunicacion con el resto de scripts.
 public class Controlador : MonoBehaviour
 {
     [SerializeField]
@@ -27,7 +29,7 @@ public class Controlador : MonoBehaviour
         get;
         private set;
     }
-    //Comprobamos que no haya otro controladores.
+    //Comprobamos que no haya otros controladores.
     private void Awake()
     {
         if (instance != null)
@@ -76,7 +78,7 @@ public class Controlador : MonoBehaviour
         textoChips.text = chips.ToString();
     }
 
-    
+    //Activacion de eventos Animados
     private void AbrirPuerta()
     {
         doorAnim.SetBool("Open", puertaFinalAbierta);

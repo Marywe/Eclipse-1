@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Clase herencia
+/// Control de la primera sala, donde apareceran los jugadores, controlando si han completado
+/// los objetivos o no.
+/// </summary>
 public class Sala1 : Salas
 
 {
@@ -18,7 +23,7 @@ public class Sala1 : Salas
         numPuertas = 2;
     }
 
-    // Update is called once per frame
+    //Cuando los jugadores completen derrotar a los enemigos, podrán activar el evento de pasar de sala.
     void Update()
     {
         base.PuertasAbiertas(Controlador.instance.currentNumEnems);
@@ -31,7 +36,7 @@ public class Sala1 : Salas
         }
 
     }
-
+    //Al entrar a la sala, activar luces y mover la camara
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -43,6 +48,7 @@ public class Sala1 : Salas
         }
     }
 
+    //Al salir de la sala, apagar luces
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))

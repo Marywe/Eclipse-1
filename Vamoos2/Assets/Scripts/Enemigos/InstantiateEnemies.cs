@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Mediante esta clase genereamos los enemigos.
 public class InstantiateEnemies : MonoBehaviour
 {
     [SerializeField]
@@ -12,6 +13,7 @@ public class InstantiateEnemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //tras crear una lista de posiciones, las vamos rellenando con enemigos.
         foreach (Transform poss in posSpawn)
         {
             GameObject newEnemy = Instantiate(enemigo);
@@ -19,10 +21,5 @@ public class InstantiateEnemies : MonoBehaviour
             Debug.Log("Oye :/");
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

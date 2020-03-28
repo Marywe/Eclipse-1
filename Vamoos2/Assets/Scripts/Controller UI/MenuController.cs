@@ -15,9 +15,9 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     private Slider loadingPorcentaje;
 
-
     public GameObject Advertencia;
     public float tiempoEsperaAdvertencia = 5;
+    static bool primeraVez = true;
 
 
     /// <summary>
@@ -26,7 +26,10 @@ public class MenuController : MonoBehaviour
     /// </summary>
     void Start()
     {
-        Destroy(Advertencia, tiempoEsperaAdvertencia);
+        while(primeraVez) {
+            Destroy(Advertencia, tiempoEsperaAdvertencia);
+            primeraVez = false;
+        }
         Resoluciones = Screen.resolutions;
         DropDeResoluciones.ClearOptions();
 

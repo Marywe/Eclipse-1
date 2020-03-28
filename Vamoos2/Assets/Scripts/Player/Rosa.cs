@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Controla movimiento del personaje Mistu
 public class Rosa : Jugador
 {   
     private Vector3 moveDirection = Vector3.zero;
@@ -48,6 +49,10 @@ public class Rosa : Jugador
         #endregion
     }
 
+    #region Movimiento
+    /// <summary>
+    /// Movimiento del personaje, obtención de su posicion y modificación de su estado
+    /// </summary>
     private void Movimiento()
     {
         xAxis = Input.GetAxis("Horizontal");
@@ -72,93 +77,14 @@ public class Rosa : Jugador
         if (xAxis != 0)
             SetDirectionValue(xAxis);
     }
+    #endregion
 
-    protected void OnTriggerEnter(Collider other)
-    {
-        if ((other.gameObject.tag == "Enemigos" || other.gameObject.tag == "Bullet") && vulnerable == true)
-        {
-            RecibirGolpe(other.transform);
-        }
+    #region Habilidades
 
-        if (other.gameObject.tag == "Salas")
-        {
-            Debug.Log("hufjdn");
-            azul.transform.position = this.transform.position;
-        }
-
-
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        if ((other.gameObject.tag == "Enemigos" || other.gameObject.tag == "Bullet") && vulnerable == true)
-        {
-            RecibirGolpe(other.transform);
-        }
-    }
-
-    public void RecibirGolpe(Transform other)
-    {
-        anim.SetTrigger("TakeDmg");
-        playerState = PlayerState.damaged;
-        Invoke("NoHacerNadaMientrasTeDan", 0.3f);
-        Danado();
-        Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
-        characterController.Move(dir);
-    }
-    protected override void Rotar()
-    {
-        Vector3 look;
-        look.x = transform.position.x - cam.position.x;
-        look.y = 0;
-        look.z = transform.position.z - cam.position.z;
-        transform.rotation = Quaternion.LookRotation(look);
-    }
-
-    private void SetSpeedValue(float speed)
-    {
-        if (speed > 0)
-            anim.SetFloat("Speed", 1);
-
-        if (speed <= 0)
-            anim.SetFloat("Speed", 0);
-    }
-    private void SetDirectionValue(float dir)
-    {
-        if (dir > 0)
-            anim.SetFloat("Direction", 1);
-        if (dir < 0)
-            anim.SetFloat("Direction", -1);
-    }
-
-    private void Dash() 
-    {
-        if (dashTime <= 0 && playerState==PlayerState.dash)
-        {
-            playerState = PlayerState.idle;  
-        }
-        else if(!dashing)
-                dashTime = startDash;
-        else if (dashTime > 0 && playerState == PlayerState.dash)
-        {
-            characterController.Move(dashVector * Time.deltaTime * dashSpeed);
-            dashTime -= Time.deltaTime;
-        }
-    }
-
-    IEnumerator corDash()
-    {
-        dashing = true;
-        yield return new WaitForSeconds(cdDash);
-        dashing = false;
-    }
-
-    IEnumerator corrSkill()
-    {
-        skilling = true;
-        yield return new WaitForSeconds(cdSkill);
-        skilling = false;
-    }
-
+    /// <summary>
+    /// Habilidad del personaje.
+    /// Cambio de estado, y realiazacion de la habiliad, desplazamiento de posicion.
+    /// </summary>
     private void HabilidadEscudo()
     {
         if (skillTime <= 0 && playerState == PlayerState.skill)
@@ -186,11 +112,52 @@ public class Rosa : Jugador
         }
     }
 
-    private void NoHacerNadaMientrasTeDan()
+    /// <summary>
+    /// Habilidad del personaje.
+    /// Cambio de estado, y realiazacion de la habiliad, desplazamiento de posicion.
+    /// </summary>
+    private void Dash()
     {
-        playerState = PlayerState.idle;
+        if (dashTime <= 0 && playerState == PlayerState.dash)
+        {
+            playerState = PlayerState.idle;
+        }
+        else if (!dashing)
+            dashTime = startDash;
+        else if (dashTime > 0 && playerState == PlayerState.dash)
+        {
+            characterController.Move(dashVector * Time.deltaTime * dashSpeed);
+            dashTime -= Time.deltaTime;
+        }
     }
 
+    #endregion
+
+    #region Colisiones
+    //Colisiones con objetos
+    protected void OnTriggerEnter(Collider other)
+    {
+        if ((other.gameObject.tag == "Enemigos" || other.gameObject.tag == "Bullet") && vulnerable == true)
+        {
+            RecibirGolpe(other.transform);
+        }
+
+        if (other.gameObject.tag == "Salas")
+        {
+            Debug.Log("hufjdn");
+            azul.transform.position = this.transform.position;
+        }
+
+
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if ((other.gameObject.tag == "Enemigos" || other.gameObject.tag == "Bullet") && vulnerable == true)
+        {
+            RecibirGolpe(other.transform);
+        }
+    }
+    
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Intangible"))
@@ -198,7 +165,67 @@ public class Rosa : Jugador
             DevolverStats(other.gameObject);
         }
     }
+    #endregion
 
+    #region Variables de Velocidad y Direccion del jugador
+    private void SetSpeedValue(float speed)
+    {
+        if (speed > 0)
+            anim.SetFloat("Speed", 1);
+
+        if (speed <= 0)
+            anim.SetFloat("Speed", 0);
+    }
+    private void SetDirectionValue(float dir)
+    {
+        if (dir > 0)
+            anim.SetFloat("Direction", 1);
+        if (dir < 0)
+            anim.SetFloat("Direction", -1);
+    }
+    #endregion
+
+    #region Cooldowns habilidades Personaje y Cambio de Estado a Idle
+    IEnumerator corDash()
+    {
+        dashing = true;
+        yield return new WaitForSeconds(cdDash);
+        dashing = false;
+    }
+
+    IEnumerator corrSkill()
+    {
+        skilling = true;
+        yield return new WaitForSeconds(cdSkill);
+        skilling = false;
+    }
+    private void NoHacerNadaMientrasTeDan()
+    {
+        playerState = PlayerState.idle;
+    }
+    #endregion
+
+    /// <summary>
+    /// Personaje dañado, cambio de animacion, de estado.
+    /// </summary>
+    public void RecibirGolpe(Transform other)
+    {
+        anim.SetTrigger("TakeDmg");
+        playerState = PlayerState.damaged;
+        Invoke("NoHacerNadaMientrasTeDan", 0.3f);
+        Danado();
+        Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
+        characterController.Move(dir);
+    }
+    protected override void Rotar()
+    {
+        Vector3 look;
+        look.x = transform.position.x - cam.position.x;
+        look.y = 0;
+        look.z = transform.position.z - cam.position.z;
+        transform.rotation = Quaternion.LookRotation(look);
+    }
+    
     void DevolverStats(GameObject other)
     {
         speed -= other.GetComponent<EscudoHabilidad>().speed;

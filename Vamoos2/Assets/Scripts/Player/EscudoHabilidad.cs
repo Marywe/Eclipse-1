@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Clase para modificar las caracteristicas del jugador cuando se realiza la habilidad del escudo.
 public class EscudoHabilidad : MonoBehaviour
 {
-
     private Rosa r;
     private Azul a;
 

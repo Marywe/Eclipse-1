@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//Otro tipo de enemigo, control general gracias al script Enemigos(herencia).
 public class Roboto : Enemigos
 {
 	public float distanciaAtaque;
@@ -91,6 +92,8 @@ public class Roboto : Enemigos
 		#endregion
 
 	}
+
+    //Damos tiempo para actualizar el estado de enemigo.
 	private void LateUpdate()
 	{
 		if (damaged && currentHealth > 0)
@@ -102,6 +105,9 @@ public class Roboto : Enemigos
 		}
 	}
 
+    /// <summary>
+    /// Ataque del enemigo hacia el jugador, estado de ataque, animación y corrutina de cooldown.
+    /// </summary>
 	void Atacar()
 	{
 		attacking = true;
@@ -109,6 +115,10 @@ public class Roboto : Enemigos
 		StartCoroutine(corAttack());
 	}
 
+    /// <summary>
+    /// Corrutina de Ataque, cooldown y cambio de estado de ataque.
+    /// </summary>
+    /// <returns></returns>
 	private IEnumerator corAttack()
 	{
 		agent.isStopped = true;
@@ -117,6 +127,7 @@ public class Roboto : Enemigos
 		agent.isStopped = false;
 
 	}
+    
 	private void Damaged()
 	{
 		agent.isStopped = false;

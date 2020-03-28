@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Clase herencia
+/// Control de la segunda sala, donde apareceran los jugadores, controlando el numero de enemigos.
+/// </summary>
 public class Sala2 : Salas
 {
     public RoomController roomController;
@@ -21,12 +25,14 @@ public class Sala2 : Salas
     // Update is called once per frame
     void Update()
     {
+        //comprobacion estado sala
         if (Controlador.instance.currentNumEnems == 0) salaClean = true;
         else salaClean = false;
 
         if (salaClean) sePuedePasar = true;
         else sePuedePasar = false;
 
+        //controlar todas las puertas para permitir al jugador que pueda pasar o no
         base.PuertasAbiertas(Controlador.instance.currentNumEnems);
         if (sePuedePasar && salaClean)
         {
@@ -46,6 +52,7 @@ public class Sala2 : Salas
 
     }
 
+    //Cuando el jugador se halle dentro de la sala, estado iluminacion activado, movimiento camara y movimiento personajes
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -63,7 +70,7 @@ public class Sala2 : Salas
            
 
     }
-
+    //Control de la iluminación de la sala, ademas de cambiar el estado de la posicion de sala del jugador
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player")) Controlador.instance.dondeEstas = Controlador.DondeEstas.s2;
@@ -75,7 +82,8 @@ public class Sala2 : Salas
             luces.SetActive(false);
     }
 
-    void InstanciarEnemigos() //Instanciar enemigos en sus posiciones
+    //Instanciar enemigos en sus posiciones
+    void InstanciarEnemigos() 
     {
         Instantiate(prefabEnems[0], puntosSpawn[0].position, puntosSpawn[0].rotation);
         Instantiate(prefabEnems[1], puntosSpawn[1].position, puntosSpawn[1].rotation);

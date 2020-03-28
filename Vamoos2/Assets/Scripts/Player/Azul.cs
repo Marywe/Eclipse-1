@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/// <summary>
-/// Controla movimiento
-/// </summary>
+
+// Controla movimiento del personaje Mistu
 public class Azul : Jugador
 {
     private Vector3 moveDirection = Vector3.zero;
@@ -38,6 +37,10 @@ public class Azul : Jugador
         #endregion
     }
 
+    #region Movimiento
+    /// <summary>
+    /// Movimiento del personaje, obtención de su posicion y modificación de su estado
+    /// </summary>
     private void Movimiento()
     {
         xAxis = Input.GetAxis("HorizontalArrow");
@@ -61,6 +64,63 @@ public class Azul : Jugador
         if(xAxis!=0)
         SetDirectionValue(xAxis);
     }
+    #endregion
+
+    #region Habilidades
+
+    /// <summary>
+    /// Habilidad del personaje.
+    /// Cambio de estado, y realiazacion de la habiliad, desplazamiento de posicion.
+    /// </summary>
+    private void Dash()
+    {
+        if (dashTime <= 0 && playerState == PlayerState.dash)
+        {
+            playerState = PlayerState.idle;
+        }
+        else if (!dashing)
+            dashTime = startDash;
+        else if (dashTime > 0 && playerState == PlayerState.dash)
+        {
+            characterController.Move(dashVector * Time.deltaTime * dashSpeed);
+            dashTime -= Time.deltaTime;
+        }
+
+    }
+
+    /// <summary>
+    /// Habilidad del personaje;
+    /// Cambio de su estado y daño a enemigos.
+    /// </summary>
+    /// <param name="enemiesHit"></param>
+    /// <param name="enemyLayer"></param>
+    /// <param name="radius"></param>
+    public void HabilidadGirar(Collider[] enemiesHit, LayerMask enemyLayer, float radius)
+    {
+        if (skillTime <= 0 && playerState == PlayerState.skill)
+        {
+            playerState = PlayerState.idle;
+        }
+        else if (!skilling) skillTime = startSkill;
+        else if (skillTime > 0 && playerState == PlayerState.skill)
+        {
+            enemiesHit = Physics.OverlapSphere(this.transform.position, radius, enemyLayer);
+
+            foreach (Collider enemy in enemiesHit)
+            {
+                enemy.GetComponent<Enemigos>().TakeDamage(0.1f);
+            }
+            skillTime -= Time.deltaTime;
+        }
+    }
+    #endregion
+    
+    #region Colisiones
+    /// <summary>
+    /// Estado de colisiones y Estados de Vulnerabilidad 
+    /// del jugador con enemigos y elementos que modifiquen su estado de salud
+    /// </summary>
+    /// <param name="other"></param>
     protected void OnTriggerEnter(Collider other)
     {
         if ((other.gameObject.tag == "Enemigos" || other.gameObject.tag == "Bullet") && vulnerable == true)
@@ -75,6 +135,60 @@ public class Azul : Jugador
             RecibirGolpe(other.transform);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Intangible"))
+        {
+            speed -= other.gameObject.GetComponent<EscudoHabilidad>().speed;
+            dano -= other.gameObject.GetComponent<EscudoHabilidad>().dano;
+        }
+    }
+    #endregion
+
+    #region Variables de Velocidad y Direccion del jugador
+
+    private void SetSpeedValue(float speed)
+    {
+        if (speed > 0)
+            anim.SetFloat("Speed", 1);
+
+        if (speed <= 0)
+            anim.SetFloat("Speed", 0);
+    }
+    private void SetDirectionValue(float dir)
+    {
+        if (dir > 0)
+            anim.SetFloat("Direction", 1);
+        if (dir < 0)
+            anim.SetFloat("Direction", -1);
+    }
+    #endregion
+
+    #region Cooldowns habilidades Personaje y Cambio de Estado a Idle
+    IEnumerator corDash()
+    {
+        dashing = true;
+        yield return new WaitForSeconds(cdDash);
+        dashing = false;
+    }
+
+    public IEnumerator corrSkill()
+    {
+        skilling = true;
+        yield return new WaitForSeconds(cdSkill);
+        skilling = false;
+    }
+    private void NoHacerNadaMientrasTeDan()
+    {
+        playerState = PlayerState.idle;
+    }
+    #endregion
+
+    /// <summary>
+    /// Personaje dañado, cambio de animacion, de estado.
+    /// </summary>
+    /// <param name="other"></param>
     public void RecibirGolpe(Transform other)
     {
         anim.SetTrigger("TakeDmg");
@@ -93,82 +207,5 @@ public class Azul : Jugador
         transform.rotation = Quaternion.LookRotation(look);
 
     }
-
-    private void SetSpeedValue(float speed)
-    {
-        if (speed > 0)
-            anim.SetFloat("Speed", 1);
-
-        if (speed <= 0)
-            anim.SetFloat("Speed", 0);
-    }
-    private void SetDirectionValue(float dir)
-    {
-        if (dir > 0)
-            anim.SetFloat("Direction", 1);
-        if (dir < 0)
-            anim.SetFloat("Direction", -1);
-    }
-
-    private void Dash() 
-    {
-        if (dashTime <= 0 && playerState == PlayerState.dash)
-        {
-            playerState = PlayerState.idle;
-        }
-        else if (!dashing)
-            dashTime = startDash;
-        else if (dashTime > 0 && playerState == PlayerState.dash)
-        {
-            characterController.Move(dashVector * Time.deltaTime * dashSpeed);
-            dashTime -= Time.deltaTime;
-        }
-
-    }
-
-    IEnumerator corDash()
-    {
-        dashing = true;
-        yield return new WaitForSeconds(cdDash);
-        dashing = false;
-    }
-
-    public IEnumerator corrSkill()
-    {
-        skilling = true;
-        yield return new WaitForSeconds(cdSkill);
-        skilling = false;
-    }
-    private void NoHacerNadaMientrasTeDan()
-    {
-        playerState = PlayerState.idle;
-    }
-
-    public void HabilidadGirar(Collider[] enemiesHit, LayerMask enemyLayer, float radius)
-    {
-        if (skillTime <= 0 && playerState == PlayerState.skill)
-        {
-            playerState=PlayerState.idle;
-        }
-        else if (!skilling) skillTime = startSkill;
-        else if (skillTime > 0 && playerState == PlayerState.skill)
-        {
-            enemiesHit = Physics.OverlapSphere(this.transform.position, radius, enemyLayer);
-
-            foreach (Collider enemy in enemiesHit)
-            {
-                enemy.GetComponent<Enemigos>().TakeDamage(0.1f);
-            }
-            skillTime -= Time.deltaTime;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Intangible"))
-        {
-            speed -= other.gameObject.GetComponent<EscudoHabilidad>().speed;
-            dano -= other.gameObject.GetComponent<EscudoHabilidad>().dano;
-        }
-    }
+    
 }

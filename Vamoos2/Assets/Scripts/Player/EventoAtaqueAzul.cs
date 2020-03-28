@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Clase para activar los eventos de ataque del personaje Azul(Mistu)
 public class EventoAtaqueAzul : MonoBehaviour
 {
     public ColliderArmaArrow c;

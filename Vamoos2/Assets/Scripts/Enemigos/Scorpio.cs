@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//Enemigo herenciado, como los demas, caracteristicas generales y específicas
 public class Scorpio : Enemigos
 {
     private bool attacking;
@@ -81,6 +82,8 @@ public class Scorpio : Enemigos
         #endregion
 
     }
+
+    //Damos tiempo para actualizar el estado de enemigo.
     private void LateUpdate()
     {
         if (damaged && currentHealth > 0)
@@ -92,6 +95,11 @@ public class Scorpio : Enemigos
             Invoke("Damaged", 0.15f);
         }
     }
+
+    /// <summary>
+    /// Ataque del enemigo hacia el jugador, estado de ataque, 
+    /// animación y corrutinas.
+    /// </summary>
     private void Atacar(Transform target, int n)
     {
         attacking = true;      
@@ -101,6 +109,14 @@ public class Scorpio : Enemigos
         StartCoroutine(corAnimAtacar(target, n));
         Invoke("corDisparo", 3);
     }
+
+    /// <summary>
+    /// Corrutinas de ataque, en funcion de que personaje le ataque.
+    /// Y cooldown del mismo.
+    /// </summary>
+    /// <param name="t"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
     private IEnumerator corAnimAtacar(Transform t, int n)
     {
         yield return new WaitForSeconds(0.15f);
@@ -121,7 +137,10 @@ public class Scorpio : Enemigos
     {
         puedeDisparar = true;
     }
-
+    /// <summary>
+    /// Control de velocidad y direccion
+    /// </summary>
+    /// <param name="speed"></param>
     private void SetSpeedValue(float speed)
     {
         if (speed > 0)

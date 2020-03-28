@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+// Clase para el comportamiento y estadisticas generales de los enemigos.
 public class Enemigos : MonoBehaviour
 {
     protected bool puedeDisparar = true;
@@ -43,7 +44,7 @@ public class Enemigos : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, radioVision);
     }
 
-    //Si vulnabilidad los personajes(su union, la cadena) puede recibir daño.
+    //Si la vulnerabilidad de los personajes(su union, la cadena) puede recibir daño.
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag=="Cadena" && vulnerable==false && shield!=null)
@@ -66,8 +67,8 @@ public class Enemigos : MonoBehaviour
         if(shield!=null)shield.SetActive(true);
 
     }
-
-    //Implementacion del daño y donde lo recibe
+    
+    //Implementacion del daño y como lo recibe
     public void TakeDamage(float dmg)
     {
         damaged = true;
@@ -85,7 +86,10 @@ public class Enemigos : MonoBehaviour
         if (currentHealth <= 0) Morirse();
     }
 
-    
+    /// <summary>
+    /// Cuando se cumpla las condiciones para su muerte, se resetea el numero de enemigos, se destruye su escudo si lo tuviese
+    /// y se procede a destruir.
+    /// </summary>
     private void Morirse()
     {
         --Controlador.instance.currentNumEnems;

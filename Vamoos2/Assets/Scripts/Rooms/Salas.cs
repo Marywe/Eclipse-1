@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Controlador del estado del estado de las puertas en general.
 public class Salas : MonoBehaviour
 {
     //public RoomController roomController;

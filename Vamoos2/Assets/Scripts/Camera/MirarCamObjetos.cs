@@ -14,7 +14,7 @@ public class MirarCamObjetos : MonoBehaviour
         cam = Controlador.instance.cam;
     }
 
-    // Update is called once per frame
+    // con Update, mantenemos actualizado la rotacion de los objeto
     void Update()
     {
         tr.rotation = Quaternion.LookRotation(transform.position - cam.position);

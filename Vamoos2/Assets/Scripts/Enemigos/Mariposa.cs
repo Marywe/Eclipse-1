@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//Script para uno de los enmigos que hay dentro del juego, creando todo lo necesario para su
+//funcionamiento y comportamiento dentro del juego y con relación al jugador y demas enemigos(herencia de Enemigos)
 public class Mariposa : Enemigos
 {
     SpriteRenderer sr;
@@ -25,7 +27,7 @@ public class Mariposa : Enemigos
     void Update()
     {
         //base.MirarObjetivo(cam);
-        #region Seguimiento
+        #region Seguimiento del enemigo por el mapa
 
         Vector3 vectorMov1 = new Vector3(objetivo1.position.x - this.transform.position.x, objetivo1.position.y - this.transform.position.y, objetivo1.position.z - this.transform.position.z);
         Vector3 vectorMov2 = new Vector3(objetivo2.position.x - this.transform.position.x, objetivo2.position.y - this.transform.position.y, objetivo2.position.z - this.transform.position.z); ;
@@ -59,6 +61,8 @@ public class Mariposa : Enemigos
         }
         #endregion
     }
+
+    //Usamos una funcion que tarde mas en realizarse para dar tiempo a que pueda cambiar el estado del enemigo.
     private void LateUpdate()
     {
         if (damaged && currentHealth > 0)
@@ -71,6 +75,7 @@ public class Mariposa : Enemigos
         }
     }
 
+    //cambio de estados durante el daño del enemigo
     private void Damaged()
     {
         agent.isStopped = false;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-
+//Junto con los demas scripts de cameras, creamos un movimiento de azote a la camara.
 public class CameraShake : MonoBehaviour
 {
     public Transform camTransform;
@@ -15,6 +15,7 @@ public class CameraShake : MonoBehaviour
 
     Vector3 originalPos;
 
+    //Comprobamos si tenemos una camara en escena y modificamos su posicion si asi es necesario.
     void Awake()
     {
         if (camTransform == null)
@@ -26,12 +27,18 @@ public class CameraShake : MonoBehaviour
         originalPos = camTransform.localPosition;
     }
 
+    //Funcion relacionada con los presonajes, es llamada por el script Jugador cuando recibe daño.
     public static void ShakeOnce(float lenght, float strength)
     {
         shakeDuration = lenght;
         shakeAmount = strength;
     }
 
+    /// <summary>
+    /// Comprobacion de los temblores de la camara, hacer uso de transiciones para 
+    /// mover la camara de posicion en funcion a la localizacion del jugador
+    /// </summary>
+    
     void Update()
     {
         

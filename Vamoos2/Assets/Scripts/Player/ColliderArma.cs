@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Script para los ataques 
 public class ColliderArma : MonoBehaviour
 {
     public LayerMask enemyLayer;
@@ -51,11 +52,14 @@ public class ColliderArma : MonoBehaviour
 
     }
 
+    //Para visualizar los bordes del collider
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, cubeSz);
     }
 
+    #region Tipos de Ataque
+    //Golpe normal, ataque basico hacia un enemigo
     private void BasicAttack()
     {
         if (Time.time - lastButTime > maxComboDelay)
@@ -86,18 +90,6 @@ public class ColliderArma : MonoBehaviour
         }
         
     }
-
-    public void SetBasicAttack(float f)
-    {
-        anim.SetFloat("AttackN", f);
-    }
-    private IEnumerator corBasicAtt()
-    {
-        puedeAtacar = false;
-        yield return new WaitForSeconds(r.cdbasicAttack);
-        puedeAtacar = true;
-    }
-
     public void FtAt()
     {
         if (nBut >= 2)
@@ -109,7 +101,7 @@ public class ColliderArma : MonoBehaviour
             //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                 enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
+                enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
             }
 
         }
@@ -119,7 +111,7 @@ public class ColliderArma : MonoBehaviour
             anim.SetBool("Attack", false);
             nBut = 0;
         }
-            
+
     }
     public void SecAt()
     {
@@ -127,10 +119,10 @@ public class ColliderArma : MonoBehaviour
         {
             SetBasicAttack(1f);
             enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2, Quaternion.identity, enemyLayer);
-//  enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
+            //  enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-               enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
+                enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
             }
 
         }
@@ -147,4 +139,20 @@ public class ColliderArma : MonoBehaviour
         StartCoroutine(corBasicAtt());
         nBut = 0;
     }
+    #endregion
+
+    //Establecer la animacion correspondiente
+    public void SetBasicAttack(float f)
+    {
+        anim.SetFloat("AttackN", f);
+    }
+    //Cooldown del ataque
+    private IEnumerator corBasicAtt()
+    {
+        puedeAtacar = false;
+        yield return new WaitForSeconds(r.cdbasicAttack);
+        puedeAtacar = true;
+    }
+    
+    
 }

@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script encargado del comportamiento animado de las puertas de las salas del juego.
+/// Haciendo uso de las colisiones, detectar si el jugador se encuentra cerca de una puerta,
+/// activando o no la animacion de la misma.
+/// </summary>
 public class Puerta : MonoBehaviour
 {
     Animator anim;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Al igua que ColliderArma, pero para aquellos que sean a distancia, como proyectiles.
 public class ColliderArmaArrow : MonoBehaviour
 {
     public LayerMask enemyLayer;
@@ -62,12 +63,14 @@ public class ColliderArmaArrow : MonoBehaviour
         if (puedeAtacar) BasicAttack();
     }
 
+    //Para poder ver los colliders
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(base.transform.position, cubeSz);
         Gizmos.DrawWireSphere(base.transform.position, radius);
     }
 
+    #region Tipos de Ataque a Distancia
     private void BasicAttack()
     {
         if (Time.time - lastButTime > maxComboDelay)
@@ -97,18 +100,7 @@ public class ColliderArmaArrow : MonoBehaviour
             nBut = Mathf.Clamp(nBut, 0, 3);
         }
 
-    }
-
-    public void SetBasicAttack(float f)
-    {
-        anim.SetFloat("AttackN", f);
-    }
-    private IEnumerator corBasicAtt()
-    {
-        puedeAtacar = false;
-        yield return new WaitForSeconds(a.cdbasicAttack);
-        puedeAtacar = true;
-    }
+    }       
 
     public void FtAt()
     {
@@ -157,5 +149,17 @@ public class ColliderArmaArrow : MonoBehaviour
         anim.SetBool("Attack", false);
         StartCoroutine(corBasicAtt());
         nBut = 0;
+    }
+#endregion
+
+    public void SetBasicAttack(float f)
+    {
+        anim.SetFloat("AttackN", f);
+    }
+    private IEnumerator corBasicAtt()
+    {
+        puedeAtacar = false;
+        yield return new WaitForSeconds(a.cdbasicAttack);
+        puedeAtacar = true;
     }
 }

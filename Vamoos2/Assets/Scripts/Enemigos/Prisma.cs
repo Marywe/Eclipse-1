@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+//Al igual que la Mariposa, el script contiene unas definiciones generales validas para todos
+//los enemigos(herencia de Enemigos), junto con sus características especificas.
 public class Prisma : Enemigos
 {
 
@@ -99,6 +101,7 @@ public class Prisma : Enemigos
 
     }
 
+    //Usamos una funcion que tarde mas en realizarse para dar tiempo a que pueda cambiar el estado del enemigo.
     private void LateUpdate()
     {
         if (damaged && currentHealth > 0)
@@ -110,6 +113,10 @@ public class Prisma : Enemigos
             Invoke("Damaged", 0.15f);
         }
     }
+    /// <summary>
+    /// Control de velocidad y direccion de este tipo de enemigo
+    /// </summary>
+    /// <param name="speed"></param>
     private void SetSpeedValue(float speed)
     {
         if(speed > 0)
@@ -127,12 +134,14 @@ public class Prisma : Enemigos
 
     }
 
+    //cambio de estados durante el daño del enemigo
     private void Damaged()
     {
         agent.isStopped = false;
         damaged = false;
     }
 
+    //Instanciamos el ataque para el jugador, dándole la posicion de su objetivo
     public void Shoot(Transform target)
     {
         animE.SetTrigger("Attack");
@@ -142,12 +151,16 @@ public class Prisma : Enemigos
         Invoke("corDisparo", 2);
     }
 
+    //
     private void corDisparo()
     {      
         puedeDisparar = true;
         SetSpeedValue(0);
     }
 
+    //Instancia del disparo para el ataque de este enemigo sobre el jugador.
+    //Cooldown de ataque, así como la comprobación de su estado despues de un tiempo, para eviar
+    //la generacion de un objeto cuando ya no deberia.
     IEnumerator InstanciarDisparo(Transform target)
     {
         yield return new WaitForSeconds(0.8f);

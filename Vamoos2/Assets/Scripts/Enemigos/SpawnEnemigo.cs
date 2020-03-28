@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Generador de enemigos, control de la cantidad de enemigos
 public class SpawnEnemigo : MonoBehaviour
 {
     [SerializeField]
@@ -16,7 +17,7 @@ public class SpawnEnemigo : MonoBehaviour
     {
         Spawnear();
     }
-
+    //Mediante una corrutina controlamos el numeros de prefabs de enemigos que generamos
     private void Spawnear()
     {
         if (sePuedeSpawnear)
@@ -27,6 +28,8 @@ public class SpawnEnemigo : MonoBehaviour
             StartCoroutine(CooldownEnemigos());
         }
     }
+
+    //tras un tiempo, cambiamos la variable
     private IEnumerator CooldownEnemigos()
     {        
         yield return new WaitForSeconds(tiempoCooldown);

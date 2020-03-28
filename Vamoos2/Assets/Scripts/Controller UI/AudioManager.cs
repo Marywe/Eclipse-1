@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     //Como el resto de funciones a continuacion, son todas funciones que crearan los sources correspondientes cuando sea oportuno, así como 
-    // que indicamos a que parametro del audio mixer correspondem, tambien si queremos que se repitan.
+    // que indicamos a que parametro del audio mixer corresponden, tambien si queremos que se repitan.
     void ReproducirMainTheme()
     {
         MiAudioManager.FuenteMaster.clip = MiAudioManager.PistaDeAudio;
