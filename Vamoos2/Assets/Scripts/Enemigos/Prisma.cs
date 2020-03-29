@@ -11,7 +11,6 @@ public class Prisma : Enemigos
     [SerializeField]
     GameObject disparo;
     Vector3 vD;
-    public Vector3 look;
 
 
     // Start is called before the first frame update

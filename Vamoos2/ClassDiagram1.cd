@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CameraShake">
+    <Position X="16.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAAIAIAAAAACAAAAAAAAAAAEIAAAAAAQAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Camera\CameraShake.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MirarCamara">
+    <Position X="14.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAACAAAAAAAAAAAAAAAAAQAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\Camera\MirarCamara.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MirarCamObjetos">
+    <Position X="18.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAACAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Camera\MirarCamObjetos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Controlador">
+    <Position X="8.75" Y="6" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Controlador.DondeEstas" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Controlador.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIABAAAEAAAARAQAAAACIAAABJAEACAAACAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Controlador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AudioManager">
+    <Position X="6.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAhAACAAAQAGAAEQAAAAAAgIAAQCAAACAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Controller UI\AudioManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuController">
+    <Position X="10.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAUAAAAAACAAAACBAIAAAAAAAAACAIAAIIAgEAQIAAA=</HashCode>
+      <FileName>Assets\Scripts\Controller UI\MenuController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PauseMenu">
+    <Position X="12.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAgAAAAAAAAAAAAAAIAAAAAAAAAAABAAAAAIQIAE=</HashCode>
+      <FileName>Assets\Scripts\Controller UI\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Disparo">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemigos\Disparo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemigos">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAIAAQABAAACDAAAAAAkAAgAQAAQgFAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemigos\Enemigos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mariposa">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAIAAAAAAAAgAAAAAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemigos\Mariposa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NearbyEnemy" Collapsed="true">
+    <Position X="24" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemigos\NearbyEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prisma">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAAGIABAAAAAEAIAAAAIAAAAAAAAAIEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemigos\Prisma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Roboto">
+    <Position X="2.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAABACAAAAAAAAAAIAACAAAAAgAAAACIgAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemigos\Roboto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scorpio">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAABAGIAAgAAAAAAIAACAAAAAAAAAACIEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemigos\Scorpio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azul">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAgGABABCBAAQAAACAAAQAAIAgUAAAEAAABAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Azul.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ColliderArma">
+    <Position X="16.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQEAACAgDBAABBgAEgAQCAAAAgAAAAAAQABAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\ColliderArma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ColliderArmaArrow">
+    <Position X="18.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQEAACAiDBAABBgAEgAQCAAAAgAAAAgAQAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\ColliderArmaArrow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EscudoHabilidad">
+    <Position X="21.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAgQAABAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\EscudoHabilidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventoAtaqueAzul">
+    <Position X="11" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIIAAAAAAAAAAAAAAACAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\Player\EventoAtaqueAzul.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventoAtaqueRosa">
+    <Position X="14.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIIAAAAAAAABAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\Player\EventoAtaqueRosa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jugador">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Jugador.PlayerState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Player\Jugador.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAEBIgAAAAAAAAAABKSwAIkAAQgAQAAAQAwAAaiDAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Jugador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Linea">
+    <Position X="20.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAACAggAAAAAAQAEAAAgQAAAAMQQAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Linea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Modificador">
+    <Position X="20.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAACAAAAAAIAAAAAACAAAAAAgQQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\Modificador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rosa">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAgAgGAAABCRAAQAAACAAAQAAIAgUAAAEIAABBA=</HashCode>
+      <FileName>Assets\Scripts\Player\Rosa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chip">
+    <Position X="1" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAAAACAAAAAAAAAgAAAAAAAQAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Rooms\Chip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Puerta">
+    <Position X="6.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAABAAAAAAAAAAQAAAAIAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Rooms\Puerta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomController">
+    <Position X="3" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABCAAAAAAAAAAAAAAAAAAgAAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Rooms\RoomController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sala1">
+    <Position X="0.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAIAAAAAAAAAAAAAAAAIEAQAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Rooms\Sala1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sala2">
+    <Position X="4.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACACJBAAAAAEAAAAAAAAAIEAQAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Rooms\Sala2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Salas">
+    <Position X="2.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAgAAAABBAAgA=</HashCode>
+      <FileName>Assets\Scripts\Rooms\Salas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
