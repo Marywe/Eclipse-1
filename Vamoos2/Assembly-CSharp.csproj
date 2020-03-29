@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{05A6E693-3C9D-19D0-B5B4-0ADF29726B5D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -148,7 +147,6 @@
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="ClassDiagram2.cd" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
