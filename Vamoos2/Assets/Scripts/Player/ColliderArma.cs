@@ -17,6 +17,8 @@ public class ColliderArma : MonoBehaviour
     private Vector3 posicion;
     private bool puedeAtacar;
     private Rosa r;
+    [SerializeField]
+    private float danioAdicional = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -122,7 +124,7 @@ public class ColliderArma : MonoBehaviour
             //  enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
+                enemy.GetComponent<Enemigos>().TakeDamage(r.dano + danioAdicional);
             }
 
         }

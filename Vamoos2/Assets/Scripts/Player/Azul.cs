@@ -142,6 +142,7 @@ public class Azul : Jugador
         {
             speed -= other.gameObject.GetComponent<EscudoHabilidad>().speed;
             dano -= other.gameObject.GetComponent<EscudoHabilidad>().dano;
+            onShield = false;
         }
     }
     #endregion

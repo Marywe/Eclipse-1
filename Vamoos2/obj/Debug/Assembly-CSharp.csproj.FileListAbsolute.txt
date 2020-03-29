@@ -1,2 +1,0 @@
-D:\PROYECTO\Eclipse 1\Vamoos2\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
-D:\PROYECTO\Eclipse 1\Vamoos2\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

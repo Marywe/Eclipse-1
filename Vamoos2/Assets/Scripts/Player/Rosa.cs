@@ -95,12 +95,13 @@ public class Rosa : Jugador
                 DevolverStats(escudoTemp);
             }
 
+            onShield = false;
             playerState = PlayerState.idle;
             escudoTemp.SetActive(false);
         }
         else if (!skilling)
         {
-            
+            escudoTemp.SetActive(false);
             escudoTemp.transform.position = transform.position;
             skillTime = startSkill;
         }

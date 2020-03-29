@@ -26,12 +26,23 @@ public class Sala1 : Salas
     //Cuando los jugadores completen derrotar a los enemigos, podrán activar el evento de pasar de sala.
     void Update()
     {
+       
+        if (salaClean) sePuedePasar = true;
+        else sePuedePasar = false;
+
         base.PuertasAbiertas(Controlador.instance.currentNumEnems);
         if (sePuedePasar && salaClean)
         {
             for (int i = 0; i < numPuertas; i++)
             {
-                doors[i].GetComponent<Animator>().SetBool("SePuedePasar", sePuedePasar);
+                doors[i].GetComponent<Animator>().SetBool("SePuedePasar", true);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < numPuertas; i++)
+            {
+                doors[i].GetComponent<Animator>().SetBool("SePuedePasar", false);
             }
         }
 

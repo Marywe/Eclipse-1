@@ -27,7 +27,7 @@ public class Chip : MonoBehaviour
     //Cuando se alcance el numero especifico de chips, modificara la variablee de la puerta para que el jugador pueda pasar
     private void Update()
     {
-        if (Controlador.instance.chips == 4)
+        if (Controlador.instance.chips == 3)
         {
             PuertaGrandeAbierta = true;
         }

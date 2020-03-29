@@ -64,7 +64,8 @@ public class Sala2 : Salas
 
             if (other.gameObject.GetComponent<Azul>() != null)
             {
-
+                Controlador.instance.objetivo2.position = other.transform.position;
+                Debug.Log("TP");
             }
         }
            
