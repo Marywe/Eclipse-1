@@ -22,7 +22,7 @@ public class ColliderArmaArrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cubeSz.x = 2.5f;
+        cubeSz.x = 3.5f;
         cubeSz.y = 3;
         cubeSz.z = 3;
         posicion.x =0.7f;

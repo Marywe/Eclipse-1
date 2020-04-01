@@ -9,7 +9,7 @@ public class ColliderArma : MonoBehaviour
     Collider[] enemiesHit;
     [SerializeField]
     private Animator anim;
-    private Vector3 cubeSz;
+    public Vector3 cubeSz;
 
     float lastButTime;
     public float maxComboDelay = 0.9f;
@@ -22,7 +22,7 @@ public class ColliderArma : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cubeSz.x = 2.5f;
+        cubeSz.x = 3.5f;
         cubeSz.y = 3;
         cubeSz.z = 3;
         posicion.x = 0.7f;

@@ -68,18 +68,25 @@ public class Mariposa : Enemigos
         if (damaged && currentHealth > 0)
         {
             //Animasao
-            animE.SetTrigger("TakeDmg");
-
+            //animE.SetTrigger("TakeDmg");
+            animE.SetBool("Damaged", damaged);
             agent.isStopped = true;
-            Invoke("Damaged", 0.15f);
+            Invoke("Damaged", 0.1f);
+            Invoke("Stop", 1f);
         }
     }
 
     //cambio de estados durante el daño del enemigo
     private void Damaged()
     {
-        agent.isStopped = false;
+        
         damaged = false;
+        animE.SetBool("Damaged", damaged);
+    }
+
+    private void Stop()
+    {
+        agent.isStopped = false;
     }
 
 }

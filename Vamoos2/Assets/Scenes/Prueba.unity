@@ -992,7 +992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258613451}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1221305109}
@@ -1014,6 +1014,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   anim: {fileID: 92467406}
+  cubeSz: {x: 3.5, y: 3, z: 3}
   maxComboDelay: 1.3
   danioAdicional: 0.5
 --- !u!1 &261127159
@@ -1490,7 +1491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &465005487
 Transform:
   m_ObjectHideFlags: 0
@@ -2277,7 +2278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &980197347
 Transform:
   m_ObjectHideFlags: 0
@@ -4563,7 +4564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1716091474
 Transform:
   m_ObjectHideFlags: 0
@@ -5124,7 +5125,7 @@ MonoBehaviour:
   - {fileID: 0}
   ptoCamPuerta: {fileID: 0}
   doorAnim: {fileID: 0}
-  currentNumEnems: 2
+  currentNumEnems: 0
   objetivo1: {fileID: 116925819}
   objetivo2: {fileID: 1221305109}
   dondeEstas: 0
@@ -11884,7 +11885,7 @@ PrefabInstance:
     - target: {fileID: 4440716780229288737, guid: 6f40096d2ac5a294aae9d759f08dcbfb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -224.8
+      value: -219.66
       objectReference: {fileID: 0}
     - target: {fileID: 4440716780229288737, guid: 6f40096d2ac5a294aae9d759f08dcbfb,
         type: 3}
@@ -11894,7 +11895,7 @@ PrefabInstance:
     - target: {fileID: 4440716780229288737, guid: 6f40096d2ac5a294aae9d759f08dcbfb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -225.8
+      value: -226.91
       objectReference: {fileID: 0}
     - target: {fileID: 4440716780229288737, guid: 6f40096d2ac5a294aae9d759f08dcbfb,
         type: 3}
@@ -15223,6 +15224,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Estrella
+      objectReference: {fileID: 0}
+    - target: {fileID: 2493074841104101478, guid: 3f70470fc4ac2204c9cfe485c9d27457,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2493074841104101479, guid: 3f70470fc4ac2204c9cfe485c9d27457,
         type: 3}
@@ -19332,7 +19338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4584479880056037672}
   m_LocalRotation: {x: -0.0017820183, y: 0.0013652765, z: -0.0019447437, w: 0.9999956}
-  m_LocalPosition: {x: 86.38, y: -2.43, z: -15.51}
+  m_LocalPosition: {x: 77.22, y: -2.38, z: -11.87}
   m_LocalScale: {x: 0.45371023, y: 0.45371035, z: 0.4537103}
   m_Children:
   - {fileID: 2134315507}
@@ -22200,7 +22206,7 @@ PrefabInstance:
     - target: {fileID: 5790963040136010585, guid: 3df7540cb52351a4b8452dcdc19ceac4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -229.56
+      value: -231.34
       objectReference: {fileID: 0}
     - target: {fileID: 5790963040136010585, guid: 3df7540cb52351a4b8452dcdc19ceac4,
         type: 3}
@@ -22245,7 +22251,7 @@ PrefabInstance:
     - target: {fileID: 5790963040136010585, guid: 3df7540cb52351a4b8452dcdc19ceac4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -219.95
+      value: -215.55
       objectReference: {fileID: 0}
     - target: {fileID: 5790963040136010585, guid: 3df7540cb52351a4b8452dcdc19ceac4,
         type: 3}
