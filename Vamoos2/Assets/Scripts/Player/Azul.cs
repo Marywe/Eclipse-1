@@ -8,6 +8,8 @@ public class Azul : Jugador
     private Vector3 moveDirection = Vector3.zero;
     public PlayerState playerState;
 
+    public GameObject rosa;
+
 
     void Start()
     {
@@ -127,6 +129,20 @@ public class Azul : Jugador
         {
             RecibirGolpe(other.transform);
         }
+
+        if (other.gameObject.tag == "Salas" && !tp)
+        {
+            Rosa r = rosa.GetComponent<Rosa>();
+            r.tp = true;
+            r.characterController.enabled = false;
+            rosa.transform.position = this.transform.position + new Vector3(1, 0, 1); //variable según la sala en la q estas
+            r.characterController.enabled = true;
+            Invoke("TP", 0.2f);
+        }
+    }
+    void TP()
+    {
+        rosa.GetComponent<Rosa>().tp = false;
     }
     private void OnTriggerStay(Collider other)
     {
@@ -134,6 +150,7 @@ public class Azul : Jugador
         {
             RecibirGolpe(other.transform);
         }
+       
     }
 
     private void OnTriggerExit(Collider other)

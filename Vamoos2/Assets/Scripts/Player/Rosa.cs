@@ -143,13 +143,21 @@ public class Rosa : Jugador
             RecibirGolpe(other.transform);
         }
 
-        if (other.gameObject.tag == "Salas")
+        if (other.gameObject.tag == "Salas" && !tp) //Para que no se tp los dos según entre cada uno y solo lo haga 1
         {
-            Debug.Log("hufjdn");
-            azul.transform.position = this.transform.position;
+            Azul a = azul.GetComponent<Azul>();
+            a.tp = true;
+            a.characterController.enabled = false;
+            azul.transform.position = this.transform.position + new Vector3(2, 0, 2); //variable según la sala en la q estas
+            a.characterController.enabled = true;
+            Invoke("TP", 0.2f);
         }
 
 
+    }
+    void TP()
+    {
+        azul.GetComponent<Azul>().tp = false;
     }
     private void OnTriggerStay(Collider other)
     {

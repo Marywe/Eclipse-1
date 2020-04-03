@@ -598,9 +598,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   distKnockback: 200
+  tp: 0
   tiempoVul: 5
   dano: 1
   cam: {fileID: 963194228}
+  characterController: {fileID: 0}
   anim: {fileID: 63166835}
   line_sc: {fileID: 615767996478704514}
   cdbasicAttack: 0.2
@@ -611,6 +613,7 @@ MonoBehaviour:
   cdSkill: 13
   onShield: 0
   playerState: 0
+  rosa: {fileID: 1221305102}
 --- !u!143 &116925823
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3013,9 +3016,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   distKnockback: 200
+  tp: 0
   tiempoVul: 5
   dano: 1
   cam: {fileID: 963194228}
+  characterController: {fileID: 0}
   anim: {fileID: 92467406}
   line_sc: {fileID: 615767996478704514}
   cdbasicAttack: 0.2
@@ -3604,7 +3609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350235707}
   m_LocalRotation: {x: -1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: 4.88, y: 21.859076, z: -4.7}
+  m_LocalPosition: {x: 3.81, y: 21.859076, z: -4.7}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 149941367069633753}
@@ -3964,7 +3969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580655483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.5, y: 5.8499613, z: 1.3444214}
+  m_LocalPosition: {x: 58.4, y: 5.6, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 154095264}
@@ -4380,7 +4385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669227037}
   m_LocalRotation: {x: -1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: -14.14, y: 21.859076, z: -4.7}
+  m_LocalPosition: {x: -14.62, y: 21.859076, z: -4.7}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 149941367069633753}
@@ -12068,6 +12073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3229993826639498427}
   - component: {fileID: 1911891967036079787}
+  - component: {fileID: 1911891967036079785}
   m_Layer: 0
   m_Name: puerta (2)
   m_TagString: Untagged
@@ -12075,6 +12081,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!65 &1911891967036079785
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911891967036079784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.12087, y: 24.6, z: 40.34}
+  m_Center: {x: -71.6696, y: 9.200001, z: -19.630001}
 --- !u!95 &1911891967036079787
 Animator:
   serializedVersion: 3
@@ -17126,6 +17145,7 @@ GameObject:
   - component: {fileID: 5178309729600629186}
   - component: {fileID: 3858165963357806442}
   - component: {fileID: 5512283210944705009}
+  - component: {fileID: 3839880355228910598}
   m_Layer: 0
   m_Name: Object001
   m_TagString: Untagged
@@ -17133,6 +17153,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &3839880355228910598
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3839880355228910597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2109988, y: 23.9688, z: 14.219406}
+  m_Center: {x: -67.34595, y: 11.9844, z: -26.855076}
 --- !u!1 &3839880355776544862
 GameObject:
   m_ObjectHideFlags: 0
@@ -19598,6 +19631,7 @@ GameObject:
   - component: {fileID: 8396350218698138868}
   - component: {fileID: 3311246106997378326}
   - component: {fileID: 2640351741366600292}
+  - component: {fileID: 4689539464026389287}
   m_Layer: 0
   m_Name: Object002
   m_TagString: Untagged
@@ -19605,6 +19639,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4689539464026389287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689539464026389286}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2109988, y: 23.9688, z: 14.219403}
+  m_Center: {x: -67.34595, y: 11.9844, z: -12.635673}
 --- !u!4 &4726908792137505075
 Transform:
   m_ObjectHideFlags: 0

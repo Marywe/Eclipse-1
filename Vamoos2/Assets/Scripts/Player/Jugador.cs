@@ -14,7 +14,7 @@ public class Jugador : MonoBehaviour
     protected int distKnockback;
 
     protected bool vulnerable = true;
-    
+    public bool tp = false;
     [SerializeField]
     float tiempoVul = 2f;
     protected GameObject sprites;
@@ -23,12 +23,14 @@ public class Jugador : MonoBehaviour
     [Header("Componentes")]
     [SerializeField]
     protected Transform cam = null;
-    protected CharacterController characterController;
+    public CharacterController characterController;
     public Animator anim;
 
     protected float xAxis;
     protected float zAxis;
     public Linea line_sc;
+
+
 
     /// <summary>
     /// Maquina de Estados para los personajes, en este caso para los estados en los que pueden encontrarse
