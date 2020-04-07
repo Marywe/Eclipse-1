@@ -9,7 +9,7 @@ public class Roboto : Enemigos
 	public float distanciaAtaque;
 	SpriteRenderer sr;
 	private bool attacking;
-
+	public Vector3 attackSz;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -27,6 +27,7 @@ public class Roboto : Enemigos
 	// Update is called once per frame
 	void Update()
 	{
+		
 		//base.MirarObjetivo(cam);
 		#region Seguimiento
 		//Con esto podemos modificar 
@@ -55,6 +56,9 @@ public class Roboto : Enemigos
         }
 		#endregion
 		#region Anims
+
+		if(mov==Vector3.zero) animE.SetBool("Moving", false);
+
 		if ((radioVision < distancia1 && radioVision < distancia2) || agent.stoppingDistance >= distancia1 || agent.stoppingDistance >= distancia2)
 		{
 			animE.SetBool("Moving", false);
@@ -122,6 +126,9 @@ public class Roboto : Enemigos
 	private IEnumerator corAttack()
 	{
 		agent.isStopped = true;
+		yield return new WaitForSeconds(0.3f);
+
+
 		yield return new WaitForSeconds(3);
 		attacking = false;
 		agent.isStopped = false;
@@ -133,4 +140,6 @@ public class Roboto : Enemigos
 		agent.isStopped = false;
 		damaged = false;
 	}
+
+
 }

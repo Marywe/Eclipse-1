@@ -83,7 +83,7 @@ public class Jugador : MonoBehaviour
     /// </summary>
     public void Danado()
     {
-        CameraShake.ShakeOnce(0.4f, 0.4f);
+        CameraShake.ShakeOnce(0.5f, 0.5f);
         line_sc.RecibirDano();
         StartCoroutine(CorVulnerabilidad());
     }

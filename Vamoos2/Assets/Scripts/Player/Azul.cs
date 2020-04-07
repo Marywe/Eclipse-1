@@ -125,7 +125,7 @@ public class Azul : Jugador
     /// <param name="other"></param>
     protected void OnTriggerEnter(Collider other)
     {
-        if ((other.gameObject.tag == "Enemigos" || other.gameObject.tag == "Bullet") && vulnerable == true)
+        if (((other.gameObject.tag == "Enemigos" && other.GetComponent<Mariposa>() != null) || other.gameObject.tag == "Bullet") && vulnerable == true)
         {
             RecibirGolpe(other.transform);
         }
@@ -137,7 +137,7 @@ public class Azul : Jugador
             r.characterController.enabled = false;
             rosa.transform.position = this.transform.position + new Vector3(1, 0, 1); //variable según la sala en la q estas
             r.characterController.enabled = true;
-            Invoke("TP", 0.2f);
+            Invoke("TP", 0.1f);
         }
     }
     void TP()
@@ -209,12 +209,15 @@ public class Azul : Jugador
     /// <param name="other"></param>
     public void RecibirGolpe(Transform other)
     {
-        anim.SetTrigger("TakeDmg");
-        playerState = PlayerState.damaged;
-        Invoke("NoHacerNadaMientrasTeDan", 0.3f);
-        Danado();
-        Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
-        characterController.Move(dir);
+        if (vulnerable)
+        {
+            anim.SetTrigger("TakeDmg");
+            playerState = PlayerState.damaged;
+            Invoke("NoHacerNadaMientrasTeDan", 0.3f);
+            Danado();
+            Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
+            characterController.Move(dir);
+        }
     }
 
 
