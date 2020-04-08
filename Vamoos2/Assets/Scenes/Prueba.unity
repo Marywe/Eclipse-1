@@ -953,9 +953,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1122969664}
   m_sendNavigationEvents: 1
-  m_DragThreshold: 10
+  m_DragThreshold: 200
 --- !u!4 &255020926
 Transform:
   m_ObjectHideFlags: 0
@@ -1138,7 +1138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -253.14273, y: 230.8009}
+  m_AnchoredPosition: {x: 99.75729, y: 97.900894}
   m_SizeDelta: {x: 76.7, y: 43.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301147023
@@ -1504,7 +1504,7 @@ Transform:
   m_GameObject: {fileID: 465005486}
   m_LocalRotation: {x: -0.0017820183, y: 0.0013652765, z: -0.0019447437, w: 0.9999956}
   m_LocalPosition: {x: 55.09, y: -0.76, z: -13.72}
-  m_LocalScale: {x: 0.45371023, y: 0.45371035, z: 0.4537103}
+  m_LocalScale: {x: 0.68874, y: 0.68874, z: 0.68874}
   m_Children:
   - {fileID: 2022124108}
   - {fileID: 567878030}
@@ -1589,7 +1589,8 @@ MonoBehaviour:
   maxHealth: 6
   radioVision: 20
   distanciaAtaque: 5
-  attackSz: {x: 0, y: 0, z: 0}
+  attackSz: {x: 2.8, y: 1.28, z: 1.5}
+  attackPos: {x: 0, y: 0, z: 0}
 --- !u!224 &469322089 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2505695881613730069, guid: 6e6236ea0418cf242858b79f29b03e24,
@@ -2759,7 +2760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 33}
+  m_AnchoredPosition: {x: -1, y: -57}
   m_SizeDelta: {x: 175.6, y: 61.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1122969666
@@ -3131,8 +3132,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -433.18372, y: 230.8009}
-  m_SizeDelta: {x: 180.9, y: 43.5}
+  m_AnchoredPosition: {x: -84, y: 97}
+  m_SizeDelta: {x: 106.8, y: 44.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1225491005
 MonoBehaviour:
@@ -4570,7 +4571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1716091474
 Transform:
   m_ObjectHideFlags: 0
@@ -19308,7 +19309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &4584479880056037673
 MonoBehaviour:
   m_ObjectHideFlags: 0

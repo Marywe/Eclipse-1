@@ -23,7 +23,7 @@ public class PauseMenu : MonoBehaviour
     //Funcion para el uso de la tecla Escape para abrir el menu
     private void Update() 
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 7"))
         {           
             if (GamePaused)
             {

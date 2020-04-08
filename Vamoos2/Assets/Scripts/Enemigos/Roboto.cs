@@ -10,6 +10,7 @@ public class Roboto : Enemigos
 	SpriteRenderer sr;
 	private bool attacking;
 	public Vector3 attackSz;
+	public Vector3 attackPos;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -27,7 +28,19 @@ public class Roboto : Enemigos
 	// Update is called once per frame
 	void Update()
 	{
-		
+
+		if (!sr.flipX)
+		{
+			attackPos = transform.position + (Vector3.right);
+			
+		}
+		else
+		{
+			attackPos = (transform.position + (-Vector3.right));
+
+		}
+
+
 		//base.MirarObjetivo(cam);
 		#region Seguimiento
 		//Con esto podemos modificar 
@@ -73,7 +86,7 @@ public class Roboto : Enemigos
 		else if ((radioVision > distancia1 || radioVision > distancia2) && mov.x < 0)
 		{
 			animE.SetBool("Moving", true);
-			sr.flipX = true;
+			sr.flipX = true; //izq
 		}
 		#endregion
 		#region Ataque
@@ -126,12 +139,19 @@ public class Roboto : Enemigos
 	private IEnumerator corAttack()
 	{
 		agent.isStopped = true;
-		yield return new WaitForSeconds(0.3f);
-
-
+		animE.SetBool("Moving", false);
+		yield return new WaitForSeconds(1.6f);
+		Collider[] hit = Physics.OverlapBox(attackPos, attackSz, transform.rotation);
+		
+		foreach(Collider colPJ in hit)
+		{
+			if (colPJ.gameObject.GetComponent<Azul>() != null) colPJ.gameObject.GetComponent<Azul>().RecibirGolpe(transform);
+			else if(colPJ.gameObject.GetComponent<Rosa>() != null) colPJ.gameObject.GetComponent<Rosa>().RecibirGolpe(transform);
+		}
+		agent.isStopped = false;
 		yield return new WaitForSeconds(3);
 		attacking = false;
-		agent.isStopped = false;
+		
 
 	}
     
@@ -141,5 +161,8 @@ public class Roboto : Enemigos
 		damaged = false;
 	}
 
-
+	private void OnDrawGizmos()
+	{
+		Gizmos.DrawWireCube(attackPos, attackSz);
+	}
 }
