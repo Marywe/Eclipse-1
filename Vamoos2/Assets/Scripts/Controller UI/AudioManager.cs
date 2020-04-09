@@ -21,9 +21,15 @@ public class AudioManager : MonoBehaviour
     public AudioClip PistaDeAudio;
 
     [Header("Enemigo 1: Mariposa")]
-    public AudioClip PistaDeAudioEnemigo1;
+    public AudioClip Movimiento;
     public AudioClip Muerte;
+    public AudioClip Hit;
 
+    [Header("Enemigo 2: Robot")]
+    public AudioClip MovimientoR;
+    public AudioClip MuerteR;
+    public AudioClip HitR;
+    public AudioClip AtaqueR;
 
     AudioSource FuenteMaster;
     AudioSource FuenteSFX;
@@ -70,21 +76,65 @@ public class AudioManager : MonoBehaviour
 
     //Como el resto de funciones a continuacion, son todas funciones que crearan los sources correspondientes cuando sea oportuno, así como 
     // que indicamos a que parametro del audio mixer corresponden, tambien si queremos que se repitan.
-    void ReproducirMainTheme()
+    public void ReproducirMainTheme()
     {
         MiAudioManager.FuenteMaster.clip = MiAudioManager.PistaDeAudio;
         MiAudioManager.FuenteMaster.loop = true;
         MiAudioManager.FuenteMaster.Play();
     }
 
-    void ReMariposa()
+    #region Mariposa
+    public void ReMariposa()
     {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.PistaDeAudioEnemigo1;
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.Muerte;
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.Movimiento;
         MiAudioManager.FuenteSFX.loop = true;
         MiAudioManager.FuenteSFX.Play();
     }
 
-   
+    public void ReMariposaHit()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.Hit;
+        MiAudioManager.FuenteSFX.loop = false;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void ReMariposaDeath()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.Muerte;
+        MiAudioManager.FuenteSFX.loop = false;
+        MiAudioManager.FuenteSFX.Play();
+    }
+    #endregion
+
+    #region Robot
+    public void ReRobot()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.MovimientoR;
+        MiAudioManager.FuenteSFX.loop = true;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void ReRobotHit()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.HitR;
+        MiAudioManager.FuenteSFX.loop = true;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void ReRobotDeath()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.MuerteR;
+        MiAudioManager.FuenteSFX.loop = false;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void ReRobotAtaque()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.AtaqueR;
+        MiAudioManager.FuenteSFX.loop = true;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    #endregion
 
 }

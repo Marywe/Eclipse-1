@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class Mariposa : Enemigos
 {
     SpriteRenderer sr;
+    //AudioManager audio;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,8 @@ public class Mariposa : Enemigos
         agent = gameObject.GetComponent<NavMeshAgent>();
         animE = gameObject.GetComponentInChildren<Animator>();
         sr = (SpriteRenderer)gameObject.GetComponentInChildren(typeof(SpriteRenderer));
+        //-------------------------------------------------------------AUDIO
+        //audio = (AudioManager)gameObject.GetComponent(typeof(AudioManager));
     }
 
     // Update is called once per frame
@@ -52,12 +55,17 @@ public class Mariposa : Enemigos
         if (mov.x < 0) sr.flipX = true;
         else sr.flipX = false;
 
+        //-------------------------------------------------------------AUDIO
+        //audio.ReMariposa();
+
         #region Morirse
         if (currentHealth <= 0)
         {
             animE.SetTrigger("Die");
             this.GetComponent<Collider>().enabled = false;
             this.enabled = false;
+            //-------------------------------------------------------------AUDIO
+            //audio.ReMariposaDeath(); 
         }
         #endregion
     }
@@ -73,6 +81,9 @@ public class Mariposa : Enemigos
             agent.isStopped = true;
             Invoke("Damaged", 0.1f);
             Invoke("Stop", 1f);
+            //-------------------------------------------------------------AUDIO
+            //audio.ReMariposaHit();
+            
         }
     }
 

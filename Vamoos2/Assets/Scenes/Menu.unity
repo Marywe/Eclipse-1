@@ -3427,9 +3427,13 @@ MonoBehaviour:
   MusicGroup: {fileID: 24300002, guid: c3a912536834e1a4a9a9fb95f1d2229f, type: 2}
   FXGroup: {fileID: 2778939055241681969, guid: c3a912536834e1a4a9a9fb95f1d2229f, type: 2}
   PistaDeAudio: {fileID: 8300000, guid: d045b4daad1f24642b7b0bd59a3313c6, type: 3}
-  PistaDeAudioEnemigo1: {fileID: 8300000, guid: 9a4d84b83a3fc3c4eb17b2437310bee3,
-    type: 3}
-  Muerte: {fileID: 0}
+  Movimiento: {fileID: 8300000, guid: acd4e4c6de7c4c5409e9983b736af2b0, type: 3}
+  Muerte: {fileID: 8300000, guid: dbaf456cf121ab04f8d32fdea4de56b9, type: 3}
+  Hit: {fileID: 8300000, guid: 306d816509fcbff4494061ccc12b87e8, type: 3}
+  MovimientoR: {fileID: 8300000, guid: 65dcab4d623ab0a49a71c25647392510, type: 3}
+  MuerteR: {fileID: 8300000, guid: e98423fdc6e72d34eb5735ca29170d55, type: 3}
+  HitR: {fileID: 8300000, guid: bee08eba8bbc8364cb53ca8271885655, type: 3}
+  AtaqueR: {fileID: 8300000, guid: 08906971dafa59a4dbf7d755d0f03e9f, type: 3}
 --- !u!1 &820088395
 GameObject:
   m_ObjectHideFlags: 0

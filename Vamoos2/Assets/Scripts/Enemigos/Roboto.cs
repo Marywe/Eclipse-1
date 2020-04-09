@@ -11,6 +11,9 @@ public class Roboto : Enemigos
 	private bool attacking;
 	public Vector3 attackSz;
 	public Vector3 attackPos;
+
+    //AudioManager audio;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -23,6 +26,9 @@ public class Roboto : Enemigos
 		agent = gameObject.GetComponent<NavMeshAgent>();
 		animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
 		sr = gameObject.GetComponentInChildren<SpriteRenderer>();
+
+        //-------------------------------------------------------------AUDIO
+        //audio = (AudioManager)gameObject.GetComponent(typeof(AudioManager));
 	}
 
 	// Update is called once per frame
@@ -40,11 +46,14 @@ public class Roboto : Enemigos
 
 		}
 
+        //-------------------------------------------------------------AUDIO
+        //audio.ReRobot(); //nullreferenceexception: object reference not set to an instance of an object. error
 
-		//base.MirarObjetivo(cam);
-		#region Seguimiento
-		//Con esto podemos modificar 
-		Vector3 vectorMov1 = new Vector3(objetivo1.position.x - this.transform.position.x, objetivo1.position.y - this.transform.position.y, objetivo1.position.z - this.transform.position.z);
+
+        //base.MirarObjetivo(cam);
+        #region Seguimiento
+        //Con esto podemos modificar 
+        Vector3 vectorMov1 = new Vector3(objetivo1.position.x - this.transform.position.x, objetivo1.position.y - this.transform.position.y, objetivo1.position.z - this.transform.position.z);
 		Vector3 vectorMov2 = new Vector3(objetivo2.position.x - this.transform.position.x, objetivo2.position.y - this.transform.position.y, objetivo2.position.z - this.transform.position.z); ;
 
 		float distancia1 = Vector3.Distance(objetivo1.position, transform.position);
@@ -105,10 +114,13 @@ public class Roboto : Enemigos
 			animE.SetTrigger("Die");
 			this.GetComponent<Collider>().enabled = false;
 			this.enabled = false;
-		}
-		#endregion
 
-	}
+            //-------------------------------------------------------------AUDIO
+            //audio.ReRobotDeath();
+        }
+        #endregion
+
+    }
 
     //Damos tiempo para actualizar el estado de enemigo.
 	private void LateUpdate()
@@ -119,8 +131,11 @@ public class Roboto : Enemigos
 			animE.SetTrigger("TakeDmg");
 			agent.isStopped = true;
 			Invoke("Damaged", 0.15f);
-		}
-	}
+
+            //-------------------------------------------------------------AUDIO
+            //audio.ReRobotHit();
+        }
+    }
 
     /// <summary>
     /// Ataque del enemigo hacia el jugador, estado de ataque, animación y corrutina de cooldown.
@@ -130,7 +145,9 @@ public class Roboto : Enemigos
 		attacking = true;
 		animE.SetTrigger("Atacar");
 		StartCoroutine(corAttack());
-	}
+        //-------------------------------------------------------------AUDIO
+        //audio.ReRobotAtaque();
+    }
 
     /// <summary>
     /// Corrutina de Ataque, cooldown y cambio de estado de ataque.
