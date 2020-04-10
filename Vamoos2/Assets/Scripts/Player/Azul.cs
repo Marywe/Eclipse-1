@@ -31,6 +31,7 @@ public class Azul : Jugador
         if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
         if (Input.GetKeyDown(KeyCode.RightShift) && playerState==PlayerState.idle && !dashing)
         {
+            anim.SetTrigger("Dashing");
             playerState = PlayerState.dash;
             StartCoroutine(corDash());
         }

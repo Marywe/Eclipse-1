@@ -32,6 +32,7 @@ public class Rosa : Jugador
         if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
         if (Input.GetKeyDown(KeyCode.LeftShift) && playerState == PlayerState.idle && !dashing)
         {
+            anim.SetTrigger("Dashing");
             playerState = PlayerState.dash;
             StartCoroutine(corDash());
         }
