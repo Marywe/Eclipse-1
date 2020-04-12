@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.EventSystems;
 
 //Clase del menu de pausa dentro del juego, mediante la cual el jugador podrá pausar la sesion de juego, así como poder salir del juego.
 //Tambien es la clase encargada del apartado visual del canvas, ya sea el HUD de los personajes, el propio menu de pausa y la pantalla de GameOver
@@ -19,6 +20,10 @@ public class PauseMenu : MonoBehaviour
     public bool GamePaused = false;
     [SerializeField]
     private Linea l;
+
+    //Selectores para el control del Mando.
+    public GameObject SelecPauseMenu;
+    public GameObject SelecGAMEOVER;
 
     //Funcion para el uso de la tecla Escape para abrir el menu
     private void Update() 
@@ -69,6 +74,10 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GamePaused = true;
+
+        //Eliminamos cualquier seleccion y despues le indicamos cual es la que queremos que sea la primera en estar seleccionada
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(SelecPauseMenu);
     }
 
     public void EndGame()
@@ -77,6 +86,10 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GamePaused = true;
         Debug.Log("GAME OVER TOLAI");
+        
+        //Eliminamos cualquier seleccion y despues le indicamos cual es la que queremos que sea la primera en estar seleccionada
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(SelecGAMEOVER);
     }
 
 

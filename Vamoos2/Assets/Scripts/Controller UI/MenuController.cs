@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// Clase encargada del manejo de las escenas, en concreto su transicion y como el nombre indica, las funciones disponibles en el Menu del juego.
@@ -21,6 +22,10 @@ public class MenuController : MonoBehaviour
     public float tiempoEsperaAdvertencia = 5;
     static bool primeraVez = true;
 
+    //Control del Menu con Mando
+    public GameObject MenuPpl;
+    public GameObject MenuOpt;
+    public GameObject MenuCredits;
 
     /// <summary>
     /// Desde el metodo Start, ademas de mostrar una imagen de advertencia, realizamos las comprobaciones para modificar la resolucion del juego, así como la
@@ -127,4 +132,5 @@ public class MenuController : MonoBehaviour
         Advertencia.SetActive(false);
        
     }
+
 }
