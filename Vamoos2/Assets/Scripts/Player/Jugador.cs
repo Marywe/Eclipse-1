@@ -88,4 +88,28 @@ public class Jugador : MonoBehaviour
         StartCoroutine(CorVulnerabilidad());
     }
 
+    protected Vector3 GetOffset()
+    {
+        //Variable del offset al entrar en la sala
+        int sala = (int)Controlador.instance.dondeEstas;
+        Vector3 offsetEntrada = Vector3.zero;
+        switch (sala)
+        {
+            case 0: //Sala principal
+                offsetEntrada = new Vector3(-2f, 0, 0.6f);
+                break;
+            case 1: //Sala mariposas
+                offsetEntrada = new Vector3(2f, 0, -2f);
+                break;
+            case 2: //Sala principal
+                break;
+            case 3: //Sala principal
+                break;
+            case 4: //Sala principal
+                break;
+        }
+
+        return offsetEntrada;
+    }
+
 }

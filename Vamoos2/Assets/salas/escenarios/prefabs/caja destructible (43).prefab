@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 4910877308069921042}
   - component: {fileID: 4142738105600310052}
   - component: {fileID: 7656540689148938205}
+  - component: {fileID: 7425619391275409764}
   m_Layer: 0
   m_Name: caja destructible (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4910877308069921042
 Transform:
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7425619391275409764
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8249936169263837953}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.976593, y: 9.935474, z: 10.367338}
+  m_Center: {x: 0.0000002138689, y: -0.0000011102593, z: 5.1836677}

@@ -133,10 +133,11 @@ public class Azul : Jugador
 
         if (other.gameObject.tag == "Salas" && !tp)
         {
+            Vector3 offsetEntrada = base.GetOffset();
             Rosa r = rosa.GetComponent<Rosa>();
             r.tp = true;
             r.characterController.enabled = false;
-            rosa.transform.position = this.transform.position + new Vector3(1, 0, 1); //variable según la sala en la q estas
+            rosa.transform.position = this.transform.position + offsetEntrada; //variable según la sala en la q estas
             r.characterController.enabled = true;
             Invoke("TP", 0.1f);
         }

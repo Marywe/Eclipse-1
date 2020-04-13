@@ -80,11 +80,11 @@ public class Sala2 : Salas
     //Instanciar enemigos en sus posiciones
     void InstanciarEnemigos() 
     {
-        Instantiate(prefabEnems[0], puntosSpawn[0].position, puntosSpawn[0].rotation);
-        Instantiate(prefabEnems[1], puntosSpawn[1].position, puntosSpawn[1].rotation);
-        Instantiate(prefabEnems[2], puntosSpawn[2].position, puntosSpawn[2].rotation);
-        Instantiate(prefabEnems[3], puntosSpawn[3].position, puntosSpawn[3].rotation);
-        Controlador.instance.currentNumEnems = 4;
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject newMariposa = Instantiate(prefabEnems[0], puntosSpawn[i].position, puntosSpawn[i].rotation);
+        }
+        Controlador.instance.currentNumEnems = 3;
         salaCleanFirstTime = true;
     }
     
