@@ -20,6 +20,12 @@ public class Controlador : MonoBehaviour
 
     public Transform objetivo1, objetivo2;
 
+    [Header("Enemigos")]
+    public GameObject prefabMariposa;
+    public GameObject prefabRobot;
+    public GameObject prefabEscorpion;
+    public GameObject prefabPrisma;
+
     //Mediante una enumeracion controlamos en que sala se encuentra el jugador.
     public enum DondeEstas { s1, s2, s3, s4, s5, s6, s7, s8}
     public DondeEstas dondeEstas = new DondeEstas();

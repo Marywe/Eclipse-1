@@ -8,11 +8,9 @@ using UnityEngine;
 /// </summary>
 public class Sala2 : Salas
 {
-    public RoomController roomController;
     [SerializeField]
     GameObject luces;
     public Transform[] puntosSpawn;
-    public GameObject[] prefabEnems;
 
     public GameObject[] doors;
 
@@ -63,7 +61,6 @@ public class Sala2 : Salas
             Controlador.instance.dondeEstas = Controlador.DondeEstas.s2;
         }
            
-
     }
     //Control de la iluminación de la sala, ademas de cambiar el estado de la posicion de sala del jugador
     private void OnTriggerStay(Collider other)
@@ -82,7 +79,7 @@ public class Sala2 : Salas
     {
         for (int i = 0; i < 3; i++)
         {
-            GameObject newMariposa = Instantiate(prefabEnems[0], puntosSpawn[i].position, puntosSpawn[i].rotation);
+            GameObject newMariposa = Instantiate(Controlador.instance.prefabMariposa, puntosSpawn[i].position, puntosSpawn[i].rotation);
         }
         Controlador.instance.currentNumEnems = 3;
         salaCleanFirstTime = true;

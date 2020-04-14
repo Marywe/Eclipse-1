@@ -70,7 +70,7 @@ public class ColliderArmaArrow : MonoBehaviour
         Gizmos.DrawWireSphere(base.transform.position, radius);
     }
 
-    #region Tipos de Ataque a Distancia
+    #region Tipos de Ataque
     private void BasicAttack()
     {
         if (Time.time - lastButTime > maxComboDelay)
