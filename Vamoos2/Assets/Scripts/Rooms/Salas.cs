@@ -11,11 +11,35 @@ public class Salas : MonoBehaviour
     protected bool salaClean=true;
     protected bool salaCleanFirstTime=false;
 
-    protected void PuertasAbiertas(int nEnems)
+    [SerializeField]
+    protected GameObject luces;
+    public Transform[] puntosSpawn;
+    public GameObject[] doors;
+
+    protected void ControladorPuertas(GameObject[] doors)
     {
-        if (nEnems == 0)
-        {       
-            sePuedePasar = true;
+        //comprobacion estado sala
+        if (Controlador.instance.currentNumEnems == 0) salaClean = true;
+        else salaClean = false;
+
+        if (salaClean) sePuedePasar = true;
+        else sePuedePasar = false;
+
+        if (sePuedePasar && salaClean)
+        {
+            for (int i = 0; i < numPuertas; i++)
+            {
+                doors[i].GetComponent<Animator>().SetBool("SePuedePasar", true);
+            }
+        }
+
+        else
+        {
+            for (int i = 0; i < numPuertas; i++)
+            {
+                doors[i].GetComponent<Animator>().SetBool("SePuedePasar", false);
+            }
         }
     }
+
 }

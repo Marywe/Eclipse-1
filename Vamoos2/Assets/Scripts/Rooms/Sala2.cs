@@ -8,11 +8,6 @@ using UnityEngine;
 /// </summary>
 public class Sala2 : Salas
 {
-    [SerializeField]
-    GameObject luces;
-    public Transform[] puntosSpawn;
-
-    public GameObject[] doors;
 
     // Start is called before the first frame update
     void Start()
@@ -23,31 +18,7 @@ public class Sala2 : Salas
     // Update is called once per frame
     void Update()
     {
-        //comprobacion estado sala
-        if (Controlador.instance.currentNumEnems == 0) salaClean = true;
-        else salaClean = false;
-
-        if (salaClean) sePuedePasar = true;
-        else sePuedePasar = false;
-
-        //controlar todas las puertas para permitir al jugador que pueda pasar o no
-        base.PuertasAbiertas(Controlador.instance.currentNumEnems);
-        if (sePuedePasar && salaClean)
-        {
-            for (int i = 0; i < numPuertas; i++)
-            {
-                doors[i].GetComponent<Animator>().SetBool("SePuedePasar", true);
-            }
-        }
-
-        else
-        {
-            for (int i = 0; i < numPuertas; i++)
-            {
-                doors[i].GetComponent<Animator>().SetBool("SePuedePasar", false);
-            }
-        }
-
+        base.ControladorPuertas(doors);
     }
 
     //Cuando el jugador se halle dentro de la sala, estado iluminacion activado, movimiento camara y movimiento personajes

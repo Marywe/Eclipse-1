@@ -120,12 +120,13 @@
     <Compile Include="Assets\Scripts\Player\Linea.cs" />
     <Compile Include="Assets\Scripts\Player\Modificador.cs" />
     <Compile Include="Assets\Scripts\Player\Rosa.cs" />
+    <Compile Include="Assets\Scripts\Rooms\AntesalaBoss.cs" />
     <Compile Include="Assets\Scripts\Rooms\Chip.cs" />
     <Compile Include="Assets\Scripts\Rooms\FinalBoss.cs" />
     <Compile Include="Assets\Scripts\Rooms\Puerta.cs" />
-    <Compile Include="Assets\Scripts\Rooms\RoomController.cs" />
     <Compile Include="Assets\Scripts\Rooms\Sala1.cs" />
     <Compile Include="Assets\Scripts\Rooms\Sala2.cs" />
+    <Compile Include="Assets\Scripts\Rooms\SalaLab.cs" />
     <Compile Include="Assets\Scripts\Rooms\Salas.cs" />
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

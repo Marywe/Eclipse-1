@@ -10,11 +10,6 @@ using UnityEngine;
 public class Sala1 : Salas
 
 {
-    public RoomController roomController;
-    [SerializeField]
-    GameObject luces;
-
-    public GameObject[] doors;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,27 +21,7 @@ public class Sala1 : Salas
     //Cuando los jugadores completen derrotar a los enemigos, podrán activar el evento de pasar de sala.
     void Update()
     {
-        if (Controlador.instance.currentNumEnems == 0) salaClean = true;
-        else salaClean = false;
-
-        if (salaClean) sePuedePasar = true;
-        else sePuedePasar = false;
-
-        base.PuertasAbiertas(Controlador.instance.currentNumEnems);
-        if (sePuedePasar && salaClean)
-        {
-            for (int i = 0; i < numPuertas; i++)
-            {
-                doors[i].GetComponent<Animator>().SetBool("SePuedePasar", true);
-            }
-        }
-        else
-        {
-            for (int i = 0; i < numPuertas; i++)
-            {
-                doors[i].GetComponent<Animator>().SetBool("SePuedePasar", false);
-            }
-        }
+        base.ControladorPuertas(doors);
 
     }
     //Al entrar a la sala, activar luces y mover la camara
