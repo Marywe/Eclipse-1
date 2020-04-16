@@ -19,6 +19,7 @@ public class FinalBoss : MonoBehaviour
     public Collider sala;
     private Bounds limits;
 
+    public Transform centroPozo;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,10 +84,7 @@ public class FinalBoss : MonoBehaviour
 
     void BombaTocha()
     {
-        GameObject newBombaTocha = Instantiate(prefabBombaTocha);
-        Ray rayo1 = new Ray(newBombaTocha.transform.position, Controlador.instance.objetivo1.position);
-        Ray rayo2 = new Ray(newBombaTocha.transform.position, Controlador.instance.objetivo2.position);
-
-        if (Physics.Raycast(rayo1, out RaycastHit hit));
+        GameObject newBombaTocha = Instantiate(prefabBombaTocha, centroPozo.position, Quaternion.identity);
+       
     }
 }
