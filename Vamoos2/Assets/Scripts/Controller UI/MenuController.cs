@@ -27,6 +27,8 @@ public class MenuController : MonoBehaviour
     public GameObject MenuOpt;
     public GameObject MenuCredits;
 
+    //private int Selector;
+
     /// <summary>
     /// Desde el metodo Start, ademas de mostrar una imagen de advertencia, realizamos las comprobaciones para modificar la resolucion del juego, así como la
     /// posibilidad de modificar en el menú.
@@ -58,10 +60,71 @@ public class MenuController : MonoBehaviour
         #endregion
     }
 
-    private void Update()
+    void Update()
     {
-        
+        #region Prueba Menu con Mando con un Swicth
+        /*
+        if (Input.GetKeyDown("joystick button 8"))
+        {
+            Selector += 1;
+
+            switch (Selector)
+            {
+                case 1:
+                    MenuPpl.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(null);
+                    EventSystem.current.SetSelectedGameObject(MenuPpl);
+                    Selector = 1;
+                    break;
+                case 2:
+                    MenuOpt.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(null);
+                    EventSystem.current.SetSelectedGameObject(MenuOpt);
+                    Selector = 2;
+                    break;
+                case 3:
+                    MenuCredits.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(null);
+                    EventSystem.current.SetSelectedGameObject(MenuCredits);
+                    Selector = 3;
+                    break;
+                default:
+                    MenuPpl.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(null);
+                    EventSystem.current.SetSelectedGameObject(MenuPpl);
+                    Selector = 1;
+                    break;
+            }
+        }
+        */ 
+        #endregion
     }
+
+    #region Control Menu Mando (NOT WORIKING PROPERLY)
+    public void MenuToOptions()
+    {
+        MenuPpl.SetActive(false);
+        MenuOpt.SetActive(true);
+        //EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(MenuOpt);
+        //GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(MenuOpt,null);
+    }
+
+    public void OptionstoMenu()
+    {
+        MenuPpl.SetActive(true);
+        MenuOpt.SetActive(false);
+        GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(MenuPpl, null);
+    }
+
+    public void CreditsToMenu()
+    {
+        MenuPpl.SetActive(true);
+        MenuCredits.SetActive(false);
+        GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(MenuPpl, null);
+    }
+    #endregion
+
     /// <summary>
     /// Función encargada de cargar la escena del juego, mediante una corrutina.
     /// </summary>

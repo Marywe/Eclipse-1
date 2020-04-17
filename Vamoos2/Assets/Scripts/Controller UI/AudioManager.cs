@@ -59,7 +59,7 @@ public class AudioManager : MonoBehaviour
     //Reproducimos el tema principal desde el comienzo de la escena.
     void Start()
     {
-        ReproducirMainTheme();
+        //ReproducirMainTheme();
     }
 
     #region Barras Volumen, asignamos dos sliders para la musica, una para el tema principal y otra para los efectos de sonidos, desde aqui los controlamos

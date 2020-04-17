@@ -746,7 +746,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 127374422}
-  - component: {fileID: 127374423}
   m_Layer: 5
   m_Name: OptionsMenu
   m_TagString: Untagged
@@ -773,33 +772,13 @@ RectTransform:
   - {fileID: 171393956}
   - {fileID: 1829595332}
   m_Father: {fileID: 1709270110}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 5, y: -0.0000076294}
   m_SizeDelta: {x: 1037.5, y: 607.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &127374423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127374421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c61dc0ec21619ff4c9f9b0e3b8a61caa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DropDeResoluciones: {fileID: 1075882470}
-  LoadingScreen: {fileID: 954322725}
-  loadingPorcentaje: {fileID: 1344460907}
-  Advertencia: {fileID: 597207820}
-  tiempoEsperaAdvertencia: 5
-  MenuPpl: {fileID: 530353468}
-  MenuOpt: {fileID: 127374421}
-  MenuCredits: {fileID: 1296753001}
 --- !u!1 &148728080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,7 +1950,7 @@ RectTransform:
   - {fileID: 870391514}
   - {fileID: 901482939}
   m_Father: {fileID: 1709270110}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2236,20 +2215,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 530353468}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Game
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1296753001}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 530353470}
+        m_MethodName: CreditsToMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2325,7 +2293,7 @@ RectTransform:
   m_Children:
   - {fileID: 1628700810}
   m_Father: {fileID: 1709270110}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3199,20 +3167,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 530353468}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 127374421}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 530353470}
+        m_MethodName: OptionstoMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3286,7 +3243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &806946951
 MonoBehaviour:
@@ -4076,7 +4033,7 @@ RectTransform:
   - {fileID: 2066396393}
   - {fileID: 1131721086}
   m_Father: {fileID: 1709270110}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4684,7 +4641,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 127374423}
+      - m_Target: {fileID: 0}
         m_MethodName: SetQuality
         m_Mode: 0
         m_Arguments:
@@ -4961,20 +4918,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 127374421}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 530353468}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 530353470}
+        m_MethodName: MenuToOptions
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5824,7 +5770,7 @@ RectTransform:
   - {fileID: 61759215}
   - {fileID: 1675882432}
   m_Father: {fileID: 1709270110}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7828,7 +7774,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 127374423}
+      - m_Target: {fileID: 0}
         m_MethodName: SetQuality
         m_Mode: 0
         m_Arguments:
@@ -8126,13 +8072,14 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 62202244}
+  - {fileID: 2053633176}
   - {fileID: 530353469}
   - {fileID: 127374422}
   - {fileID: 1296753002}
   - {fileID: 954322726}
   - {fileID: 597207821}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8184,7 +8131,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1829595332}
-  - component: {fileID: 1829595333}
   m_Layer: 5
   m_Name: Resolution
   m_TagString: Untagged
@@ -8214,26 +8160,6 @@ RectTransform:
   m_AnchoredPosition: {x: -63.4, y: -80}
   m_SizeDelta: {x: 640.5, y: 73.8}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1829595333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829595331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c61dc0ec21619ff4c9f9b0e3b8a61caa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DropDeResoluciones: {fileID: 1075882470}
-  LoadingScreen: {fileID: 0}
-  loadingPorcentaje: {fileID: 0}
-  Advertencia: {fileID: 0}
-  tiempoEsperaAdvertencia: 5
-  MenuPpl: {fileID: 0}
-  MenuOpt: {fileID: 0}
-  MenuCredits: {fileID: 0}
 --- !u!1 &1872630876
 GameObject:
   m_ObjectHideFlags: 0
@@ -8477,6 +8403,7 @@ GameObject:
   - component: {fileID: 2053633176}
   - component: {fileID: 2053633175}
   - component: {fileID: 2053633174}
+  - component: {fileID: 2053633177}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -8525,13 +8452,33 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053633173}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -400, y: -225, z: 0}
+  m_LocalScale: {x: 1.7241377, y: 1.7241377, z: 1.7241377}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1709270110}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2053633177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053633173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61dc0ec21619ff4c9f9b0e3b8a61caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DropDeResoluciones: {fileID: 1668488307}
+  LoadingScreen: {fileID: 954322725}
+  loadingPorcentaje: {fileID: 1344460907}
+  Advertencia: {fileID: 597207820}
+  tiempoEsperaAdvertencia: 5
+  MenuPpl: {fileID: 1631899925}
+  MenuOpt: {fileID: 790401965}
+  MenuCredits: {fileID: 590258105}
 --- !u!1 &2066396392
 GameObject:
   m_ObjectHideFlags: 0
