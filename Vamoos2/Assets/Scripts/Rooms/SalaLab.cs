@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SalaLab : Salas
 {
@@ -17,7 +18,7 @@ public class SalaLab : Salas
     // Start is called before the first frame update
     void Start()
     {
-        numPuertas = 4;
+        numPuertas = 0;
     }
 
     // Update is called once per frame
@@ -25,7 +26,7 @@ public class SalaLab : Salas
     {
         base.ControladorPuertas(doors);
 
-        if (Controlador.instance.currentNumEnems == 1 && salaCleanFirstTime)
+        if (Controlador.instance.currentNumEnems == 1)
         {
             SubirPlataforma();
         }
@@ -64,6 +65,7 @@ public class SalaLab : Salas
         GameObject newScorpio = Instantiate(Controlador.instance.prefabEscorpion, puntosSpawn[0].position, puntosSpawn[0].rotation);
 
         newPrisma = Instantiate(Controlador.instance.prefabPrisma, puntosSpawn[3].position, puntosSpawn[3].rotation);
+        newPrisma.GetComponent<NavMeshAgent>().enabled = false;
         newPrisma.GetComponent<Prisma>().enabled = false;
         Controlador.instance.currentNumEnems = 4;
         salaCleanFirstTime = true;
@@ -77,7 +79,9 @@ public class SalaLab : Salas
         {
             noCaerse.enabled = false;
             plataforma.gameObject.isStatic = true;
+            newPrisma.GetComponent<Prisma>().enabled = true;
+            newPrisma.GetComponent<NavMeshAgent>().enabled = true;
         }
-        newPrisma.GetComponent<Prisma>().enabled = true;
+        
     }
 }
