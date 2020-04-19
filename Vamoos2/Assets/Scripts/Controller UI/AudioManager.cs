@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip PistaDeAudio;
 
     [Header("Enemigo 1: Mariposa")]
-    public AudioClip Movimiento;
+    public static AudioClip Movimiento;
     public AudioClip Muerte;
     public AudioClip Hit;
 
@@ -60,6 +60,37 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         //ReproducirMainTheme();
+
+
+        #region Intento Audio 2
+        /*/sonidos de enemigos
+        do
+        {
+            switch (Enemigos.FindObjectsOfType<Enemigos>())
+            {
+                case Enemigos.Instantiate.GetComponentsInChildren<Roboto>
+                    ReRobot();
+                    if ()
+                    {
+                        ReRobotAtaque();
+                    }else if ()
+                    {
+                        ReRobotHit();
+                    }else if ()
+                    {
+                        ReRobotDeath();
+                    }
+                    break;
+
+
+
+
+            }
+
+        } while (PauseMenu.GamePaused == false) ;
+        */
+        #endregion
+
     }
 
     #region Barras Volumen, asignamos dos sliders para la musica, una para el tema principal y otra para los efectos de sonidos, desde aqui los controlamos
