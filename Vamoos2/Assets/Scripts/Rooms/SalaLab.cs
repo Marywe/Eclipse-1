@@ -1,0 +1,87 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class SalaLab : Salas
+{
+    private GameObject newPrisma;
+    [SerializeField]
+    private Transform plataforma;
+    [SerializeField]
+    private float speed;
+    [SerializeField]
+    private Transform target;
+
+    [SerializeField]
+    Collider noCaerse;
+    // Start is called before the first frame update
+    void Start()
+    {
+        numPuertas = 0;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        base.ControladorPuertas(doors);
+
+        if (Controlador.instance.currentNumEnems == 1)
+        {
+            SubirPlataforma();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            luces.SetActive(true);
+            Controlador.instance.cam = Controlador.instance.ptoscamara[1];
+            if (!salaCleanFirstTime) InstanciarEnemigos();
+            Controlador.instance.dondeEstas = Controlador.DondeEstas.sLab;
+        }
+
+    }
+    //Control de la iluminación de la sala, ademas de cambiar el estado de la posicion de sala del jugador
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player")) Controlador.instance.dondeEstas = Controlador.DondeEstas.sLab;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            luces.SetActive(false);
+    }
+
+    //Instanciar enemigos en sus posiciones
+    void InstanciarEnemigos()
+    {
+        for (int i = 1; i <= 2; i++)
+        {
+            GameObject newMariposa = Instantiate(Controlador.instance.prefabMariposa, puntosSpawn[i].position, puntosSpawn[i].rotation);
+        }
+        GameObject newScorpio = Instantiate(Controlador.instance.prefabEscorpion, puntosSpawn[0].position, puntosSpawn[0].rotation);
+
+        newPrisma = Instantiate(Controlador.instance.prefabPrisma, puntosSpawn[3].position, puntosSpawn[3].rotation);
+        newPrisma.GetComponent<NavMeshAgent>().enabled = false;
+        newPrisma.GetComponent<Prisma>().enabled = false;
+        Controlador.instance.currentNumEnems = 4;
+        salaCleanFirstTime = true;
+    }
+
+    void SubirPlataforma()
+    {
+        plataforma.transform.position = Vector3.MoveTowards(plataforma.transform.position, target.position, speed * Time.deltaTime);
+
+        if (plataforma.transform.position == target.position)
+        {
+            noCaerse.enabled = false;
+            plataforma.gameObject.isStatic = true;
+            newPrisma.GetComponent<Prisma>().enabled = true;
+            newPrisma.GetComponent<NavMeshAgent>().enabled = true;
+        }
+        
+    }
+}

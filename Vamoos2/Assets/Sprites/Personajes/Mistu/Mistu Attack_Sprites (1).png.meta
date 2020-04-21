@@ -1,0 +1,727 @@
+fileFormatVersion: 2
+guid: af8fd6f73a117c743af1089ea88c15e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5915307512928493229
+    second: Mistu Attack_Sprites (1)_0
+  - first:
+      213: -8337711516063543698
+    second: Mistu Attack_Sprites (1)_1
+  - first:
+      213: -5291965378965923081
+    second: Mistu Attack_Sprites (1)_2
+  - first:
+      213: 5238943892332837105
+    second: Mistu Attack_Sprites (1)_3
+  - first:
+      213: 5553279376730902137
+    second: Mistu Attack_Sprites (1)_4
+  - first:
+      213: -2868523229318400297
+    second: Mistu Attack_Sprites (1)_5
+  - first:
+      213: 8130719060752412556
+    second: Mistu Attack_Sprites (1)_6
+  - first:
+      213: 2726854822740831957
+    second: Mistu Attack_Sprites (1)_7
+  - first:
+      213: 4801447160550120951
+    second: Mistu Attack_Sprites (1)_8
+  - first:
+      213: 2548626633968520319
+    second: Mistu Attack_Sprites (1)_9
+  - first:
+      213: 8347114325770929784
+    second: Mistu Attack_Sprites (1)_10
+  - first:
+      213: -5044916619883015684
+    second: Mistu Attack_Sprites (1)_11
+  - first:
+      213: 9202771640552942304
+    second: Mistu Attack_Sprites (1)_12
+  - first:
+      213: -3581077862774219636
+    second: Mistu Attack_Sprites (1)_13
+  - first:
+      213: 9133206512825398269
+    second: Mistu Attack_Sprites (1)_14
+  - first:
+      213: 8891894266522368298
+    second: Mistu Attack_Sprites (1)_15
+  - first:
+      213: -6600913826465035379
+    second: Mistu Attack_Sprites (1)_16
+  - first:
+      213: 8968636862038763618
+    second: Mistu Attack_Sprites (1)_17
+  - first:
+      213: -5953840587020398302
+    second: Mistu Attack_Sprites (1)_18
+  - first:
+      213: 3548758242672264088
+    second: Mistu Attack_Sprites (1)_19
+  - first:
+      213: 7703105915148559170
+    second: Mistu Attack_Sprites (1)_20
+  - first:
+      213: 8882384264955482702
+    second: Mistu Attack_Sprites (1)_21
+  - first:
+      213: 1527569088712987613
+    second: Mistu Attack_Sprites (1)_22
+  - first:
+      213: 1663615490611229165
+    second: Mistu Attack_Sprites (1)_23
+  - first:
+      213: 2631042666581386515
+    second: Mistu Attack_Sprites (1)_24
+  - first:
+      213: -8316371945723095825
+    second: Mistu Attack_Sprites (1)_25
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 3
+        width: 43
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e70117396c1b0c54b858fbb0c1a0f8eb
+      internalID: 5915307512928493229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 3
+        width: 82
+        height: 64
+      alignment: 9
+      pivot: {x: 0.7181726, y: 0.49999988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10458ab341bf78346b4f0d84bb59edee
+      internalID: -8337711516063543698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_2
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 3
+        width: 85
+        height: 66
+      alignment: 9
+      pivot: {x: 0.702678, y: 0.48996058}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d5af356cbe3004695635a46412e8c8
+      internalID: -5291965378965923081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 3
+        width: 85
+        height: 66
+      alignment: 9
+      pivot: {x: 0.71047294, y: 0.5100393}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 771c4a448e5f915429c22a9aa371442a
+      internalID: 5238943892332837105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_4
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 3
+        width: 69
+        height: 66
+      alignment: 9
+      pivot: {x: 0.70166147, y: 0.49999994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4672393cc2a8da428532feb467af0c4
+      internalID: 5553279376730902137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_5
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 3
+        width: 75
+        height: 102
+      alignment: 9
+      pivot: {x: 0.6413558, y: 0.3895672}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219bb179d9ade954fa84535566e8e2a8
+      internalID: -2868523229318400297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_6
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 3
+        width: 112
+        height: 97
+      alignment: 9
+      pivot: {x: 0.28702328, y: 0.34972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df848909fc70dc4aa36974a89fba305
+      internalID: 8130719060752412556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_7
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 3
+        width: 104
+        height: 62
+      alignment: 9
+      pivot: {x: 0.3088678, y: 0.49999988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b362ba415ec6d7c4e99cdf514b8c8839
+      internalID: 2726854822740831957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_8
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 3
+        width: 97
+        height: 64
+      alignment: 9
+      pivot: {x: 0.34288985, y: 0.4896468}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b54c9479d706f204c8392f7db8562b2c
+      internalID: 4801447160550120951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_9
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 2
+        width: 76
+        height: 64
+      alignment: 9
+      pivot: {x: 0.4128201, y: 0.51035297}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 419e6b6a2544b864481632dfa19925c4
+      internalID: 2548626633968520319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_10
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21ddd6e9f451dc4180510e5f5e1e1f8
+      internalID: 8347114325770929784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_11
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 3
+        width: 73
+        height: 66
+      alignment: 9
+      pivot: {x: 0.6543052, y: 0.52007866}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 343a87b14ed10e44ca353fb24cf3010b
+      internalID: -5044916619883015684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_12
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 3
+        width: 99
+        height: 66
+      alignment: 9
+      pivot: {x: 0.76102453, y: 0.53011805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a711a3c85de5484ea8cea2f140e37a6
+      internalID: 9202771640552942304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_13
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 3
+        width: 85
+        height: 66
+      alignment: 9
+      pivot: {x: 0.72606415, y: 0.54015744}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29548b8c96d85eb4aaa4a8c90b9c4218
+      internalID: -3581077862774219636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_14
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 2
+        width: 58
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5685467, y: 0.5401574}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed6d4c6fc6c8bd4aa560a966852c3bd
+      internalID: 9133206512825398269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_15
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 2
+        width: 61
+        height: 81
+      alignment: 9
+      pivot: {x: 0.51086426, y: 0.47545934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a497cf5f085cc994db34d9b1606aa414
+      internalID: 8891894266522368298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_16
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 2
+        width: 64
+        height: 92
+      alignment: 9
+      pivot: {x: 0.5207081, y: 0.4855957}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40d2876c7818c84ba5ae299929b69f4
+      internalID: -6600913826465035379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_17
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 2
+        width: 71
+        height: 101
+      alignment: 9
+      pivot: {x: 0.5093341, y: 0.44095656}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd6a2e86c8c22041a7cd97285db214b
+      internalID: 8968636862038763618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_18
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 3
+        width: 88
+        height: 90
+      alignment: 9
+      pivot: {x: 0.7334165, y: 0.44846457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b457a416d526f4eaaa6dedabcb36bf
+      internalID: -5953840587020398302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_19
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 3
+        width: 132
+        height: 103
+      alignment: 9
+      pivot: {x: 0.3343515, y: 0.4485361}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68dbfa830a1d82645802d1442562460e
+      internalID: 3548758242672264088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_20
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 3
+        width: 67
+        height: 66
+      alignment: 9
+      pivot: {x: 0.51978266, y: 0.54015744}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5579911109459147b9992221605ba8c
+      internalID: 7703105915148559170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_21
+      rect:
+        serializedVersion: 2
+        x: 2096
+        y: 3
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18cb16d7bd621a042bf1dc4e1278c45c
+      internalID: 8882384264955482702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_22
+      rect:
+        serializedVersion: 2
+        x: 2198
+        y: 3
+        width: 71
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0748c3b1a482ea94192123d131b2c31a
+      internalID: 1527569088712987613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_23
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 3
+        width: 142
+        height: 66
+      alignment: 9
+      pivot: {x: 0.3880134, y: 0.54015744}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca0f5be04dd7c747b476662217d312c
+      internalID: 1663615490611229165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_24
+      rect:
+        serializedVersion: 2
+        x: 2452
+        y: 3
+        width: 73
+        height: 66
+      alignment: 9
+      pivot: {x: 0.67246026, y: 0.5100393}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a989f6d9d2484b40b202ddeba47030e
+      internalID: 2631042666581386515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mistu Attack_Sprites (1)_25
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 3
+        width: 99
+        height: 66
+      alignment: 9
+      pivot: {x: 0.7610258, y: 0.53011805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6397a938dbc2ebf438d786ce5801f63f
+      internalID: -8316371945723095825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d6463448fb2d13240865723c4c87a4f0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
