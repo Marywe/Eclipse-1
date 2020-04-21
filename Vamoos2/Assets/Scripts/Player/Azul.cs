@@ -168,7 +168,7 @@ public class Azul : Jugador
 
     #region Variables de Velocidad y Direccion del jugador
 
-    private void SetSpeedValue(float speed)
+    public void SetSpeedValue(float speed)
     {
         if (speed > 0)
             anim.SetFloat("Speed", 1);

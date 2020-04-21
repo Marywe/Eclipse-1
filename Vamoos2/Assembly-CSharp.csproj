@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BombardeoState.cs" />
     <Compile Include="Assets\ExternalTools\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\ExternalTools\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\ExternalTools\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -97,7 +96,6 @@
     <Compile Include="Assets\ExternalTools\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\ExternalTools\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\ExternalTools\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\INTRO.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Scripts\Camera\MirarCamara.cs" />
     <Compile Include="Assets\Scripts\Camera\MirarCamObjetos.cs" />
@@ -125,12 +123,14 @@
     <Compile Include="Assets\Scripts\Rooms\AntesalaBoss.cs" />
     <Compile Include="Assets\Scripts\Rooms\Chip.cs" />
     <Compile Include="Assets\Scripts\Rooms\FinalBoss.cs" />
-    <Compile Include="Assets\Scripts\Rooms\FinalFight.cs" />
     <Compile Include="Assets\Scripts\Rooms\Puerta.cs" />
     <Compile Include="Assets\Scripts\Rooms\Sala1.cs" />
     <Compile Include="Assets\Scripts\Rooms\Sala2.cs" />
+    <Compile Include="Assets\Scripts\Rooms\SalaBoss.cs" />
     <Compile Include="Assets\Scripts\Rooms\SalaLab.cs" />
     <Compile Include="Assets\Scripts\Rooms\Salas.cs" />
+    <Compile Include="Assets\STATE MACHINE\BombardeoState.cs" />
+    <Compile Include="Assets\STATE MACHINE\INTRO.cs" />
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

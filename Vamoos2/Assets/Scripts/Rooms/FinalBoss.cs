@@ -19,22 +19,61 @@ public class FinalBoss : MonoBehaviour
     public Transform centroPozo;
 
     public GameObject boss;
+
+    public Transform[] posicionesObjetivos;
+    public static bool entering = false;
+
+
+    GameObject Araxiel;
+    GameObject Mistu;
     // Start is called before the first frame update
     void Start()
     {
-       
+        Mistu = Controlador.instance.objetivo1.gameObject;
+        Araxiel = Controlador.instance.objetivo2.gameObject;
         limits = sala.bounds;
+    }
+    private void Update()
+    {
+        if (entering)
+        {
+            Moverse();
+        }
     }
 
     public void Entrada() //Que no se muevan
     {
-        Controlador.instance.objetivo1.gameObject.GetComponent<CharacterController>().enabled = false;
-        Controlador.instance.objetivo2.gameObject.GetComponent<CharacterController>().enabled = false;
 
+        //CINEMACHINE GUAPA 
+
+       Mistu.GetComponent<CharacterController>().enabled = false;
+       Araxiel.GetComponent<CharacterController>().enabled = false;
+
+        
         //REPRODUCIR RISA DEL PIBE
 
-        boss.SetActive(true);
         StartCoroutine(corEntrada());
+    }
+    private void Moverse()
+    {
+        if ((Mistu.transform.position - posicionesObjetivos[0].position).magnitude < 0.3f)
+        {
+            Mistu.GetComponent<Azul>().SetSpeedValue(1);
+            Mistu.GetComponent<Rigidbody>().AddForce((posicionesObjetivos[0].position - Controlador.instance.objetivo1.position).normalized * 50 * Time.deltaTime);
+        }
+        else Mistu.GetComponent<Azul>().SetSpeedValue(0);
+
+        if ((Araxiel.transform.position - posicionesObjetivos[1].position).magnitude < 0.3f)
+        {
+            Araxiel.GetComponent<Rosa>().SetSpeedValue(1);
+            Araxiel.GetComponent<Rigidbody>().AddForce((posicionesObjetivos[1].position - Controlador.instance.objetivo2.position).normalized * 50 * Time.deltaTime);
+        }
+        else Araxiel.GetComponent<Rosa>().SetSpeedValue(0);
+
+        if(Mistu.transform.position != posicionesObjetivos[0].position && Araxiel.transform.position != posicionesObjetivos[1].position)
+        {
+            entering = false;
+        }
     }
     void Phase1()
     { 
@@ -46,6 +85,7 @@ public class FinalBoss : MonoBehaviour
     }
     IEnumerator corEntrada()
     {
+
         yield return new WaitForSeconds(3);
         Controlador.instance.objetivo1.gameObject.GetComponent<CharacterController>().enabled = true;
         Controlador.instance.objetivo2.gameObject.GetComponent<CharacterController>().enabled = true;
@@ -57,9 +97,9 @@ public class FinalBoss : MonoBehaviour
         Controlador.instance.currentNumEnems = 1;
     }
 
-    void SpawnBombas()
+    public void SpawnBombas()
     {
-        float tiempoEntreBombas = 3;
+        float tiempoEntreBombas = 4;
         for (int i = 0; i < 3; i++)
         {
             Invoke("InstanciarBombas", tiempoEntreBombas);
