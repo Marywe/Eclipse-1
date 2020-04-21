@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5429347918197384529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5429347918197384528}
+  - component: {fileID: 5429347918197384535}
+  - component: {fileID: 5429347918197384534}
+  - component: {fileID: 5429347918197384533}
+  - component: {fileID: 6926326850115020527}
+  m_Layer: 0
+  m_Name: Controlador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5429347918197384528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429347918197384529}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.797322, y: -98.56181, z: 126.934944}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5429347918197384535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429347918197384529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e665c82bba719dc4690c41c4fe5c56c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoChips: {fileID: 0}
+  chips: 0
+  puertaFinalAbierta: 0
+  cam: {fileID: 0}
+  ptoscamara:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ptoCamPuerta: {fileID: 0}
+  doorAnim: {fileID: 0}
+  currentNumEnems: 0
+  objetivo1: {fileID: 0}
+  objetivo2: {fileID: 0}
+  prefabMariposa: {fileID: 8024776557018405164, guid: c62ddac296608564f8ed505aa46d6afb,
+    type: 3}
+  prefabRobot: {fileID: 0}
+  prefabEscorpion: {fileID: 0}
+  prefabPrisma: {fileID: 0}
+  dondeEstas: 0
+--- !u!114 &5429347918197384534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429347918197384529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95684cd2be4ffff468ea17a46c29f0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseMenuUI: {fileID: 0}
+  GameHUD: {fileID: 0}
+  GameoverUI: {fileID: 0}
+  GamePaused: 0
+  l: {fileID: 0}
+  SelecPauseMenu: {fileID: 0}
+  SelecGAMEOVER: {fileID: 0}
+--- !u!114 &5429347918197384533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429347918197384529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f9b9997dcfcca4b85ccf44a76a38dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 0}
+--- !u!114 &6926326850115020527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429347918197384529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf53fed017d97e247a15f29754cb87f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ptosSpawn: []
+  prefabBomba: {fileID: 0}
+  prefabBombaTocha: {fileID: 0}
+  sala: {fileID: 0}
+  centroPozo: {fileID: 0}
+  boss: {fileID: 0}
