@@ -42,6 +42,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Phase1
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: ENDED
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3406077273400593543}
   m_Solo: 0
@@ -198,6 +201,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: Hits
     m_EventTreshold: 4
+  - m_ConditionMode: 1
+    m_ConditionEvent: ENDED
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2558393590379502550}
   m_Solo: 0
@@ -251,16 +257,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e81fe6f4bf4104481dbc89e648166c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pasan2:
+  Bombardeo:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5429347918197384529, guid: a8c0c7dbde491e442b98210c13351880,
+      - m_Target: {fileID: 6926326850115020527, guid: a8c0c7dbde491e442b98210c13351880,
           type: 3}
-        m_MethodName: 
+        m_MethodName: SpawnBombas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -328,6 +334,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: BombTime
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: ENDED
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 839241475339593219}
@@ -451,6 +460,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: Hits
     m_EventTreshold: 2
+  - m_ConditionMode: 1
+    m_ConditionEvent: ENDED
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -156089308273865225}
   m_Solo: 0
@@ -517,6 +529,12 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: Hits
     m_Type: 3
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: ENDED
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -711,6 +729,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: BombTime
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: ENDED
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3109356556533919896}
   m_Solo: 0
@@ -738,6 +759,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Phase1
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: ENDED
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -156089308273865225}

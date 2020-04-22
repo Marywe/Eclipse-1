@@ -5,11 +5,12 @@ using UnityEngine.Events;
 
 public class BombardeoState : StateMachineBehaviour
 {
-    public UnityEvent pasan2;
+    public UnityEvent Bombardeo;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        pasan2.Invoke();
+        animator.SetBool("ENDED", false);
+        Bombardeo.Invoke();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

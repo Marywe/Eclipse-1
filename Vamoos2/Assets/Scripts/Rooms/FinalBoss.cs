@@ -118,7 +118,7 @@ public class FinalBoss : MonoBehaviour
             
     }
 
-    void BombaTocha()
+    public void BombaTocha()
     {
         GameObject newBombaTocha = Instantiate(prefabBombaTocha, centroPozo.position, Quaternion.identity);
        
