@@ -12,7 +12,8 @@ public class Roboto : Enemigos
 	public Vector3 attackSz;
 	public Vector3 attackPos;
 
-    //AudioManager audio;
+    AudioManager audioManager;
+    public AudioSource audioSource;
 
 	// Start is called before the first frame update
 	void Start()
@@ -27,13 +28,13 @@ public class Roboto : Enemigos
 		animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
 		sr = gameObject.GetComponentInChildren<SpriteRenderer>();
 
-        //-------------------------------------------------------------AUDIO
-        //audio = (AudioManager)gameObject.GetComponent(typeof(AudioManager));
+        audioSource = audioManager.GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+        ReRobot(); 
 
 		if (!sr.flipX)
 		{
@@ -46,8 +47,6 @@ public class Roboto : Enemigos
 
 		}
 
-        //-------------------------------------------------------------AUDIO
-        //audio.ReRobot(); //nullreferenceexception: object reference not set to an instance of an object. error
 
 
         //base.MirarObjetivo(cam);
@@ -115,8 +114,7 @@ public class Roboto : Enemigos
 			this.GetComponent<Collider>().enabled = false;
 			this.enabled = false;
 
-            //-------------------------------------------------------------AUDIO
-            //audio.ReRobotDeath();
+            ReRobotDeath();
         }
         #endregion
 
@@ -132,8 +130,7 @@ public class Roboto : Enemigos
 			agent.isStopped = true;
 			Invoke("Damaged", 0.15f);
 
-            //-------------------------------------------------------------AUDIO
-            //audio.ReRobotHit();
+            ReRobotHit();
         }
     }
 
@@ -145,8 +142,7 @@ public class Roboto : Enemigos
 		attacking = true;
 		animE.SetTrigger("Atacar");
 		StartCoroutine(corAttack());
-        //-------------------------------------------------------------AUDIO
-        //audio.ReRobotAtaque();
+        ReRobotAtaque();
     }
 
     /// <summary>
@@ -182,4 +178,39 @@ public class Roboto : Enemigos
 	{
 		Gizmos.DrawWireCube(attackPos, attackSz);
 	}
+
+
+    #region Robot Musica
+    public void ReRobot()
+    {
+        audioManager.FuenteSFX.clip = audioManager.MovimientoR;
+        audioManager.FuenteSFX.loop = true;
+        audioManager.FuenteSFX.Play();
+    }
+
+    public void ReRobotHit()
+    {
+        audioManager.FuenteSFX.clip = audioManager.HitR;
+        audioManager.FuenteSFX.loop = true;
+        audioManager.FuenteSFX.Play();
+    }
+
+    public void ReRobotDeath()
+    {
+        audioManager.FuenteSFX.clip = audioManager.MuerteR;
+        audioManager.FuenteSFX.loop = false;
+        audioManager.FuenteSFX.Play();
+    }
+
+    public void ReRobotAtaque()
+    {
+        audioManager.FuenteSFX.clip = audioManager.AtaqueR;
+        audioManager.FuenteSFX.loop = true;
+        audioManager.FuenteSFX.Play();
+    }
+
+    #endregion
+
+
+
 }

@@ -31,8 +31,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip HitR;
     public AudioClip AtaqueR;
 
-    AudioSource FuenteMaster;
-    AudioSource FuenteSFX;
+    [HideInInspector]
+    public AudioSource FuenteMaster;
+    [HideInInspector]
+    public AudioSource FuenteSFX;
 
     // Mediante el awake logramos que el audio se reproduzca antes que nada, para asegurar que no haya componentes duplicados relacionados con el audiomanager
     void Awake()
@@ -49,8 +51,8 @@ public class AudioManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
-        FuenteMaster = gameObject.AddComponent<AudioSource>() as AudioSource;
-        FuenteSFX = gameObject.AddComponent<AudioSource>() as AudioSource;
+        FuenteMaster = gameObject.AddComponent<AudioSource>(); // as AudioSource;
+        FuenteSFX = gameObject.AddComponent<AudioSource>(); // as AudioSource;
 
         FuenteMaster.outputAudioMixerGroup = MusicGroup;
         FuenteSFX.outputAudioMixerGroup = FXGroup;
@@ -59,7 +61,7 @@ public class AudioManager : MonoBehaviour
     //Reproducimos el tema principal desde el comienzo de la escena.
     void Start()
     {
-        //ReproducirMainTheme();
+        ReproducirMainTheme();
     }
 
     #region Barras Volumen, asignamos dos sliders para la musica, una para el tema principal y otra para los efectos de sonidos, desde aqui los controlamos
@@ -74,8 +76,7 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
-    //Como el resto de funciones a continuacion, son todas funciones que crearan los sources correspondientes cuando sea oportuno, así como 
-    // que indicamos a que parametro del audio mixer corresponden, tambien si queremos que se repitan.
+    //Crear source correspondiente así como indicar a que parametro del audio mixer corresponde, tambien si queremos que se repita.
     public void ReproducirMainTheme()
     {
         MiAudioManager.FuenteMaster.clip = MiAudioManager.PistaDeAudio;
@@ -106,35 +107,6 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
-    #region Robot
-    public void ReRobot()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.MovimientoR;
-        MiAudioManager.FuenteSFX.loop = true;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void ReRobotHit()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.HitR;
-        MiAudioManager.FuenteSFX.loop = true;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void ReRobotDeath()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.MuerteR;
-        MiAudioManager.FuenteSFX.loop = false;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void ReRobotAtaque()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.AtaqueR;
-        MiAudioManager.FuenteSFX.loop = true;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    #endregion
+    
 
 }
