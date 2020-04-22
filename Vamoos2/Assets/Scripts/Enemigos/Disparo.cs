@@ -9,7 +9,7 @@ public class Disparo : MonoBehaviour
 {
     private void Start()
     {
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 3.5f);
     }
     private void OnTriggerEnter(Collider other)
     {

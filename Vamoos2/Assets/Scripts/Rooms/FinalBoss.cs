@@ -12,10 +12,8 @@ public class FinalBoss : MonoBehaviour
     [SerializeField]
     GameObject prefabBombaTocha;
 
-    private int numBombas = 10;
+    private const int numBombas = 10;
 
-    private Bounds limits;
-    public Collider sala;
     public Transform centroPozo;
 
     public GameObject boss;
@@ -26,12 +24,17 @@ public class FinalBoss : MonoBehaviour
 
     GameObject Araxiel;
     GameObject Mistu;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        Invoke("Pjs", 0.3f);
+    }
+    private void Pjs()
+    {
         Mistu = Controlador.instance.objetivo1.gameObject;
         Araxiel = Controlador.instance.objetivo2.gameObject;
-        limits = sala.bounds;
     }
     private void Update()
     {
@@ -40,6 +43,7 @@ public class FinalBoss : MonoBehaviour
             Moverse();
         }
     }
+
 
     public void Entrada() //Que no se muevan
     {
@@ -99,28 +103,27 @@ public class FinalBoss : MonoBehaviour
 
     public void SpawnBombas()
     {
-        float tiempoEntreBombas = 4;
-        for (int i = 0; i < 3; i++)
-        {
-            Invoke("InstanciarBombas", tiempoEntreBombas);
-            tiempoEntreBombas -= 0.1f;
-        }
-
+        InvokeRepeating("InstanciarBombas", 3, 3);
+        Invoke("CancelarInvoke", 15);
         //Bomba tocha
+    }
+
+   void CancelarInvoke()
+    {
+        CancelInvoke("InstanciarBombas");
+        boss.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("ENDED", true);
     }
     void InstanciarBombas()
     {
         for (int i = 0; i < numBombas; i++)
         {
-            Vector3 randomPosition = new Vector3(Random.Range(limits.min.x, limits.max.x), 0, Random.Range(limits.min.z, limits.max.z));
+            Vector3 randomPosition = new Vector3(Random.Range(-249, -197), -79, Random.Range(-625,-587));
             GameObject newBomba = Instantiate(prefabBomba, randomPosition, Quaternion.identity);
-        }
-            
+        }            
     }
 
     public void BombaTocha()
     {
-        GameObject newBombaTocha = Instantiate(prefabBombaTocha, centroPozo.position, Quaternion.identity);
-       
+        GameObject newBombaTocha = Instantiate(prefabBombaTocha, centroPozo.position, Quaternion.identity);    
     }
 }
