@@ -37,7 +37,7 @@ public class SalaLab : Salas
         if (other.CompareTag("Player"))
         {
             luces.SetActive(true);
-            Controlador.instance.cam = Controlador.instance.ptoscamara[1];
+            //Controlador.instance.cam = Controlador.instance.ptoscamara[1];
             if (!salaCleanFirstTime) InstanciarEnemigos();
             Controlador.instance.dondeEstas = Controlador.DondeEstas.sLab;
         }

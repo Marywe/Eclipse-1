@@ -12,7 +12,7 @@ public class Controlador : MonoBehaviour
     public int chips = 0;
     public bool puertaFinalAbierta = false;
     public Transform cam;
-    public Transform[] ptoscamara;
+    public GameObject[] ptoscamara;
 
     [SerializeField] Transform ptoCamPuerta;
     [SerializeField] Animator doorAnim;

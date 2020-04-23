@@ -24,7 +24,7 @@ public class AntesalaBoss : Salas
         if (other.CompareTag("Player"))
         {
             luces.SetActive(true);
-            Controlador.instance.cam = Controlador.instance.ptoscamara[1];
+            Controlador.instance.ptoscamara[2].SetActive(true);
             if (!salaCleanFirstTime) InstanciarEnemigos();
             Controlador.instance.dondeEstas = Controlador.DondeEstas.sAnteBoss;
         }
@@ -39,7 +39,11 @@ public class AntesalaBoss : Salas
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
+            Controlador.instance.ptoscamara[2].SetActive(false);
             luces.SetActive(false);
+        }
+            
     }
 
     //Instanciar enemigos en sus posiciones

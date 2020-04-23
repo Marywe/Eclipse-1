@@ -59,13 +59,13 @@ public class CameraShake : MonoBehaviour
         switch (Controlador.instance.dondeEstas)
         {
             case Controlador.DondeEstas.s1:
-                originalPos = Controlador.instance.ptoscamara[0].position;
+                originalPos = Controlador.instance.ptoscamara[0].transform.position;
                 break;
             case Controlador.DondeEstas.s2:
-                originalPos = Controlador.instance.ptoscamara[1].position;
+                originalPos = Controlador.instance.ptoscamara[1].transform.position;
                 break;
             case Controlador.DondeEstas.s3:
-                originalPos = Controlador.instance.ptoscamara[2].position;
+                originalPos = Controlador.instance.ptoscamara[2].transform.position;
                 break;
 
         }

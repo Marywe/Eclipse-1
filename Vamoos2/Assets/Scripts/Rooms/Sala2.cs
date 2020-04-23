@@ -27,7 +27,7 @@ public class Sala2 : Salas
         if (other.CompareTag("Player"))
         {
             luces.SetActive(true);
-            Controlador.instance.cam = Controlador.instance.ptoscamara[1];
+            Controlador.instance.ptoscamara[1].SetActive(true);
             if (!salaCleanFirstTime) InstanciarEnemigos();
             Controlador.instance.dondeEstas = Controlador.DondeEstas.s2;
         }
@@ -42,7 +42,11 @@ public class Sala2 : Salas
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
+            Controlador.instance.ptoscamara[1].SetActive(false);
             luces.SetActive(false);
+        }
+            
     }
 
     //Instanciar enemigos en sus posiciones
