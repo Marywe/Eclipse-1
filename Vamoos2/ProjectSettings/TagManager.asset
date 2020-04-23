@@ -15,6 +15,7 @@ TagManager:
   - Ataque
   - Intangible
   - Salas
+  - Boss
   layers:
   - Default
   - TransparentFX

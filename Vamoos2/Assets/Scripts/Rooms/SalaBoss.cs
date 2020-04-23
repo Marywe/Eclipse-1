@@ -5,17 +5,8 @@ using UnityEngine;
 public class SalaBoss : MonoBehaviour
 {
     public GameObject boss;
+    public FinalBoss f;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +14,8 @@ public class SalaBoss : MonoBehaviour
         {
             Controlador.instance.dondeEstas = Controlador.DondeEstas.sBoss;
             boss.SetActive(true);
+            boss.transform.GetChild(0).GetComponent<Animator>().SetBool("ENDED", false);
+            f.Entrada();
         }
     }
 }

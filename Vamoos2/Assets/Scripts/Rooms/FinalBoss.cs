@@ -22,20 +22,19 @@ public class FinalBoss : MonoBehaviour
     public static bool entering = false;
 
 
-    GameObject Araxiel;
-    GameObject Mistu;
+    public GameObject Araxiel;
+    public GameObject Mistu;
 
+    public CharacterController cr;
     // Start is called before the first frame update
+    private void Awake()
+    {
+
+    }
     void Start()
     {
+    }
 
-        Invoke("Pjs", 0.3f);
-    }
-    private void Pjs()
-    {
-        Mistu = Controlador.instance.objetivo1.gameObject;
-        Araxiel = Controlador.instance.objetivo2.gameObject;
-    }
     private void Update()
     {
         if (entering)
@@ -45,19 +44,20 @@ public class FinalBoss : MonoBehaviour
     }
 
 
-    public void Entrada() //Que no se muevan
+    public   void Entrada() //Que no se muevan
     {
-
         //CINEMACHINE GUAPA 
 
-       Mistu.GetComponent<CharacterController>().enabled = false;
-       Araxiel.GetComponent<CharacterController>().enabled = false;
+        Mistu.GetComponent<CharacterController>().enabled = false;
+        Araxiel.GetComponent<CharacterController>().enabled = false;
 
-        
+
         //REPRODUCIR RISA DEL PIBE
 
-        StartCoroutine(corEntrada());
+        Invoke("corEntrada", 3);
+
     }
+
     private void Moverse()
     {
         if ((Mistu.transform.position - posicionesObjetivos[0].position).magnitude < 0.3f)
@@ -74,23 +74,22 @@ public class FinalBoss : MonoBehaviour
         }
         else Araxiel.GetComponent<Rosa>().SetSpeedValue(0);
 
-        if(Mistu.transform.position != posicionesObjetivos[0].position && Araxiel.transform.position != posicionesObjetivos[1].position)
+        if (Mistu.transform.position != posicionesObjetivos[0].position && Araxiel.transform.position != posicionesObjetivos[1].position)
         {
             entering = false;
         }
     }
     void Phase1()
-    { 
+    {
     }
 
     void Phase2()
     {
 
     }
-    IEnumerator corEntrada()
+    void corEntrada()
     {
 
-        yield return new WaitForSeconds(3);
         Controlador.instance.objetivo1.gameObject.GetComponent<CharacterController>().enabled = true;
         Controlador.instance.objetivo2.gameObject.GetComponent<CharacterController>().enabled = true;
     }
@@ -105,25 +104,37 @@ public class FinalBoss : MonoBehaviour
     {
         InvokeRepeating("InstanciarBombas", 3, 3);
         Invoke("CancelarInvoke", 15);
-        //Bomba tocha
     }
 
-   void CancelarInvoke()
+    void CancelarInvoke()
     {
         CancelInvoke("InstanciarBombas");
-        boss.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("ENDED", true);
+        GameObject.FindWithTag("Boss").GetComponent<Animator>().SetBool("ENDED", true);
     }
     void InstanciarBombas()
     {
         for (int i = 0; i < numBombas; i++)
         {
-            Vector3 randomPosition = new Vector3(Random.Range(-249, -197), -79, Random.Range(-625,-587));
+            Vector3 randomPosition = new Vector3(Random.Range(-249, -197), -79, Random.Range(-625, -587));
             GameObject newBomba = Instantiate(prefabBomba, randomPosition, Quaternion.identity);
-        }            
+        }
     }
 
     public void BombaTocha()
     {
-        GameObject newBombaTocha = Instantiate(prefabBombaTocha, centroPozo.position, Quaternion.identity);    
+        GameObject.FindWithTag("Boss").GetComponent<Animator>().SetBool("ENDED", false);
+
+        GameObject newBombaTocha = Instantiate(prefabBombaTocha, centroPozo.position, Quaternion.identity);
+        Vector3 direction = Vector3.forward;
+        if ((Mistu.transform.position - newBombaTocha.transform.position).magnitude > (Araxiel.transform.position - newBombaTocha.transform.position).magnitude)
+            direction = Araxiel.transform.position - newBombaTocha.transform.position;
+        else
+            direction = Mistu.transform.position - newBombaTocha.transform.position;
+
+
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        newBombaTocha.transform.rotation = Quaternion.RotateTowards(newBombaTocha.transform.rotation, rotation, Time.deltaTime * 50);
+        //Desplazamiento
+        newBombaTocha.transform.Translate(Vector3.forward * 20 * Time.deltaTime);
     }
 }
