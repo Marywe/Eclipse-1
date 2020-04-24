@@ -9,11 +9,18 @@ public class Disparo : MonoBehaviour
 {
     private void Start()
     {
-        Destroy(gameObject, 3.5f);
+        if(gameObject.layer!=15)
+            Destroy(gameObject, 3.5f);
+        
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(!other.CompareTag("Salas"))
-        Destroy(gameObject);
+        if (!other.CompareTag("Salas"))
+        {
+            Destroy(gameObject);
+            if (gameObject.layer == 15) --Controlador.instance.currentNumEnems;
+        }
+            
+
     }
 }

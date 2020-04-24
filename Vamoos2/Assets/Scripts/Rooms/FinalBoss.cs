@@ -25,16 +25,6 @@ public class FinalBoss : MonoBehaviour
     public GameObject Araxiel;
     public GameObject Mistu;
 
-    public CharacterController cr;
-    // Start is called before the first frame update
-    private void Awake()
-    {
-
-    }
-    void Start()
-    {
-    }
-
     private void Update()
     {
         if (entering)
@@ -44,12 +34,12 @@ public class FinalBoss : MonoBehaviour
     }
 
 
-    public   void Entrada() //Que no se muevan
+    public void Entrada() //Que no se muevan
     {
         //CINEMACHINE GUAPA 
 
-        Mistu.GetComponent<CharacterController>().enabled = false;
-        Araxiel.GetComponent<CharacterController>().enabled = false;
+        //Mistu.GetComponent<CharacterController>().enabled = false;
+        //Araxiel.GetComponent<CharacterController>().enabled = false;
 
 
         //REPRODUCIR RISA DEL PIBE
@@ -79,14 +69,6 @@ public class FinalBoss : MonoBehaviour
             entering = false;
         }
     }
-    void Phase1()
-    {
-    }
-
-    void Phase2()
-    {
-
-    }
     void corEntrada()
     {
 
@@ -96,13 +78,34 @@ public class FinalBoss : MonoBehaviour
 
     void SpawnEnems()
     {
-        GameObject newEnem = Instantiate(Controlador.instance.prefabMariposa, ptosSpawn[0].position, ptosSpawn[0].rotation);
-        Controlador.instance.currentNumEnems = 1;
+        int numEnems = Random.Range(3, 6);
+        for (int i = 0; i < numEnems; i++)
+        {
+            int rndEnem = Random.Range(0, 3);
+            switch (rndEnem)
+            {
+                case 0:
+                    GameObject newEnem0 = Instantiate(Controlador.instance.prefabMariposa, ptosSpawn[i].position, ptosSpawn[i].rotation);
+                    break;
+                case 1:
+                    GameObject newEnem1 = Instantiate(Controlador.instance.prefabEscorpion, ptosSpawn[i].position, ptosSpawn[i].rotation); 
+                    break;
+                case 2:
+                    GameObject newEnem2 = Instantiate(Controlador.instance.prefabRobot, ptosSpawn[i].position, ptosSpawn[i].rotation);
+                    break;
+                case 3:
+                    GameObject newEnem3 = Instantiate(Controlador.instance.prefabPrisma, ptosSpawn[i].position, ptosSpawn[i].rotation);
+                    break;
+            }    
+        }
+        
+        Controlador.instance.currentNumEnems = numEnems;
     }
 
     public void SpawnBombas()
     {
         InvokeRepeating("InstanciarBombas", 3, 3);
+        GameObject.FindWithTag("Boss").GetComponent<Animator>().SetBool("Phase1", false);
         Invoke("CancelarInvoke", 15);
     }
 
@@ -110,21 +113,21 @@ public class FinalBoss : MonoBehaviour
     {
         CancelInvoke("InstanciarBombas");
         GameObject.FindWithTag("Boss").GetComponent<Animator>().SetBool("ENDED", true);
+        
     }
     void InstanciarBombas()
     {
         for (int i = 0; i < numBombas; i++)
         {
-            Vector3 randomPosition = new Vector3(Random.Range(-249, -197), -79, Random.Range(-625, -587));
+            Vector3 randomPosition = new Vector3(Random.Range(-147, -97), 5.6f, Random.Range(-96 ,- 57));
             GameObject newBomba = Instantiate(prefabBomba, randomPosition, Quaternion.identity);
         }
     }
 
     public void BombaTocha()
-    {
-        GameObject.FindWithTag("Boss").GetComponent<Animator>().SetBool("ENDED", false);
-
+    {        
         GameObject newBombaTocha = Instantiate(prefabBombaTocha, centroPozo.position, Quaternion.identity);
+        Controlador.instance.currentNumEnems = 1;
         Vector3 direction = Vector3.forward;
         if ((Mistu.transform.position - newBombaTocha.transform.position).magnitude > (Araxiel.transform.position - newBombaTocha.transform.position).magnitude)
             direction = Araxiel.transform.position - newBombaTocha.transform.position;
