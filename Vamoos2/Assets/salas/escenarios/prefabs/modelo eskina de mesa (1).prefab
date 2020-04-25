@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7594535066344954084}
   - component: {fileID: 1458660334963401426}
   - component: {fileID: 5116857408462380587}
-  - component: {fileID: 4755948694207550199}
   m_Layer: 0
   m_Name: modelo eskina de mesa (1)
   m_TagString: Untagged
@@ -79,16 +78,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4755948694207550199
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6863042451098823415}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.776472, y: 7.3778386, z: 4.297644}
-  m_Center: {x: -3.388236, y: -3.6889188, z: -2.148822}
