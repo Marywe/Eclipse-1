@@ -18,6 +18,7 @@ public class SalaLab : Salas
     // Start is called before the first frame update
     void Start()
     {
+        newPrisma = Controlador.instance.prefabPrisma;
         numPuertas = 0;
     }
 
@@ -37,23 +38,23 @@ public class SalaLab : Salas
         if (other.CompareTag("Player"))
         {
             luces.SetActive(true);
-            //Controlador.instance.cam = Controlador.instance.ptoscamara[1];
+            Controlador.instance.ptoscamara[4].SetActive(true);
             if (!salaCleanFirstTime) InstanciarEnemigos();
             Controlador.instance.dondeEstas = Controlador.DondeEstas.sLab;
         }
 
     }
     //Control de la iluminación de la sala, ademas de cambiar el estado de la posicion de sala del jugador
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player")) Controlador.instance.dondeEstas = Controlador.DondeEstas.sLab;
-    }
+
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             luces.SetActive(false);
-    }
+            Controlador.instance.ptoscamara[4].SetActive(false);
+        }
+        }
 
     //Instanciar enemigos en sus posiciones
     void InstanciarEnemigos()

@@ -15,14 +15,13 @@ public class Sala1 : Salas
     {
         salaClean = true;
         salaCleanFirstTime = true;
-        numPuertas = 2;
+        numPuertas = 1;
     }
 
     //Cuando los jugadores completen derrotar a los enemigos, podrán activar el evento de pasar de sala.
     void Update()
     {
         base.ControladorPuertas(doors);
-
     }
     //Al entrar a la sala, activar luces y mover la camara
     private void OnTriggerEnter(Collider other)
@@ -45,12 +44,6 @@ public class Sala1 : Salas
             luces.SetActive(false);
         }
     }
-
-    void vainas() {
-        
-    }
-
-    //Instanciar enemigos en sus posiciones
 
 
 

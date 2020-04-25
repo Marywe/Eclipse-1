@@ -146,6 +146,7 @@ public class Rosa : Jugador
 
         if (other.gameObject.tag == "Salas" && !tp) //Para que no se tp los dos según entre cada uno y solo lo haga 1
         {
+            Debug.Log("ghj");
             Vector3 offsetEntrada = base.GetOffset();
             //TP
             Azul a = azul.GetComponent<Azul>();

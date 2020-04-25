@@ -8,15 +8,15 @@ public class AntesalaBoss : Salas
     // Start is called before the first frame update
     void Start()
     {
-        
+        salaClean = true;
+        salaCleanFirstTime = true;
+        numPuertas = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-        base.ControladorPuertas(doors);
-
-        
+        base.ControladorPuertas(doors);  
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,16 +25,11 @@ public class AntesalaBoss : Salas
         {
             luces.SetActive(true);
             Controlador.instance.ptoscamara[2].SetActive(true);
-            if (!salaCleanFirstTime) InstanciarEnemigos();
             Controlador.instance.dondeEstas = Controlador.DondeEstas.sAnteBoss;
         }
 
     }
     //Control de la iluminación de la sala, ademas de cambiar el estado de la posicion de sala del jugador
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player")) Controlador.instance.dondeEstas = Controlador.DondeEstas.sAnteBoss;
-    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -46,14 +41,5 @@ public class AntesalaBoss : Salas
             
     }
 
-    //Instanciar enemigos en sus posiciones
-    void InstanciarEnemigos()
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            GameObject newMariposa = Instantiate(Controlador.instance.prefabMariposa, puntosSpawn[i].position, puntosSpawn[i].rotation);
-        }
-        Controlador.instance.currentNumEnems = 3;
-        salaCleanFirstTime = true;
-    }
+   
 }

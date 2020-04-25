@@ -101,9 +101,11 @@ public class Jugador : MonoBehaviour
             case 1: //Sala mariposas
                 offsetEntrada = new Vector3(2f, 0, -2f);
                 break;
-            case 2: //Sala principal
+            case 2: //Sala anteboss
+                offsetEntrada = new Vector3(0, 0, 3f);
                 break;
-            case 3: //Sala principal
+            case 3: //Sala pasillo
+                offsetEntrada = new Vector3(2f, 0, 2f);
                 break;
             case 4: //Sala principal
                 break;
