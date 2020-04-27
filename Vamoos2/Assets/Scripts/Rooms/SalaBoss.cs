@@ -8,14 +8,16 @@ public class SalaBoss : MonoBehaviour
     public FinalBoss f;
     // Start is called before the first frame update
 
-    private void OnTriggerEnter(Collider other)
+    private IEnumerator OnTriggerEnter(Collider other)
     {
+        
         if (other.CompareTag("Player"))
         {
             Controlador.instance.dondeEstas = Controlador.DondeEstas.sBoss;
             boss.SetActive(true);
             boss.transform.GetChild(0).GetComponent<Animator>().SetBool("ENDED", false);
-            f.Entrada();
+            yield return 0;
+            f.Entrada(Controlador.instance.objetivo1.gameObject, Controlador.instance.objetivo2.gameObject);
         }
     }
 }

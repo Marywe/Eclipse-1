@@ -18,6 +18,7 @@ public class SalaLab : Salas
     // Start is called before the first frame update
     void Start()
     {
+        target.GetComponent<MeshRenderer>().enabled = false;
         newPrisma = Controlador.instance.prefabPrisma;
         numPuertas = 0;
     }

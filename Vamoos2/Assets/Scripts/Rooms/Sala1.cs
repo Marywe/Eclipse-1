@@ -29,7 +29,6 @@ public class Sala1 : Salas
         if (other.CompareTag("Player"))
         {
             luces.SetActive(true);
-
             Controlador.instance.ptoscamara[0].SetActive(true);
             Controlador.instance.dondeEstas = Controlador.DondeEstas.s1;
         }

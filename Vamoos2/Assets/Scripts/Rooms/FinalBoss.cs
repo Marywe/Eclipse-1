@@ -25,6 +25,8 @@ public class FinalBoss : MonoBehaviour
     public GameObject Araxiel;
     public GameObject Mistu;
 
+
+
     private void Update()
     {
         if (entering)
@@ -34,12 +36,12 @@ public class FinalBoss : MonoBehaviour
     }
 
 
-    public void Entrada() //Que no se muevan
+    public void Entrada(GameObject Mistu, GameObject Araxiel) //Que no se muevan
     {
         //CINEMACHINE GUAPA 
-
-        //Mistu.GetComponent<CharacterController>().enabled = false;
-        //Araxiel.GetComponent<CharacterController>().enabled = false;
+        CharacterController controller = Mistu.GetComponent<CharacterController>();
+       controller.enabled = false;
+        Araxiel.GetComponent<CharacterController>().enabled = false;
 
 
         //REPRODUCIR RISA DEL PIBE
@@ -119,7 +121,7 @@ public class FinalBoss : MonoBehaviour
     {
         for (int i = 0; i < numBombas; i++)
         {
-            Vector3 randomPosition = new Vector3(Random.Range(-147, -97), 5.6f, Random.Range(-96 ,- 57));
+            Vector3 randomPosition = new Vector3(Random.Range(-250, -200), -82, Random.Range(-587   ,- 626));
             GameObject newBomba = Instantiate(prefabBomba, randomPosition, Quaternion.identity);
         }
     }

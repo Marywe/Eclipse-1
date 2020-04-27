@@ -28,13 +28,13 @@ public class Roboto : Enemigos
 		animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
 		sr = gameObject.GetComponentInChildren<SpriteRenderer>();
 
-        audioSource = audioManager.GetComponent<AudioSource>();
+        //audioSource = audioManager.GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-        ReRobot(); 
+        //ReRobot(); 
 
 		if (!sr.flipX)
 		{
