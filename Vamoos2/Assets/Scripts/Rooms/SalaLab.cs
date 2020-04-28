@@ -20,7 +20,7 @@ public class SalaLab : Salas
     {
         target.GetComponent<MeshRenderer>().enabled = false;
         newPrisma = Controlador.instance.prefabPrisma;
-        numPuertas = 0;
+        numPuertas = 3;
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class SalaLab : Salas
     {
         base.ControladorPuertas(doors);
 
-        if (Controlador.instance.currentNumEnems == 1)
+        if (Controlador.instance.currentNumEnems == 1 && Controlador.instance.dondeEstas==Controlador.DondeEstas.sLab)
         {
             SubirPlataforma();
         }
