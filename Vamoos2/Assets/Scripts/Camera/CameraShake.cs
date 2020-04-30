@@ -55,18 +55,49 @@ public class CameraShake : MonoBehaviour
         {
             camTransform.localPosition = originalPos;
         }
-
-        switch (Controlador.instance.dondeEstas)
+        int n = (int)Controlador.instance.dondeEstas;
+        switch (n)
         {
-            case Controlador.DondeEstas.s1:
-                originalPos = Controlador.instance.ptoscamara[0].transform.position;
+            case 0:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
                 break;
-            case Controlador.DondeEstas.s2:
-                originalPos = Controlador.instance.ptoscamara[1].transform.position;
+            case 1:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
                 break;
-            case Controlador.DondeEstas.sAnteBoss:
-                originalPos = Controlador.instance.ptoscamara[2].transform.position;
+            case 2:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
                 break;
+            case 3:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                break;
+            case 4:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                break;
+            case 5:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                break;
+            case 6:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                break;
+            case 7:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                break;
+            case 8:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                break;
+            case 9:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                break;
+            case 10:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                break;
+            case 11:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                break;
+            case 12:
+                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                break;
+
 
         }
     }

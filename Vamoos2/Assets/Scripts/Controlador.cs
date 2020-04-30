@@ -27,7 +27,7 @@ public class Controlador : MonoBehaviour
     public GameObject prefabPrisma;
 
     //Mediante una enumeracion controlamos en que sala se encuentra el jugador.
-    public enum DondeEstas { s1, s2, sAnteBoss, pasillo, sLab, LabDer, LabIzq, preAscensor, debajopreAscensor, Ascensor, sBoss}
+    public enum DondeEstas { s1, s2, sAnteBoss, pasillo, sLab, LabDer, LabIzq, preAscensor, debajopreAscensor, Ascensor, sArriba, sBossRush, sBoss}
     public DondeEstas dondeEstas = new DondeEstas();
 
     public static Controlador instance

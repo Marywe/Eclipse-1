@@ -34,10 +34,6 @@ public class Sala2 : Salas
            
     }
     //Control de la iluminación de la sala, ademas de cambiar el estado de la posicion de sala del jugador
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player")) Controlador.instance.dondeEstas = Controlador.DondeEstas.s2;
-    }
 
     private void OnTriggerExit(Collider other)
     {

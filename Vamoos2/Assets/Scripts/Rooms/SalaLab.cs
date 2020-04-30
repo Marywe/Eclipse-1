@@ -28,7 +28,7 @@ public class SalaLab : Salas
     {
         base.ControladorPuertas(doors);
 
-        if (Controlador.instance.currentNumEnems == 1 && Controlador.instance.dondeEstas==Controlador.DondeEstas.sLab)
+        if (Controlador.instance.currentNumEnems == 1 && salaCleanFirstTime)
         {
             SubirPlataforma();
         }

@@ -105,6 +105,8 @@
     <Compile Include="Assets\Scripts\Controller UI\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Controller UI\MenuController.cs" />
     <Compile Include="Assets\Scripts\Controller UI\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Cosas\Chip.cs" />
+    <Compile Include="Assets\Scripts\Cosas\Modificador.cs" />
     <Compile Include="Assets\Scripts\Enemigos\Disparo.cs" />
     <Compile Include="Assets\Scripts\Enemigos\Enemigos.cs" />
     <Compile Include="Assets\Scripts\Enemigos\Mariposa.cs" />
@@ -120,13 +122,14 @@
     <Compile Include="Assets\Scripts\Player\EventoAtaqueRosa.cs" />
     <Compile Include="Assets\Scripts\Player\Jugador.cs" />
     <Compile Include="Assets\Scripts\Player\Linea.cs" />
-    <Compile Include="Assets\Scripts\Player\Modificador.cs" />
     <Compile Include="Assets\Scripts\Player\Rosa.cs" />
     <Compile Include="Assets\Scripts\Rooms\AntesalaBoss.cs" />
-    <Compile Include="Assets\Scripts\Rooms\Chip.cs" />
+    <Compile Include="Assets\Scripts\Rooms\ASCENSOR.cs" />
     <Compile Include="Assets\Scripts\Rooms\FinalBoss.cs" />
     <Compile Include="Assets\Scripts\Rooms\MiniSalas.cs" />
     <Compile Include="Assets\Scripts\Rooms\Pasillo3.cs" />
+    <Compile Include="Assets\Scripts\Rooms\PreAscensor.cs" />
+    <Compile Include="Assets\Scripts\Rooms\Prepreascensor.cs" />
     <Compile Include="Assets\Scripts\Rooms\Puerta.cs" />
     <Compile Include="Assets\Scripts\Rooms\Sala1.cs" />
     <Compile Include="Assets\Scripts\Rooms\Sala2.cs" />
@@ -158,46 +161,46 @@
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/REPOSITORIOS/Eclipse-Dawn-of-darkness/Vamoos2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -375,12 +378,6 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.8f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.8f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.8f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
