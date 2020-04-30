@@ -104,8 +104,7 @@ public class MenuController : MonoBehaviour
     public void MenuToOptions()
     {
         MenuPpl.SetActive(false);
-        MenuOpt.SetActive(true);
-        //EventSystem.current.SetSelectedGameObject(null);
+        MenuOpt.SetActive(true);   
         EventSystem.current.SetSelectedGameObject(MenuOpt);
         //GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(MenuOpt,null);
     }
@@ -114,14 +113,16 @@ public class MenuController : MonoBehaviour
     {
         MenuPpl.SetActive(true);
         MenuOpt.SetActive(false);
-        GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(MenuPpl, null);
+        EventSystem.current.SetSelectedGameObject(MenuPpl);
+        //GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(MenuPpl, null);
     }
 
     public void CreditsToMenu()
     {
         MenuPpl.SetActive(true);
         MenuCredits.SetActive(false);
-        GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(MenuPpl, null);
+        EventSystem.current.SetSelectedGameObject(MenuPpl);
+        //GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(MenuPpl, null);
     }
     #endregion
 
