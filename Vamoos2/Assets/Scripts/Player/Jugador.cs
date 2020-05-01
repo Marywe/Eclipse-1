@@ -95,19 +95,43 @@ public class Jugador : MonoBehaviour
         Vector3 offsetEntrada = Vector3.zero;
         switch (sala)
         {
-            case 0: //Sala principal
+            case 0: //DONE
                 offsetEntrada = new Vector3(-2f, 0, 0.6f);
                 break;
-            case 1: //Sala mariposas
+            case 1: //DONE
                 offsetEntrada = new Vector3(2f, 0, -2f);
                 break;
-            case 2: //Sala anteboss
+            case 2: //DONE
                 offsetEntrada = new Vector3(0, 0, 3f);
                 break;
-            case 3: //Sala pasillo
+            case 3: //DONE
                 offsetEntrada = new Vector3(2f, 0, 2f);
                 break;
             case 4: //Sala principal
+                break;
+            case 5: //Sala pasillo
+                offsetEntrada = new Vector3(2f, 0, 2f);
+                break;
+            case 6: //Sala pasillo
+                offsetEntrada = new Vector3(2f, 0, 2f);
+                break;
+            case 7: //Sala pasillo
+                offsetEntrada = new Vector3(2f, 0, 2f);
+                break;
+            case 8: //Sala pasillo
+                offsetEntrada = new Vector3(2f, 0, 2f);
+                break;
+            case 9: //DONE
+                offsetEntrada = new Vector3(0, 0, 2f);
+                break;
+            case 10: //Sala pasillo
+                offsetEntrada = new Vector3(2f, 0, 2f);
+                break;
+            case 11: //Sala pasillo
+                offsetEntrada = new Vector3(2f, 0, 2f);
+                break;
+            case 12: //Sala pasillo
+                offsetEntrada = new Vector3(2f, 0, 2f);
                 break;
         }
 

@@ -28,5 +28,26 @@ public class ASCENSOR : Salas
         base.ControladorPuertas(doors);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            
+            Controlador.instance.ptoscamara[9].SetActive(true);
+            Controlador.instance.dondeEstas = Controlador.DondeEstas.Ascensor;
+            ascensorAnim.SetTrigger("Moverse");
+        }
+    }
+
+    //Al salir de la sala, apagar luces
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Controlador.instance.ptoscamara[9].SetActive(false);
+
+        }
+    }
+
 
 }
