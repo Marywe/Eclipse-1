@@ -178,7 +178,7 @@ public class Prisma : Enemigos
             look.z = transform.position.z - target.position.z;
             transform.rotation = Quaternion.LookRotation(look);
 
-            newDisparo.GetComponent<Rigidbody>().AddForce(vD.normalized * 60 * 20);
+            newDisparo.GetComponent<Rigidbody>().AddForce(vD.normalized * 40 * 20);
 		}
       
     }

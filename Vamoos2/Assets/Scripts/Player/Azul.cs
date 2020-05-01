@@ -95,9 +95,7 @@ public class Azul : Jugador
     /// Habilidad del personaje;
     /// Cambio de su estado y daño a enemigos.
     /// </summary>
-    /// <param name="enemiesHit"></param>
-    /// <param name="enemyLayer"></param>
-    /// <param name="radius"></param>
+  
     public void HabilidadGirar(Collider[] enemiesHit, LayerMask enemyLayer, float radius)
     {
         if (skillTime <= 0 && playerState == PlayerState.skill)

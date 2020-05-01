@@ -45,6 +45,7 @@ public class Rosa : Jugador
             posicionEscudoSuelo = transform.position;
             playerState = PlayerState.skill;
             StartCoroutine(corrSkill());
+            anim.SetTrigger("Skill");
         }
         HabilidadEscudo();
         #endregion
@@ -109,9 +110,14 @@ public class Rosa : Jugador
         else if (skillTime > 0 && playerState == PlayerState.skill)
         {
             escudoTemp.transform.position = posicionEscudoSuelo;
-            escudoTemp.SetActive(true);
+            Invoke("ActivarEscudo", 0.6f);
             skillTime -= Time.deltaTime;
         }
+    }
+
+    void ActivarEscudo()
+    {
+        escudoTemp.SetActive(true);
     }
 
     /// <summary>

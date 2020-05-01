@@ -14,8 +14,8 @@ public class Controlador : MonoBehaviour
     public Transform cam;
     public GameObject[] ptoscamara;
 
-    [SerializeField] Transform ptoCamPuerta;
     [SerializeField] Animator doorAnim;
+    public GameObject LucesSalaPreBoss;
     public int currentNumEnems;
 
     public Transform objetivo1, objetivo2;
@@ -63,39 +63,51 @@ public class Controlador : MonoBehaviour
     //Ademas la camara temporalmente mostrará donde se encuentra esta sala y despues de unos segundos volverá a su posicion incial, junto a los personajes.
     public void AddChips()
     {
-        if (chips == 3)
+        ++chips;
+        textoChips.text = chips.ToString();
+
+        if (chips == 4)
         {
-            Time.timeScale = 0;
+            objetivo1.gameObject.GetComponent<CharacterController>().enabled = false;
+            objetivo2.gameObject.GetComponent<CharacterController>().enabled = false;
+
             puertaFinalAbierta = true;
 
+            LucesSalaPreBoss.SetActive(true);
             //Animación cámara
-            Transform temp = cam.transform;
-            cam.transform.position = Vector3.Lerp(cam.transform.position, ptoCamPuerta.position, 3 * Time.deltaTime);
-            cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, ptoCamPuerta.rotation, 3 * Time.deltaTime);
+            int currentRoom = (int)dondeEstas;
+            ptoscamara[currentRoom].SetActive(false);
+            ptoscamara[13].SetActive(true);
+            
+            
             //Animación puerta
-            Invoke("AbrirPuerta", 3);
+            Invoke("AbrirPuerta", 2);
             //Camera back
-            Invoke("VolverCam", 5);
-
+            StartCoroutine(VolverCam(currentRoom));
 
         }
 
-        ++chips;
-        textoChips.text = chips.ToString();
+        
     }
 
-    //Activacion de eventos Animados
-    private void AbrirPuerta()
+    
+    private void AbrirPuerta() //Activacion de eventos Animados
     {
         doorAnim.SetBool("Open", puertaFinalAbierta);
     }
-    //Control de la camara durante el desbloqueo de la sala final
-    private void VolverCam(Transform t)
+    
+    private IEnumerator VolverCam(int currentRoom) //Control de la camara durante el desbloqueo de la sala final
     {
-        cam.transform.position = Vector3.Lerp(cam.transform.position, t.position, 3 * Time.deltaTime);
-        cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, t.rotation, 3 * Time.deltaTime);
+        yield return new WaitForSeconds(5);
 
-        Time.timeScale = 1f;
+        ptoscamara[currentRoom].SetActive(true);
+        ptoscamara[13].SetActive(false);
+        LucesSalaPreBoss.SetActive(false);
+
+        yield return new WaitForSeconds(1);
+
+        objetivo1.gameObject.GetComponent<CharacterController>().enabled = true;
+        objetivo2.gameObject.GetComponent<CharacterController>().enabled = true;
     }
 
 

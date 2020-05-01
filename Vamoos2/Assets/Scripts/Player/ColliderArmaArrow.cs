@@ -42,6 +42,7 @@ public class ColliderArmaArrow : MonoBehaviour
         {   
             a.playerState = Jugador.PlayerState.skill;
             a.StartCoroutine(a.corrSkill());
+            a.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Skill");
         }
         a.HabilidadGirar(enemiesHit, enemyLayer, radius);
         #endregion
