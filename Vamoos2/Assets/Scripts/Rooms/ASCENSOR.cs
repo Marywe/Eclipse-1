@@ -31,8 +31,7 @@ public class ASCENSOR : Salas
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            
+        {           
             Controlador.instance.ptoscamara[9].SetActive(true);
             Controlador.instance.dondeEstas = Controlador.DondeEstas.Ascensor;
             ascensorAnim.SetTrigger("Moverse");
@@ -45,7 +44,6 @@ public class ASCENSOR : Salas
         if (other.CompareTag("Player"))
         {
             Controlador.instance.ptoscamara[9].SetActive(false);
-
         }
     }
 

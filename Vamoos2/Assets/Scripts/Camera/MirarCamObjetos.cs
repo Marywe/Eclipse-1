@@ -17,7 +17,7 @@ public class MirarCamObjetos : MonoBehaviour
     // con Update, mantenemos actualizado la rotacion de los objeto
     void Update()
     {
-        tr.rotation = Quaternion.LookRotation(transform.position - cam.position);
+        tr.rotation = Quaternion.LookRotation(tr.position - cam.position);
         Vector3 look;
         look.x = transform.position.x - cam.position.x;
         look.y = 0;
