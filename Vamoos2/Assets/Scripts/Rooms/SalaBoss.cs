@@ -6,8 +6,12 @@ public class SalaBoss : MonoBehaviour
 {
     public GameObject boss;
     public FinalBoss f;
+    public static Bounds bounds;
     // Start is called before the first frame update
-
+    private void Start()
+    {
+        bounds = GetComponent<Collider>().bounds;
+    }
     private IEnumerator OnTriggerEnter(Collider other)
     {
         

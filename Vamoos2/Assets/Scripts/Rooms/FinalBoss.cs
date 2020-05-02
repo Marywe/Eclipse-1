@@ -12,7 +12,7 @@ public class FinalBoss : MonoBehaviour
     [SerializeField]
     GameObject prefabBombaTocha;
 
-    private const int numBombas = 10;
+    private const int numBombas = 20;
 
     public Transform centroPozo;
 
@@ -121,7 +121,7 @@ public class FinalBoss : MonoBehaviour
     {
         for (int i = 0; i < numBombas; i++)
         {
-            Vector3 randomPosition = new Vector3(Random.Range(-250, -200), -82, Random.Range(-587   ,- 626));
+            Vector3 randomPosition = new Vector3(Random.Range(SalaBoss.bounds.min.x, SalaBoss.bounds.max.x), -82, Random.Range(SalaBoss.bounds.min.z, SalaBoss.bounds.max.z));
             GameObject newBomba = Instantiate(prefabBomba, randomPosition, Quaternion.identity);
         }
     }
