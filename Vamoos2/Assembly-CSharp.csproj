@@ -125,7 +125,6 @@
     <Compile Include="Assets\Scripts\Player\Rosa.cs" />
     <Compile Include="Assets\Scripts\Rooms\AntesalaBoss.cs" />
     <Compile Include="Assets\Scripts\Rooms\ASCENSOR.cs" />
-    <Compile Include="Assets\Scripts\Rooms\FinalBoss.cs" />
     <Compile Include="Assets\Scripts\Rooms\MiniSalas.cs" />
     <Compile Include="Assets\Scripts\Rooms\Pasillo3.cs" />
     <Compile Include="Assets\Scripts\Rooms\PreAscensor.cs" />

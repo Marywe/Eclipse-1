@@ -14,6 +14,8 @@ public class Rosa : Jugador
     public GameObject azul;
     void Start()
     {
+        particulaRecibirDano = transform.GetChild(2).GetComponent<ParticleSystem>();
+
         playerState = PlayerState.idle;
         anim.SetFloat("Direction", 1);
         dashTime = startDash;
@@ -231,6 +233,7 @@ public class Rosa : Jugador
     {
         if (vulnerable)
         {
+            particulaRecibirDano.Play();
             anim.SetTrigger("TakeDmg");
             playerState = PlayerState.damaged;
             Invoke("NoHacerNadaMientrasTeDan", 0.3f);

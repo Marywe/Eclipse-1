@@ -30,6 +30,8 @@ public class Jugador : MonoBehaviour
     protected float zAxis;
     public Linea line_sc;
 
+    protected ParticleSystem particulaRecibirDano;
+
 
 
     /// <summary>

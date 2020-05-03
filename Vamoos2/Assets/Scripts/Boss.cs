@@ -14,7 +14,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Controlador.instance.currentNumEnems==0 && !anim.GetBool("BombTime")) //Cuando termina la fase spawn
+        /*if(Controlador.instance.currentNumEnems==0 && !anim.GetBool("BombTime")) //Cuando termina la fase spawn
         {
             anim.SetBool("ENDED", true);
             anim.SetBool("BombTime", true);
@@ -25,6 +25,6 @@ public class Boss : MonoBehaviour
             anim.SetBool("ENDED", true);
             anim.SetBool("BombTime", false);
             anim.SetBool("Phase1", true);
-        }
+        }*/
     }
 }

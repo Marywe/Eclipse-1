@@ -11,7 +11,7 @@ public class INTRO : StateMachineBehaviour
     {
 
         firstEntry.Invoke();
-        FinalBoss.entering = true;
+        SalaBoss.entering = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
