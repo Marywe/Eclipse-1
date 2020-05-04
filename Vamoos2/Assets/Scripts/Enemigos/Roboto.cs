@@ -128,7 +128,7 @@ public class Roboto : Enemigos
 			//Animasao
 			animE.SetTrigger("TakeDmg");
 			agent.isStopped = true;
-			Invoke("Damaged", 0.15f);
+			Invoke("Damaged", 0.5f);
 
             ReRobotHit();
         }
