@@ -12,7 +12,7 @@ public class ColliderArmaArrow : MonoBehaviour
     private bool puedeAtacar;
 
     private Vector3 posicion;
-    private Vector3 cubeSz;
+    public Vector3 cubeSz;
     float lastButTime;
     public float maxComboDelay = 0.9f;
     private int nBut;
@@ -22,9 +22,6 @@ public class ColliderArmaArrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cubeSz.x = 3.5f;
-        cubeSz.y = 3;
-        cubeSz.z = 3;
         posicion.x =0.7f;
         posicion.y = 0;
         posicion.z = 0;

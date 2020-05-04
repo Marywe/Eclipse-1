@@ -22,9 +22,7 @@ public class ColliderArma : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cubeSz.x = 3.5f;
-        cubeSz.y = 3;
-        cubeSz.z = 3;
+       
         posicion.x = 0.7f;
         posicion.y = 0;
         posicion.z = 0;

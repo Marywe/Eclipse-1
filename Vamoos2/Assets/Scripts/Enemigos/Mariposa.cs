@@ -80,7 +80,7 @@ public class Mariposa : Enemigos
             animE.SetBool("Damaged", damaged);
             agent.isStopped = true;
             Invoke("Damaged", 0.1f);
-            Invoke("Stop", 1f);
+            Invoke("Stop", 1.5f);
             //-------------------------------------------------------------AUDIO
             //audio.ReMariposaHit();
             

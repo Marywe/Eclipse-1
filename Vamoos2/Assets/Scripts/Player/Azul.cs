@@ -211,7 +211,7 @@ public class Azul : Jugador
     /// <param name="other"></param>
     public void RecibirGolpe(Transform other)
     {
-        if (vulnerable)
+        if (vulnerable && playerState!=PlayerState.skill && playerState!=PlayerState.dash)
         {
             particulaRecibirDano.Play();
             anim.SetTrigger("TakeDmg");
@@ -219,7 +219,7 @@ public class Azul : Jugador
             Invoke("NoHacerNadaMientrasTeDan", 0.3f);
             Danado();
             Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
-            characterController.Move(dir);
+            characterController.Move(new Vector3(dir.x, 0, dir.z));
         }
     }
 

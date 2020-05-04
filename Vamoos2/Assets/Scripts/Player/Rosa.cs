@@ -231,7 +231,7 @@ public class Rosa : Jugador
     /// </summary>
     public void RecibirGolpe(Transform other)
     {
-        if (vulnerable)
+        if (vulnerable && playerState != PlayerState.dash)
         {
             particulaRecibirDano.Play();
             anim.SetTrigger("TakeDmg");
@@ -239,7 +239,7 @@ public class Rosa : Jugador
             Invoke("NoHacerNadaMientrasTeDan", 0.3f);
             Danado();
             Vector3 dir = ((this.transform.position - other.transform.position).normalized * distKnockback * Time.deltaTime);
-            characterController.Move(dir);
+            characterController.Move(new Vector3(dir.x, 0, dir.z));
         }
     }
     protected override void Rotar()
