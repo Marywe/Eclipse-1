@@ -103,37 +103,37 @@ public class Jugador : MonoBehaviour
             case 1: //DONE
                 offsetEntrada = new Vector3(2f, 0, -2f);
                 break;
-            case 2: //DONE
+            case 2: //DONE MENOS LA X
                 offsetEntrada = new Vector3(0, 0, 3f);
                 break;
             case 3: //DONE
                 offsetEntrada = new Vector3(2f, 0, 2f);
                 break;
-            case 4: //Sala principal
+            case 4: //DONE MENOS LA X
+                offsetEntrada = new Vector3(0, 0, -2f);
                 break;
-            case 5: //Sala pasillo
-                offsetEntrada = new Vector3(2f, 0, 2f);
+            case 5: //DONE
+                offsetEntrada = new Vector3(2f, 0, 0);
                 break;
-            case 6: //Sala pasillo
-                offsetEntrada = new Vector3(2f, 0, 2f);
+            case 6: //DONE
+                offsetEntrada = new Vector3(-2f, 0, 0);
                 break;
-            case 7: //Sala pasillo
-                offsetEntrada = new Vector3(2f, 0, 2f);
+            case 7: //DONE
+                offsetEntrada = new Vector3(-2f, 0, 2f);
                 break;
-            case 8: //Sala pasillo
-                offsetEntrada = new Vector3(2f, 0, 2f);
+            case 8: //DONE
+                offsetEntrada = new Vector3(0, 0, -2f);
                 break;
             case 9: //DONE
                 offsetEntrada = new Vector3(0, 0, 2f);
                 break;
-            case 10: //Sala pasillo
-                offsetEntrada = new Vector3(2f, 0, 2f);
+            case 10: //DONE AL SALIR DEL ASCENSOR
+                offsetEntrada = new Vector3(2f, 0, -2f);
                 break;
-            case 11: //Sala pasillo
-                offsetEntrada = new Vector3(2f, 0, 2f);
+            case 11: //DONE
+                offsetEntrada = new Vector3(2f, 0, -2f);
                 break;
-            case 12: //Sala pasillo
-                offsetEntrada = new Vector3(2f, 0, 2f);
+            case 12: //DONE
                 break;
         }
 

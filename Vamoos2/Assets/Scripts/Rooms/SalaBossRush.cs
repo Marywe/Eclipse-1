@@ -44,9 +44,9 @@ public class SalaBossRush : Salas
     {
        
         GameObject newRobot = Instantiate(Controlador.instance.prefabRobot, puntosSpawn[0].position, puntosSpawn[0].rotation);
-        GameObject newMariposa = Instantiate(Controlador.instance.prefabRobot, puntosSpawn[0].position, puntosSpawn[0].rotation);
-        GameObject newPrisma = Instantiate(Controlador.instance.prefabRobot, puntosSpawn[0].position, puntosSpawn[0].rotation);
-        GameObject newEscorpion = Instantiate(Controlador.instance.prefabRobot, puntosSpawn[0].position, puntosSpawn[0].rotation);
+        GameObject newMariposa = Instantiate(Controlador.instance.prefabEscorpion, puntosSpawn[1].position, puntosSpawn[1].rotation);
+        GameObject newPrisma = Instantiate(Controlador.instance.prefabMariposa, puntosSpawn[2].position, puntosSpawn[2].rotation);
+        GameObject newEscorpion = Instantiate(Controlador.instance.prefabPrisma, puntosSpawn[3].position, puntosSpawn[3].rotation);
 
         Controlador.instance.currentNumEnems = 4;
         salaCleanFirstTime = true;
