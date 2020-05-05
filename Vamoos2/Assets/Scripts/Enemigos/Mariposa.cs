@@ -7,7 +7,7 @@ using UnityEngine.AI;
 //funcionamiento y comportamiento dentro del juego y con relación al jugador y demas enemigos(herencia de Enemigos)
 public class Mariposa : Enemigos
 {
-    SpriteRenderer sr;
+   
     //AudioManager audio;
     
     // Start is called before the first frame update
@@ -24,6 +24,25 @@ public class Mariposa : Enemigos
         sr = (SpriteRenderer)gameObject.GetComponentInChildren(typeof(SpriteRenderer));
         //-------------------------------------------------------------AUDIO
         //audio = (AudioManager)gameObject.GetComponent(typeof(AudioManager));
+
+        particleSpawn = transform.GetChild(2).GetComponent<ParticleSystem>();
+        Spawn();
+    }
+
+    protected void Spawn()
+    {
+        sr.enabled = false;
+        agent.isStopped = true;
+        particleSpawn.Play();
+        StartCoroutine(corEnable());
+    }
+
+    IEnumerator corEnable()
+    {
+
+        yield return new WaitForSeconds(2.5f);
+        agent.isStopped = false;
+        sr.enabled = true;
     }
 
     // Update is called once per frame

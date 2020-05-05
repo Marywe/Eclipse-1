@@ -30,6 +30,9 @@ public class Enemigos : MonoBehaviour
     bool vulnerable = false;
     protected NavMeshAgent agent;
 
+    protected ParticleSystem particleSpawn;
+    protected SpriteRenderer sr;
+
     /*protected void MirarObjetivo(Transform objetivo)
     {
         Vector3 direccion = (objetivo.position - transform.position).normalized;
@@ -96,4 +99,7 @@ public class Enemigos : MonoBehaviour
         if (shield != null) Destroy(shield);        
         Destroy(this.gameObject, 4f);
     }
+
+
+    
 }

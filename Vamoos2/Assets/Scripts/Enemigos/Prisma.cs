@@ -24,6 +24,26 @@ public class Prisma : Enemigos
         currentHealth = maxHealth;
         agent = gameObject.GetComponent<NavMeshAgent>();
         animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
+        sr = gameObject.GetComponentInChildren<SpriteRenderer>();
+
+        particleSpawn = transform.GetChild(2).GetComponent<ParticleSystem>();
+        Spawn();
+    }
+
+    protected void Spawn()
+    {
+        sr.enabled = false;
+        agent.isStopped = true;
+        particleSpawn.Play();
+        StartCoroutine(corEnable());
+    }
+
+    IEnumerator corEnable()
+    {
+
+        yield return new WaitForSeconds(2.5f);
+        agent.isStopped = false;
+        sr.enabled = true;
     }
 
     // Update is called once per frame

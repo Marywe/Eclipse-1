@@ -7,7 +7,6 @@ using UnityEngine.AI;
 public class Roboto : Enemigos
 {
 	public float distanciaAtaque;
-	SpriteRenderer sr;
 	private bool attacking;
 	public Vector3 attackSz;
 	public Vector3 attackPos;
@@ -28,7 +27,24 @@ public class Roboto : Enemigos
 		animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
 		sr = gameObject.GetComponentInChildren<SpriteRenderer>();
 
-        //audioSource = audioManager.GetComponent<AudioSource>();
+		//audioSource = audioManager.GetComponent<AudioSource>();
+	
+		particleSpawn = transform.GetChild(2).GetComponent<ParticleSystem>();
+		Spawn();
+	}
+	protected void Spawn()
+	{
+		sr.enabled = false;
+		agent.isStopped = true;
+		particleSpawn.Play();
+		StartCoroutine(corEnable());
+	}
+
+	IEnumerator corEnable()
+	{
+		yield return new WaitForSeconds(2.5f);
+		agent.isStopped = false;
+		sr.enabled = true;
 	}
 
 	// Update is called once per frame
@@ -130,7 +146,7 @@ public class Roboto : Enemigos
 			agent.isStopped = true;
 			Invoke("Damaged", 0.5f);
 
-            ReRobotHit();
+            //ReRobotHit();
         }
     }
 
