@@ -30,6 +30,9 @@ public class Controlador : MonoBehaviour
     public enum DondeEstas { s1, s2, sAnteBoss, pasillo, sLab, LabDer, LabIzq, preAscensor, debajopreAscensor, Ascensor, sArriba, sBossRush, sBoss}
     public DondeEstas dondeEstas = new DondeEstas();
 
+    public enum OrientacionPuerta { NORTE, OESTE, SUR, ESTE }
+    public OrientacionPuerta orientacion = new OrientacionPuerta();
+
     public static Controlador instance
     {
         get;

@@ -15,7 +15,7 @@ public class Linea : MonoBehaviour
     private Animator anim;
 
     public int colisiones = 0;
-    public int vidaMax = 6;
+    public int vidaMax;
 
     PauseMenu go;
 

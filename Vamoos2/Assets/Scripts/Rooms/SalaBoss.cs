@@ -39,10 +39,7 @@ public class SalaBoss : MonoBehaviour
     }
     private void Update()
     {
-        if (entering)
-        {
-            Moverse();
-        }
+       
 
         if (bossanim.GetCurrentAnimatorStateInfo(0).IsTag("bomba") && !haHechoCosas)
         {
@@ -86,19 +83,17 @@ public class SalaBoss : MonoBehaviour
             yield return 0;
 
 
-            Entrada(Controlador.instance.objetivo1.gameObject, Controlador.instance.objetivo2.gameObject);
+            Entrada();
         }
     }
 
-    public void Entrada(GameObject Mistu, GameObject Araxiel) //Que no se muevan
+    public void Entrada() //Que no se muevan
     {
         
-        Mistu.GetComponent<CharacterController>().enabled = false;
-        Araxiel.GetComponent<CharacterController>().enabled = false;
 
         //REPRODUCIR RISA DEL PIBE
 
-        Invoke("corEntrada", 3);
+        //Invoke("corEntrada", 3);
     }
 
     private void Moverse()
@@ -124,7 +119,6 @@ public class SalaBoss : MonoBehaviour
     }
     void corEntrada()
     {
-
         Controlador.instance.objetivo1.gameObject.GetComponent<CharacterController>().enabled = true;
         Controlador.instance.objetivo2.gameObject.GetComponent<CharacterController>().enabled = true;
     }
@@ -171,7 +165,7 @@ public class SalaBoss : MonoBehaviour
     {
         for (int i = 0; i < numBombas; i++)
         {
-            Vector3 randomPosition = new Vector3(Random.Range(SalaBoss.bounds.min.x, SalaBoss.bounds.max.x), 5.2f, Random.Range(SalaBoss.bounds.min.z, SalaBoss.bounds.max.z));
+            Vector3 randomPosition = new Vector3(Random.Range(SalaBoss.bounds.min.x, SalaBoss.bounds.max.x), 8.54f, Random.Range(SalaBoss.bounds.min.z, SalaBoss.bounds.max.z));
             GameObject newBomba = Instantiate(prefabBomba, randomPosition, Quaternion.identity);
         }
     }
@@ -180,16 +174,6 @@ public class SalaBoss : MonoBehaviour
     {
         GameObject newBombaTocha = Instantiate(prefabBombaTocha, centroPozo.position, Quaternion.identity);
         Controlador.instance.currentNumEnems = 1;
-        Vector3 direction = Vector3.forward;
-        if ((Mistu.transform.position - newBombaTocha.transform.position).magnitude > (Araxiel.transform.position - newBombaTocha.transform.position).magnitude)
-            direction = Araxiel.transform.position - newBombaTocha.transform.position;
-        else
-            direction = Mistu.transform.position - newBombaTocha.transform.position;
-
-
-        Quaternion rotation = Quaternion.LookRotation(direction);
-        newBombaTocha.transform.rotation = Quaternion.RotateTowards(newBombaTocha.transform.rotation, rotation, Time.deltaTime * 50);
-        //Desplazamiento
-        newBombaTocha.transform.Translate(Vector3.forward * 20 * Time.deltaTime);
+       
     }    
 }

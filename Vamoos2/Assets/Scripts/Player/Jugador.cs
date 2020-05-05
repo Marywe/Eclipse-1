@@ -92,10 +92,26 @@ public class Jugador : MonoBehaviour
 
     protected Vector3 GetOffset()
     {
-        //Variable del offset al entrar en la sala
-        int sala = (int)Controlador.instance.dondeEstas;
         Vector3 offsetEntrada = Vector3.zero;
-        switch (sala)
+        int orientacion = (int)Controlador.instance.orientacion;
+        switch (orientacion)
+        {
+            case 0: //DONE
+                offsetEntrada = new Vector3(3f, 0, -3f);
+                break;
+            case 1: //DONE
+                offsetEntrada = new Vector3(3f, 0, -3f);
+                break;
+            case 2: //DONE
+                offsetEntrada = new Vector3(3f, 0, 3f);
+                break;
+            case 3: //DONE
+                offsetEntrada = new Vector3(-3f, 0, -3f);
+                break;
+        }
+        //Variable del offset al entrar en la sala
+        //int sala = (int)Controlador.instance.dondeEstas;
+        /*switch (sala)
         {
             case 0: //DONE
                 offsetEntrada = new Vector3(-2f, 0, 0.6f);
@@ -135,7 +151,7 @@ public class Jugador : MonoBehaviour
                 break;
             case 12: //DONE
                 break;
-        }
+        }*/
 
         return offsetEntrada;
     }

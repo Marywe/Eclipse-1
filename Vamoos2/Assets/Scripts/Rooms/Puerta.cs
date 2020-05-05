@@ -37,4 +37,26 @@ public class Puerta : MonoBehaviour
         }
        
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            switch (gameObject.tag)
+            {
+                case "NORTE":
+                    Controlador.instance.orientacion = Controlador.OrientacionPuerta.NORTE;
+                    break;
+                case "SUR":
+                    Controlador.instance.orientacion = Controlador.OrientacionPuerta.SUR;
+                    break;
+                case "ESTE":
+                    Controlador.instance.orientacion = Controlador.OrientacionPuerta.ESTE;
+                    break;
+                case "OESTE":
+                    Controlador.instance.orientacion = Controlador.OrientacionPuerta.OESTE;
+                    break;
+
+            }
+        }
+    }
 }

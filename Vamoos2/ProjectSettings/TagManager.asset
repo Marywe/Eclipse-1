@@ -16,6 +16,10 @@ TagManager:
   - Intangible
   - Salas
   - Boss
+  - NORTE
+  - SUR
+  - ESTE
+  - OESTE
   layers:
   - Default
   - TransparentFX

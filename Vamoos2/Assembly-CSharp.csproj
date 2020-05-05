@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Bombota.cs" />
     <Compile Include="Assets\ExternalTools\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\ExternalTools\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\ExternalTools\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -137,9 +138,8 @@
     <Compile Include="Assets\Scripts\Rooms\SalaLab.cs" />
     <Compile Include="Assets\Scripts\Rooms\SalaRobot.cs" />
     <Compile Include="Assets\Scripts\Rooms\Salas.cs" />
-    <Compile Include="Assets\STATE MACHINE\BombardeoState.cs" />
     <Compile Include="Assets\STATE MACHINE\ENDED.cs" />
-    <Compile Include="Assets\STATE MACHINE\INTRO.cs" />
+    <Compile Include="Assets\TpBoss.cs" />
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\ExternalTools\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
