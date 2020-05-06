@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 //Clase encargada de las especificaciones de los personajes, es decir, sus caracteristicas.
@@ -52,9 +53,11 @@ public class Jugador : MonoBehaviour
     protected float skillTime;
     public float startSkill;
     public float cdSkill;
-    protected bool skilling = false;
+    public bool skilling = false;
     public bool onShield = false;
 
+
+    public Image dash;
     /// <summary>
     /// Corrutina para la mecánica de daño sobre los personajes, cambiando el estado de vulnerabilidad de la linea.
     /// </summary>

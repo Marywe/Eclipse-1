@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Controla movimiento del personaje Mistu
 public class Azul : Jugador
@@ -31,8 +32,10 @@ public class Azul : Jugador
         #region Dash
         dashVector = new Vector3(moveDirection.x, 0, moveDirection.z).normalized;
         if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
-        if (Input.GetKeyDown(KeyCode.RightShift) && playerState==PlayerState.idle && !dashing)
+        if (!dashing) dash.color = new Color(255, 255, 255);
+        if (Input.GetButtonDown("DASH2") && playerState==PlayerState.idle && !dashing)
         {
+            dash.color = new Color(0, 0, 0);
             anim.SetTrigger("Dashing");
             playerState = PlayerState.dash;
             StartCoroutine(corDash());
@@ -149,14 +152,14 @@ public class Azul : Jugador
     }
     private void OnTriggerStay(Collider other)
     {
-        if ((other.gameObject.tag == "Enemigos" || other.gameObject.tag == "Bullet") && vulnerable == true)
+        if (((other.gameObject.tag == "Enemigos" && other.GetComponent<Mariposa>() != null) || other.gameObject.tag == "Bullet") && vulnerable == true)
         {
             RecibirGolpe(other.transform);
         }
        
     }
 
-    private void OnTriggerExit(Collider other)
+    /*private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Intangible"))
         {
@@ -164,7 +167,7 @@ public class Azul : Jugador
             dano -= other.gameObject.GetComponent<EscudoHabilidad>().dano;
             onShield = false;
         }
-    }
+    }*/
     #endregion
 
     #region Variables de Velocidad y Direccion del jugador

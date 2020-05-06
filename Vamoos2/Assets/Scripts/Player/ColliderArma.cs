@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Script para los ataques 
 public class ColliderArma : MonoBehaviour
@@ -19,6 +20,8 @@ public class ColliderArma : MonoBehaviour
     private Rosa r;
     [SerializeField]
     private float danioAdicional = 0.5f;
+
+    public Image basic;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +51,12 @@ public class ColliderArma : MonoBehaviour
         }
         #endregion
 
-        if (puedeAtacar) BasicAttack();
+        if (puedeAtacar)
+        {
+            basic.color = new Color(255, 255, 255);
+            BasicAttack();
+        }
+        else basic.color = new Color(0, 0, 0);
 
     }
 

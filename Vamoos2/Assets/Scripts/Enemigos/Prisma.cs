@@ -192,11 +192,11 @@ public class Prisma : Enemigos
 			vD.y = 0;
 			vD.z = target.transform.position.z - transform.position.z;
 
-            Vector3 look;
+            /*Vector3 look;
             look.x = transform.position.x - target.position.x;
             look.y = transform.position.y-target.position.y;
             look.z = transform.position.z - target.position.z;
-            transform.rotation = Quaternion.LookRotation(look);
+            transform.rotation = Quaternion.LookRotation(look);*/
 
             newDisparo.GetComponent<Rigidbody>().AddForce(vD.normalized * 40 * 20);
 		}

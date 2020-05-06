@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Al igua que ColliderArma pero para el otro pj
 public class ColliderArmaArrow : MonoBehaviour
@@ -19,6 +20,8 @@ public class ColliderArmaArrow : MonoBehaviour
     public float radius;
     private Azul a;
 
+
+    public Image basic, skill;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +38,10 @@ public class ColliderArmaArrow : MonoBehaviour
     {
         #region Skill Girar
 
-        if (Input.GetKeyDown(KeyCode.RightAlt) && a.playerState == Jugador.PlayerState.idle)
-        {   
+        if(!a.skilling) skill.color = new Color(255, 255, 255);
+        if (Input.GetButtonDown("HAB2") && a.playerState == Jugador.PlayerState.idle && !a.skilling)
+        {
+            skill.color = new Color(0, 0, 0);
             a.playerState = Jugador.PlayerState.skill;
             a.StartCoroutine(a.corrSkill());
             a.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Skill");
@@ -58,7 +63,12 @@ public class ColliderArmaArrow : MonoBehaviour
         }
         #endregion
 
-        if (puedeAtacar) BasicAttack();
+        if (puedeAtacar)
+        {
+            basic.color = new Color(255, 255, 255);
+            BasicAttack();
+        }
+        else basic.color = new Color(0, 0, 0);
     }
 
     //Para poder ver los colliders

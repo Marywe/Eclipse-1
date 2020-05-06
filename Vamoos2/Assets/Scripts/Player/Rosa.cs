@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Controla movimiento del personaje Araxiel
 public class Rosa : Jugador
@@ -12,6 +13,8 @@ public class Rosa : Jugador
     Vector3 posicionEscudoSuelo;
 
     public GameObject azul;
+
+    public Image skill;
     void Start()
     {
         particulaRecibirDano = transform.GetChild(2).GetComponent<ParticleSystem>();
@@ -32,8 +35,10 @@ public class Rosa : Jugador
         #region Dash
         dashVector = new Vector3(moveDirection.x, 0, moveDirection.z).normalized;
         if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
-        if (Input.GetKeyDown(KeyCode.LeftShift) && playerState == PlayerState.idle && !dashing)
+        if(!dashing) dash.color = new Color(255, 255, 255);
+        if (Input.GetButtonDown("DASH1") && playerState == PlayerState.idle && !dashing)
         {
+            dash.color = new Color(0, 0, 0);
             anim.SetTrigger("Dashing");
             playerState = PlayerState.dash;
             StartCoroutine(corDash());
@@ -42,8 +47,10 @@ public class Rosa : Jugador
         #endregion
 
         #region Skill Escudo
-        if (Input.GetKeyDown(KeyCode.CapsLock) && playerState==PlayerState.idle)
+        if (!skilling) skill.color = new Color(255, 255, 255);
+        if (Input.GetButtonDown("HAB1") && playerState==PlayerState.idle && !skilling)
         {
+            skill.color = new Color(0, 0, 0);
             posicionEscudoSuelo = transform.position;
             playerState = PlayerState.skill;
             StartCoroutine(corrSkill());
@@ -93,11 +100,11 @@ public class Rosa : Jugador
     {
         if (skillTime <= 0 && playerState == PlayerState.skill)
         {
-            if (onShield)
+            /*if (onShield)
             {
                 DevolverStats(escudoTemp);
                 DevolverStats(escudoTemp);
-            }
+            }*/
 
             onShield = false;
             playerState = PlayerState.idle;
@@ -180,13 +187,13 @@ public class Rosa : Jugador
         }
     }
     
-    private void OnTriggerExit(Collider other)
+    /*private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Intangible"))
         {
             DevolverStats(other.gameObject);
         }
-    }
+    }*/
     #endregion
 
     #region Variables de Velocidad y Direccion del jugador
@@ -252,10 +259,10 @@ public class Rosa : Jugador
         transform.rotation = Quaternion.LookRotation(look);
     }
     
-    void DevolverStats(GameObject other)
+    /*void DevolverStats(GameObject other)
     {
         speed -= other.GetComponent<EscudoHabilidad>().speed;
         dano -= other.GetComponent<EscudoHabilidad>().dano;
         onShield = false;
-    }
+    }*/
 }
