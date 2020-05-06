@@ -69,6 +69,7 @@ public class ColliderArma : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
+            
             lastButTime = Time.time;
             nBut++;
             anim.SetBool("Attack", true);
@@ -76,7 +77,7 @@ public class ColliderArma : MonoBehaviour
             if (nBut == 1)
             {
                 SetBasicAttack(0);
-
+                r.speed -= 3;
                 enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2, Quaternion.identity, enemyLayer);
                 //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
                 foreach (Collider enemy in enemiesHit)
@@ -109,6 +110,7 @@ public class ColliderArma : MonoBehaviour
         {
             StartCoroutine(corBasicAtt());
             anim.SetBool("Attack", false);
+            r.speed += 3;
             nBut = 0;
         }
 
@@ -131,6 +133,7 @@ public class ColliderArma : MonoBehaviour
             nBut = 0;
             anim.SetBool("Attack", false);
             StartCoroutine(corBasicAtt());
+            r.speed += 3;
         }
     }
     public void ThAt()
@@ -138,6 +141,7 @@ public class ColliderArma : MonoBehaviour
         anim.SetBool("Attack", false);
         StartCoroutine(corBasicAtt());
         nBut = 0;
+        r.speed += 3;
     }
     #endregion
 

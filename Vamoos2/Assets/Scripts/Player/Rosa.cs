@@ -162,13 +162,14 @@ public class Rosa : Jugador
             a.characterController.enabled = false;
             azul.transform.position = this.transform.position + offsetEntrada; //variable según la sala en la q estas
             a.characterController.enabled = true;
-            Invoke("TP", 0.1f);
+            StartCoroutine(TP());
         }
 
 
     }
-    void TP()
+    public IEnumerator TP()
     {
+        yield return new WaitForSeconds(0.1f);
         azul.GetComponent<Azul>().tp = false;
     }
     private void OnTriggerStay(Collider other)

@@ -20,18 +20,17 @@ public class MirarCamara : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        tr.rotation = Quaternion.LookRotation(tr.position - cam.position);
+        if (tr2 != null) tr2.rotation = Quaternion.LookRotation(tr2.position - cam.position);
         Rotar();
     }
     //Encargado de ajustar la rotacion de la camara en relacion a la posicion de los personajes.
-    protected virtual void Rotar()
+     void Rotar()
     {
         Vector3 look;
         look.x = transform.position.x - cam.position.x;
         look.y = 0;
         look.z = transform.position.z - cam.position.z;
-        transform.rotation = Quaternion.LookRotation(look);
-
-        tr.rotation = Quaternion.LookRotation(tr.position - cam.position);
-        if (tr2!=null)tr2.rotation = Quaternion.LookRotation(tr2.position - cam.position);
+        transform.rotation = Quaternion.LookRotation(look);        
     }
 }

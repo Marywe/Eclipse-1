@@ -74,6 +74,10 @@ public class Controlador : MonoBehaviour
             objetivo1.gameObject.GetComponent<CharacterController>().enabled = false;
             objetivo2.gameObject.GetComponent<CharacterController>().enabled = false;
 
+            objetivo1.GetComponent<Azul>().tp = true;
+            objetivo2.GetComponent<Rosa>().tp = true;
+
+
             puertaFinalAbierta = true;
 
             LucesSalaPreBoss.SetActive(true);
@@ -111,6 +115,8 @@ public class Controlador : MonoBehaviour
 
         objetivo1.gameObject.GetComponent<CharacterController>().enabled = true;
         objetivo2.gameObject.GetComponent<CharacterController>().enabled = true;
+        StartCoroutine(objetivo1.GetComponent<Azul>().TP());
+        StartCoroutine(objetivo2.GetComponent<Rosa>().TP());
     }
 
 

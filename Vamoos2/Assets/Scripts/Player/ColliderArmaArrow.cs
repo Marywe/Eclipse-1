@@ -84,6 +84,8 @@ public class ColliderArmaArrow : MonoBehaviour
 
             if (nBut == 1)
             {
+                a.speed -= 3;
+
                 SetBasicAttack(0);
 
                 enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2, Quaternion.identity, enemyLayer);
@@ -115,6 +117,7 @@ public class ColliderArmaArrow : MonoBehaviour
         }
         else
         {
+            a.speed += 3;
             StartCoroutine(corBasicAtt());
             anim.SetBool("Attack", false);
             nBut = 0;
@@ -136,6 +139,7 @@ public class ColliderArmaArrow : MonoBehaviour
         }
         else
         {
+            a.speed += 3;
             nBut = 0;
             anim.SetBool("Attack", false);
             StartCoroutine(corBasicAtt());
@@ -147,6 +151,7 @@ public class ColliderArmaArrow : MonoBehaviour
         anim.SetBool("Attack", false);
         StartCoroutine(corBasicAtt());
         nBut = 0;
+        a.speed += 3;
     }
 #endregion
 

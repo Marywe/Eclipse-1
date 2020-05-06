@@ -23,8 +23,15 @@ public class TpBoss : MonoBehaviour
             Transform mistu = Controlador.instance.objetivo1;
             Transform araxiel = Controlador.instance.objetivo2;
 
+            Azul a = mistu.GetComponent<Azul>();
+            Rosa r = araxiel.GetComponent<Rosa>();
+
+
             mistu.GetComponent<CharacterController>().enabled = false;
             araxiel.GetComponent<CharacterController>().enabled = false;
+
+            a.tp = true;
+            r.tp = true;
 
             mistu.position = posicionesObjetivos[0].position;
             araxiel.position = posicionesObjetivos[1].position;
@@ -34,6 +41,9 @@ public class TpBoss : MonoBehaviour
 
             mistu.GetComponent<CharacterController>().enabled = true;
             araxiel.GetComponent<CharacterController>().enabled = true;
+
+            StartCoroutine(a.TP());
+            StartCoroutine(r.TP());
         }
     }
 
