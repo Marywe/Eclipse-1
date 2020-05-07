@@ -17,7 +17,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("Hits", hits);
+        anim.SetInteger("Hits", hits);
 
         /*if(Controlador.instance.currentNumEnems==0 && !anim.GetBool("BombTime")) //Cuando termina la fase spawn
         {

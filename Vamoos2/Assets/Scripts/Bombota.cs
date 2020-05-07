@@ -35,8 +35,15 @@ public class Bombota : MonoBehaviour
 
         else
         {
-            Vector3 directionBoss = (Controlador.instance.boss.transform.position - transform.position).normalized;
-            Moving(directionBoss);
+            Vector3 directionBoss = (boss.transform.position - transform.position);
+            Moving(directionBoss.normalized);
+
+
+            if ((directionBoss).magnitude < 0.1f)
+            {
+                ++boss.GetComponent<Boss>().hits;
+                Destroy(gameObject);
+            }
         }
      
         
@@ -46,10 +53,10 @@ public class Bombota : MonoBehaviour
     {
         if (other.gameObject.tag == "Cadena")
         {
-            Debug.Log("holy");
+            Destroy(transform.GetChild(1).gameObject);
             isReturning = true;
+            translationSpeed = 6;
         }
-        if(other.CompareTag("Player")) Debug.Log("xd");
     }
 
     private void Moving(Vector3 direction)
@@ -60,7 +67,9 @@ public class Bombota : MonoBehaviour
 
     private void OnDestroy()
     {
+        boss.GetComponentInChildren<Animator>().SetTrigger("Damaged");
+        boss.GetComponentInChildren<Animator>().SetBool("Phase1", true);
         --Controlador.instance.currentNumEnems;
-        ++boss.GetComponent<Boss>().hits;
+        
     }
 }

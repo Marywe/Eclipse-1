@@ -60,7 +60,7 @@ public class SalaBoss : MonoBehaviour
         {
             haHechoCosas = false;
         }
-        
+
 
         //ACABAR SPAWN CUANDO SE HAYAN MUERTO LOS ENEMIES
         if (bossanim.GetCurrentAnimatorStateInfo(0).IsTag("idle") && !bossanim.GetBool("BombTime") && Controlador.instance.currentNumEnems==0) 
@@ -166,7 +166,7 @@ public class SalaBoss : MonoBehaviour
     {
         for (int i = 0; i < numBombas; i++)
         {
-            Vector3 randomPosition = new Vector3(Random.Range(SalaBoss.bounds.min.x, SalaBoss.bounds.max.x), 8.54f, Random.Range(SalaBoss.bounds.min.z, SalaBoss.bounds.max.z));
+            Vector3 randomPosition = new Vector3(Random.Range(SalaBoss.bounds.min.x, SalaBoss.bounds.max.x), 8f, Random.Range(SalaBoss.bounds.min.z, SalaBoss.bounds.max.z));
             GameObject newBomba = Instantiate(prefabBomba, randomPosition, Quaternion.identity);
         }
     }

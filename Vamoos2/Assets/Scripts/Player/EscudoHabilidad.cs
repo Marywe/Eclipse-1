@@ -13,25 +13,33 @@ public class EscudoHabilidad : MonoBehaviour
     public float dano;
 
     private Transform refSueloA, refSueloB;
+
+    public static bool temporal;
     private void Awake()
     {
        
 
-        gameObject.SetActive(true);
         refSueloA = gameObject.transform.GetChild(2);
         refSueloB = gameObject.transform.GetChild(3);
 
+        temporal = false;
         
     }
 
     private void Start()
     {
-        gameObject.SetActive(false);
     }
     private void Update()
     {
         refSueloA.position = new Vector3(r.transform.position.x, r.transform.position.y-0.67f, r.transform.position.z - 0.27F);
         refSueloB.position = new Vector3(a.transform.position.x, a.transform.position.y - 0.67f, a.transform.position.z - 0.27F);
+
+        if (gameObject.activeSelf && !temporal)
+        {
+            Enabled();
+        }
+       
+
     }
     /*private void OnTriggerEnter(Collider other)
     {
@@ -54,16 +62,17 @@ public class EscudoHabilidad : MonoBehaviour
         }
     }*/
 
-    private void OnEnable()
+    private void Enabled()
     {
         r.speed += speed;
         r.dano += dano;
 
         a.speed += speed;
-        a.dano += dano; 
+        a.dano += dano;
+        temporal = true;
     }
 
-    private void OnDisable()
+    public void Disabled()
     {
 
         r.speed -= speed;
@@ -71,6 +80,8 @@ public class EscudoHabilidad : MonoBehaviour
 
         a.speed -= speed;
         a.dano -= dano;
+
+        temporal = false;
         
     }
 

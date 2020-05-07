@@ -35,7 +35,7 @@ public class Rosa : Jugador
         #region Dash
         dashVector = new Vector3(moveDirection.x, 0, moveDirection.z).normalized;
         if (dashVector == Vector3.zero) dashVector = Vector3.right * anim.GetFloat("Direction");
-        if(!dashing) dash.color = new Color(255, 255, 255);
+        if (!dashing) dash.color = new Color(255, 255, 255);
         if (Input.GetButtonDown("DASH1") && playerState == PlayerState.idle && !dashing)
         {
             dash.color = new Color(0, 0, 0);
@@ -48,7 +48,7 @@ public class Rosa : Jugador
 
         #region Skill Escudo
         if (!skilling) skill.color = new Color(255, 255, 255);
-        if (Input.GetButtonDown("HAB1") && playerState==PlayerState.idle && !skilling)
+        if (Input.GetButtonDown("HAB1") && playerState == PlayerState.idle && !skilling)
         {
             skill.color = new Color(0, 0, 0);
             posicionEscudoSuelo = transform.position;
@@ -58,6 +58,12 @@ public class Rosa : Jugador
         }
         HabilidadEscudo();
         #endregion
+
+        if (!escudoTemp.activeSelf && EscudoHabilidad.temporal)
+        {
+            escudoTemp.GetComponent<EscudoHabilidad>().Disabled();
+        }
+    
     }
 
     #region Movimiento
@@ -100,11 +106,7 @@ public class Rosa : Jugador
     {
         if (skillTime <= 0 && playerState == PlayerState.skill)
         {
-            /*if (onShield)
-            {
-                DevolverStats(escudoTemp);
-                DevolverStats(escudoTemp);
-            }*/
+
 
             onShield = false;
             playerState = PlayerState.idle;
