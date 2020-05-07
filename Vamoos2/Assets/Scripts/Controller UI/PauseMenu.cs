@@ -75,8 +75,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GamePaused = true;
 
-        //Eliminamos cualquier seleccion y despues le indicamos cual es la que queremos que sea la primera en estar seleccionada
-        EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(SelecPauseMenu);
     }
 
@@ -87,8 +85,7 @@ public class PauseMenu : MonoBehaviour
         GamePaused = true;
         Debug.Log("GAME OVER TOLAI");
         
-        //Eliminamos cualquier seleccion y despues le indicamos cual es la que queremos que sea la primera en estar seleccionada
-        EventSystem.current.SetSelectedGameObject(null);
+
         EventSystem.current.SetSelectedGameObject(SelecGAMEOVER);
     }
 

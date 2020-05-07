@@ -22,10 +22,18 @@ public class MenuController : MonoBehaviour
     public float tiempoEsperaAdvertencia = 5;
     static bool primeraVez = true;
 
-    //Control del Menu con Mando
+    #region Control del Menu con Mando (Objetos)
+    //G.O. transiciones
     public GameObject MenuPpl;
     public GameObject MenuOpt;
     public GameObject MenuCredits;
+    public GameObject MenuControl;
+    //Buttons
+    public GameObject BotonPpl;
+    public GameObject BotonOpt;
+    public GameObject BotonCredits;
+    public GameObject BotonControl;
+    #endregion
 
     //private int Selector;
 
@@ -100,29 +108,48 @@ public class MenuController : MonoBehaviour
         #endregion
     }
 
-    #region Control Menu Mando (NOT WORIKING PROPERLY)
+    #region Control Menu con Mando 
     public void MenuToOptions()
     {
         MenuPpl.SetActive(false);
         MenuOpt.SetActive(true);   
-        EventSystem.current.SetSelectedGameObject(MenuOpt);
-        //GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(MenuOpt,null);
+        EventSystem.current.SetSelectedGameObject(BotonOpt);
+        
     }
-
     public void OptionstoMenu()
     {
         MenuPpl.SetActive(true);
         MenuOpt.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(MenuPpl);
-        //GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(MenuPpl, null);
+        EventSystem.current.SetSelectedGameObject(BotonPpl);
+        
     }
-
-    public void CreditsToMenu()
+    public void MenutoCredits()
+    {
+        MenuPpl.SetActive(false);
+        MenuCredits.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(BotonCredits);
+        
+    }
+     public void CreditsToMenu()
     {
         MenuPpl.SetActive(true);
         MenuCredits.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(MenuPpl);
-        //GameObject.Find("EventSystem").GetComponent<EventSystem>().SetSelectedGameObject(MenuPpl, null);
+        EventSystem.current.SetSelectedGameObject(BotonPpl);
+        
+    }
+    public void MenuOPTtoControl()
+    {
+        MenuOpt.SetActive(false);
+        MenuControl.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(BotonControl);
+
+    }
+    public void ControltoMenu()
+    {
+        MenuPpl.SetActive(true);
+        MenuControl.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(BotonPpl);
+
     }
     #endregion
 
