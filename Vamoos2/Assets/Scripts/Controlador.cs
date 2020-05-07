@@ -25,7 +25,7 @@ public class Controlador : MonoBehaviour
     public GameObject prefabRobot;
     public GameObject prefabEscorpion;
     public GameObject prefabPrisma;
-
+    public GameObject boss;
     //Mediante una enumeracion controlamos en que sala se encuentra el jugador.
     public enum DondeEstas { s1, s2, sAnteBoss, pasillo, sLab, LabDer, LabIzq, preAscensor, debajopreAscensor, Ascensor, sArriba, sBossRush, sBoss}
     public DondeEstas dondeEstas = new DondeEstas();

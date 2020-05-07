@@ -59,43 +59,43 @@ public class CameraShake : MonoBehaviour
         switch (n)
         {
             case 0:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
             case 1:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
             case 2:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
             case 3:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
             case 4:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
             case 5:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
             case 6:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
             case 7:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
             case 8:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
             case 9:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
             case 10:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
             case 11:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
             case 12:
-                originalPos = Controlador.instance.ptoscamara[n].transform.position;
+                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
                 break;
 
 

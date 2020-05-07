@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    Animator anim;
+    protected Animator anim;
+    public int hits = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +17,8 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anim.SetFloat("Hits", hits);
+
         /*if(Controlador.instance.currentNumEnems==0 && !anim.GetBool("BombTime")) //Cuando termina la fase spawn
         {
             anim.SetBool("ENDED", true);

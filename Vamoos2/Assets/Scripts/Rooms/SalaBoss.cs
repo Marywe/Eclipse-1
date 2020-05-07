@@ -53,6 +53,7 @@ public class SalaBoss : MonoBehaviour
         }
         else if (bossanim.GetCurrentAnimatorStateInfo(0).IsTag("bombote") && !haHechoCosas)
         {
+            BombaTocha();
             haHechoCosas = true;
         }
         else if (bossanim.GetCurrentAnimatorStateInfo(0).IsTag("idle") && haHechoCosas)
