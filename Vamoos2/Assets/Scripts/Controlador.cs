@@ -7,6 +7,9 @@ using UnityEngine.UI;
 //Comunicacion con el resto de scripts.
 public class Controlador : MonoBehaviour
 {
+    [HideInInspector]
+    public AudioManager audioManager;
+
     [SerializeField]
     private Text textoChips;
     public int chips = 0;
@@ -54,6 +57,8 @@ public class Controlador : MonoBehaviour
 
 
         currentNumEnems = 0;
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
+
     } //Comprobación Singleton
 
     /*public void AddPunt(int puntos)

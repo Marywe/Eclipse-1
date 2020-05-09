@@ -26,7 +26,9 @@ public class PostProcessingChanges : MonoBehaviour
         if(Controlador.instance.dondeEstas == Controlador.DondeEstas.sLab || 
            Controlador.instance.dondeEstas == Controlador.DondeEstas.sBossRush || 
            Controlador.instance.dondeEstas == Controlador.DondeEstas.sArriba ||
-           Controlador.instance.dondeEstas == Controlador.DondeEstas.LabDer)
+           Controlador.instance.dondeEstas == Controlador.DondeEstas.LabDer ||
+           Controlador.instance.dondeEstas == Controlador.DondeEstas.sBoss ||
+           Controlador.instance.dondeEstas == Controlador.DondeEstas.Ascensor)
         {
             depth.enabled.value = false;
 

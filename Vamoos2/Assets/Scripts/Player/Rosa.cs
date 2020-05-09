@@ -50,11 +50,12 @@ public class Rosa : Jugador
         if (!skilling) skill.color = new Color(255, 255, 255);
         if (Input.GetButtonDown("HAB1") && playerState == PlayerState.idle && !skilling)
         {
-            skill.color = new Color(0, 0, 0);
+            skill.color = Color.black;
             posicionEscudoSuelo = transform.position;
             playerState = PlayerState.skill;
             StartCoroutine(corrSkill());
             anim.SetTrigger("Skill");
+            Invoke("ActivarEscudo", 0.6f);
         }
         HabilidadEscudo();
         #endregion
@@ -82,8 +83,12 @@ public class Rosa : Jugador
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
-        
-        if(playerState==PlayerState.idle || playerState==PlayerState.skill)characterController.Move(moveDirection * Time.deltaTime);
+
+        if (playerState == PlayerState.idle || playerState == PlayerState.skill)
+        {
+            characterController.Move(moveDirection * Time.deltaTime);
+            //Controlador.instance.audioManager.PJSAndando();
+        }
         else characterController.Move(new Vector3(0, moveDirection.y, 0) * Time.deltaTime);
 
         if (xAxis == 0 && zAxis == 0)
@@ -106,8 +111,6 @@ public class Rosa : Jugador
     {
         if (skillTime <= 0 && playerState == PlayerState.skill)
         {
-
-
             onShield = false;
             playerState = PlayerState.idle;
             escudoTemp.SetActive(false);
@@ -120,8 +123,7 @@ public class Rosa : Jugador
         }
         else if (skillTime > 0 && playerState == PlayerState.skill)
         {
-            escudoTemp.transform.position = posicionEscudoSuelo;
-            Invoke("ActivarEscudo", 0.6f);
+            escudoTemp.transform.position = posicionEscudoSuelo;  
             skillTime -= Time.deltaTime;
         }
     }

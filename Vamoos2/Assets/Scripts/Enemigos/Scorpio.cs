@@ -34,10 +34,10 @@ public class Scorpio : Enemigos
     }
 
     IEnumerator corEnable()
-    {
-        
+    {   
         yield return new WaitForSeconds(2.5f);
         agent.isStopped = false;
+        shield.SetActive(true);
         sr.enabled = true;
     }
     // Update is called once per frame

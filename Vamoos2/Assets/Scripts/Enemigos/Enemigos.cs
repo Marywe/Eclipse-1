@@ -81,7 +81,7 @@ public class Enemigos : MonoBehaviour
         
         else if (vulnerable == false && shield!=null)
         {
-            armor -= (int)dmg;
+            armor -= dmg;
         }
         Debug.Log("Current life: " + currentHealth + " Armor: " + armor);
         if (armor <= 0) Destroy(shield);

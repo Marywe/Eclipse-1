@@ -43,6 +43,7 @@ public class Roboto : Enemigos
 	IEnumerator corEnable()
 	{
 		yield return new WaitForSeconds(2.5f);
+		shield.SetActive(true);
 		agent.isStopped = false;
 		sr.enabled = true;
 	}
@@ -113,6 +114,9 @@ public class Roboto : Enemigos
 			sr.flipX = true; //izq
 		}
 		#endregion
+
+		if (animE.GetBool("Moving")) Controlador.instance.audioManager.ReRobot();
+
 		#region Ataque
 		if (distancia1 <= distanciaAtaque && !attacking && puedeDisparar)
 		{
@@ -130,7 +134,6 @@ public class Roboto : Enemigos
 			this.GetComponent<Collider>().enabled = false;
 			this.enabled = false;
 
-            ReRobotDeath();
         }
         #endregion
 
@@ -144,9 +147,8 @@ public class Roboto : Enemigos
 			//Animasao
 			animE.SetTrigger("TakeDmg");
 			agent.isStopped = true;
+			Controlador.instance.audioManager.ReRobotHit();
 			Invoke("Damaged", 0.5f);
-
-            //ReRobotHit();
         }
     }
 
@@ -155,10 +157,11 @@ public class Roboto : Enemigos
     /// </summary>
 	void Atacar()
 	{
+		Controlador.instance.audioManager.ReRobotAtaque();
 		attacking = true;
 		animE.SetTrigger("Atacar");
 		StartCoroutine(corAttack());
-        ReRobotAtaque();
+
     }
 
     /// <summary>
@@ -170,6 +173,8 @@ public class Roboto : Enemigos
 		agent.isStopped = true;
 		animE.SetBool("Moving", false);
 		yield return new WaitForSeconds(1.6f);
+		Controlador.instance.audioManager.ReRobotAtaque();
+
 		Collider[] hit = Physics.OverlapBox(attackPos, attackSz, transform.rotation);
 		
 		foreach(Collider colPJ in hit)
@@ -186,6 +191,7 @@ public class Roboto : Enemigos
     
 	private void Damaged()
 	{
+		
 		agent.isStopped = false;
 		damaged = false;
 	}
@@ -196,37 +202,5 @@ public class Roboto : Enemigos
 	}
 
 
-    #region Robot Musica
-    public void ReRobot()
-    {
-        audioManager.FuenteSFX.clip = audioManager.MovimientoR;
-        audioManager.FuenteSFX.loop = true;
-        audioManager.FuenteSFX.Play();
-    }
-
-    public void ReRobotHit()
-    {
-        audioManager.FuenteSFX.clip = audioManager.HitR;
-        audioManager.FuenteSFX.loop = true;
-        audioManager.FuenteSFX.Play();
-    }
-
-    public void ReRobotDeath()
-    {
-        audioManager.FuenteSFX.clip = audioManager.MuerteR;
-        audioManager.FuenteSFX.loop = false;
-        audioManager.FuenteSFX.Play();
-    }
-
-    public void ReRobotAtaque()
-    {
-        audioManager.FuenteSFX.clip = audioManager.AtaqueR;
-        audioManager.FuenteSFX.loop = true;
-        audioManager.FuenteSFX.Play();
-    }
-
-    #endregion
-
-
-
+    
 }

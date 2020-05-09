@@ -31,6 +31,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip HitR;
     public AudioClip AtaqueR;
 
+    [Header("Personajes")]
+    public AudioClip pjsMoving;
+
     [HideInInspector]
     public AudioSource FuenteMaster;
     [HideInInspector]
@@ -72,7 +75,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetLevelSFX(float sliderValue)
     {
-        mixer.SetFloat("SFXVol", Mathf.Log10(sliderValue) * 18);
+        mixer.SetFloat("SFXVol", Mathf.Log10(sliderValue) * 20);
     }
     #endregion
 
@@ -107,6 +110,45 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
-    
+    #region Robot Musica
+    public void ReRobot()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.MovimientoR;
+        MiAudioManager.FuenteSFX.loop = true;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void ReRobotHit()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.HitR;
+        MiAudioManager.FuenteSFX.loop = false;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void ReRobotDeath()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.MuerteR;
+        MiAudioManager.FuenteSFX.loop = false;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void ReRobotAtaque()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.AtaqueR;
+        MiAudioManager.FuenteSFX.loop = false;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    #endregion
+
+    #region PJS
+
+    public void PJSAndando()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.pjsMoving;
+        MiAudioManager.FuenteSFX.loop = true;
+        MiAudioManager.FuenteSFX.Play();
+    }
+    #endregion
 
 }

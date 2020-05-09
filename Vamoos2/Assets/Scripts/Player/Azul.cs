@@ -114,7 +114,7 @@ public class Azul : Jugador
 
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(0.05f);
+                enemy.GetComponent<Enemigos>().TakeDamage(0.03f);
             }
             skillTime -= Time.deltaTime;
         }

@@ -42,6 +42,7 @@ public class Prisma : Enemigos
     {
 
         yield return new WaitForSeconds(2.5f);
+        shield.SetActive(true);
         agent.isStopped = false;
         sr.enabled = true;
     }

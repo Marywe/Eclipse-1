@@ -42,6 +42,7 @@ public class Mariposa : Enemigos
 
         yield return new WaitForSeconds(2.5f);
         agent.isStopped = false;
+        shield.SetActive(true);
         sr.enabled = true;
     }
 
