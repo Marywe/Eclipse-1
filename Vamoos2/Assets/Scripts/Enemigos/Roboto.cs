@@ -11,8 +11,7 @@ public class Roboto : Enemigos
 	public Vector3 attackSz;
 	public Vector3 attackPos;
 
-    AudioManager audioManager;
-    public AudioSource audioSource;
+    AudioSource audioR;
 
 	// Start is called before the first frame update
 	void Start()
@@ -27,9 +26,9 @@ public class Roboto : Enemigos
 		animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
 		sr = gameObject.GetComponentInChildren<SpriteRenderer>();
 
-		//audioSource = audioManager.GetComponent<AudioSource>();
-	
-		particleSpawn = transform.GetChild(2).GetComponent<ParticleSystem>();
+        audioR = gameObject.AddComponent<AudioSource>() as AudioSource;
+
+        particleSpawn = transform.GetChild(2).GetComponent<ParticleSystem>();
 		Spawn();
 	}
 	protected void Spawn()
@@ -51,9 +50,11 @@ public class Roboto : Enemigos
 	// Update is called once per frame
 	void Update()
 	{
-        //ReRobot(); 
+        Controlador.instance.audioManager.ReRobot();
+        // audioR.clip = AudioManager.ReRobot();
 
-		if (!sr.flipX)
+
+        if (!sr.flipX)
 		{
 			attackPos = transform.position + (Vector3.right);
 			

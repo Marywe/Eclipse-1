@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
 {
     static AudioManager MiAudioManager;
 
+    public int contadorAudios = 1;
+
     /// <summary>
     /// Mediante un audio mixer, y dos grupos vamos a controlar todos los sonidos del juego.
     /// </summary>
@@ -20,6 +22,9 @@ public class AudioManager : MonoBehaviour
     [Header("TemaPrincipal")]
     public AudioClip PistaDeAudio;
 
+    [Header("Personajes")]
+    public AudioClip pjsMoving;
+
     [Header("Enemigo 1: Mariposa")]
     public AudioClip Movimiento;
     public AudioClip Muerte;
@@ -31,9 +36,19 @@ public class AudioManager : MonoBehaviour
     public AudioClip HitR;
     public AudioClip AtaqueR;
 
-    [Header("Personajes")]
-    public AudioClip pjsMoving;
+    [Header("Enemigo 3: Scorpio")]
+    public AudioClip MovimientoS;
+    public AudioClip MuerteS;
+    public AudioClip HitS;
+    public AudioClip AtaqueS;
 
+    [Header("Enemigo 4: Prisma")]
+    public AudioClip MovimientoP;
+    public AudioClip MuerteP;
+    public AudioClip HitP;
+    public AudioClip AtaqueP;
+
+  
     [HideInInspector]
     public AudioSource FuenteMaster;
     [HideInInspector]
@@ -53,10 +68,10 @@ public class AudioManager : MonoBehaviour
             MiAudioManager = this;
         }
         DontDestroyOnLoad(gameObject);
-
-        FuenteMaster = gameObject.AddComponent<AudioSource>(); // as AudioSource;
-        FuenteSFX = gameObject.AddComponent<AudioSource>(); // as AudioSource;
-
+        
+        FuenteMaster = gameObject.AddComponent<AudioSource>() as AudioSource;
+        FuenteSFX = gameObject.AddComponent<AudioSource>() as AudioSource;
+        
         FuenteMaster.outputAudioMixerGroup = MusicGroup;
         FuenteSFX.outputAudioMixerGroup = FXGroup;
 
@@ -110,7 +125,7 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
-    #region Robot Musica
+    #region Robot 
     public void ReRobot()
     {
         MiAudioManager.FuenteSFX.clip = MiAudioManager.MovimientoR;
@@ -149,6 +164,68 @@ public class AudioManager : MonoBehaviour
         MiAudioManager.FuenteSFX.loop = true;
         MiAudioManager.FuenteSFX.Play();
     }
+    #endregion
+
+    #region Scorpio 
+    public void ReScorpio()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.MovimientoS;
+        MiAudioManager.FuenteSFX.loop = true;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void ReScorpioHit()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.HitS;
+        MiAudioManager.FuenteSFX.loop = false;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void ReScorpioDeath()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.MuerteS;
+        MiAudioManager.FuenteSFX.loop = false;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void ReScorpioAtaque()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.AtaqueS;
+        MiAudioManager.FuenteSFX.loop = false;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    #endregion
+
+    #region Prisma 
+    public void RePrisma()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.MovimientoP;
+        MiAudioManager.FuenteSFX.loop = true;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void RePrismaHit()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.HitP;
+        MiAudioManager.FuenteSFX.loop = false;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void RePrismaDeath()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.MuerteP;
+        MiAudioManager.FuenteSFX.loop = false;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
+    public void RePrismaAtaque()
+    {
+        MiAudioManager.FuenteSFX.clip = MiAudioManager.AtaqueP;
+        MiAudioManager.FuenteSFX.loop = false;
+        MiAudioManager.FuenteSFX.Play();
+    }
+
     #endregion
 
 }

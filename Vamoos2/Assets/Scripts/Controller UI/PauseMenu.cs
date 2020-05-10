@@ -85,7 +85,6 @@ public class PauseMenu : MonoBehaviour
         GamePaused = true;
         Debug.Log("GAME OVER TOLAI");
         
-
         EventSystem.current.SetSelectedGameObject(SelecGAMEOVER);
     }
 
