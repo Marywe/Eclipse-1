@@ -102,7 +102,10 @@ public class Controlador : MonoBehaviour
         
     }
 
-    
+    private void Update()
+    {
+        currentNumEnems = Mathf.Clamp(currentNumEnems, 0, 6);
+    }
     private void AbrirPuerta() //Activacion de eventos Animados
     {
         doorAnim.SetBool("Open", puertaFinalAbierta);

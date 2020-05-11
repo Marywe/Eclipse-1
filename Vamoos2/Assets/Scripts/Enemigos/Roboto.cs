@@ -26,9 +26,10 @@ public class Roboto : Enemigos
 		animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
 		sr = gameObject.GetComponentInChildren<SpriteRenderer>();
 
-        audioR = gameObject.AddComponent<AudioSource>() as AudioSource;
+		audioSource = GetComponent<AudioSource>();
+		audioManager = Controlador.instance.audioManager;
 
-        particleSpawn = transform.GetChild(2).GetComponent<ParticleSystem>();
+		particleSpawn = transform.GetChild(2).GetComponent<ParticleSystem>();
 		Spawn();
 	}
 	protected void Spawn()
@@ -50,22 +51,15 @@ public class Roboto : Enemigos
 	// Update is called once per frame
 	void Update()
 	{
-        Controlador.instance.audioManager.ReRobot();
-        // audioR.clip = AudioManager.ReRobot();
-
 
         if (!sr.flipX)
 		{
-			attackPos = transform.position + (Vector3.right);
-			
+			attackPos = transform.position + (Vector3.right);	
 		}
 		else
 		{
 			attackPos = (transform.position + (-Vector3.right));
-
 		}
-
-
 
         //base.MirarObjetivo(cam);
         #region Seguimiento
@@ -80,14 +74,14 @@ public class Roboto : Enemigos
 		{
 			mov = vectorMov1;
 			agent.SetDestination(objetivo1.position);
-
+			audioManager.ReRobot(this.audioSource, "moving");
 		}
 
 		else if (distancia2 <= radioVision && distancia2 < distancia1)
 		{
 			mov = vectorMov2;
 			agent.SetDestination(objetivo2.position);
-
+			audioManager.ReRobot(this.audioSource, "moving");
 		}
         else
         {
@@ -116,8 +110,7 @@ public class Roboto : Enemigos
 		}
 		#endregion
 
-		if (animE.GetBool("Moving")) Controlador.instance.audioManager.ReRobot();
-
+		
 		#region Ataque
 		if (distancia1 <= distanciaAtaque && !attacking && puedeDisparar)
 		{
@@ -131,6 +124,7 @@ public class Roboto : Enemigos
 		#region Morirse
 		if (currentHealth <= 0)
 		{
+			audioManager.ReRobot(this.audioSource, "death");
 			animE.SetTrigger("Die");
 			this.GetComponent<Collider>().enabled = false;
 			this.enabled = false;
@@ -148,7 +142,7 @@ public class Roboto : Enemigos
 			//Animasao
 			animE.SetTrigger("TakeDmg");
 			agent.isStopped = true;
-			Controlador.instance.audioManager.ReRobotHit();
+			audioManager.ReRobot(this.audioSource, "hit");
 			Invoke("Damaged", 0.5f);
         }
     }
@@ -158,7 +152,7 @@ public class Roboto : Enemigos
     /// </summary>
 	void Atacar()
 	{
-		Controlador.instance.audioManager.ReRobotAtaque();
+		
 		attacking = true;
 		animE.SetTrigger("Atacar");
 		StartCoroutine(corAttack());
@@ -174,7 +168,7 @@ public class Roboto : Enemigos
 		agent.isStopped = true;
 		animE.SetBool("Moving", false);
 		yield return new WaitForSeconds(1.6f);
-		Controlador.instance.audioManager.ReRobotAtaque();
+		audioManager.ReRobot(this.audioSource, "attack");
 
 		Collider[] hit = Physics.OverlapBox(attackPos, attackSz, transform.rotation);
 		

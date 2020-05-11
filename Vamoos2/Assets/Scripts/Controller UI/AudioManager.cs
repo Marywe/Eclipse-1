@@ -70,10 +70,10 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
         FuenteMaster = gameObject.AddComponent<AudioSource>() as AudioSource;
-        FuenteSFX = gameObject.AddComponent<AudioSource>() as AudioSource;
+        //FuenteSFX = gameObject.AddComponent<AudioSource>() as AudioSource;
         
         FuenteMaster.outputAudioMixerGroup = MusicGroup;
-        FuenteSFX.outputAudioMixerGroup = FXGroup;
+        //FuenteSFX.outputAudioMixerGroup = FXGroup;
 
     }
     //Reproducimos el tema principal desde el comienzo de la escena.
@@ -97,61 +97,57 @@ public class AudioManager : MonoBehaviour
     //Crear source correspondiente así como indicar a que parametro del audio mixer corresponde, tambien si queremos que se repita.
     public void ReproducirMainTheme()
     {
-        MiAudioManager.FuenteMaster.clip = MiAudioManager.PistaDeAudio;
-        MiAudioManager.FuenteMaster.loop = true;
-        MiAudioManager.FuenteMaster.Play();
+        FuenteMaster.clip = MiAudioManager.PistaDeAudio;
+        FuenteMaster.loop = true;
+        FuenteMaster.Play();
+        
     }
 
     #region Mariposa
-    public void ReMariposa()
+    public void ReMariposa(AudioSource audioS, string s)
     {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.Movimiento;
-        MiAudioManager.FuenteSFX.loop = true;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void ReMariposaHit()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.Hit;
-        MiAudioManager.FuenteSFX.loop = false;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void ReMariposaDeath()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.Muerte;
-        MiAudioManager.FuenteSFX.loop = false;
-        MiAudioManager.FuenteSFX.Play();
+        switch (s)
+        {
+            case "moving":
+                audioS.clip = Movimiento;
+                audioS.loop = true;
+                break;
+            case "hit":
+                audioS.clip = Hit;
+                audioS.loop = false;
+                break;
+            case "death":
+                audioS.clip = MiAudioManager.Muerte;
+                audioS.loop = false;
+                break;
+        }
+        audioS.Play();
     }
     #endregion
 
     #region Robot 
-    public void ReRobot()
+    public void ReRobot(AudioSource audioS, string s)
     {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.MovimientoR;
-        MiAudioManager.FuenteSFX.loop = true;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void ReRobotHit()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.HitR;
-        MiAudioManager.FuenteSFX.loop = false;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void ReRobotDeath()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.MuerteR;
-        MiAudioManager.FuenteSFX.loop = false;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void ReRobotAtaque()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.AtaqueR;
-        MiAudioManager.FuenteSFX.loop = false;
-        MiAudioManager.FuenteSFX.Play();
+        switch (s)
+        {
+            case "moving":
+                audioS.clip = MovimientoR;
+                audioS.loop = true;
+                break;
+            case "hit":
+                audioS.clip = HitR;
+                audioS.loop = false;
+                break;
+            case "death":
+                audioS.clip = MiAudioManager.MuerteR;
+                audioS.loop = false;
+                break;
+            case "attack":
+                audioS.clip = MiAudioManager.AtaqueR;
+                audioS.loop = false;
+                break;
+        }
+        audioS.Play();
     }
 
     #endregion

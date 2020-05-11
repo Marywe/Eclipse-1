@@ -7,8 +7,6 @@ using UnityEngine.AI;
 //funcionamiento y comportamiento dentro del juego y con relación al jugador y demas enemigos(herencia de Enemigos)
 public class Mariposa : Enemigos
 {
-   
-    //AudioManager audio;
     
     // Start is called before the first frame update
     void Start()
@@ -22,8 +20,11 @@ public class Mariposa : Enemigos
         agent = gameObject.GetComponent<NavMeshAgent>();
         animE = gameObject.GetComponentInChildren<Animator>();
         sr = (SpriteRenderer)gameObject.GetComponentInChildren(typeof(SpriteRenderer));
-        //-------------------------------------------------------------AUDIO
-        //audio = (AudioManager)gameObject.GetComponent(typeof(AudioManager));
+
+        //AUDIO
+        audioSource = GetComponent<AudioSource>();
+        audioManager = Controlador.instance.audioManager;
+        
 
         particleSpawn = transform.GetChild(2).GetComponent<ParticleSystem>();
         Spawn();
@@ -39,7 +40,6 @@ public class Mariposa : Enemigos
 
     IEnumerator corEnable()
     {
-
         yield return new WaitForSeconds(2.5f);
         agent.isStopped = false;
         shield.SetActive(true);
@@ -62,21 +62,22 @@ public class Mariposa : Enemigos
         {
             mov = vectorMov1;
             agent.SetDestination(objetivo1.position);
-
+            audioManager.ReMariposa(this.audioSource, "moving");
         }
 
         if (distancia2 <= radioVision && distancia2 < distancia1)
         {
             mov = vectorMov2;
             agent.SetDestination(objetivo2.position);
+            audioManager.ReMariposa(this.audioSource, "moving");
         }
+
+       
         #endregion    
 
         if (mov.x < 0) sr.flipX = true;
         else sr.flipX = false;
 
-        //-------------------------------------------------------------AUDIO
-        //audio.ReMariposa();
 
         #region Morirse
         if (currentHealth <= 0)
@@ -85,7 +86,7 @@ public class Mariposa : Enemigos
             this.GetComponent<Collider>().enabled = false;
             this.enabled = false;
             //-------------------------------------------------------------AUDIO
-            //audio.ReMariposaDeath(); 
+            audioManager.ReMariposa(this.audioSource, "death");
         }
         #endregion
     }
@@ -102,15 +103,14 @@ public class Mariposa : Enemigos
             Invoke("Damaged", 0.1f);
             Invoke("Stop", 1.5f);
             //-------------------------------------------------------------AUDIO
-            //audio.ReMariposaHit();
+            audioManager.ReMariposa(this.audioSource, "hit");
             
         }
     }
 
     //cambio de estados durante el daño del enemigo
     private void Damaged()
-    {
-        
+    {  
         damaged = false;
         animE.SetBool("Damaged", damaged);
     }

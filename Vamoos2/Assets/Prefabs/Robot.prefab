@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 5278071445014214983}
   - component: {fileID: 5278071445014214979}
   - component: {fileID: 5278071445014214978}
+  - component: {fileID: 1641533854490963116}
   m_Layer: 10
   m_Name: Robot
   m_TagString: Enemigos
@@ -219,7 +220,103 @@ MonoBehaviour:
   distanciaAtaque: 5
   attackSz: {x: 2.8, y: 1.28, z: 2}
   attackPos: {x: 0, y: 0, z: 0}
-  audioSource: {fileID: 0}
+--- !u!82 &1641533854490963116
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5278071445014215001}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2778939055241681969, guid: c3a912536834e1a4a9a9fb95f1d2229f,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &3526623836321872942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -327,6 +424,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5278071445014215000}
     m_Modifications:
+    - target: {fileID: 7496154023132264658, guid: 66f00c2fcdbad4d42a48a67cb9344c08,
+        type: 3}
+      propertyPath: m_Name
+      value: spawn enemigo
+      objectReference: {fileID: 0}
     - target: {fileID: 7496154023132264669, guid: 66f00c2fcdbad4d42a48a67cb9344c08,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -396,11 +498,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7496154023132264658, guid: 66f00c2fcdbad4d42a48a67cb9344c08,
-        type: 3}
-      propertyPath: m_Name
-      value: spawn enemigo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66f00c2fcdbad4d42a48a67cb9344c08, type: 3}

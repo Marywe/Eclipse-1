@@ -26,6 +26,9 @@ public class Prisma : Enemigos
         animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
         sr = gameObject.GetComponentInChildren<SpriteRenderer>();
 
+        audioSource = GetComponent<AudioSource>();
+        audioManager = Controlador.instance.audioManager;
+
         particleSpawn = transform.GetChild(2).GetComponent<ParticleSystem>();
         Spawn();
     }

@@ -6,6 +6,9 @@ using UnityEngine.AI;
 // Clase para el comportamiento y estadisticas generales de los enemigos.
 public class Enemigos : MonoBehaviour
 {
+    protected AudioManager audioManager;
+    protected AudioSource audioSource;
+
     protected bool puedeDisparar = true;
 
     [SerializeField]
