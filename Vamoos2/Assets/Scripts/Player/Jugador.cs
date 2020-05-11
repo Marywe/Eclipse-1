@@ -100,13 +100,13 @@ public class Jugador : MonoBehaviour
         switch (orientacion)
         {
             case 0: //DONE
-                offsetEntrada = new Vector3(3f, 0, -3f);
+                offsetEntrada = new Vector3(1f, 0, -3f);
                 break;
             case 1: //DONE
                 offsetEntrada = new Vector3(3f, 0, -3f);
                 break;
             case 2: //DONE
-                offsetEntrada = new Vector3(3f, 0, 3f);
+                offsetEntrada = new Vector3(1f, 0, 3f);
                 break;
             case 3: //DONE
                 offsetEntrada = new Vector3(-3f, 0, -3f);

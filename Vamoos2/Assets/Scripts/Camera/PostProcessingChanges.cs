@@ -28,17 +28,11 @@ public class PostProcessingChanges : MonoBehaviour
            Controlador.instance.dondeEstas == Controlador.DondeEstas.sArriba ||
            Controlador.instance.dondeEstas == Controlador.DondeEstas.LabDer ||
            Controlador.instance.dondeEstas == Controlador.DondeEstas.sBoss ||
-           Controlador.instance.dondeEstas == Controlador.DondeEstas.Ascensor)
+           Controlador.instance.dondeEstas == Controlador.DondeEstas.Ascensor ||
+           Controlador.instance.dondeEstas == Controlador.DondeEstas.LabIzq)
         {
             depth.enabled.value = false;
 
-        }
-        else if(Controlador.instance.dondeEstas == Controlador.DondeEstas.LabIzq)
-        {
-            depth.enabled.value = true;
-            depth.focusDistance.value = 16;
-            depth.aperture.value = 5.1f;
-            depth.focalLength.value = 146;
         }
         else
         {

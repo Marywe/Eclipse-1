@@ -99,6 +99,7 @@
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Scripts\Camera\MirarCamara.cs" />
     <Compile Include="Assets\Scripts\Camera\MirarCamObjetos.cs" />
+    <Compile Include="Assets\Scripts\Camera\PostProcessingChanges.cs" />
     <Compile Include="Assets\Scripts\Controlador.cs" />
     <Compile Include="Assets\Scripts\Controller UI\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Controller UI\MenuController.cs" />
@@ -124,7 +125,6 @@
     <Compile Include="Assets\Scripts\Player\Jugador.cs" />
     <Compile Include="Assets\Scripts\Player\Linea.cs" />
     <Compile Include="Assets\Scripts\Player\Rosa.cs" />
-    <Compile Include="Assets\Scripts\PostProcessingChanges.cs" />
     <Compile Include="Assets\Scripts\Rooms\AntesalaBoss.cs" />
     <Compile Include="Assets\Scripts\Rooms\ASCENSOR.cs" />
     <Compile Include="Assets\Scripts\Rooms\MiniSalas.cs" />

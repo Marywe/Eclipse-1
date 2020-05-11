@@ -23,7 +23,7 @@ public class Boss : MonoBehaviour
 
         if (hits == 3)
         {
-            
+            StartCoroutine(corMuerte());
         }
     }
 

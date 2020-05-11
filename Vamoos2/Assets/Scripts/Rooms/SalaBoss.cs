@@ -146,7 +146,7 @@ public class SalaBoss : MonoBehaviour
                     break;
             }
         }
-
+        bossanim.SetBool("BombTime", false);
         Controlador.instance.currentNumEnems = numEnems;
     }
 
@@ -175,6 +175,6 @@ public class SalaBoss : MonoBehaviour
     {
         GameObject newBombaTocha = Instantiate(prefabBombaTocha, centroPozo.position, Quaternion.identity);
         Controlador.instance.currentNumEnems = 1;
-       
+        bossanim.SetBool("BombTime", false);
     }    
 }

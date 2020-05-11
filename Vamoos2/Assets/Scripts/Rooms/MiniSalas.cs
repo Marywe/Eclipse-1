@@ -47,12 +47,10 @@ public class MiniSalas : Salas
             if (this.gameObject.layer == 0)
             {
                 Controlador.instance.ptoscamara[6].SetActive(false);
-                Controlador.instance.dondeEstas = Controlador.DondeEstas.LabIzq;
             }
             else
             {
                 Controlador.instance.ptoscamara[5].SetActive(false);
-                Controlador.instance.dondeEstas = Controlador.DondeEstas.LabDer;
             }
         }
     }
