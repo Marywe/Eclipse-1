@@ -13,18 +13,16 @@ public class CameraShake : MonoBehaviour
     private float vel;
     private Vector3 vel2 = Vector3.zero;
 
-    Vector3 originalPos;
+    public Transform[] originalTr;
+     Vector3[] originalPos = new Vector3[13];
 
     //Comprobamos si tenemos una camara en escena y modificamos su posicion si asi es necesario.
-    void Awake()
+    private void Start()
     {
-        if (camTransform == null)
+        for (int i = 0; i < originalTr.Length; i++)
         {
-            camTransform = transform;
-
+            originalPos[i] = originalTr[i].localPosition;
         }
-
-        originalPos = camTransform.localPosition;
     }
 
     //Funcion relacionada con los presonajes, es llamada por el script Jugador cuando recibe daño.
@@ -41,64 +39,20 @@ public class CameraShake : MonoBehaviour
     
     void Update()
     {
-        
-        if (shakeDuration > 0)
-        {
-            Vector3 newPos = originalPos + Random.insideUnitSphere * shakeAmount;
+        int n = (int)Controlador.instance.dondeEstas;
 
-            camTransform.localPosition = Vector3.SmoothDamp(camTransform.localPosition, newPos, ref vel2, 0.05f);
+        if (shakeDuration > 0 && n!=9)
+        {
+            Vector3 newPos = originalPos[n] + Random.insideUnitSphere * shakeAmount;
+
+            Controlador.instance.ptoscamara[n].transform.localPosition = Vector3.SmoothDamp(Controlador.instance.ptoscamara[n].transform.localPosition, newPos, ref vel2, 0.05f);
 
             shakeDuration -= Time.deltaTime;
             shakeAmount = Mathf.SmoothDamp(shakeAmount, 0, ref vel, 0.4f);
         }
-        else
+        else if(shakeDuration <= 0 && n !=9)
         {
-            camTransform.localPosition = originalPos;
-        }
-        int n = (int)Controlador.instance.dondeEstas;
-        switch (n)
-        {
-            case 0:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-            case 1:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-            case 2:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-            case 3:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-            case 4:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-            case 5:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-            case 6:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-            case 7:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-            case 8:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-            case 9:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-            case 10:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-            case 11:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-            case 12:
-                originalPos = Controlador.instance.ptoscamara[n].transform.localPosition;
-                break;
-
-
+            Controlador.instance.ptoscamara[n].transform.localPosition = originalPos[n];
         }
     }
 }

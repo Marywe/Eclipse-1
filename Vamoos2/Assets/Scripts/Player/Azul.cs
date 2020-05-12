@@ -16,6 +16,9 @@ public class Azul : Jugador
     {
         particulaRecibirDano = transform.GetChild(2).GetComponent<ParticleSystem>();
 
+        audioSource = GetComponent<AudioSource>();
+        audioManager = Controlador.instance.audioManager;
+
         playerState = PlayerState.idle;
         anim.SetFloat("Direction", 1);
         dashTime = startDash;
@@ -61,8 +64,12 @@ public class Azul : Jugador
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
-        if (playerState == PlayerState.idle || playerState == PlayerState.skill) characterController.Move(moveDirection * Time.deltaTime);
-        else characterController.Move(new Vector3(0, moveDirection.y , 0 )* Time.deltaTime);
+        if (playerState == PlayerState.idle || playerState == PlayerState.skill) 
+        { 
+            characterController.Move(moveDirection * Time.deltaTime);
+            audioManager.PJS(audioSource, "moving");
+        }
+        else characterController.Move(new Vector3(0, moveDirection.y, 0) * Time.deltaTime);
 
         if (xAxis == 0 && zAxis == 0)
             SetSpeedValue(0);

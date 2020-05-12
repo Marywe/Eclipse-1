@@ -43,7 +43,7 @@ public class PauseMenu : MonoBehaviour
 
         if (l.colisiones >= l.vidaMax)
         {
-            EndGame();
+            Invoke("EndGame", 1);
         }
 
     }

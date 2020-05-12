@@ -18,6 +18,8 @@ public class Rosa : Jugador
     void Start()
     {
         particulaRecibirDano = transform.GetChild(2).GetComponent<ParticleSystem>();
+        audioSource = GetComponent<AudioSource>();
+        audioManager = Controlador.instance.audioManager;
 
         playerState = PlayerState.idle;
         anim.SetFloat("Direction", 1);
@@ -87,7 +89,7 @@ public class Rosa : Jugador
         if (playerState == PlayerState.idle || playerState == PlayerState.skill)
         {
             characterController.Move(moveDirection * Time.deltaTime);
-            //Controlador.instance.audioManager.PJSAndando();
+            audioManager.PJS(audioSource, "moving");
         }
         else characterController.Move(new Vector3(0, moveDirection.y, 0) * Time.deltaTime);
 

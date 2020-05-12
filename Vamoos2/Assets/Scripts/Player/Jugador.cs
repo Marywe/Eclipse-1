@@ -33,7 +33,8 @@ public class Jugador : MonoBehaviour
 
     protected ParticleSystem particulaRecibirDano;
 
-
+    protected AudioManager audioManager;
+    protected AudioSource audioSource;
 
     /// <summary>
     /// Maquina de Estados para los personajes, en este caso para los estados en los que pueden encontrarse
@@ -72,9 +73,6 @@ public class Jugador : MonoBehaviour
     /// <summary>
     /// Funcion para rotar los sprites de los personajes en relacion a la camara
     /// </summary>
-    
-
-
     protected virtual void Rotar()
     {
         sprites.transform.rotation = Quaternion.LookRotation(transform.position - cam.position);

@@ -37,6 +37,8 @@ public class Linea : MonoBehaviour
     {
         LongitudYVainas();
         ModificarCollider();
+
+
     }
 
     //Detectar colisiones con los enemigos
@@ -82,6 +84,9 @@ public class Linea : MonoBehaviour
         line.SetPosition(1, bPrima);
     }
 
-
+    void ActualizarColores()
+    {
+        if (colisiones <= 2) { }
+    }
 
 }

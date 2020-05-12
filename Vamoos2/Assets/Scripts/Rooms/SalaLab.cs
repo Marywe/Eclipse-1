@@ -68,7 +68,6 @@ public class SalaLab : Salas
 
         newPrisma = Instantiate(Controlador.instance.prefabPrisma, puntosSpawn[3].position, puntosSpawn[3].rotation);
         newPrisma.GetComponent<NavMeshAgent>().enabled = false;
-        newPrisma.GetComponent<Prisma>().enabled = false;
         Controlador.instance.currentNumEnems = 4;
         salaCleanFirstTime = true;
     }
@@ -84,6 +83,5 @@ public class SalaLab : Salas
             newPrisma.GetComponent<Prisma>().enabled = true;
             newPrisma.GetComponent<NavMeshAgent>().enabled = true;
         }
-        
     }
 }

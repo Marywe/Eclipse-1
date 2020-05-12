@@ -23,16 +23,23 @@ public class PostProcessingChanges : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(Controlador.instance.dondeEstas == Controlador.DondeEstas.sLab || 
            Controlador.instance.dondeEstas == Controlador.DondeEstas.sBossRush || 
            Controlador.instance.dondeEstas == Controlador.DondeEstas.sArriba ||
            Controlador.instance.dondeEstas == Controlador.DondeEstas.LabDer ||
            Controlador.instance.dondeEstas == Controlador.DondeEstas.sBoss ||
-           Controlador.instance.dondeEstas == Controlador.DondeEstas.Ascensor ||
-           Controlador.instance.dondeEstas == Controlador.DondeEstas.LabIzq)
+           Controlador.instance.dondeEstas == Controlador.DondeEstas.Ascensor)
         {
             depth.enabled.value = false;
 
+        }
+        else if(Controlador.instance.dondeEstas == Controlador.DondeEstas.LabIzq)
+        {
+            depth.enabled.value = true;
+            depth.focalLength.value = 35;
+            depth.focusDistance.value = 20;
+            depth.aperture.value = 0.18f;
         }
         else
         {

@@ -21,6 +21,8 @@ public class AudioManager : MonoBehaviour
     //Mediante Header hacemos mas sencilla la organicacion y asignacion en el inspector de los sources de sonido.
     [Header("TemaPrincipal")]
     public AudioClip PistaDeAudio;
+    public AudioClip PistaMenus;
+    public AudioClip PistaAscensor;
 
     [Header("Personajes")]
     public AudioClip pjsMoving;
@@ -67,6 +69,7 @@ public class AudioManager : MonoBehaviour
         {
             MiAudioManager = this;
         }
+
         DontDestroyOnLoad(gameObject);
         
         FuenteMaster = gameObject.AddComponent<AudioSource>() as AudioSource;
@@ -97,7 +100,7 @@ public class AudioManager : MonoBehaviour
     //Crear source correspondiente así como indicar a que parametro del audio mixer corresponde, tambien si queremos que se repita.
     public void ReproducirMainTheme()
     {
-        FuenteMaster.clip = MiAudioManager.PistaDeAudio;
+        FuenteMaster.clip = PistaDeAudio;
         FuenteMaster.loop = true;
         FuenteMaster.Play();
         
@@ -124,7 +127,6 @@ public class AudioManager : MonoBehaviour
         audioS.Play();
     }
     #endregion
-
     #region Robot 
     public void ReRobot(AudioSource audioS, string s)
     {
@@ -143,7 +145,59 @@ public class AudioManager : MonoBehaviour
                 audioS.loop = false;
                 break;
             case "attack":
-                audioS.clip = MiAudioManager.AtaqueR;
+                audioS.clip = AtaqueR;
+                audioS.loop = false;
+                break;
+        }
+        audioS.Play();
+    }
+
+    #endregion
+    #region Scorpio 
+    public void ReScorpio(AudioSource audioS, string s)
+    {
+        switch (s)
+        {
+            case "moving":
+                audioS.clip = MovimientoS;
+                audioS.loop = true;
+                break;
+            case "hit":
+                audioS.clip = HitS;
+                audioS.loop = false;
+                break;
+            case "death":
+                audioS.clip = MuerteS;
+                audioS.loop = false;
+                break;
+            case "attack":
+                audioS.clip = AtaqueS;
+                audioS.loop = false;
+                break;
+        }
+        audioS.Play();
+    }
+
+    #endregion
+    #region Prisma 
+    public void RePrisma(AudioSource audioS, string s)
+    {
+        switch (s)
+        {
+            case "moving":
+                audioS.clip = MovimientoP;
+                audioS.loop = true;
+                break;
+            case "hit":
+                audioS.clip = HitP;
+                audioS.loop = false;
+                break;
+            case "death":
+                audioS.clip = MuerteP;
+                audioS.loop = false;
+                break;
+            case "attack":
+                audioS.clip = AtaqueP;
                 audioS.loop = false;
                 break;
         }
@@ -154,74 +208,25 @@ public class AudioManager : MonoBehaviour
 
     #region PJS
 
-    public void PJSAndando()
+    public void PJS(AudioSource audioS, string s)
     {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.pjsMoving;
-        MiAudioManager.FuenteSFX.loop = true;
-        MiAudioManager.FuenteSFX.Play();
+        switch (s)
+        {
+            case "moving":
+                audioS.clip = pjsMoving;
+                audioS.loop = true;
+                break;
+            case "hit":
+                audioS.clip = Hit;
+                audioS.loop = false;
+                break;
+            case "death":
+                audioS.clip = Muerte;
+                audioS.loop = false;
+                break;
+        }
+        audioS.Play();
     }
-    #endregion
-
-    #region Scorpio 
-    public void ReScorpio()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.MovimientoS;
-        MiAudioManager.FuenteSFX.loop = true;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void ReScorpioHit()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.HitS;
-        MiAudioManager.FuenteSFX.loop = false;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void ReScorpioDeath()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.MuerteS;
-        MiAudioManager.FuenteSFX.loop = false;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void ReScorpioAtaque()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.AtaqueS;
-        MiAudioManager.FuenteSFX.loop = false;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    #endregion
-
-    #region Prisma 
-    public void RePrisma()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.MovimientoP;
-        MiAudioManager.FuenteSFX.loop = true;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void RePrismaHit()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.HitP;
-        MiAudioManager.FuenteSFX.loop = false;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void RePrismaDeath()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.MuerteP;
-        MiAudioManager.FuenteSFX.loop = false;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
-    public void RePrismaAtaque()
-    {
-        MiAudioManager.FuenteSFX.clip = MiAudioManager.AtaqueP;
-        MiAudioManager.FuenteSFX.loop = false;
-        MiAudioManager.FuenteSFX.Play();
-    }
-
     #endregion
 
 }
