@@ -6,6 +6,9 @@ using UnityEngine;
 public class Linea : MonoBehaviour
 {
     [SerializeField]
+    private Material[] materialesCadena;
+
+    [SerializeField]
     private GameObject Mistu;
     [SerializeField]
     private GameObject Araxiel;
@@ -37,8 +40,7 @@ public class Linea : MonoBehaviour
     {
         LongitudYVainas();
         ModificarCollider();
-
-
+        ActualizarColores();
     }
 
     //Detectar colisiones con los enemigos
@@ -86,7 +88,55 @@ public class Linea : MonoBehaviour
 
     void ActualizarColores()
     {
-        if (colisiones <= 2) { }
+        if (colisiones <= 2) 
+        { 
+            foreach(Material m in materialesCadena)
+            {
+                m.color = Color.white;
+            }
+        }
+        else if (colisiones>2 && colisiones <= 4)
+        {
+            foreach (Material m in materialesCadena)
+            {
+                m.color = Color.magenta;
+            }
+        }
+        else if (colisiones > 4 && colisiones <= 6)
+        {
+            foreach (Material m in materialesCadena)
+            {
+                m.color = Color.blue;
+            }
+        }
+        else if (colisiones > 6 && colisiones <= 8)
+        {
+            foreach (Material m in materialesCadena)
+            {
+                m.color = Color.green;
+            }
+        }
+        else if (colisiones > 8 && colisiones <= 10)
+        {
+            foreach (Material m in materialesCadena)
+            {
+                m.color = Color.yellow;
+            }
+        }
+        else if (colisiones > 10 && colisiones<= 12)
+        {
+            foreach (Material m in materialesCadena)
+            {
+                m.color = Color.red;
+            }
+        }
+        else if (colisiones > 12 )
+        {
+            foreach (Material m in materialesCadena)
+            {
+                m.color = Color.black;
+            }
+        }
     }
 
 }
