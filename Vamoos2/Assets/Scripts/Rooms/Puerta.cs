@@ -26,7 +26,7 @@ public class Puerta : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             cerca = true;
-        }       
+        }
     }
 
     private void OnTriggerExit(Collider other)

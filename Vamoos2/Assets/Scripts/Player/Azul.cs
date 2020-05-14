@@ -148,8 +148,12 @@ public class Azul : Jugador
             r.tp = true;
             r.characterController.enabled = false;
             rosa.transform.position = this.transform.position + offsetEntrada; //variable según la sala en la q estas
+
+            //characterController.Move(new Vector3(Mathf.Clamp((offsetEntrada.x * 2), -3, 3), 0, Mathf.Clamp((offsetEntrada.z * 2), -3, 3)) * 3);
+
             r.characterController.enabled = true;
             StartCoroutine(TP());
+
         }
     }
     public IEnumerator TP()

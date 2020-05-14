@@ -6,16 +6,18 @@ using UnityEngine;
 public class Modificador : MonoBehaviour
 {
     private string tagMod;
+    Vector3 initialPosition;
     // Start is called before the first frame update
     void Start()
     {
         tagMod = gameObject.tag;
+        initialPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = new Vector3(initialPosition.x, transform.position.y, initialPosition.z);
     }
 
     /// <summary>
