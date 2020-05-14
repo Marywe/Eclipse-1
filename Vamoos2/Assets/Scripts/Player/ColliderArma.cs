@@ -128,12 +128,7 @@ public class ColliderArma : MonoBehaviour
         if (nBut >= 3)
         {
             SetBasicAttack(1f);
-            enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2, Quaternion.identity, enemyLayer);
-            //  enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
-            foreach (Collider enemy in enemiesHit)
-            {
-                enemy.GetComponent<Enemigos>().TakeDamage(r.dano + danioAdicional);
-            }
+           
 
         }
         else
@@ -146,6 +141,14 @@ public class ColliderArma : MonoBehaviour
     }
     public void ThAt()
     {
+
+        enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2, Quaternion.identity, enemyLayer);
+        //  enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
+        foreach (Collider enemy in enemiesHit)
+        {
+            enemy.GetComponent<Enemigos>().TakeDamage(r.dano + danioAdicional);
+        }
+
         anim.SetBool("Attack", false);
         StartCoroutine(corBasicAtt());
         nBut = 0;
