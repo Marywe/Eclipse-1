@@ -119,7 +119,6 @@ public class ColliderArma : MonoBehaviour
             {
                 enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
             }
-
         }
         else
         {
@@ -153,6 +152,8 @@ public class ColliderArma : MonoBehaviour
         {
             enemy.GetComponent<Enemigos>().TakeDamage(r.dano + danioAdicional);
         }
+
+        puedeAtacar2 = true;
     }
     public void ThAt()
     {

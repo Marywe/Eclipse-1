@@ -19,7 +19,7 @@ public class Rosa : Jugador
     public float speed2;
     void Start()
     {
-        speed2 = speed;
+        speed2 = 6;
 
         particulaRecibirDano = transform.GetChild(2).GetComponent<ParticleSystem>();
         audioSource = GetComponent<AudioSource>();
