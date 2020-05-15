@@ -18,4 +18,9 @@ public class EventoAtaqueRosa : MonoBehaviour
     {
         rosa.ThAt();
     }
+
+    public void FinalCombo()
+    {
+        rosa.FinalCombo();
+    }
 }

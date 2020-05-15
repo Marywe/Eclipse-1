@@ -5,11 +5,7 @@ using UnityEngine;
 /// Script que controla las características de los chips para abrir la puerta final
 /// </summary>
 public class Chip : MonoBehaviour
-{  
-    private bool PuertaGrandeAbierta = false;
-    private void Start()
-    {
-    }
+{
     //Añadir Chips cuando la cosilision sea realizada por un personaje(jugador)
     private void OnTriggerEnter(Collider other)
     {
@@ -17,16 +13,6 @@ public class Chip : MonoBehaviour
         {
             Controlador.instance.AddChips();
             Destroy(gameObject);
-        }
-
-    }
-
-    //Cuando se alcance el numero especifico de chips, modificara la variablee de la puerta para que el jugador pueda pasar
-    private void Update()
-    {
-        if (Controlador.instance.chips == 3)
-        {
-            PuertaGrandeAbierta = true;
         }
     }
 }

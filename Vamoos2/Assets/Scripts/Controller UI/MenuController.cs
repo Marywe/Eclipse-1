@@ -22,7 +22,6 @@ public class MenuController : MonoBehaviour
 
     public GameObject Advertencia;
     public float tiempoEsperaAdvertencia = 5;
-    static bool primeraVez = true;
 
     #region Control del Menu con Mando (Objetos)
     //G.O. transiciones

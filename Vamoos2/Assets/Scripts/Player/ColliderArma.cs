@@ -128,8 +128,6 @@ public class ColliderArma : MonoBehaviour
         if (nBut >= 3)
         {
             SetBasicAttack(1f);
-           
-
         }
         else
         {
@@ -139,16 +137,18 @@ public class ColliderArma : MonoBehaviour
             r.speed += 3;
         }
     }
-    public void ThAt()
-    {
 
+    public void FinalCombo()
+    {
         enemiesHit = Physics.OverlapBox(transform.position, cubeSz / 2, Quaternion.identity, enemyLayer);
         //  enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
         foreach (Collider enemy in enemiesHit)
         {
             enemy.GetComponent<Enemigos>().TakeDamage(r.dano + danioAdicional);
         }
-
+    }
+    public void ThAt()
+    {
         anim.SetBool("Attack", false);
         StartCoroutine(corBasicAtt());
         nBut = 0;

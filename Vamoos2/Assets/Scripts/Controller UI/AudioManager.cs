@@ -115,7 +115,6 @@ public class AudioManager : MonoBehaviour
         FuenteMaster.clip = PistaDeAudio;
         FuenteMaster.loop = true;
         FuenteMaster.Play();
-        
     }
 
     #region Mariposa
