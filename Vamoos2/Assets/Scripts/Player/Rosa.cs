@@ -15,8 +15,12 @@ public class Rosa : Jugador
     public GameObject azul;
 
     public Image skill;
+
+    public float speed2;
     void Start()
     {
+        speed2 = speed;
+
         particulaRecibirDano = transform.GetChild(2).GetComponent<ParticleSystem>();
         audioSource = GetComponent<AudioSource>();
         audioManager = Controlador.instance.audioManager;

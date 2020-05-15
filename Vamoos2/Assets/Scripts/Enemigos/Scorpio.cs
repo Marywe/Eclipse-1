@@ -14,7 +14,6 @@ public class Scorpio : Enemigos
         objetivo1 = Controlador.instance.objetivo1;
         objetivo2 = Controlador.instance.objetivo2;
         shield = transform.GetChild(1).gameObject;
-        maxHealth = 5;
         currentHealth = maxHealth;
         agent = gameObject.GetComponent<NavMeshAgent>();
         animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
@@ -124,7 +123,7 @@ public class Scorpio : Enemigos
     private void Atacar(Transform target, int n)
     {
         attacking = true;      
-        animE.SetTrigger("Attack");
+        
         puedeDisparar = false;
         StartCoroutine(corAttack());
         StartCoroutine(corAnimAtacar(target, n));
@@ -140,7 +139,9 @@ public class Scorpio : Enemigos
     /// <returns></returns>
     private IEnumerator corAnimAtacar(Transform t, int n)
     {
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.5f);
+        animE.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.2f);
         if ((t.position-transform.position).magnitude <= agent.stoppingDistance)
         {
             if (n == 1) t.GetComponent<Azul>().RecibirGolpe(this.transform);
@@ -150,7 +151,7 @@ public class Scorpio : Enemigos
     private IEnumerator corAttack()
     {
         agent.isStopped = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         attacking = false;
         agent.isStopped = false;
     }

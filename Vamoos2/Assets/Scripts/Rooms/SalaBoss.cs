@@ -13,7 +13,7 @@ public class SalaBoss : MonoBehaviour
     [SerializeField]
     GameObject prefabBombaTocha;
 
-    private const int numBombas = 35;
+    private const int numBombas = 60;
 
     public Transform centroPozo;
 
@@ -46,7 +46,7 @@ public class SalaBoss : MonoBehaviour
             SpawnBombas();
             haHechoCosas = true;
         }
-        else if (bossanim.GetCurrentAnimatorStateInfo(0).IsTag("spawn") && !haHechoCosas)
+        else if (bossanim.GetCurrentAnimatorStateInfo(0).IsTag("spawn") && !haHechoCosas && bossanim.GetFloat("Hits") <3)
         {
             SpawnEnems();
             haHechoCosas = true;

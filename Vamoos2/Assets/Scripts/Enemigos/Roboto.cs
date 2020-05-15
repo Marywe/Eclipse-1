@@ -74,14 +74,14 @@ public class Roboto : Enemigos
 		{
 			mov = vectorMov1;
 			agent.SetDestination(objetivo1.position);
-			audioManager.ReRobot(this.audioSource, "moving");
+			//audioManager.ReRobot(this.audioSource, "moving");
 		}
 
 		else if (distancia2 <= radioVision && distancia2 < distancia1)
 		{
 			mov = vectorMov2;
 			agent.SetDestination(objetivo2.position);
-			audioManager.ReRobot(this.audioSource, "moving");
+			//audioManager.ReRobot(this.audioSource, "moving");
 		}
         else
         {
@@ -124,7 +124,7 @@ public class Roboto : Enemigos
 		#region Morirse
 		if (currentHealth <= 0)
 		{
-			audioManager.ReRobot(this.audioSource, "death");
+			//audioManager.ReRobot(this.audioSource, "death");
 			animE.SetTrigger("Die");
 			this.GetComponent<Collider>().enabled = false;
 			this.enabled = false;
@@ -142,7 +142,7 @@ public class Roboto : Enemigos
 			//Animasao
 			animE.SetTrigger("TakeDmg");
 			agent.isStopped = true;
-			audioManager.ReRobot(this.audioSource, "hit");
+			//audioManager.ReRobot(this.audioSource, "hit");
 			Invoke("Damaged", 0.5f);
         }
     }
@@ -168,7 +168,7 @@ public class Roboto : Enemigos
 		agent.isStopped = true;
 		animE.SetBool("Moving", false);
 		yield return new WaitForSeconds(1.6f);
-		audioManager.ReRobot(this.audioSource, "attack");
+		//audioManager.ReRobot(this.audioSource, "attack");
 
 		Collider[] hit = Physics.OverlapBox(attackPos, attackSz, transform.rotation);
 		
@@ -180,13 +180,10 @@ public class Roboto : Enemigos
 		agent.isStopped = false;
 		yield return new WaitForSeconds(3);
 		attacking = false;
-		
-
 	}
     
 	private void Damaged()
 	{
-		
 		agent.isStopped = false;
 		damaged = false;
 	}

@@ -92,8 +92,6 @@ public class Prisma : Enemigos
             SetSpeedValue(0);
             if (puedeDisparar)
                 Shoot(objetivo2);
-
-
         }
 
 
@@ -190,11 +188,13 @@ public class Prisma : Enemigos
 		if (!damaged)
 		{
             GameObject newDisparo = Instantiate(disparo);
-            newDisparo.transform.position = transform.position;
+            newDisparo.transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
 
 			vD.x = target.transform.position.x - transform.position.x;
-			vD.y = 0;
+			vD.y = target.transform.position.y - transform.position.y;
 			vD.z = target.transform.position.z - transform.position.z;
+
+            newDisparo.transform.rotation = Quaternion.LookRotation(vD);
 
             /*Vector3 look;
             look.x = transform.position.x - target.position.x;

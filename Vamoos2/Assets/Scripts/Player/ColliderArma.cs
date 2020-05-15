@@ -17,6 +17,7 @@ public class ColliderArma : MonoBehaviour
     private int nBut = 0;
     private Vector3 posicion;
     private bool puedeAtacar;
+    private bool puedeAtacar2 = true;
     private Rosa r;
     [SerializeField]
     private float danioAdicional = 0.5f;
@@ -53,8 +54,14 @@ public class ColliderArma : MonoBehaviour
 
         if (puedeAtacar)
         {
-            basic.color = new Color(255, 255, 255);
+            
             BasicAttack();
+        }
+
+        if (puedeAtacar2)
+        {
+            r.speed = r.speed2;
+            basic.color = new Color(255, 255, 255);
         }
         else basic.color = new Color(0, 0, 0);
 
@@ -77,7 +84,7 @@ public class ColliderArma : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            
+            puedeAtacar2 = false;
             lastButTime = Time.time;
             nBut++;
             anim.SetBool("Attack", true);
@@ -167,6 +174,7 @@ public class ColliderArma : MonoBehaviour
         puedeAtacar = false;
         yield return new WaitForSeconds(r.cdbasicAttack);
         puedeAtacar = true;
+        puedeAtacar2 = true;
     }
     
     

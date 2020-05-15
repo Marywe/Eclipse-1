@@ -7,7 +7,7 @@ public class Estrella : MonoBehaviour
     private GameObject escudo;
     private bool vulnerable;
 
-    public GameObject dialogue;
+    
 
     private void Start()
     {
@@ -17,36 +17,21 @@ public class Estrella : MonoBehaviour
 
     private IEnumerator OnTriggerEnter(Collider other)
     {
-        if (gameObject.name == "Estrella") 
-        {
-            if (other.gameObject.tag == "Cadena" && vulnerable)
-            {
-                escudo.SetActive(false);
-                vulnerable = false;
 
-                yield return new WaitForSeconds(5);
-                escudo.SetActive(true);
-                vulnerable = true;
-            }
-        }
-        else
+        if (other.gameObject.tag == "Cadena" && vulnerable)
         {
-            if (other.CompareTag("Player"))
-            {
-                dialogue.SetActive(true);
-            }
+            escudo.SetActive(false);
+            vulnerable = false;
+
+            yield return new WaitForSeconds(5);
+            escudo.SetActive(true);
+            vulnerable = true;
         }
 
         yield return null;
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if(gameObject.name != "Estrella" && other.CompareTag("Player"))
-        {
-            dialogue.SetActive(false);
-        }
-    }
+    
 
 
 

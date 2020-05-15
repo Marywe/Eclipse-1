@@ -67,6 +67,8 @@ public class Modificador : MonoBehaviour
     void ModificarVel(GameObject other)
     {
         other.GetComponent<Jugador>().speed += 1;
+
+        if (other.GetComponent<Rosa>() != null) other.GetComponent<Rosa>().speed2 += 1;
     }
     void ModificarRecarga(GameObject other)
     {
