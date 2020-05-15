@@ -50,7 +50,19 @@ public class AudioManager : MonoBehaviour
     public AudioClip HitP;
     public AudioClip AtaqueP;
 
-  
+    [Header("BOSS")]
+    public AudioClip MovimientoB;
+    public AudioClip MuerteB;
+    public AudioClip HitB;
+    public AudioClip AtaqueB;
+    public AudioClip AtkBomb;
+
+    [Header("Objetos")]
+    public AudioClip BossKey;
+    public AudioClip HealPack;
+    public AudioClip Upgrades;
+
+
     [HideInInspector]
     public AudioSource FuenteMaster;
     [HideInInspector]
@@ -228,5 +240,34 @@ public class AudioManager : MonoBehaviour
         audioS.Play();
     }
     #endregion
+
+    public void BOSS(AudioSource audioS, string s)
+    {
+        switch (s)
+        {
+            case "moving":
+                audioS.clip = MovimientoB;
+                audioS.loop = true;
+                break;
+            case "hit":
+                audioS.clip = HitB;
+                audioS.loop = false;
+                break;
+            case "BombAtk":
+                audioS.clip = AtkBomb;
+                audioS.loop = false;
+                break;
+            case "attack":
+                audioS.clip = AtaqueP;
+                audioS.loop = false;
+                break;
+            case "Death":
+                audioS.clip = MuerteB;
+                audioS.loop = false;
+                break;
+        }
+        audioS.Play();
+    }
+
 
 }

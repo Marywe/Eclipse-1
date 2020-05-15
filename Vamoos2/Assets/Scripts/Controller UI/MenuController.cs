@@ -17,6 +17,8 @@ public class MenuController : MonoBehaviour
     private GameObject LoadingScreen;
     [SerializeField]
     private Slider loadingPorcentaje;
+    private Animator animCredits;
+    public GameObject Thanks;
 
     public GameObject Advertencia;
     public float tiempoEsperaAdvertencia = 5;
@@ -45,7 +47,7 @@ public class MenuController : MonoBehaviour
     {
      
         Invoke("FuncionAdvertencia", tiempoEsperaAdvertencia);
-
+        animCredits = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
         #region Resoluciones
         Resoluciones = Screen.resolutions;
         DropDeResoluciones.ClearOptions();
@@ -127,6 +129,8 @@ public class MenuController : MonoBehaviour
     {
         MenuPpl.SetActive(false);
         MenuCredits.SetActive(true);
+        animCredits.SetBool("Credits", true);
+        Thanks.SetActive(true);
         EventSystem.current.SetSelectedGameObject(BotonCredits);
         
     }
