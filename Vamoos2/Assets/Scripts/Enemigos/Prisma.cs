@@ -36,7 +36,8 @@ public class Prisma : Enemigos
     protected void Spawn()
     {
         sr.enabled = false;
-        agent.isStopped = true;
+        if(agent.isOnNavMesh)
+            agent.isStopped = true;
         particleSpawn.Play();
         StartCoroutine(corEnable());
     }
@@ -46,7 +47,8 @@ public class Prisma : Enemigos
 
         yield return new WaitForSeconds(2.5f);
         shield.SetActive(true);
-        agent.isStopped = false;
+        if (agent.isOnNavMesh)
+            agent.isStopped = false;
         sr.enabled = true;
     }
 
@@ -62,38 +64,40 @@ public class Prisma : Enemigos
         Vector3 vectorMov2 = new Vector3(objetivo2.position.x - this.transform.position.x, objetivo2.position.y - this.transform.position.y, objetivo2.position.z - this.transform.position.z);
         float distancia2 = Vector3.Distance(objetivo2.position, transform.position);
 
-        #region PJ1
-        if (distancia1 <= radioVision && distancia1 < distancia2 && distancia1 > agent.stoppingDistance)
+        if (agent.isOnNavMesh)
         {
-            SetSpeedValue(1);
-            mov = vectorMov1;
-            agent.SetDestination((objetivo1.position) - Vector3.forward - Vector3.right * 2);
+            #region PJ1
+            if (distancia1 <= radioVision && distancia1 < distancia2 && distancia1 > agent.stoppingDistance)
+            {
+                SetSpeedValue(1);
+                mov = vectorMov1;
+                agent.SetDestination((objetivo1.position) - Vector3.forward - Vector3.right * 2);
+            }
+
+            else if (distancia1 <= agent.stoppingDistance + 5 && distancia1 < distancia2)
+            {
+                SetSpeedValue(0);
+                if (puedeDisparar)
+                    Shoot(objetivo1);
+            }
+
+            #endregion
+
+            #region PJ2
+
+            else if (distancia2 <= radioVision && distancia2 < distancia1 && distancia2 > agent.stoppingDistance)
+            {
+                SetSpeedValue(1);
+                mov = vectorMov2;
+                agent.SetDestination(objetivo2.position - Vector3.forward - Vector3.right * 2);
+            }
+            else if (distancia2 <= agent.stoppingDistance + 5 && distancia2 < distancia1)
+            {
+                SetSpeedValue(0);
+                if (puedeDisparar)
+                    Shoot(objetivo2);
+            }
         }
-
-        else if (distancia1 <= agent.stoppingDistance + 5 && distancia1 < distancia2)
-        {
-            SetSpeedValue(0);
-            if (puedeDisparar)
-                Shoot(objetivo1);
-        }
-
-        #endregion
-
-        #region PJ2
-
-        else if (distancia2 <= radioVision && distancia2 < distancia1 && distancia2 > agent.stoppingDistance)
-        {
-            SetSpeedValue(1);
-            mov = vectorMov2;
-            agent.SetDestination(objetivo2.position - Vector3.forward - Vector3.right * 2);
-        }
-        else if (distancia2 <= agent.stoppingDistance + 5 && distancia2 < distancia1)
-        {
-            SetSpeedValue(0);
-            if (puedeDisparar)
-                Shoot(objetivo2);
-        }
-
 
         #endregion
         #endregion
