@@ -4,11 +4,36 @@ using System;
 using UnityEngine;
 using UnityEngine.Audio;
 //Clase que contiene todo el audio del juego, se encarga de generar los sources determinados y reproducirlos.
+[System.Serializable]
+public class Sounds
+{
+    public AudioClip clip;
+    public string name;
+
+    private float volume = 0.7f;
+    private float pitch = 1f;
+    private float rndVolume = 0.1f;
+
+
+    private AudioSource audioSource;
+
+    public void SetSource(AudioSource _audio)
+    {
+        audioSource = _audio;
+    }
+
+    public void PlaySound(string name)
+    {
+        audioSource.volume = volume * (1 + UnityEngine.Random.Range(-rndVolume, rndVolume));
+        audioSource.pitch = pitch * (1 + UnityEngine.Random.Range(-rndVolume, rndVolume));
+        audioSource.Play();
+    }
+}
+
+
 public class AudioManager : MonoBehaviour
 {
     static AudioManager MiAudioManager;
-
-    public int contadorAudios = 1;
 
     /// <summary>
     /// Mediante un audio mixer, y dos grupos vamos a controlar todos los sonidos del juego.
@@ -112,14 +137,23 @@ public class AudioManager : MonoBehaviour
     //Crear source correspondiente así como indicar a que parametro del audio mixer corresponde, tambien si queremos que se repita.
     public void ReproducirMainTheme()
     {
+        FuenteMaster.Stop();
         FuenteMaster.clip = PistaDeAudio;
         FuenteMaster.loop = true;
         FuenteMaster.Play();
     }
 
-    #region Mariposa
+    public void ElevatorMusic()
+    {
+        FuenteMaster.Stop();
+        FuenteMaster.clip = PistaAscensor;
+        FuenteMaster.loop = true;
+        FuenteMaster.Play();
+    }
+
     public void ReMariposa(AudioSource audioS, string s)
     {
+        audioS.Stop();
         switch (s)
         {
             case "moving":
@@ -137,10 +171,10 @@ public class AudioManager : MonoBehaviour
         }
         audioS.Play();
     }
-    #endregion
-    #region Robot 
+
     public void ReRobot(AudioSource audioS, string s)
     {
+        audioS.Stop();
         switch (s)
         {
             case "moving":
@@ -163,8 +197,6 @@ public class AudioManager : MonoBehaviour
         audioS.Play();
     }
 
-    #endregion
-    #region Scorpio 
     public void ReScorpio(AudioSource audioS, string s)
     {
         switch (s)
@@ -189,10 +221,9 @@ public class AudioManager : MonoBehaviour
         audioS.Play();
     }
 
-    #endregion
-    #region Prisma 
     public void RePrisma(AudioSource audioS, string s)
     {
+        audioS.Stop();
         switch (s)
         {
             case "moving":
@@ -215,15 +246,13 @@ public class AudioManager : MonoBehaviour
         audioS.Play();
     }
 
-    #endregion
-
-    #region PJS
-
     public void PJS(AudioSource audioS, string s)
     {
+        audioS.Stop();
         switch (s)
         {
             case "moving":
+                audioS.volume = 1f;
                 audioS.clip = pjsMoving;
                 audioS.loop = true;
                 break;
@@ -238,7 +267,6 @@ public class AudioManager : MonoBehaviour
         }
         audioS.Play();
     }
-    #endregion
 
     public void BOSS(AudioSource audioS, string s)
     {
@@ -268,5 +296,22 @@ public class AudioManager : MonoBehaviour
         audioS.Play();
     }
 
+    public void PickUps(AudioSource audioS, string s)
+    {
+        switch (s)
+        {
+            case "healthpack":
+                audioS.clip = HealPack;
+                break;
+            case "pick":
+                audioS.clip = Upgrades;
+                break;
+            case "key":
+                audioS.clip = BossKey;
+                break;
+        }
+        audioS.loop = false;
+        audioS.Play();
+    }
 
 }

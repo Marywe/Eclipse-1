@@ -97,6 +97,7 @@ public class ColliderArma : MonoBehaviour
                 //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
                 foreach (Collider enemy in enemiesHit)
                 {
+                    if(enemy.GetComponent<Enemigos>() != null)
                     enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
                 }
                 
@@ -117,7 +118,8 @@ public class ColliderArma : MonoBehaviour
             //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
+                if (enemy.GetComponent<Enemigos>() != null)
+                    enemy.GetComponent<Enemigos>().TakeDamage(r.dano);
             }
         }
         else
@@ -150,7 +152,8 @@ public class ColliderArma : MonoBehaviour
         //  enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
         foreach (Collider enemy in enemiesHit)
         {
-            enemy.GetComponent<Enemigos>().TakeDamage(r.dano + danioAdicional);
+            if (enemy.GetComponent<Enemigos>() != null)
+                enemy.GetComponent<Enemigos>().TakeDamage(r.dano + danioAdicional);
         }
 
         puedeAtacar2 = true;

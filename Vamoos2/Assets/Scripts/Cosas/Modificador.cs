@@ -7,9 +7,16 @@ public class Modificador : MonoBehaviour
 {
     private string tagMod;
     Vector3 initialPosition;
+    AudioSource audioSource;
+    AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
+
+        audioManager = Controlador.instance.audioManager;
+
         tagMod = gameObject.tag;
         initialPosition = transform.position;
     }
@@ -31,18 +38,24 @@ public class Modificador : MonoBehaviour
             switch (tagMod)
             {
                 case "Vida":
+                    audioManager.PickUps(audioSource, "pick");
                     ModificarVida(other.gameObject);
                     break;
                 case "Recarga":
+                    audioManager.PickUps(audioSource, "pick");
                     ModificarRecarga(other.gameObject);
                     break;
                 case "Velocidad":
+                    audioManager.PickUps(audioSource, "pick");
                     ModificarVel(other.gameObject);
                     break;
                 case "Ataque":
+                    audioManager.PickUps(audioSource, "pick");
                     ModificarDano(other.gameObject);
                     break;
                 case "Untagged":
+                    audioManager.PickUps(audioSource, "healthpack");
+
                     if(other.GetComponent<Jugador>().line_sc.colisiones>0)
                         --other.GetComponent<Jugador>().line_sc.colisiones;
 
@@ -50,8 +63,10 @@ public class Modificador : MonoBehaviour
                         --other.GetComponent<Jugador>().line_sc.colisiones;
                     break;
             }
+            transform.GetChild(0).gameObject.SetActive(false);
+            gameObject.GetComponent<Collider>().enabled = false;
 
-            Destroy(gameObject);
+            Destroy(gameObject, 1f);
         }
 
     }

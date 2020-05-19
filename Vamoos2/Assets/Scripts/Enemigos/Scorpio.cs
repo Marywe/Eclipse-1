@@ -95,6 +95,7 @@ public class Scorpio : Enemigos
         #region Morirse
         if (currentHealth <= 0)
         {
+            audioManager.ReScorpio(this.audioSource, "death");
             animE.SetTrigger("Die");
             this.GetComponent<Collider>().enabled = false;
             this.enabled = false;
@@ -108,6 +109,7 @@ public class Scorpio : Enemigos
     {
         if (damaged && currentHealth > 0)
         {
+            audioManager.ReScorpio(this.audioSource, "hit");
             //Animasao
             animE.SetTrigger("TakeDmg");
 
@@ -141,6 +143,7 @@ public class Scorpio : Enemigos
     {
         yield return new WaitForSeconds(0.5f);
         animE.SetTrigger("Attack");
+        audioManager.ReScorpio(this.audioSource, "attack");
         yield return new WaitForSeconds(0.2f);
         if ((t.position-transform.position).magnitude <= agent.stoppingDistance)
         {

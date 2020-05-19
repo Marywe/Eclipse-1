@@ -43,13 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00cd744f17599cc4f9713b9e476e3ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contadorAudios: 1
   mixer: {fileID: 24100000, guid: c3a912536834e1a4a9a9fb95f1d2229f, type: 2}
   MusicGroup: {fileID: 24300002, guid: c3a912536834e1a4a9a9fb95f1d2229f, type: 2}
   FXGroup: {fileID: 2778939055241681969, guid: c3a912536834e1a4a9a9fb95f1d2229f, type: 2}
-  PistaDeAudio: {fileID: 8300000, guid: d045b4daad1f24642b7b0bd59a3313c6, type: 3}
+  PistaDeAudio: {fileID: 8300000, guid: 5ccb978988bcefd4fa2c63825129926b, type: 3}
   PistaMenus: {fileID: 0}
-  PistaAscensor: {fileID: 0}
+  PistaAscensor: {fileID: 8300000, guid: 0283d65cc2dfba54da42cde0ff4f65b2, type: 3}
   pjsMoving: {fileID: 8300000, guid: 926ca7296c80936438cce5c31e09dfd9, type: 3}
   Movimiento: {fileID: 8300000, guid: acd4e4c6de7c4c5409e9983b736af2b0, type: 3}
   Muerte: {fileID: 8300000, guid: dbaf456cf121ab04f8d32fdea4de56b9, type: 3}
@@ -70,9 +69,9 @@ MonoBehaviour:
   MuerteB: {fileID: 0}
   HitB: {fileID: 0}
   AtaqueB: {fileID: 0}
-  AtkBomb: {fileID: 0}
-  BossKey: {fileID: 0}
-  HealPack: {fileID: 0}
-  Upgrades: {fileID: 0}
+  AtkBomb: {fileID: 8300000, guid: ebc8ecfbfba9bb544852f5c00d4eb473, type: 3}
+  BossKey: {fileID: 8300000, guid: 2acaaab6d4b421e44808e24a47652316, type: 3}
+  HealPack: {fileID: 8300000, guid: e73463e8e3ffe1c48bc7a8ec57c4b364, type: 3}
+  Upgrades: {fileID: 8300000, guid: c527648027b78de429879a39b2eca148, type: 3}
   FuenteMaster: {fileID: 0}
   FuenteSFX: {fileID: 0}

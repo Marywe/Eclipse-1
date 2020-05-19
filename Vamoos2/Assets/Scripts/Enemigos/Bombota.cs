@@ -11,12 +11,18 @@ public class Bombota : MonoBehaviour
     GameObject boss;
 
     private bool isReturning = false;
+
+    AudioManager audioManager;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         boss = Controlador.instance.boss;
-    }
+        audioSource = gameObject.AddComponent<AudioSource>();
 
+        audioManager = Controlador.instance.audioManager;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -38,11 +44,12 @@ public class Bombota : MonoBehaviour
             Vector3 directionBoss = (boss.transform.position - transform.position);
             Moving(directionBoss.normalized);
 
-
+            if ((directionBoss).magnitude < 0.2f) audioManager.BOSS(audioSource, "BombAtk");
             if ((directionBoss).magnitude < 0.1f)
             {
                 ++boss.GetComponent<Boss>().hits;
-                Destroy(gameObject);
+                Destroy(transform.GetChild(0).gameObject);
+                Destroy(gameObject, 1);
             }
         }
      

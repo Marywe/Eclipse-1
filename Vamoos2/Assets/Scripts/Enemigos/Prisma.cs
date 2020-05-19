@@ -117,6 +117,7 @@ public class Prisma : Enemigos
         #region Morirse
         if (currentHealth <= 0)
         {
+            audioManager.RePrisma(this.audioSource, "death");
             animE.SetTrigger("Die");
             this.GetComponent<Collider>().enabled = false;
             this.enabled = false;
@@ -131,6 +132,7 @@ public class Prisma : Enemigos
     {
         if (damaged && currentHealth > 0)
         {
+            audioManager.RePrisma(this.audioSource, "hit");
             //Animasao
             animE.SetTrigger("TakeDmg");
 
@@ -191,6 +193,7 @@ public class Prisma : Enemigos
         yield return new WaitForSeconds(0.8f);
 		if (!damaged)
 		{
+            audioManager.RePrisma(this.audioSource, "attack");
             GameObject newDisparo = Instantiate(disparo);
             newDisparo.transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
 

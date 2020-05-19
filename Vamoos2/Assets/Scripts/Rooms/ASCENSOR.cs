@@ -5,7 +5,7 @@ using UnityEngine;
 public class ASCENSOR : Salas
 {
     Animator ascensorAnim;
-
+    AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +13,9 @@ public class ASCENSOR : Salas
         salaCleanFirstTime = true;
         numPuertas = 2;
         ascensorAnim = transform.GetChild(0).GetComponent<Animator>();
+
+
+        audioManager = Controlador.instance.audioManager;
     }
 
     // Update is called once per frame
@@ -32,6 +35,8 @@ public class ASCENSOR : Salas
     {
         if (other.CompareTag("Player"))
         {
+            audioManager.ElevatorMusic();
+
             Controlador.instance.ptoscamara[9].SetActive(true);
             Controlador.instance.dondeEstas = Controlador.DondeEstas.Ascensor;
             ascensorAnim.SetTrigger("Moverse");
@@ -56,6 +61,8 @@ public class ASCENSOR : Salas
     {
         if (other.CompareTag("Player"))
         {
+            audioManager.ReproducirMainTheme();
+
             Controlador.instance.ptoscamara[9].SetActive(false);
             Controlador.instance.objetivo1.SetParent(null);
             Controlador.instance.objetivo2.SetParent(null);

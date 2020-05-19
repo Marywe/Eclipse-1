@@ -102,7 +102,8 @@ public class ColliderArmaArrow : MonoBehaviour
                 //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
                 foreach (Collider enemy in enemiesHit)
                 {
-                    enemy.GetComponent<Enemigos>().TakeDamage(a.dano);
+                    if (enemy.GetComponent<Enemigos>() != null)
+                        enemy.GetComponent<Enemigos>().TakeDamage(a.dano);
                 }
 
             }
@@ -121,7 +122,8 @@ public class ColliderArmaArrow : MonoBehaviour
             //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(a.dano);
+                if (enemy.GetComponent<Enemigos>() != null)
+                    enemy.GetComponent<Enemigos>().TakeDamage(a.dano);
             }
 
         }
@@ -143,7 +145,8 @@ public class ColliderArmaArrow : MonoBehaviour
             //enemiesHit = Physics.OverlapSphere(this.transform.position, cubeSz, enemyLayer);
             foreach (Collider enemy in enemiesHit)
             {
-                enemy.GetComponent<Enemigos>().TakeDamage(a.dano);
+                if (enemy.GetComponent<Enemigos>() != null)
+                    enemy.GetComponent<Enemigos>().TakeDamage(a.dano);
             }
 
         }
