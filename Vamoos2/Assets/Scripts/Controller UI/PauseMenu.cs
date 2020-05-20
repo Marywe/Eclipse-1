@@ -33,6 +33,11 @@ public class PauseMenu : MonoBehaviour
             if (GamePaused)
             {
                 ContinueGame();
+
+                if (Input.GetButtonDown("Cancel"))
+                {
+                    MenuBack("Menu");
+                }
             }
             else
             { 
