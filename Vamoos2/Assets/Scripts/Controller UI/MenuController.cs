@@ -44,8 +44,7 @@ public class MenuController : MonoBehaviour
     /// </summary>
     void Start()
     {
-     
-        Invoke("FuncionAdvertencia", tiempoEsperaAdvertencia);
+      
         #region Resoluciones
         Resoluciones = Screen.resolutions;
         DropDeResoluciones.ClearOptions();
@@ -70,6 +69,7 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
+        Destroy(Advertencia, 5);
         #region Prueba Menu con Mando con un Swicth
         /*
         if (Input.GetKeyDown("joystick button 8"))
@@ -218,11 +218,6 @@ public class MenuController : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height,Screen.fullScreen);
     }
 
-    public void FuncionAdvertencia()
-    {
 
-        Advertencia.SetActive(false);
-       
-    }
 
 }
