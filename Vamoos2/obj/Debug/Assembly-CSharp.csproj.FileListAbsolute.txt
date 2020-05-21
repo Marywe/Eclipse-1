@@ -1,2 +1,0 @@
-C:\Users\Philip\Desktop\UNI\2º AÑO\1ºQuatri\MEGALODON CORPS\Eclipse\Eclipse-Dawn-of-darkness\Vamoos2\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
-C:\Users\Philip\Desktop\UNI\2º AÑO\1ºQuatri\MEGALODON CORPS\Eclipse\Eclipse-Dawn-of-darkness\Vamoos2\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

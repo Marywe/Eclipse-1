@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SalaBossRush : Salas
 {
+    bool haSpawneado = false;
+    public GameObject chip;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,12 @@ public class SalaBossRush : Salas
     void Update()
     {
         base.ControladorPuertas(doors);
+
+        if(salaCleanFirstTime && salaClean && !haSpawneado)
+        {
+            chip.SetActive(true);
+            haSpawneado = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

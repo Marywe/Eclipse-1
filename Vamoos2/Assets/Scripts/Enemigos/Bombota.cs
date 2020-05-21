@@ -45,10 +45,10 @@ public class Bombota : MonoBehaviour
             Moving(directionBoss.normalized);
 
             if ((directionBoss).magnitude < 0.2f) audioManager.BOSS(audioSource, "BombAtk");
-            if ((directionBoss).magnitude < 0.1f)
+            if ((directionBoss).magnitude < 0.05f)
             {
                 ++boss.GetComponent<Boss>().hits;
-                Destroy(transform.GetChild(0).gameObject);
+                transform.GetChild(0).gameObject.SetActive(false);
                 Destroy(gameObject, 1);
             }
         }
