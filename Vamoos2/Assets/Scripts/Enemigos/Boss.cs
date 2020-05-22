@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class Boss : MonoBehaviour
 
         yield return new WaitForSeconds(duracionMuerte);
         pantallaFinal.SetActive(true);
-        Time.timeScale = 0f;
+        yield return new WaitForSeconds(69.3f);
+        SceneManager.LoadScene(0);
+
     }
 }

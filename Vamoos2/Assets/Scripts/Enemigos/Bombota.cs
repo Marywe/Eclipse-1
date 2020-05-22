@@ -15,6 +15,8 @@ public class Bombota : MonoBehaviour
     AudioManager audioManager;
     AudioSource audioSource;
 
+    bool hasHit = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +49,15 @@ public class Bombota : MonoBehaviour
             if ((directionBoss).magnitude < 0.2f) audioManager.BOSS(audioSource, "BombAtk");
             if ((directionBoss).magnitude < 0.05f)
             {
-                ++boss.GetComponent<Boss>().hits;
+                
+                if (!hasHit)
+                {
+                    ++boss.GetComponent<Boss>().hits;
+                    hasHit = true;
+
+                    boss.GetComponentInChildren<Animator>().SetTrigger("Damaged");
+
+                }
                 transform.GetChild(0).gameObject.SetActive(false);
                 Destroy(gameObject, 1);
             }
@@ -73,10 +83,8 @@ public class Bombota : MonoBehaviour
 
 
     private void OnDestroy()
-    {
-        boss.GetComponentInChildren<Animator>().SetTrigger("Damaged");
+    { 
         boss.GetComponentInChildren<Animator>().SetBool("Phase1", true);
-        --Controlador.instance.currentNumEnems;
-        
+        --Controlador.instance.currentNumEnems; 
     }
 }
