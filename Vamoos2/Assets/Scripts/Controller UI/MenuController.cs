@@ -69,7 +69,7 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
-        Destroy(Advertencia, 5);
+        Destroy(Advertencia, 3);
         #region Prueba Menu con Mando con un Swicth
         /*
         if (Input.GetKeyDown("joystick button 8"))
