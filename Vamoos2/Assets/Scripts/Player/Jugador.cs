@@ -97,64 +97,64 @@ public class Jugador : MonoBehaviour
         int orientacion = (int)Controlador.instance.orientacion;
         switch (orientacion)
         {
-            case 0: //DONE
+            case 0: //NORTE
                 offsetEntrada = new Vector3(1f, 0, -3f);
                 break;
-            case 1: //DONE
+            case 1: //OESTE
                 offsetEntrada = new Vector3(3f, 0, -3f);
                 break;
-            case 2: //DONE
+            case 2: //SUR
                 offsetEntrada = new Vector3(1f, 0, 3f);
                 break;
-            case 3: //DONE
+            case 3: //ESTE
                 offsetEntrada = new Vector3(-3f, 0, -3f);
                 break;
         }
-        //Variable del offset al entrar en la sala
-        //int sala = (int)Controlador.instance.dondeEstas;
-        /*switch (sala)
-        {
-            case 0: //DONE
-                offsetEntrada = new Vector3(-2f, 0, 0.6f);
-                break;
-            case 1: //DONE
-                offsetEntrada = new Vector3(2f, 0, -2f);
-                break;
-            case 2: //DONE MENOS LA X
-                offsetEntrada = new Vector3(0, 0, 3f);
-                break;
-            case 3: //DONE
-                offsetEntrada = new Vector3(2f, 0, 2f);
-                break;
-            case 4: //DONE MENOS LA X
-                offsetEntrada = new Vector3(0, 0, -2f);
-                break;
-            case 5: //DONE
-                offsetEntrada = new Vector3(2f, 0, 0);
-                break;
-            case 6: //DONE
-                offsetEntrada = new Vector3(-2f, 0, 0);
-                break;
-            case 7: //DONE
-                offsetEntrada = new Vector3(-2f, 0, 2f);
-                break;
-            case 8: //DONE
-                offsetEntrada = new Vector3(0, 0, -2f);
-                break;
-            case 9: //DONE
-                offsetEntrada = new Vector3(0, 0, 2f);
-                break;
-            case 10: //DONE AL SALIR DEL ASCENSOR
-                offsetEntrada = new Vector3(2f, 0, -2f);
-                break;
-            case 11: //DONE
-                offsetEntrada = new Vector3(2f, 0, -2f);
-                break;
-            case 12: //DONE
-                break;
-        }*/
-
         return offsetEntrada;
     }
 
+
+    //Variable del offset al entrar en la sala
+    //int sala = (int)Controlador.instance.dondeEstas;
+    /*switch (sala)
+    {
+        case 0: //DONE
+            offsetEntrada = new Vector3(-2f, 0, 0.6f);
+            break;
+        case 1: //DONE
+            offsetEntrada = new Vector3(2f, 0, -2f);
+            break;
+        case 2: //DONE MENOS LA X
+            offsetEntrada = new Vector3(0, 0, 3f);
+            break;
+        case 3: //DONE
+            offsetEntrada = new Vector3(2f, 0, 2f);
+            break;
+        case 4: //DONE MENOS LA X
+            offsetEntrada = new Vector3(0, 0, -2f);
+            break;
+        case 5: //DONE
+            offsetEntrada = new Vector3(2f, 0, 0);
+            break;
+        case 6: //DONE
+            offsetEntrada = new Vector3(-2f, 0, 0);
+            break;
+        case 7: //DONE
+            offsetEntrada = new Vector3(-2f, 0, 2f);
+            break;
+        case 8: //DONE
+            offsetEntrada = new Vector3(0, 0, -2f);
+            break;
+        case 9: //DONE
+            offsetEntrada = new Vector3(0, 0, 2f);
+            break;
+        case 10: //DONE AL SALIR DEL ASCENSOR
+            offsetEntrada = new Vector3(2f, 0, -2f);
+            break;
+        case 11: //DONE
+            offsetEntrada = new Vector3(2f, 0, -2f);
+            break;
+        case 12: //DONE
+            break;
+    }*/
 }

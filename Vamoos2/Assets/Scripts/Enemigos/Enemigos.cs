@@ -15,7 +15,7 @@ public class Enemigos : MonoBehaviour
     protected float maxHealth;
     protected float currentHealth;
     protected Vector3 mov;
-    protected float armor = 3;
+    protected float armor = 6;
     protected Animator animE;
 
     protected GameObject shield;

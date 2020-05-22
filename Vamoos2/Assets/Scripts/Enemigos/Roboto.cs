@@ -20,7 +20,7 @@ public class Roboto : Enemigos
 		objetivo2 = Controlador.instance.objetivo2;
 		shield = transform.GetChild(1).gameObject;
 		attacking = false;
-		maxHealth = 6;
+		maxHealth = 8;
 		currentHealth = maxHealth;
 		agent = gameObject.GetComponent<NavMeshAgent>();
 		animE = (Animator)gameObject.GetComponentInChildren(typeof(Animator));
@@ -61,7 +61,6 @@ public class Roboto : Enemigos
 			attackPos = (transform.position + (-Vector3.right));
 		}
 
-        //base.MirarObjetivo(cam);
         #region Seguimiento
         //Con esto podemos modificar 
         Vector3 vectorMov1 = new Vector3(objetivo1.position.x - this.transform.position.x, objetivo1.position.y - this.transform.position.y, objetivo1.position.z - this.transform.position.z);
@@ -153,11 +152,9 @@ public class Roboto : Enemigos
     /// </summary>
 	void Atacar()
 	{
-		
 		attacking = true;
 		animE.SetTrigger("Atacar");
 		StartCoroutine(corAttack());
-
     }
 
     /// <summary>
@@ -171,15 +168,15 @@ public class Roboto : Enemigos
 		yield return new WaitForSeconds(1.6f);
 		audioManager.ReRobot(this.audioSource, "attack");
 
-		Collider[] hit = Physics.OverlapBox(attackPos, attackSz, transform.rotation);
+		/*Collider[] hit = Physics.OverlapBox(attackPos, attackSz, transform.rotation);
 		
 		foreach(Collider colPJ in hit)
 		{
 			if (colPJ.gameObject.GetComponent<Azul>() != null) colPJ.gameObject.GetComponent<Azul>().RecibirGolpe(transform);
 			else if(colPJ.gameObject.GetComponent<Rosa>() != null) colPJ.gameObject.GetComponent<Rosa>().RecibirGolpe(transform);
-		}
+		}*/
 		agent.isStopped = false;
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(2);
 		attacking = false;
 	}
     
